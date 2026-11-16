@@ -1,157 +1,253 @@
 # -*- coding: utf-8 -*-
-# Part 2: Topics 5, 6, 7, 8, 9 (30 questions each = 150 questions)
+# Part 2: Topics 5, 6, 7, 8, 9 (30 PURE THEORETICAL questions each = 150 questions)
 
 def get_part2_questions():
     # =========================================================================
-    # MAVZU 5: Chiziqli tenglamalar sistemasi, FYS, Matritsalar usuli, Kramer (30 ta)
+    # MAVZU 5: Chiziqli tenglamalar sistemasi, FYS, Matritsalar usuli, Kramer (30 ta NAZARIY)
     # =========================================================================
     t5 = [
         {
-            "q": "$AX = B$ chiziqli tenglamalar sistemasida $B = \\Theta = (0, 0, \\dots, 0)^T$ bo‘lsa, bunday sistema qanday ataladi va uning birgalikda bo‘lish xossasi qanday?",
+            "q": "$n$ ta noma’lumli $m$ ta chiziqli tenglamalar sistemasida $a_{ij}$, $x_j$ va $b_i$ miqdorlar qanday nomlanadi (4-slayd)?",
             "opts": [
-                "Bir jinsli chiziqli tenglamalar sistemasi deyiladi va u har doim birgalikda bo‘ladi (chunki $X = \\Theta$ har doim yechim)",
-                "Bir jinsli bo‘lmagan sistema deyiladi va u hech qachon yechimga ega bo‘lmaydi",
-                "Kramer sistemasi deyiladi va faqat $\\det(A) \\ne 0$ bo‘lganda birgalikda bo‘ladi",
-                "Maxsus sistema deyiladi va har doim cheksiz ko‘p yechimga ega bo‘ladi"
+                "$a_{ij}$ — sistemaning koeffitsiyentlari, $x_1, x_2, \\dots, x_n$ — noma’lumlar, $b_1, b_2, \\dots, b_m$ — ozod hadlar",
+                "$a_{ij}$ — ozod hadlar, $x_j$ — koeffitsiyentlar, $b_i$ — noma’lumlar",
+                "$a_{ij}$ — minorlar, $x_j$ — determinantlar, $b_i$ — ranglar",
+                "$a_{ij}$ — bazislar, $x_j$ — indekslar, $b_i$ — vektorlar"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "5-ma’ruza (5-slayd): Agar $B = \\Theta$ bo‘lsa, sistema bir jinsli chiziqli tenglamalar sistemasi ($AX = \\Theta$) deyiladi. U har doim birgalikda, chunki $X = \\Theta$ nol vektor har doim yechim bo‘ladi."
+            "exp": "5-ma’ruza (4-slayd): $a_{ij}$ ($i=1,\\dots,m;\\; j=1,\\dots,n$) sonlar sistemaning koeffitsiyentlari, $x_1, \\dots, x_n$ lar noma’lumlar, $b_1, \\dots, b_m$ sonlar esa ozod hadlar deyiladi."
         },
         {
-            "q": "$n$ ta noma’lumli $AX = \\Theta$ bir jinsli chiziqli tenglamalar sistemasi qachon yagona nol yechimga, qachon nolmas yechimlarga ega bo‘ladi?",
+            "q": "Chiziqli tenglamalar sistemasining matritsaviy yozuvi $AX = B$ da $A$, $X$ va $B$ matritsalarning o‘lchamlari qanday bo‘ladi ($m$ ta tenglama, $n$ ta noma’lum)?",
             "opts": [
-                "$\\text{rang}(A) = n$ bo‘lsa yagona nol yechimga; $\\text{rang}(A) < n$ bo‘lsa nol yechimdan tashqari nolmas yechimlarga ham ega bo‘ladi",
-                "$\\text{rang}(A) < n$ bo‘lsa yagona nol yechimga; $\\text{rang}(A) = n$ bo‘lsa cheksiz ko‘p yechimga ega",
-                "$\\text{rang}(A) = 0$ bo‘lgandagina nolmas yechimga ega bo‘ladi",
-                "Har doim faqat yagona nol yechimga ega bo‘ladi"
+                "$A$ — $m \\times n$ o‘lchamli asosiy matritsa, $X$ — $n \\times 1$ o‘lchamli noma’lumlar ustun matritsasi, $B$ — $m \\times 1$ o‘lchamli ozod hadlar ustun matritsasi",
+                "$A, X, B$ larning barchasi $n \\times n$ o‘lchamli kvadrat matritsalar",
+                "$A$ — $n \\times m$ o‘lchamli, $X$ — $1 \\times n$ satr matritsa, $B$ — $1 \\times m$ satr matritsa",
+                "$A$ — $m \\times m$ o‘lchamli, $X$ va $B$ esa $n \\times n$ o‘lchamli"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "5-ma’ruza (5-slayd): Bir jinsli sistema uchun $\\text{rang}(A) = n$ bo‘lsa yagona nol yechimga ega; $\\text{rang}(A) < n$ bo‘lsa nolmas yechimlarga ham ega bo‘ladi."
+            "exp": "5-ma’ruza (4-slayd): $A_{m\\times n} \\cdot X_{n\\times 1} = B_{m\\times 1}$."
         },
         {
-            "q": "Bir jinsli chiziqli tenglamalar sistemasining «fundamental yechimlar sistemasi» (FYS) deb nimaga aytiladi va u nechta vektordan iborat bo‘ladi?",
+            "q": "Chiziqli tenglamalar sistemasining «asosiy matritsasi» $A$ va «kengaytirilgan matritsasi» $(A \\mid B)$ orasidagi farq nimadan iborat (19-slayd)?",
             "opts": [
-                "Yechimlarning har qanday maksimal sondagi chiziqli erkli sistemasiga aytiladi va $n - r$ ta nolmas vektordan iborat bo‘ladi",
-                "Sistemaning barcha yechimlari yig‘indisiga aytiladi va $n + r$ ta vektordan iborat bo‘ladi",
-                "Faqat birlik vektorlardan tuzilgan sistemaga aytiladi va $r$ ta vektordan iborat bo‘ladi",
-                "Nol vektordan iborat yagona yechimga aytiladi"
+                "Asosiy matritsa $A$ faqat noma’lumlar oldidagi koeffitsiyentlardan tuziladi; kengaytirilgan matritsa $(A \\mid B)$ esa asosiy matritsaga ozod hadlar ustuni $B$ ni qo‘shishdan hosil bo‘ladi",
+                "Asosiy matritsa kvadrat bo‘ladi, kengaytirilgan matritsa esa transponirlangan matritsa bo‘ladi",
+                "Kengaytirilgan matritsa asosiy matritsaning teskarisiga teng bo‘ladi",
+                "Asosiy matritsada ozod hadlar qatnashadi, kengaytirilgan matritsada esa qatnashmaydi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "5-ma’ruza (7-8-slaydlar): Bir jinsli sistema rangi $r < n$ bo‘lganda fundamental yechimlar sistemasi $n - r$ ta chiziqli erkli nolmas vektorlardan iborat bo‘ladi."
+            "exp": "5-ma’ruza (19-slayd): $(A \\mid B)$ kengaytirilgan matritsa $A$ asosiy matritsaning o‘ng tomoniga $B$ ozod hadlar ustunini yozish orqali hosil qilinadi."
         },
         {
-            "q": "Ma’ruzadagi 9-11-slaydlar misoli: 5 ta noma’lumli bir jinsli sistemaning rangi $r = 2$ bo‘lsa, uning fundamental yechimlar sistemasi nechta vektordan iborat va umumiy yechimi qanday ko‘rinishda yoziladi?",
+            "q": "Chiziqli tenglamalar sistemasining «yechimi» deb nimaga aytiladi (17-slayd)?",
             "opts": [
-                "$n - r = 5 - 2 = 3$ ta vektordan iborat; $X = c_1 F_1 + c_2 F_2 + c_3 F_3$",
-                "$r = 2$ ta vektordan iborat; $X = c_1 F_1 + c_2 F_2$",
-                "$n = 5$ ta vektordan iborat; $X = F_0 + c_1 F_1$",
-                "$n + r = 7$ ta vektordan iborat"
+                "$x_1, x_2, \\dots, x_n$ noma’lumlarning o‘rniga qo‘yilganda sistemadagi barcha tenglamalarni to‘g‘ri tenglikka (ayniyatga) aylantiruvchi $\\alpha_1, \\alpha_2, \\dots, \\alpha_n$ sonlar tizimiga ($X = (\\alpha_1, \\dots, \\alpha_n)^T$)",
+                "Sistemadagi faqat birinchi tenglamani qanoatlantiruvchi ixtiyoriy sonlar to‘plamiga",
+                "Asosiy matritsa determinantining qiymatiga",
+                "Ozod hadlarning algebraik yig‘indisiga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "5-ma’ruza (9-11-slaydlar): $n = 5, r = 2 \\implies n - r = 3$ ta fundamental yechim ($F_1, F_2, F_3$) mavjud va umumiy yechim $X = c_1 F_1 + c_2 F_2 + c_3 F_3$ ko‘rinishda bo‘ladi."
+            "exp": "5-ma’ruza (17-slayd): Agar $\\alpha_1, \\alpha_2, \\dots, \\alpha_n$ sonlar $x_1, x_2, \\dots, x_n$ larning o‘rniga qo‘yilganda sistemadagi tenglamalarni to‘g‘ri tenglikka aylantirsa, bu sonlarga sistemaning yechimlari deyiladi."
         },
         {
-            "q": "Ma’ruzadagi 6-slayd misoli: $\\begin{cases} x_1 - 2x_2 - 2x_3 + 3x_4 = 0 \\\\ 2x_1 + 3x_2 + x_3 - 5x_4 = 0 \\\\ 4x_1 + x_2 - 3x_3 - x_4 = 0 \\end{cases}$ bir jinsli sistemaning umumiy yechimini toping ($x_4 = \\alpha$).",
+            "q": "Qanday chiziqli tenglamalar sistemasiga «birgalikda bo‘lgan sistema» va qanday sistemaga «birgalikda bo‘lmagan sistema» deyiladi (17-slayd)?",
             "opts": [
-                "$x_1 = \\frac{3}{5}\\alpha,\\quad x_2 = \\alpha,\\quad x_3 = \\frac{4}{5}\\alpha,\\quad x_4 = \\alpha$",
-                "$x_1 = \\alpha,\\quad x_2 = 2\\alpha,\\quad x_3 = 3\\alpha,\\quad x_4 = \\alpha$",
-                "$x_1 = -\\frac{3}{5}\\alpha,\\quad x_2 = -\\alpha,\\quad x_3 = \\frac{4}{5}\\alpha,\\quad x_4 = \\alpha$",
-                "$x_1 = 0,\\quad x_2 = 0,\\quad x_3 = 0,\\quad x_4 = 0$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "5-ma’ruza (6-slayd): Pog‘onali shaklga keltirilganda $2x_2 - 2x_4 = 0 \\implies x_2 = x_4 = \\alpha$; $7x_2 + 5x_3 - 11x_4 = 0 \\implies x_3 = \\frac{4}{5}\\alpha$; $x_1 = \\frac{3}{5}\\alpha$."
-        },
-        {
-            "q": "Bir jinsli bo‘lmagan $AX = B$ ($B \\ne \\Theta$) chiziqli tenglamalar sistemasining umumiy yechimi qaysi formula orqali ifodalanadi?",
-            "opts": [
-                "$X = F_0 + c_1 F_1 + c_2 F_2 + \\dots + c_{n-r} F_{n-r}$ (bu yerda $F_0$ — xususiy yechim, $F_i$ — mos bir jinsli sistema FYS)",
-                "$X = c_1 F_1 + c_2 F_2 + \\dots + c_n F_n$",
-                "$X = F_0 \\cdot (c_1 F_1 + \\dots + c_{n-r} F_{n-r})$",
-                "$X = A^T B + F_0$"
+                "Kamida bitta yechimga ega bo‘lsa — birgalikda; bitta ham yechimga ega bo‘lmasa ($\\varnothing$) — birgalikda bo‘lmagan sistema deyiladi",
+                "Faqat cheksiz ko‘p yechimga ega bo‘lsa — birgalikda; yagona yechimga ega bo‘lsa — birgalikda bo‘lmagan deyiladi",
+                "Tenglamalar soni noma’lumlar soniga teng bo‘lsa — birgalikda deyiladi",
+                "Ozod hadlari nolga teng bo‘lsa — birgalikda bo‘lmagan deyiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "5-ma’ruza (12-slayd): Bir jinsli bo‘lmagan sistemaning umumiy yechimi uning bitta xususiy yechimi $F_0$ bilan mos bir jinsli sistemaning umumiy yechimi yig‘indisiga teng."
+            "exp": "5-ma’ruza (17-slayd): Chiziqli tenglamalar sistemasi kamida bitta yechimga ega bo‘lsa birgalikda, aks holda (bitta ham yechimga ega bo‘lmasa) birgalikda bo‘lmagan sistema deyiladi."
         },
         {
-            "q": "Ma’ruzadagi 13-14-slaydlar misoli: $\\begin{cases} x_1 - x_2 + 2x_3 = 1 \\\\ 2x_1 + x_2 - x_3 = 2 \\end{cases}$ sistemaning ($x_1$ — erkli o‘zgaruvchi) umumiy yechimini toping.",
+            "q": "**Kroneker-Kapelli teoremasi** (19-slayd): Chiziqli tenglamalar sistemasi birgalikda bo‘lishi uchun qanday shart zarur va yetarli?",
             "opts": [
-                "$X = \\begin{pmatrix} 0 \\\\ 5 \\\\ 3 \\end{pmatrix} + c \\begin{pmatrix} 1 \\\\ -5 \\\\ -3 \\end{pmatrix}$",
-                "$X = \\begin{pmatrix} 1 \\\\ 5 \\\\ 3 \\end{pmatrix} + c \\begin{pmatrix} 0 \\\\ 5 \\\\ 3 \\end{pmatrix}$",
-                "$X = \\begin{pmatrix} 0 \\\\ -5 \\\\ -3 \\end{pmatrix} + c \\begin{pmatrix} 1 \\\\ 5 \\\\ 3 \\end{pmatrix}$",
-                "$X = \\begin{pmatrix} 1 \\\\ 2 \\\\ 1 \\end{pmatrix} + c \\begin{pmatrix} 1 \\\\ -1 \\\\ 2 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "5-ma’ruza (13-14-slaydlar): Sistema $\\begin{cases} 3x_1 + x_3 = 3 \\\\ 5x_1 + x_2 = 5 \\end{cases}$ ga keladi. $x_1=0$ da $F_0 = (0, 5, 3)^T$; bir jinsli sistemada $x_1=1$ da $F_1 = (1, -5, -3)^T$."
-        },
-        {
-            "q": "Kroneker-Kapelli teoremasiga ko‘ra, chiziqli tenglamalar sistemasi birgalikda bo‘lishi uchun qanday shart zarur va yetarli?",
-            "opts": [
-                "Asosiy matritsa rangi kengaytirilgan matritsa rangiga teng bo‘lishi: $\\text{rang}(A) = \\text{rang}(A \\mid B)$",
-                "Asosiy matritsa determinanti nolga teng bo‘lishi: $\\det(A) = 0$",
-                "$\\text{rang}(A) < \\text{rang}(A \\mid B)$ bo‘lishi",
-                "Tenglamalar soni noma’lumlar sonidan katta bo‘lishi ($m > n$)"
+                "$\\text{rang}(A) = \\text{rang}(A \\mid B)$ bo‘lishi (asosiy matritsa rangi kengaytirilgan matritsa rangiga teng bo‘lishi) zarur va yetarli",
+                "$\\text{rang}(A) < \\text{rang}(A \\mid B)$ bo‘lishi zarur va yetarli",
+                "$\\det(A) = 0$ bo‘lishi zarur va yetarli",
+                "Tenglamalar soni $m$ noma’lumlar soni $n$ ga teng bo‘lishi zarur va yetarli"
             ],
             "ans": 0,
             "diff": "Oson",
             "exp": "5-ma’ruza (19-slayd): Kroneker-Kapelli teoremasi: Chiziqli tenglamalar sistemasi birgalikda bo‘lishi uchun $\\text{rang}(A) = \\text{rang}(A \\mid B)$ bo‘lishi zarur va yetarli."
         },
         {
-            "q": "Agar $n$ ta noma’lumli chiziqli tenglamalar sistemasida $r(A) = r(A \\mid B) = r$ bo‘lib, $r < n$ bo‘lsa, sistema haqida nima deyish mumkin?",
+            "q": "Kroneker-Kapelli teoremasiga ko‘ra, $n$ ta noma’lumli sistemada $r(A) = r(A \\mid B) = r$ bo‘lganda qachon sistema yagona yechimga, qachon cheksiz ko‘p yechimga ega bo‘ladi (24-slayd)?",
             "opts": [
-                "Sistema birgalikda va cheksiz ko‘p yechimga ega",
-                "Sistema birgalikda va yagona yechimga ega",
-                "Sistema birgalikda emas (yechimga ega emas)",
-                "Sistema faqat nol yechimga ega"
+                "Agar $r = n$ bo‘lsa sistema bitta (yagona) yechimga ega; agar $r < n$ bo‘lsa sistema cheksiz ko‘p yechimga ega",
+                "Agar $r < n$ bo‘lsa sistema yagona yechimga ega; agar $r = n$ bo‘lsa cheksiz ko‘p yechimga ega",
+                "Agar $r = 0$ bo‘lsa yagona yechimga ega",
+                "Har doim faqat bitta yechimga ega bo‘ladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "5-ma’ruza (24-slayd): $r(A) = r(A|B) = r$ bo‘lganda: $r = n$ bo‘lsa bitta (yagona) yechimga ega; $r < n$ bo‘lsa cheksiz ko‘p yechimga ega."
+            "exp": "5-ma’ruza (24-slayd): $r(A) = r(A \\mid B) = r$ bo‘lganda: $r = n \\implies$ bitta yechim; $r < n \\implies$ cheksiz ko‘p yechim; $r(A) \\ne r(A \\mid B) \\implies$ yechimga ega emas."
         },
         {
-            "q": "Ma’ruzadagi 20-21-slaydlar misoli: $\\begin{cases} x + y + z = 3 \\\\ x - 2y + 3z = 5 \\\\ 2x + 3y - z = 7 \\end{cases}$ sistemaning asosiy va kengaytirilgan matritsalari rangini hamda birgalikdaligini aniqlang.",
+            "q": "Asosiy matritsa rangi $r(A)$ va kengaytirilgan matritsa rangi $r(A \\mid B)$ orasida $r(A) > r(A \\mid B)$ tengsizlik bo‘lishi mumkinmi?",
             "opts": [
-                "$r(A) = r(A \\mid B) = 3$, demak sistema birgalikda (yagona yechimga ega)",
-                "$r(A) = 2,\\; r(A \\mid B) = 3$, demak sistema birgalikda emas",
-                "$r(A) = r(A \\mid B) = 2$, demak sistema cheksiz ko‘p yechimga ega",
-                "$r(A) = 1,\\; r(A \\mid B) = 2$, demak sistema birgalikda emas"
+                "Yo‘q, hech qachon bo‘lishi mumkin emas, chunki $A$ matritsa $(A \\mid B)$ ning qism matritsasi bo‘lib, har doim $r(A) \\le r(A \\mid B) \\le r(A) + 1$ bajariladi",
+                "Ha, agar ozod hadlar manfiy bo‘lsa $r(A) > r(A \\mid B)$ bo‘ladi",
+                "Ha, bir jinsli sistemalarda $r(A) > r(A \\mid B)$ bo‘ladi",
+                "Ha, tenglamalar soni noma’lumlar sonidan ko‘p bo‘lganda shunday bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "5-ma’ruza (20-21-slaydlar): Pog‘onali shakl $\\begin{pmatrix} 1 & 1 & 1 & | & 3 \\\\ 0 & 1 & -3 & | & 1 \\\\ 0 & 0 & -7 & | & 5 \\end{pmatrix} \\implies r(A) = r(A|B) = 3$, sistema birgalikda."
+            "exp": "$A$ matritsaning har qanday minori $(A \\mid B)$ ning ham minori bo‘lgani sababli $r(A)$ hech qachon $r(A \\mid B)$ dan katta bo‘la olmaydi."
         },
         {
-            "q": "Ma’ruzadagi 22-23-slaydlar misoli: $\\begin{cases} x + y - z = 3 \\\\ x + 2y + 3z = 5 \\\\ 2x + 3y + 2z = 7 \\end{cases}$ sistemani birgalikda yoki birgalikda emasligini tekshiring.",
+            "q": "Qachon $AX = B$ tenglamalar sistemasi «bir jinsli chiziqli tenglamalar sistemasi» deyiladi (5-slayd)?",
             "opts": [
-                "$r(A) = 2 \\ne r(A \\mid B) = 3$, demak sistema birgalikda emas (yechimga ega emas)",
-                "$r(A) = r(A \\mid B) = 3$, demak sistema yagona yechimga ega",
-                "$r(A) = r(A \\mid B) = 2$, demak sistema cheksiz ko‘p yechimga ega",
-                "$r(A) = 3,\\; r(A \\mid B) = 2$, sistema birgalikda"
+                "Ozod hadlar ustuni nol vektordan iborat bo‘lganda ($B = \\Theta = (0, 0, \\dots, 0)^T$), ya’ni $AX = \\Theta$ bo‘lganda",
+                "Barcha noma’lumlar oldidagi koeffitsiyentlar bir xil songa teng bo‘lganda",
+                "Tenglamalar soni noma’lumlar soniga teng bo‘lganda ($m = n$)",
+                "Ozod hadlar ustuni birlik vektordan iborat bo‘lganda"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (5-slayd): Agar $B = \\Theta$ bo‘lsa, u holda tenglamalar sistemasi bir jinsli chiziqli tenglamalar sistemasi deyiladi: $AX = \\Theta$."
+        },
+        {
+            "q": "Nima sababdan bir jinsli chiziqli tenglamalar sistemasi ($AX = \\Theta$) HAR DOIM birgalikda bo‘ladi (5-slayd)?",
+            "opts": [
+                "Chunki nol vektor $X = \\Theta = (0, 0, \\dots, 0)^T$ har doim sistemaning yechimi bo‘ladi (hamda nol ustun qo‘shilishi rangni o‘zgartirmaydi: $r(A) = r(A \\mid \\Theta)$)",
+                "Chunki bir jinsli sistemaning asosiy determinanti har doim $1$ ga teng bo‘ladi",
+                "Chunki bir jinsli sistemada noma’lumlar soni har doim tenglamalar sonidan ko‘p bo‘ladi",
+                "Chunki bir jinsli sistemada koeffitsiyentlar nolga teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (5-slayd): Bir jinsli chiziqli tenglamalar sistemasi har doim birgalikda, chunki $X = \\Theta$ har doim sistemaning yechimi bo‘ladi."
+        },
+        {
+            "q": "$n$ ta noma’lumli $AX = \\Theta$ bir jinsli chiziqli tenglamalar sistemasi qachon aniq bo‘lib, faqat yagona nol (trivial) yechimga ega bo‘ladi (5-slayd)?",
+            "opts": [
+                "$\\text{rang}(A) = n$ munosabat o‘rinli bo‘lganda (kvadrat sistemada $\\det(A) \\ne 0$ bo‘lganda)",
+                "$\\text{rang}(A) < n$ munosabat o‘rinli bo‘lganda",
+                "$\\text{rang}(A) = 0$ bo‘lganda",
+                "Tenglamalar soni noma’lumlar sonidan kichik ($m < n$) bo‘lganda"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (5-slayd): Bir jinsli sistema uchun $\\text{rang}(A) = n$ munosabat o‘rinli bo‘lsa, sistema aniq bo‘lib, yagona nol yechimga ega."
+        },
+        {
+            "q": "$n$ ta noma’lumli $AX = \\Theta$ bir jinsli chiziqli tenglamalar sistemasi qachon nol yechimdan tashqari nolmas (notrivial) yechimlarga ham ega bo‘ladi (5-slayd)?",
+            "opts": [
+                "$\\text{rang}(A) < n$ munosabat o‘rinli bo‘lganda (xususan kvadrat sistemada $\\det(A) = 0$ bo‘lganda)",
+                "$\\text{rang}(A) = n$ bo‘lganda (kvadrat sistemada $\\det(A) \\ne 0$ bo‘lganda)",
+                "Faqat barcha koeffitsiyentlar nolga teng bo‘lganda",
+                "Hech qachon nolmas yechimga ega bo‘lmaydi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (5-slayd): Bir jinsli sistema uchun $\\text{rang}(A) < n$ munosabat o‘rinli bo‘lsa, sistema nol yechimdan tashqari nolmas yechimlarga ham ega bo‘ladi."
+        },
+        {
+            "q": "Bir jinsli chiziqli algebraik tenglamalar sistemasining «fundamental yechimlar sistemasi» (FYS) deb nimaga aytiladi (7-slayd)?",
+            "opts": [
+                "Sistema yechimlarining har qanday maksimal sondagi chiziqli erkli sistemasiga",
+                "Sistemaning faqat nol vektordan iborat yechimiga",
+                "Sistemaning barcha yechimlari yig‘indisiga",
+                "Asosiy matritsaning satr vektorlari sistemasiga"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (7-slayd, Ta’rif): Bir jinsli chiziqli algebraik tenglamalar sistemasi yechimlarining har qanday maksimal sondagi chiziqli erkli sistemasi bu tenglamalar sistemasining fundamental yechimlar sistemasi deb ataladi."
+        },
+        {
+            "q": "Fundamental yechimlar sistemasi haqidagi **Teorema** (7-slayd) qanday bayon etiladi?",
+            "opts": [
+                "$AX = \\Theta$ bir jinsli tenglamalar sistemasining har qanday yechimi uning fundamental yechimlar sistemasining chiziqli kombinatsiyasidan iborat: $X = c_1 F_1 + c_2 F_2 + \\dots + c_k F_k$",
+                "$AX = \\Theta$ sistemaning har qanday yechimi fundamental yechimlarning skalyar ko‘paytmasiga teng",
+                "Fundamental yechimlar sistemasi har doim bitta vektordan iborat bo‘ladi",
+                "Fundamental yechimlar o‘zaro chiziqli bog‘liq bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (7-slayd, Teorema va Tasdiq): $AX = \\Theta$ tenglamalar sistemasining har qanday yechimi fundamental yechimlar sistemasining chiziqli kombinatsiyasidan iborat: $X = c_1 F_1 + \\dots + c_k F_k$."
+        },
+        {
+            "q": "Fundamental yechimlar soni haqidagi **Teorema** (8-slayd): Bir jinsli algebraik tenglamalar sistemasining rangi $r$ ga teng bo‘lib, noma’lumlar soni $n$ dan kichik ($r < n$) bo‘lsa, FYS nechta nolmas vektordan iborat bo‘ladi?",
+            "opts": [
+                "$n - r$ ta chiziqli erkli nolmas vektorlardan iborat bo‘ladi",
+                "$r$ ta nolmas vektordan iborat bo‘ladi",
+                "$n + r$ ta vektordan iborat bo‘ladi",
+                "$C_n^r$ ta vektordan iborat bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (8-slayd, Teorema): Tenglamalar sistemasining fundamental yechimlar sistemasi $n - r$ ta nolmas vektorlardan iborat bo‘ladi."
+        },
+        {
+            "q": "Bir jinsli sistemaning fundamental yechimlar sistemasini ($F_1, F_2, \\dots, F_{n-r}$) amalda qurish algoritmi qanday (9-10-slaydlar)?",
+            "opts": [
+                "$r$ ta bazis noma’lumlar qolgan $n - r$ ta ozod noma’lumlar orqali ifodalanadi, so‘ngra ozod noma’lumlar o‘rniga $n - r$ o‘lchovli $(1,0,\\dots,0)^T, (0,1,\\dots,0)^T, \\dots, (0,0,\\dots,1)^T$ chiziqli erkli vektorlar ketma-ket qo‘yilib $F_1, \\dots, F_{n-r}$ hisoblanadi",
+                "Barcha ozod noma’lumlarga faqat $0$ qiymat berilib, bitta nol vektor topiladi",
+                "Asosiy matritsaning ustunlari transponirlanadi",
+                "Kramer formulalari bo‘yicha $\\Delta_{x_i}$ lar hisoblanadi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "5-ma’ruza (22-23-slaydlar): 1- va 2-tenglamalar yig‘indisi $2x + 3y + 2z = 8$ beradi, 3-tenglama esa $2x + 3y + 2z = 7$. Pog‘onali shaklda 3-satr $(0, 0, 0 \\mid -1)$ bo‘lib, $r(A)=2 \\ne r(A|B)=3$."
+            "exp": "5-ma’ruza (9-10-slaydlar): Ozod noma’lumlar o‘rniga birlik matritsaning chiziqli erkli ustun vektorlarini qo‘yish orqali $n-r$ ta chiziqli erkli fundamental yechim hosil qilinadi."
         },
         {
-            "q": "Ma’ruzadagi 26-28-slaydlar misoli: $\\begin{cases} 2x_1 + 2x_2 - 3x_3 = 5 \\\\ x_1 - x_2 + x_3 = 0 \\\\ 3x_1 + x_2 + x_3 = 2 \\end{cases}$ sistemani matritsalar usuli ($X = A^{-1}B$) bilan yeching.",
+            "q": "Qanday tenglamalar sistemasiga «bir jinsli bo‘lmagan chiziqli tenglamalar sistemasi» deyiladi va uning umumiy yechimi formulasi qanday (12-slayd)?",
             "opts": [
-                "$x_1 = 1,\\quad x_2 = 0,\\quad x_3 = -1$",
-                "$x_1 = -1,\\quad x_2 = 0,\\quad x_3 = 1$",
-                "$x_1 = 2,\\quad x_2 = 1,\\quad x_3 = 1$",
-                "$x_1 = 1,\\quad x_2 = 1,\\quad x_3 = 0$"
+                "Agar $B \\ne \\Theta$ bo‘lsa bir jinsli bo‘lmagan sistema deyiladi; umumiy yechimi: $X = F_0 + c_1 F_1 + \\dots + c_{n-r} F_{n-r}$",
+                "Agar $B = \\Theta$ bo‘lsa bir jinsli bo‘lmagan sistema deyiladi; umumiy yechimi: $X = c_1 F_1 + \\dots + c_n F_n$",
+                "Umumiy yechimi: $X = F_0 \\cdot c_1 F_1$",
+                "Umumiy yechimi faqat $X = F_0$ dan iborat bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (12-slayd): Agar $B \\ne \\Theta$ bo‘lsa, bir jinsli bo‘lmagan sistema deyiladi va umumiy yechimi $X = F_0 + c_1 F_1 + \\dots + c_{n-r} F_{n-r}$ ko‘rinishda bo‘ladi."
+        },
+        {
+            "q": "Bir jinsli bo‘lmagan sistemaning umumiy yechimi $X = F_0 + c_1 F_1 + \\dots + c_{n-r} F_{n-r}$ formulasidagi $F_0$ va $F_1, \\dots, F_{n-r}$ lar nimani anglatadi (12-slayd)?",
+            "opts": [
+                "$F_0$ — bir jinsli bo‘lmagan sistemaning bitta xususiy yechimi; $F_1, \\dots, F_{n-r}$ — mos bir jinsli ($AX = \\Theta$) sistemaning fundamental yechimlari sistemasi",
+                "$F_0$ — nol vektor; $F_1, \\dots, F_{n-r}$ — bir jinsli bo‘lmagan sistemaning xususiy yechimlari",
+                "$F_0$ — ozod hadlar vektori $B$; $F_i$ — asosiy matritsa ustunlari",
+                "$F_0, F_1, \\dots, F_{n-r}$ larning barchasi bir jinsli sistemaning yechimlari"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (12-slayd): $F_0$ — bir jinsli bo‘lmagan sistemaning xususiy yechimlaridan biri, $F_1, \\dots, F_{n-r}$ — mos bir jinsli sistemaning FYS, $c_i$ — ixtiyoriy haqiqiy sonlar."
+        },
+        {
+            "q": "Bir jinsli bo‘lmagan sistemaning xususiy yechimi $F_0$ ni topish uchun erkli o‘zgaruvchilarga qanday qiymatlar beriladi (12-13-slaydlar)?",
+            "opts": [
+                "Erkli o‘zgaruvchilarga ixtiyoriy xususiy qiymatlar (eng qulayi — barcha erkli o‘zgaruvchilarga $0$ qiymatlar) berilib, bir jinsli bo‘lmagan sistema bazis o‘zgaruvchilarga nisbatan yechiladi",
+                "Barcha bazis o‘zgaruvchilarga $0$ qiymat beriladi",
+                "Erkli o‘zgaruvchilarga $\\infty$ qiymat beriladi",
+                "$F_0$ har doim nol vektorga teng deb olinadi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "5-ma’ruza (28-slayd): $X = A^{-1}B = -\\frac{1}{12}\\begin{pmatrix} -12 \\\\ 0 \\\\ 12 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 0 \\\\ -1 \\end{pmatrix}$."
+            "exp": "5-ma’ruza (12-13-slaydlar): $F_0$ ni aniqlash uchun erkli o‘zgaruvchilarning xususiy (masalan $0$) qiymatlarida bir jinsli bo‘lmagan tenglamalar sistemasi yechiladi."
         },
         {
-            "q": "$A \\cdot X \\cdot B = C$ ko‘rinishdagi matritsaviy tenglamaning yechimi qaysi formula bilan topiladi ($\\det A \\ne 0, \\det B \\ne 0$)?",
+            "q": "Chiziqli tenglamalar sistemasini yechishning «Matritsalar usuli» qachon qo‘llaniladi va qaysi formulaga asoslanadi (25-26-slaydlar)?",
+            "opts": [
+                "Tenglamalar soni noma’lumlar soniga teng ($n \\times n$) va asosiy matritsa determinanti $|A| \\ne 0$ bo‘lganda qo‘llaniladi; $X = A^{-1} B$",
+                "Ixtiyoriy $m \\times n$ sistemada $|A| = 0$ bo‘lganda qo‘llaniladi; $X = A^T B$",
+                "Faqat bir jinsli sistemalarda qo‘llaniladi; $X = A \\cdot B$",
+                "Kengaytirilgan matritsa ustunlarini ko‘paytirish orqali bajariladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (25-26-slaydlar): $n$ ta noma’lumli $n$ ta tenglamalar sistemasida $|A| \\ne 0$ bo‘lsa, $A^{-1}$ mavjud va $X = A^{-1}B$."
+        },
+        {
+            "q": "$A \\cdot X \\cdot B = C$ ko‘rinishdagi matritsaviy tenglamaning yechimi qaysi formula bilan aniqlanadi ($\\det A \\ne 0,\\; \\det B \\ne 0$, 29-slayd)?",
             "opts": [
                 "$X = A^{-1} C B^{-1}$",
                 "$X = A^{-1} B^{-1} C$",
@@ -160,1695 +256,1580 @@ def get_part2_questions():
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "5-ma’ruza (29-slayd): Tenglikning chap tomonidan $A^{-1}$ ga, o‘ng tomonidan $B^{-1}$ ga ko‘paytirsak: $X = A^{-1} C B^{-1}$."
+            "exp": "5-ma’ruza (29-slayd): $A \\cdot X \\cdot B = C$ tenglamaning ikkala tomonini chapdan $A^{-1}$ ga va o‘ngdan $B^{-1}$ ga ko‘paytirib, $X = A^{-1} C B^{-1}$ hosil qilinadi."
         },
         {
-            "q": "Ma’ruzadagi 29-slayd misoli: $\\begin{pmatrix} 0 & 1 \\\\ 2 & 1 \\end{pmatrix} X \\begin{pmatrix} 1 & 3 \\\\ 3 & 6 \\end{pmatrix} = \\begin{pmatrix} 4 & 0 \\\\ 5 & 8 \\end{pmatrix}$ matritsaviy tenglamadan $X$ ni toping.",
+            "q": "**Kramer qoidasi** (30-slayd): $n$ ta noma’lumli $n$ ta chiziqli tenglamalar sistemasining asosiy determinanti $\\Delta \\ne 0$ bo‘lsa, sistema nechta yechimga ega va noma’lumlar qanday topiladi?",
             "opts": [
-                "$\\begin{pmatrix} 3 & -5/6 \\\\ -8 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -3 & 5/6 \\\\ 8 & -4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1/2 & 4 \\\\ 4 & 0 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -2 & 1 \\\\ 1 & -1/3 \\end{pmatrix}$"
+                "Sistema yagona yechimga ega va $x_1 = \\frac{\\Delta_{x_1}}{\\Delta},\\; x_2 = \\frac{\\Delta_{x_2}}{\\Delta},\\; \\dots,\\; x_n = \\frac{\\Delta_{x_n}}{\\Delta}$ Kramer formulalari bilan aniqlanadi",
+                "Sistema cheksiz ko‘p yechimga ega va $x_i = \\Delta \\cdot \\Delta_{x_i}$ formula bilan topiladi",
+                "Sistema yechimga ega emas",
+                "Noma’lumlar $x_i = \\frac{\\Delta}{\\Delta_{x_i}}$ formula bilan topiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (30-slayd): $\\Delta \\ne 0$ bo‘lsa, sistema yagona yechimga ega va $x_i = \\frac{\\Delta_{x_i}}{\\Delta}$ formulalar bilan aniqlanadi."
+        },
+        {
+            "q": "Kramer formulalaridagi $\\Delta_{x_1}, \\Delta_{x_2}, \\dots, \\Delta_{x_n}$ yordamchi determinantlar asosiy $\\Delta$ determinantdan qanday hosil qilinadi (31-slayd)?",
+            "opts": [
+                "$\\Delta$ determinantda mos noma’lum ($x_i$) oldidagi koeffitsiyentlar ustunini ozod hadlar ustuni ($b_1, b_2, \\dots, b_n$) bilan almashtirish orqali hosil qilinadi",
+                "$\\Delta$ determinantning $i$-satrini ozod hadlar bilan almashtirish orqali",
+                "$\\Delta$ determinantning $i$-satri va $i$-ustunini o‘chirish orqali",
+                "$\\Delta$ determinantni $b_i$ ozod hadga ko‘paytirish orqali"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (31-slayd): $\\Delta_{x_1}, \\dots, \\Delta_{x_n}$ determinantlar $\\Delta$ determinantda noma’lumlar oldidagi koeffitsiyentlarni mos ravishda ozod hadlar bilan almashtirish orqali hosil qilinadi."
+        },
+        {
+            "q": "Kramer usulida asosiy determinant $\\Delta = 0$ bo‘lib, barcha $\\Delta_{x_1} = 0, \\Delta_{x_2} = 0, \\dots, \\Delta_{x_n} = 0$ bo‘lsa (va $r(A)=r(A|B)$ bo‘lsa), tenglamalar sistemasi qanday yechimga ega bo‘ladi (32-33-slaydlar)?",
+            "opts": [
+                "Cheksiz ko‘p yechimga ega bo‘ladi",
+                "Yagona yechimga ega bo‘ladi",
+                "Faqat nol yechimga ega bo‘ladi",
+                "Har doim ikkita yechimga ega bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (32-33-slaydlar): Agar $\\Delta = 0$ bo‘lib, a) $\\Delta_{x_1} = 0, \\dots, \\Delta_{x_n} = 0$ bo‘lsa (birgalikda bo‘lganda), sistema cheksiz ko‘p yechimga ega bo‘ladi."
+        },
+        {
+            "q": "Kramer usulida asosiy determinant $\\Delta = 0$ bo‘lib, qo‘shimcha determinantlardan kamida bittasi $\\Delta_{x_i} \\ne 0$ bo‘lsa, tenglamalar sistemasi haqida nima deyish mumkin (32, 34-slaydlar)?",
+            "opts": [
+                "Tenglamalar sistemasi yechimga ega emas (birgalikda emas)",
+                "Tenglamalar sistemasi yagona yechimga ega",
+                "Tenglamalar sistemasi cheksiz ko‘p yechimga ega",
+                "$x_i = 0$ yechimga ega"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (32, 34-slaydlar): Agar $\\Delta = 0$ bo‘lib, b) $\\Delta_{x_i} \\ne 0$ bo‘lsa, tenglamalar sistemasi yechimga ega emas."
+        },
+        {
+            "q": "Agar bir jinsli chiziqli tenglamalar sistemasida tenglamalar soni $m$ noma’lumlar soni $n$ dan kichik ($m < n$) bo‘lsa, bu sistema haqida qaysi nazariy tasdiq DOIMO to‘g‘ri?",
+            "opts": [
+                "Sistema albatta nol yechimdan tashqari cheksiz ko‘p nolmas yechimlarga ega (chunki $r(A) \\le m < n$ va $n - r \\ge 1$)",
+                "Sistema faqat yagona nol yechimga ega",
+                "Sistema birgalikda emas",
+                "Sistemaning FYS da $m$ ta vektor bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "$r(A) \\le \\min(m, n) = m < n$ bo‘lgani sababli $r(A) < n$ shart avtomatik bajariladi va sistema nolmas yechimlarga ega bo‘ladi."
+        },
+        {
+            "q": "Agar $X_1$ va $X_2$ ustun-vektorlar $AX = \\Theta$ bir jinsli sistemaning yechimlari bo‘lsa, ularning yig‘indisi $X_1 + X_2$ va songa ko‘paytmasi $\\lambda X_1$ ham shu sistemaning yechimi bo‘ladimi?",
+            "opts": [
+                "Ha, chunki $A(X_1 + X_2) = AX_1 + AX_2 = \\Theta + \\Theta = \\Theta$ va $A(\\lambda X_1) = \\lambda(AX_1) = \\Theta$ (yechimlar to‘plami chiziqli fazo tashkil qiladi)",
+                "Yo‘q, faqat $X_1 - X_2$ yechim bo‘ladi",
+                "Faqat $\\lambda = 1$ bo‘lganda yechim bo‘ladi",
+                "Yig‘indi bir jinsli bo‘lmagan sistemaning yechimi bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Bir jinsli sistemaning barcha yechimlari to‘plami $\\mathbb{R}^n$ ning $n - r$ o‘lchovli chiziqli qism fazosini (yadrosini) tashkil etadi, FYS esa shu qism fazoning bazisidir."
+        },
+        {
+            "q": "Agar $X_1$ va $X_2$ vektorlar $AX = B$ ($B \\ne \\Theta$) bir jinsli bo‘lmagan sistemaning yechimlari bo‘lsa, ularning yig‘indisi $X_1 + X_2$ ham shu sistemaning yechimi bo‘ladimi?",
+            "opts": [
+                "Yo‘q, chunki $A(X_1 + X_2) = AX_1 + AX_2 = B + B = 2B \\ne B$; ammo ularning ayirmasi $X_1 - X_2$ mos bir jinsli $AX = \\Theta$ sistemaning yechimi bo‘ladi",
+                "Ha, $X_1 + X_2$ ham har doim $AX = B$ ning yechimi bo‘ladi",
+                "$X_1 - X_2$ ham $AX = B$ ning yechimi bo‘ladi",
+                "Bir jinsli bo‘lmagan sistemada ikkita yechim bo‘lishi mumkin emas"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "5-ma’ruza (29-slayd): $A^{-1} = \\begin{pmatrix} -1/2 & 1/2 \\\\ 1 & 0 \\end{pmatrix}$, $B^{-1} = \\begin{pmatrix} -2 & 1 \\\\ 1 & -1/3 \\end{pmatrix}$. Ko‘paytirish natijasida $X = A^{-1}CB^{-1} = \\begin{pmatrix} 3 & -5/6 \\\\ -8 & 4 \\end{pmatrix}$."
+            "exp": "$A(X_1 - X_2) = AX_1 - AX_2 = B - B = \\Theta$. Shuning uchun ikkita xususiy yechim ayirmasi mos bir jinsli sistemaning yechimi bo‘ladi."
         },
         {
-            "q": "Ma’ruzadagi 31-32-slaydlar misoli: $\\begin{cases} -2x_1 + x_2 - x_3 = 7 \\\\ 4x_1 + 2x_2 + 3x_3 = -5 \\\\ x_1 + 3x_2 - 2x_3 = 1 \\end{cases}$ sistemani Kramer formulalari yordamida yeching ($\\Delta = 27$).",
+            "q": "$n$ ta noma’lumli $n$ ta bir jinsli chiziqli tenglamalar sistemasi ($AX = \\Theta$) nolmas yechimlarga ega bo‘lishi uchun asosiy determinant $\\Delta = \\det(A)$ qanday shartni qanoatlantirishi zarur va yetarli?",
             "opts": [
-                "$x_1 = -3,\\quad x_2 = 2,\\quad x_3 = 1$",
-                "$x_1 = 3,\\quad x_2 = -2,\\quad x_3 = -1$",
-                "$x_1 = -3,\\quad x_2 = 1,\\quad x_3 = 2$",
-                "$x_1 = 1,\\quad x_2 = 2,\\quad x_3 = -3$"
+                "$\\Delta = \\det(A) = 0$ bo‘lishi zarur va yetarli",
+                "$\\Delta = \\det(A) \\ne 0$ bo‘lishi zarur va yetarli",
+                "$\\Delta = 1$ bo‘lishi zarur va yetarli",
+                "$\\Delta > 0$ bo‘lishi zarur va yetarli"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "Kvadrat bir jinsli sistemada nolmas yechim mavjud bo‘lishi sharti $r(A) < n \\iff \\det(A) = 0$."
+        },
+        {
+            "q": "Agar chiziqli tenglamalar sistemasida $r(A) = r(A \\mid B) = n$ bo‘lsa, mos bir jinsli sistemaning fundamental yechimlar sistemasi (FYS) nechta vektordan iborat bo‘ladi?",
+            "opts": [
+                "FYS mavjud emas ($n - r = n - n = 0$), chunki mos bir jinsli sistema faqat yagona nol yechimga ega",
+                "$n$ ta vektordan iborat bo‘ladi",
+                "$1$ ta nolmas vektordan iborat bo‘ladi",
+                "Cheksiz ko‘p vektordan iborat bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "5-ma’ruza (31-32-slaydlar): $\\Delta = 27,\\; \\Delta_{x_1} = -81,\\; \\Delta_{x_2} = 54,\\; \\Delta_{x_3} = 27$. Demak $x_1 = -81/27 = -3,\\; x_2 = 54/27 = 2,\\; x_3 = 27/27 = 1$."
-        },
-        {
-            "q": "Kramer usulida asosiy determinant $\\Delta = 0$ bo‘lib, qo‘shimcha determinantlardan kamida bittasi $\\Delta_{x_i} \\ne 0$ bo‘lsa, sistema qanday yechimga ega bo‘ladi?",
-            "opts": [
-                "Sistema yechimga ega emas (birgalikda emas)",
-                "Sistema yagona yechimga ega",
-                "Sistema cheksiz ko‘p yechimga ega",
-                "Sistema faqat nol yechimga ega"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "5-ma’ruza (32, 34-slaydlar): Agar $\\Delta = 0$ va $\\Delta_{x_i} \\ne 0$ bo‘lsa, tenglamalar sistemasi yechimga ega emas."
-        },
-        {
-            "q": "Ma’ruzadagi 33-slayd misoli: $\\begin{cases} 2x_1 + x_2 + 3x_3 = 3 \\\\ 4x_1 + 2x_2 + 6x_3 = 6 \\\\ 6x_1 + 3x_2 + 9x_3 = 9 \\end{cases}$ sistemada $\\Delta, \\Delta_{x_1}, \\Delta_{x_2}, \\Delta_{x_3}$ nimaga teng va sistema nechta yechimga ega?",
-            "opts": [
-                "$\\Delta = \\Delta_{x_1} = \\Delta_{x_2} = \\Delta_{x_3} = 0$; sistema cheksiz ko‘p yechimga ega",
-                "$\\Delta = 0,\\; \\Delta_{x_1} = 6$; sistema yechimga ega emas",
-                "$\\Delta = 18$; sistema yagona yechimga ega",
-                "Sistema faqat bitta $(1, 1, 0)$ yechimga ega"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "5-ma’ruza (33-slayd): Barcha tenglamalar 1-tenglamaga proporsional ($r(A)=r(A|B)=1 < 3$) va $\\Delta = \\Delta_{x_1} = \\Delta_{x_2} = \\Delta_{x_3} = 0$, sistema cheksiz ko‘p yechimga ega."
-        },
-        {
-            "q": "Ma’ruzadagi 34-slayd misoli: $\\begin{cases} 2x_1 + x_2 + 3x_3 = 3 \\\\ 4x_1 + 2x_2 + 6x_3 = 5 \\\\ 3x_1 + 2x_2 = 2 \\end{cases}$ sistemada $\\Delta = 0$ bo‘lib, $\\Delta_{x_1}, \\Delta_{x_2}, \\Delta_{x_3}$ qiymatlari va yechim holati qanday?",
-            "opts": [
-                "$\\Delta_{x_1} = -6,\\; \\Delta_{x_2} = 9,\\; \\Delta_{x_3} = 1$; sistema yechimga ega emas",
-                "$\\Delta_{x_1} = 0,\\; \\Delta_{x_2} = 0,\\; \\Delta_{x_3} = 0$; sistema cheksiz ko‘p yechimga ega",
-                "$\\Delta_{x_1} = 6,\\; \\Delta_{x_2} = -9,\\; \\Delta_{x_3} = -1$; sistema yagona yechimga ega",
-                "Sistema $(0, 0, 1)$ yechimga ega"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "5-ma’ruza (34-slayd): $\\Delta = 0$, ammo $\\Delta_{x_1} = -6 \\ne 0, \\Delta_{x_2} = 9 \\ne 0, \\Delta_{x_3} = 1 \\ne 0$. Demak, sistema yechimga ega emas."
-        },
-        {
-            "q": "Ushbu $\\begin{cases} 4x + 2y = -18 \\\\ 4x - 5y = 3 \\end{cases}$ chiziqli tenglamalar sistemasini Kramer qoidasi bilan yeching.",
-            "opts": [
-                "$(-3;\\; -3)$",
-                "$(3;\\; -3)$",
-                "$(-3;\\; 3)$",
-                "$(3;\\; 3)$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$\\Delta = -20 - 8 = -28$. $\\Delta_x = 90 - 6 = 84 \\implies x = 84/(-28) = -3$. $\\Delta_y = 12 - (-72) = 84 \\implies y = 84/(-28) = -3$."
-        },
-        {
-            "q": "7 ta noma’lumli va 5 ta tenglamadan iborat bir jinsli chiziqli tenglamalar sistemasining asosiy matritsasi rangi $r(A) = 4$ ga teng. Bu sistemaning fundamental yechimlar sistemasida (FYS) nechta chiziqli erkli vektor bor?",
-            "opts": [
-                "$3$ ta ($n - r = 7 - 4 = 3$)",
-                "$1$ ta ($m - r = 5 - 4 = 1$)",
-                "$4$ ta ($r = 4$)",
-                "$2$ ta ($n - m = 7 - 5 = 2$)"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "5-ma’ruza (8-slayd): Teoremaga ko‘ra FYS dagi vektorlar soni noma’lumlar soni $n$ dan rang $r$ ni ayirilganiga teng: $n - r = 7 - 4 = 3$."
-        },
-        {
-            "q": "$k$ parametrning qanday musbat qiymatida $\\begin{cases} kx + 4y = 0 \\\\ 9x + ky = 0 \\end{cases}$ bir jinsli tenglamalar sistemasi nolmas yechimlarga ega bo‘ladi?",
-            "opts": [
-                "$k = 6$",
-                "$k = 4$",
-                "$k = 9$",
-                "$k = 12$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Bir jinsli kvadrat sistema nolmas yechimga ega bo‘lishi uchun asosiy determinant $\\Delta = k^2 - 36 = 0$ bo‘lishi kerak. Musbat qiymati: $k = 6$."
-        },
-        {
-            "q": "Ma’ruzadagi 15-slayd misoli: $\\begin{cases} 4x_1 + 7x_2 + 2x_3 + 3x_4 = 8 \\\\ x_1 + 3x_2 - x_3 + 2x_4 = 3 \\\\ 2x_1 + x_2 + 4x_3 - x_4 = 2 \\end{cases}$ sistemada $x_3=0, x_4=0$ deb olinganda hosil bo‘ladigan $F_0$ xususiy yechimni toping.",
-            "opts": [
-                "$F_0 = (0.6;\\; 0.8;\\; 0;\\; 0)^T$",
-                "$F_0 = (-2.6;\\; 1.2;\\; 1;\\; 0)^T$",
-                "$F_0 = (1;\\; -1;\\; 0;\\; 1)^T$",
-                "$F_0 = (0.8;\\; 0.6;\\; 0;\\; 0)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "5-ma’ruza (15-slayd): Pog‘onali matritsadan $x_2 - 1.2x_3 + x_4 = 0.8$ va $x_1 + 2.6x_3 - x_4 = 0.6$ chiqadi. $x_3=x_4=0$ da $F_0 = (0.6; 0.8; 0; 0)^T$."
-        },
-        {
-            "q": "Ma’ruzadagi 15-slayd misolida mos bir jinsli sistemaning fundamental yechimlari $F_1$ va $F_2$ qaysi qatorda to‘g‘ri ko‘rsatilgan?",
-            "opts": [
-                "$F_1 = (-2.6;\\; 1.2;\\; 1;\\; 0)^T,\\quad F_2 = (1;\\; -1;\\; 0;\\; 1)^T$",
-                "$F_1 = (2.6;\\; -1.2;\\; 1;\\; 0)^T,\\quad F_2 = (-1;\\; 1;\\; 0;\\; 1)^T$",
-                "$F_1 = (0.6;\\; 0.8;\\; 1;\\; 0)^T,\\quad F_2 = (0.6;\\; 0.8;\\; 0;\\; 1)^T$",
-                "$F_1 = (1;\\; 0;\\; -2.6;\\; 1.2)^T,\\quad F_2 = (0;\\; 1;\\; 1;\\; -1)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "5-ma’ruza (15-slayd): $(x_3, x_4) = (1, 0)$ qo‘yilsa $F_1 = (-2.6; 1.2; 1; 0)^T$, $(x_3, x_4) = (0, 1)$ qo‘yilsa $F_2 = (1; -1; 0; 1)^T$ hosil bo‘ladi."
-        },
-        {
-            "q": "Agar $F_1 = (2, -1, 1, 0)^T$ va $F_2 = (1, 3, 0, 1)^T$ vektorlar $AX = \\Theta$ bir jinsli sistemaning fundamental yechimlari bo‘lsa, $X = 2F_1 - F_2$ xususiy yechimni toping.",
-            "opts": [
-                "$(3,\\; -5,\\; 2,\\; -1)^T$",
-                "$(5,\\; 1,\\; 2,\\; 1)^T$",
-                "$(3,\\; 1,\\; 2,\\; -1)^T$",
-                "$(1,\\; -4,\\; 1,\\; -1)^T$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$2F_1 - F_2 = (4-1,\\; -2-3,\\; 2-0,\\; 0-1)^T = (3, -5, 2, -1)^T$."
-        },
-        {
-            "q": "$\\begin{cases} 3x - 2y = 7 \\\\ 6x - 4y = m \\end{cases}$ chiziqli tenglamalar sistemasi $m$ ning qanday qiymatida cheksiz ko‘p yechimga ega bo‘ladi?",
-            "opts": [
-                "$m = 14$",
-                "$m = 7$",
-                "$m = -14$",
-                "$m \\ne 14$ bo‘lgan barcha qiymatlarda"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Chap tomon ikkinchi tenglamada 2 marta katta: $2(3x - 2y) = 6x - 4y$. Sistema birgalikda va cheksiz ko‘p yechimga ega bo‘lishi uchun $m = 2 \\cdot 7 = 14$ bo‘lishi kerak."
-        },
-        {
-            "q": "$\\begin{cases} x + y + z = 6 \\\\ x - y + z = 2 \\\\ x + y - z = 0 \\end{cases}$ tenglamalar sistemasining yechimi $(x, y, z)$ ni toping.",
-            "opts": [
-                "$(1;\\; 2;\\; 3)$",
-                "$(2;\\; 1;\\; 3)$",
-                "$(3;\\; 2;\\; 1)$",
-                "$(1;\\; 3;\\; 2)$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "1-tenglamadan 2-tenglamani ayirsak $2y = 4 \\implies y = 2$. 1-tenglamadan 3-tenglamani ayirsak $2z = 6 \\implies z = 3$. U holda $x = 6 - 2 - 3 = 1$."
-        },
-        {
-            "q": "Kramer qoidasini qo‘llash uchun tenglamalar sistemasi qanday shartlarni qanoatlantirishi shart?",
-            "opts": [
-                "Tenglamalar soni noma’lumlar soniga teng ($m = n$) va asosiy determinant $\\Delta \\ne 0$ bo‘lishi shart",
-                "Tenglamalar soni noma’lumlar sonidan ko‘p ($m > n$) bo‘lishi shart",
-                "Ozod hadlar ustuni faqat nollardan iborat bo‘lishi shart",
-                "Asosiy determinant $\\Delta = 0$ bo‘lishi shart"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "5-ma’ruza (30-slayd): Kramer qoidasi $n$ ta noma’lumli $n$ ta chiziqli tenglamalar sistemasida $\\Delta \\ne 0$ bo‘lganda yagona yechimni topish uchun qo‘llaniladi."
-        },
-        {
-            "q": "Ma’ruzadagi 16-slayd misoli: $\\begin{cases} x + 2y + z = 1 \\\\ -3x + y + 4z = 5 \\\\ x - 5z = 7 \\end{cases}$ sistemaning asosiy matritsasi $A$ ni toping.",
-            "opts": [
-                "$\\begin{pmatrix} 1 & 2 & 1 \\\\ -3 & 1 & 4 \\\\ 1 & 0 & -5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 2 & 1 \\\\ -3 & 1 & 4 \\\\ 1 & -5 & 0 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 2 & 1 & 1 \\\\ -3 & 1 & 4 & 5 \\\\ 1 & 0 & -5 & 7 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & -3 & 1 \\\\ 2 & 1 & 0 \\\\ 1 & 4 & -5 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "5-ma’ruza (16-slayd): 3-tenglamada $y$ qatnashmagani uchun uning koeffitsiyenti $a_{32} = 0$ bo‘ladi: $1\\cdot x + 0\\cdot y - 5\\cdot z = 7$."
-        },
-        {
-            "q": "Agar 3 ta noma’lumli chiziqli tenglamalar sistemasida $\\Delta = 15$, $\\Delta_{x_1} = -30$, $\\Delta_{x_2} = 45$, $\\Delta_{x_3} = 0$ bo‘lsa, $x_1 + x_2 + x_3$ yig‘indini toping.",
-            "opts": [
-                "$1$",
-                "$5$",
-                "$-1$",
-                "$3$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$x_1 = -30/15 = -2,\\; x_2 = 45/15 = 3,\\; x_3 = 0/15 = 0$. Yig‘indi: $-2 + 3 + 0 = 1$."
-        },
-        {
-            "q": "4 ta tenglama va 3 ta noma’lumdan iborat chiziqli tenglamalar sistemasi yagona yechimga ega bo‘lishi uchun $r(A)$ va $r(A \\mid B)$ nechaga teng bo‘lishi kerak?",
-            "opts": [
-                "$r(A) = r(A \\mid B) = 3$",
-                "$r(A) = r(A \\mid B) = 4$",
-                "$r(A) = 3,\\quad r(A \\mid B) = 4$",
-                "$r(A) = r(A \\mid B) = 2$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Noma’lumlar soni $n = 3$ bo‘lgani uchun yagona yechim sharti Kroneker-Kapelli teoremasiga ko‘ra $r(A) = r(A \\mid B) = n = 3$."
+            "exp": "5-ma’ruza (5, 8-slaydlar): $r = n$ bo‘lganda erkli o‘zgaruvchilar soni $n - r = 0$ bo‘lib, bir jinsli sistema faqat nol yechimga ega va nolmas FYS mavjud emas."
         }
     ]
 
     # =========================================================================
-    # MAVZU 6: Gauss va Gauss-Jordan usullari, Bazis yechim (30 ta savol)
+    # MAVZU 6: Gauss va Gauss-Jordan usullari, Bazis yechim (30 ta NAZARIY savol)
     # =========================================================================
     t6 = [
         {
-            "q": "Chiziqli tenglamalar sistemasini yechishning Gauss usuli (ketma-ket yo‘qotish usuli) qanday ikki bosqichdan iborat?",
+            "q": "Chiziqli tenglamalar sistemasini yechishning «Gauss usuli» mohiyati nimadan iborat (5-slayd)?",
             "opts": [
-                "1) To‘g‘ri yurish — kengaytirilgan matritsani uchburchak (pog‘onali) shaklga keltirish; 2) Teskari yurish — oxirgi tenglamadan boshlab noma’lumlarni ketma-ket topish",
-                "1) Determinantlarni hisoblash; 2) Qo‘shma matritsani transponirlash",
-                "1) Matritsani kvadratga ko‘tarish; 2) Skalyar ko‘paytmani topish",
-                "1) Vektorlarni ortogonallash; 2) Normallashtirish"
+                "Elementar satr almashtirishlari yordamida noma’lumlarni ketma-ket yo‘qotib, sistemani ekvivalent uchburchak (yoki pog‘onali) shaklga keltirish va so‘ngra teskari yurish bilan noma’lumlarni topish",
+                "Asosiy matritsaning barcha minorlari va algebraik to‘ldiruvchilarini hisoblash orqali teskari matritsa topish",
+                "Har bir noma’lum uchun alohida $n$-tartibli determinant hisoblash",
+                "Tenglamalarni kvadratga oshirib qo‘shish"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "6-ma’ruza (5-7-slaydlar): Gauss usulida avval elementar almashtirishlar bilan uchburchak/pog‘onali sistema hosil qilinadi (to‘g‘ri yurish), so‘ngra pastdan yuqoriga qarab noma’lumlar topiladi (teskari yurish)."
+            "exp": "6-ma’ruza (5-7-slaydlar): Gauss usuli noma’lumlarni ketma-ket yo‘qotish orqali sistemani uchburchak/pog‘onali ko‘rinishga keltirishga asoslangan."
         },
         {
-            "q": "Gauss-Jordan usuli Gauss usulidan nimasi bilan farq qiladi va unda kengaytirilgan matritsa qanday ko‘rinishga keltiriladi?",
+            "q": "Gauss usulining «to‘g‘ri yurish» va «teskari yurish» bosqichlarida qanday ishlar bajariladi (5-7-slaydlar)?",
             "opts": [
-                "Kengaytirilgan matritsa $(A \\mid B) \\sim (E \\mid X)$ ko‘rinishga keltiriladi va teskari yurishga hojat qolmaydi",
-                "Faqat 2 ta tenglamali sistemalar uchun ishlatiladi",
-                "Kengaytirilgan matritsa $(A \\mid B) \\sim (O \\mid X)$ nol matritsaga keltiriladi",
-                "Determinantlarni Sarrius qoidasi bilan hisoblashga asoslanadi"
+                "To‘g‘ri yurishda kengaytirilgan matritsa yuqori uchburchak (pog‘onali) shaklga keltiriladi; teskari yurishda esa oxirgi tenglamadan boshlab yuqoriga qarab $x_n, x_{n-1}, \\dots, x_1$ ketma-ket topiladi",
+                "To‘g‘ri yurishda $x_1$ dan $x_n$ gacha topiladi; teskari yurishda matritsa transponirlanadi",
+                "To‘g‘ri yurishda determinant topiladi; teskari yurishda teskari matritsa topiladi",
+                "Ikkala bosqichda ham faqat ustunlar almashtiriladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "6-ma’ruza (10-slayd): Gauss-Jordan usulida $(A \\mid B) \\sim (E \\mid X)$ ko‘rinishga keltiriladi (bosh diagonaldan yuqoridagi va pastdagi barcha elementlar nolga aylantiriladi)."
+            "exp": "6-ma’ruza (5, 7-slaydlar): To‘g‘ri yurish natijasida $\\tilde{a}_{nn}x_n = \\tilde{b}_n$ tenglama hosil bo‘ladi, undan $x_n$ topilib, yuqoridagi tenglamalarga ketma-ket qo‘yiladi."
         },
         {
-            "q": "Ma’ruzadagi 6-7-slaydlar misoli: $\\begin{cases} x_1 - x_2 + 2x_3 - x_4 = 1 \\\\ x_1 + x_2 + x_3 + x_4 = 10 \\\\ 3x_1 - x_2 + 4x_3 - 2x_4 = 5 \\\\ 2x_1 + 2x_2 + 3x_3 - x_4 = 11 \\end{cases}$ sistemani Gauss usulida yeching.",
+            "q": "Gauss usulida tenglamalar sistemasini yechishda kengaytirilgan $(A \\mid B)$ matritsaning qatori ustida qanday elementar almashtirishlar bajarishga ruxsat etiladi?",
             "opts": [
-                "$x_1 = 1,\\quad x_2 = 2,\\quad x_3 = 3,\\quad x_4 = 4$",
-                "$x_1 = 4,\\quad x_2 = 3,\\quad x_3 = 2,\\quad x_4 = 1$",
-                "$x_1 = 2,\\quad x_2 = 2,\\quad x_3 = 3,\\quad x_4 = 3$",
-                "$x_1 = -1,\\quad x_2 = -2,\\quad x_3 = 3,\\quad x_4 = 4$"
+                "Tenglamalar (satrlar) o‘rnini almashtirish, satrni noldan farqli songa ko‘paytirish/bo‘lish, bir satrni songa ko‘paytirib boshqa satrga qo‘shish hamda $0 = 0$ nol satrni tashlab yuborish",
+                "Ozod hadlar ustuni $B$ ni asosiy matritsaning 1-ustuni bilan almashtirish",
+                "Satrning barcha elementlariga bir xil $k \\ne 0$ sonni qo‘shib chiqish",
+                "Kengaytirilgan matritsani transponirlash"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "6-ma’ruza (6-7-slaydlar): Uchburchak shakl $\\begin{cases} x_1 - x_2 + 2x_3 - x_4 = 1 \\\\ 2x_2 - x_3 + 2x_4 = 9 \\\\ -x_3 - x_4 = -7 \\\\ -4x_4 = -16 \\end{cases} \\implies x_4=4, x_3=3, x_2=2, x_1=1$."
+            "exp": "Tenglamalar sistemasining yechimlari to‘plami o‘zgarmasligi (ekvivalent sistema hosil bo‘lishi) uchun amallar tenglamalar (satrlar) ustida bajariladi."
         },
         {
-            "q": "Ma’ruzadagi 8-9-slaydlar misoli: $\\begin{cases} x_1 - x_2 + 2x_3 - x_4 = 4 \\\\ x_1 + x_2 + x_3 + x_4 = 10 \\\\ 7x_1 + 2x_2 + 8x_3 - 6x_4 = 44 \\\\ 5x_1 + 2x_2 + 5x_3 - 6x_4 = 30 \\end{cases}$ sistemani Gauss usulida pog‘onali shaklga keltirganda $x_4 = \\alpha$ orqali umumiy yechim qanday bo‘ladi?",
+            "q": "Gauss usulida to‘g‘ri yurish natijasida kengaytirilgan matritsada barcha elementlari noldan iborat $(0\\; 0\\; \\dots\\; 0 \\mid 0)$ satr hosil bo‘lsa, bu nimani bildiradi (8-9-slaydlar)?",
             "opts": [
-                "$x_1 = 8\\alpha - 4,\\quad x_2 = \\frac{20 - 11\\alpha}{3},\\quad x_3 = \\frac{22 - 16\\alpha}{3},\\quad x_4 = \\alpha$",
-                "$x_1 = 4 - 8\\alpha,\\quad x_2 = \\frac{11\\alpha - 20}{3},\\quad x_3 = \\frac{16\\alpha - 22}{3},\\quad x_4 = \\alpha$",
-                "$x_1 = \\alpha,\\quad x_2 = 2\\alpha,\\quad x_3 = 3\\alpha,\\quad x_4 = \\alpha$",
-                "Sistema yechimga ega emas"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "6-ma’ruza (8-9-slaydlar): 4-satr nolga aylanib, $\\begin{cases} x_1 - x_2 + 2x_3 - x_4 = 4 \\\\ 2x_2 - x_3 + 2x_4 = 6 \\\\ 3x_3 + 16x_4 = 22 \\end{cases}$ hosil bo‘ladi va $x_4=\\alpha$ dan $x_3 = \\frac{22-16\\alpha}{3},\\; x_2 = \\frac{20-11\\alpha}{3},\\; x_1 = 8\\alpha - 4$ kelib chiqadi."
-        },
-        {
-            "q": "Ma’ruzadagi 9-slayd misolidagi $x_1 = 8\\alpha - 4,\\; x_2 = \\frac{20 - 11\\alpha}{3},\\; x_3 = \\frac{22 - 16\\alpha}{3},\\; x_4 = \\alpha$ umumiy yechimda $\\alpha = 1$ deb olinsa, qanday xususiy yechim hosil bo‘ladi?",
-            "opts": [
-                "$x_1 = 4,\\quad x_2 = 3,\\quad x_3 = 2,\\quad x_4 = 1$",
-                "$x_1 = -4,\\quad x_2 = 20/3,\\quad x_3 = 22/3,\\quad x_4 = 0$",
-                "$x_1 = 1,\\quad x_2 = 2,\\quad x_3 = 3,\\quad x_4 = 4$",
-                "$x_1 = 4,\\quad x_2 = -3,\\quad x_3 = 2,\\quad x_4 = 1$"
+                "Mos tenglama qolgan tenglamalarning chiziqli kombinatsiyasi ekanligini bildiradi; bu nol satr tashlab yuboriladi va sistemaning rangi tenglamalar sonidan kichik bo‘ladi",
+                "Sistema birgalikda emasligini (yechimga ega emasligini) bildiradi",
+                "Sistemaning barcha noma’lumlari $0$ ga teng ekanligini bildiradi",
+                "Hisoblashda xatolik ketganini bildiradi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "$\\alpha = 1$ qo‘yilsa: $x_1 = 8(1)-4 = 4,\\; x_2 = (20-11)/3 = 3,\\; x_3 = (22-16)/3 = 2,\\; x_4 = 1$."
+            "exp": "6-ma’ruza (8-9-slaydlar): $(0\\; 0\\; 0\\; 0 \\mid 0)$ satr tashlab yuboriladi va qolgan pog‘onali tenglamalardan erkli o‘zgaruvchi $\\alpha \\in \\mathbb{R}$ orqali umumiy yechim yoziladi."
         },
         {
-            "q": "Ma’ruzadagi 10-12-slaydlar misoli: $\\begin{cases} x_1 + x_2 + 2x_3 + 3x_4 = 1 \\\\ 3x_1 - x_2 - x_3 - 2x_4 = -4 \\\\ 2x_1 + 3x_2 - x_3 - x_4 = -6 \\\\ x_1 + 2x_2 + 3x_3 - x_4 = -4 \\end{cases}$ sistemani Gauss-Jordan usulida yeching.",
+            "q": "Gauss usulida to‘g‘ri yurish davomida $(0\\; 0\\; \\dots\\; 0 \\mid b)$ ko‘rinishdagi satr ($b \\ne 0$) hosil bo‘lsa, qanday xulosa chiqariladi?",
             "opts": [
-                "$x_1 = -1,\\quad x_2 = -1,\\quad x_3 = 0,\\quad x_4 = 1$",
-                "$x_1 = 1,\\quad x_2 = 1,\\quad x_3 = 0,\\quad x_4 = -1$",
-                "$x_1 = -1,\\quad x_2 = 0,\\quad x_3 = -1,\\quad x_4 = 1$",
-                "$x_1 = 0,\\quad x_2 = -1,\\quad x_3 = 1,\\quad x_4 = -1$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "6-ma’ruza (10-12-slaydlar): $(A|B)$ matritsa Gauss-Jordan usuli bilan $\\left(\\begin{smallmatrix} 1&0&0&0&-1 \\\\ 0&1&0&0&-1 \\\\ 0&0&1&0&0 \\\\ 0&0&0&1&1 \\end{smallmatrix}\\right)$ ko‘rinishga keladi: $x_1=-1, x_2=-1, x_3=0, x_4=1$."
-        },
-        {
-            "q": "Tenglamalar sistemasining «bazis yechimi» deb nimaga aytiladi va unda erkli o‘zgaruvchilar qanday qiymat qabul qiladi?",
-            "opts": [
-                "Erkli o‘zgaruvchilarning qiymatlari $0$ ga teng deb olinib, faqat bazis o‘zgaruvchilari noldan farqli bo‘lishi mumkin bo‘lgan yechimga bazis yechim deyiladi",
-                "Barcha o‘zgaruvchilari $1$ ga teng bo‘lgan yechimga bazis yechim deyiladi",
-                "Bazis o‘zgaruvchilari $0$ ga teng bo‘lib, erkli o‘zgaruvchilari noldan farqli bo‘lgan yechimga aytiladi",
-                "Faqat bir jinsli sistemaning nol yechimiga bazis yechim deyiladi"
+                "Sistema birgalikda emas (yechimga ega emas), chunki $0 \\cdot x_1 + \\dots + 0 \\cdot x_n = b \\ne 0$ ziddiyatli tenglama hosil bo‘ldi va $r(A) < r(A \\mid B)$",
+                "Sistema cheksiz ko‘p yechimga ega",
+                "Oxirgi noma’lum $x_n = b$ ga teng",
+                "Sistema yagona nol yechimga ega"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "6-ma’ruza (13-14-slaydlar): Faqat bazis o‘zgaruvchilari noldan farqli bo‘lishi mumkin bo‘lgan (erkli o‘zgaruvchilari 0 ga teng deb olingan) yechim bazis yechimi deyiladi."
+            "exp": "Chap tomonda barcha koeffitsiyentlar nol, o‘ngda esa $b \\ne 0$ bo‘lishi Kroneker-Kapelli teoremasiga ko‘ra $r(A) \\ne r(A \\mid B)$ ekanligini ko‘rsatadi."
         },
         {
-            "q": "Agar tenglamalar sistemasida noma’lumlar soni $n$ va sistema rangi $r$ ($r < n$) bo‘lsa, noma’lumlarni $r$ ta bazis va $n-r$ ta erkli o‘zgaruvchilarga ajratish usullari (guruhlari) soni qaysi formula bilan topiladi?",
+            "q": "Chiziqli tenglamalar sistemasini yechishning «Gauss-Jordan usuli» qanday sxema orqali ifodalanadi (10-slayd)?",
             "opts": [
-                "$C_n^r = \\frac{n!}{r! \\cdot (n - r)!}$",
-                "$A_n^r = \\frac{n!}{(n - r)!}$",
-                "$P_n = n!$",
-                "$n - r$"
+                "$(A \\mid B) \\sim (E \\mid X)$, ya’ni kengaytirilgan matritsaning asosiy qismi birlik matritsa $E$ ga keltirilganda ozod hadlar ustuni bevosita $X$ yechimga aylanadi",
+                "$(A \\mid E) \\sim (B \\mid X)$",
+                "$(A \\mid B) \\sim (O \\mid X)$",
+                "$(A \\mid B) \\sim (A^T \\mid B^T)$"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "6-ma’ruza (14-slayd): $C_n^r = \\frac{n!}{r!(n-r)!}$, bu yerda $n$ — noma’lumlar soni, $r$ — rang."
+            "exp": "6-ma’ruza (10-slayd): Gauss-Jordan usulida $(A \\mid B) \\sim (E \\mid X)$ sxemasi bajariladi."
         },
         {
-            "q": "Ma’ruzadagi 15-slayd misoli: $\\begin{cases} 2x_1 - 3x_2 + 4x_3 + 6x_4 + 6x_5 = 3 \\\\ 3x_1 - 4x_2 + 6x_3 + 8x_4 + 9x_5 = 5 \\end{cases}$ sistemada nechta bazis o‘zgaruvchi, nechta erkli o‘zgaruvchi va nechta kombinatorik bazis guruh ($C_n^r$) mavjud?",
+            "q": "Gauss-Jordan usuli oddiy Gauss usulidan qaysi jihati bilan farq qiladi (10-12-slaydlar)?",
             "opts": [
-                "$r = 2$ ta bazis o‘zgaruvchi, $n - r = 3$ ta erkli o‘zgaruvchi va $C_5^2 = 10$ ta guruh",
-                "$r = 3$ ta bazis o‘zgaruvchi, $n - r = 2$ ta erkli o‘zgaruvchi va $C_5^3 = 10$ ta guruh",
-                "$r = 2$ ta bazis o‘zgaruvchi, $n - r = 3$ ta erkli o‘zgaruvchi va $5! = 120$ ta guruh",
-                "$r = 2$ ta bazis o‘zgaruvchi, $n - r = 2$ ta erkli o‘zgaruvchi va $6$ ta guruh"
+                "Gauss usulida faqat bosh diagonal ostidagi elementlar nolga aylantirilsa, Gauss-Jordan usulida bosh diagonalning ham ostidagi, ham ustidagi barcha elementlar nolga aylantiriladi va teskari yurish talab etilmaydi",
+                "Gauss-Jordan usulida faqat determinantlar hisoblanadi",
+                "Gauss-Jordan usulida faqat ustunlar ustida amal bajariladi",
+                "Gauss-Jordan usuli faqat 2 noma’lumli sistemalarga qo‘llaniladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "6-ma’ruza (15-slayd): $n = 5, r = 2 \\implies$ bazis o‘zgaruvchilar 2 ta, erkli o‘zgaruvchilar $5 - 2 = 3$ ta, $C_5^2 = \\frac{5!}{2!3!} = 10$ ta juftlik."
+            "exp": "6-ma’ruza (10-12-slaydlar): Gauss-Jordan usulida asosiy matritsa diagonal (birlik $E$) ko‘rinishga keltirilgani uchun noma’lumlar qiymati to‘g‘ridan-to‘g‘ri hosil bo‘ladi."
         },
         {
-            "q": "Ma’ruzadagi 16-slayd misoli: $\\begin{cases} 2x_1 - 3x_2 + 4x_3 + 6x_4 + 6x_5 = 3 \\\\ 3x_1 - 4x_2 + 6x_3 + 8x_4 + 9x_5 = 5 \\end{cases}$ sistemada 10 ta juftlikdan qaysi 4 tasida 2-tartibli minor nolga teng bo‘lgani sababli ular bazis o‘zgaruvchilar bo‘la OLMAYDI?",
+            "q": "Bazis tenglamalar sistemasi haqidagi **Teorema** (13-slayd) qanday bayon etiladi?",
             "opts": [
-                "$(x_1, x_3),\\; (x_1, x_5),\\; (x_2, x_4),\\; (x_3, x_5)$ — qolgan 6 tasida minor noldan farqli va 6 ta bazis yechim mavjud",
-                "$(x_1, x_2),\\; (x_1, x_4),\\; (x_2, x_3),\\; (x_4, x_5)$ — faqat 4 ta bazis yechim mavjud",
-                "Barcha 10 ta juftlikda minor noldan farqli va 10 ta bazis yechim mavjud",
-                "Faqat $(x_1, x_2)$ juftlikda minor noldan farqli"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "6-ma’ruza (16-slayd): 1, 3, 5-ustunlar o‘zaro proporsional ($(4,6)=2(2,3)$ va $(6,9)=3(2,3)$), 2 va 4-ustunlar ham proporsional ($(6,8)=-2(-3,-4)$). Shu sababli $(x_1,x_3), (x_1,x_5), (x_3,x_5)$ va $(x_2,x_4)$ minorlari $0$ ga teng. Qolgan 6 ta minor noldan farqli!"
-        },
-        {
-            "q": "Ma’ruzadagi 17-slayd misoli: $\\begin{cases} 2x_1 - 3x_2 + 4x_3 + 6x_4 + 6x_5 = 3 \\\\ 3x_1 - 4x_2 + 6x_3 + 8x_4 + 9x_5 = 5 \\end{cases}$ sistemada $x_1$ va $x_2$ bazis o‘zgaruvchilar ($x_3=x_4=x_5=0$) bo‘lgandagi $X_{1b}$ bazis yechimni toping.",
-            "opts": [
-                "$X_{1b} = (3;\\; 1;\\; 0;\\; 0;\\; 0)^T$",
-                "$X_{1b} = (1;\\; 3;\\; 0;\\; 0;\\; 0)^T$",
-                "$X_{1b} = (3;\\; 0;\\; 0;\\; -0.5;\\; 0)^T$",
-                "$X_{1b} = (0;\\; 1;\\; 1.5;\\; 0;\\; 0)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "6-ma’ruza (17-slayd): $\\begin{cases} 2x_1 - 3x_2 = 3 \\\\ 3x_1 - 4x_2 = 5 \\end{cases} \\implies x_1 = 3,\\; x_2 = 1$. Demak $X_{1b} = (3, 1, 0, 0, 0)^T$."
-        },
-        {
-            "q": "Ma’ruzadagi 17-slayd misoli: Yuqoridagi sistemada $x_1$ va $x_4$ bazis o‘zgaruvchilar ($x_2=x_3=x_5=0$) bo‘lgandagi $X_{2b}$ bazis yechimni toping.",
-            "opts": [
-                "$X_{2b} = (3;\\; 0;\\; 0;\\; -0.5;\\; 0)^T$",
-                "$X_{2b} = (3;\\; 0;\\; 0;\\; 0.5;\\; 0)^T$",
-                "$X_{2b} = (0;\\; 0;\\; 1.5;\\; -0.5;\\; 0)^T$",
-                "$X_{2b} = (1;\\; 0;\\; 0;\\; 0.5;\\; 0)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "6-ma’ruza (17-slayd): $\\begin{cases} 2x_1 + 6x_4 = 3 \\\\ 3x_1 + 8x_4 = 5 \\end{cases} \\implies x_1 = 3,\\; x_4 = -0.5$. Demak $X_{2b} = (3, 0, 0, -0.5, 0)^T$."
-        },
-        {
-            "q": "Ma’ruzadagi 17-slayd misoli: Yuqoridagi sistemada qolgan 4 ta bazis yechim ($X_{3b}, X_{4b}, X_{5b}, X_{6b}$) qaysi javobda to‘liq va to‘g‘ri berilgan?",
-            "opts": [
-                "$X_{3b}=(0, 1, 1.5, 0, 0)^T;\\; X_{4b}=(0, 1, 0, 0, 1)^T;\\; X_{5b}=(0, 0, 1.5, -0.5, 0)^T;\\; X_{6b}=(0, 0, 0, -0.5, 1)^T$",
-                "$X_{3b}=(0, 1, -1.5, 0, 0)^T;\\; X_{4b}=(0, -1, 0, 0, 1)^T;\\; X_{5b}=(0, 0, 1.5, 0.5, 0)^T;\\; X_{6b}=(0, 0, 0, 0.5, 1)^T$",
-                "$X_{3b}=(1, 0, 1.5, 0, 0)^T;\\; X_{4b}=(1, 0, 0, 0, 1)^T;\\; X_{5b}=(0, 1.5, 0, -0.5, 0)^T;\\; X_{6b}=(0, 0, 1, -0.5, 0)^T$",
-                "$X_{3b}=(0, 2, 3, 0, 0)^T;\\; X_{4b}=(0, 2, 0, 0, 2)^T;\\; X_{5b}=(0, 0, 3, -1, 0)^T;\\; X_{6b}=(0, 0, 0, -1, 2)^T$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "6-ma’ruza (17-slayd): Mos juftliklarni qo‘yib yechilganda aynan shu 4 ta vektor hosil bo‘ladi."
-        },
-        {
-            "q": "6 ta noma’lumli chiziqli tenglamalar sistemasining rangi $r = 4$ ga teng bo‘lsa, noma’lumlarni bazis va erkli o‘zgaruvchilarga ajratishning maksimal usullari soni $C_6^4$ nechaga teng?",
-            "opts": [
-                "$15$",
-                "$20$",
-                "$12$",
-                "$30$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$C_6^4 = \\frac{6!}{4! \\cdot 2!} = \\frac{5 \\cdot 6}{1 \\cdot 2} = 15$."
-        },
-        {
-            "q": "Gauss usulida to‘g‘ri yurish natijasida kengaytirilgan matritsaning biror satri $(0\\;\\; 0\\;\\; 0\\;\\; 0 \\mid 7)$ ko‘rinishga kelsa, bu nimani anglatadi?",
-            "opts": [
-                "$0 \\cdot x_1 + 0 \\cdot x_2 + 0 \\cdot x_3 + 0 \\cdot x_4 = 7$ ziddiyatli tenglama hosil bo‘lganini, ya’ni sistema birgalikda emasligini ($\\varnothing$)",
-                "$x_4 = 7$ ekanligini",
-                "Sistema cheksiz ko‘p yechimga ega ekanligini",
-                "Sistemaning barcha yechimlari $7$ ga teng ekanligini"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Chap tomonda barcha koeffitsiyentlar 0 bo‘lib, o‘ng tomonda $7 \\ne 0$ turibdi ($r(A) < r(A|B)$), demak sistema yechimga ega emas."
-        },
-        {
-            "q": "$\\begin{cases} x_1 + 2x_2 - x_3 + 3x_4 = 5 \\\\ 2x_1 + x_2 + x_3 - x_4 = 4 \\end{cases}$ sistemada $x_1$ va $x_2$ bazis o‘zgaruvchilar deb olinsa, mos bazis yechimni toping.",
-            "opts": [
-                "$(1;\\; 2;\\; 0;\\; 0)^T$",
-                "$(2;\\; 1;\\; 0;\\; 0)^T$",
-                "$(0;\\; 0;\\; 1;\\; 2)^T$",
-                "$(3;\\; 1;\\; 0;\\; 0)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Erkli o‘zgaruvchilar $x_3 = 0, x_4 = 0$ deb olinadi: $\\begin{cases} x_1 + 2x_2 = 5 \\\\ 2x_1 + x_2 = 4 \\end{cases} \\implies x_1 = 1,\\; x_2 = 2$. Bazis yechim: $(1, 2, 0, 0)^T$."
-        },
-        {
-            "q": "Yuqoridagi $\\begin{cases} x_1 + 2x_2 - x_3 + 3x_4 = 5 \\\\ 2x_1 + x_2 + x_3 - x_4 = 4 \\end{cases}$ sistemada $x_3$ va $x_4$ bazis o‘zgaruvchilar deb olinsa ($x_1 = x_2 = 0$), mos bazis yechimni toping.",
-            "opts": [
-                "$(0;\\; 0;\\; 8.5;\\; 4.5)^T$",
-                "$(0;\\; 0;\\; 4.5;\\; 8.5)^T$",
-                "$(0;\\; 0;\\; -1;\\; 1)^T$",
-                "$(0;\\; 0;\\; 5;\\; 4)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$x_1 = x_2 = 0$ da $\\begin{cases} -x_3 + 3x_4 = 5 \\\\ x_3 - x_4 = 4 \\end{cases}$. Qo‘shib yuborsak $2x_4 = 9 \\implies x_4 = 4.5$ va $x_3 = 4 + 4.5 = 8.5$. Demak $(0; 0; 8.5; 4.5)^T$."
-        },
-        {
-            "q": "Gauss-Jordan usulida kengaytirilgan matritsa $\\begin{pmatrix} 1 & 0 & 2 & | & 5 \\\\ 0 & 1 & -1 & | & 3 \\\\ 0 & 0 & 1 & | & 2 \\end{pmatrix}$ holatga keltirildi. Uni $(E \\mid X)$ birlik matritsa shakliga to‘liq keltirish uchun qanday amal bajariladi va yechim nima bo‘ladi?",
-            "opts": [
-                "1-satrdan 3-satrning 2 baravarini ayiramiz va 2-satrga 3-satrni qo‘shamiz; natija: $x_1 = 1,\\; x_2 = 5,\\; x_3 = 2$",
-                "1-satrga 3-satrning 2 baravarini qo‘shamiz; natija: $x_1 = 9,\\; x_2 = 1,\\; x_3 = 2$",
-                "Hech qanday amal shart emas; natija: $x_1 = 5,\\; x_2 = 3,\\; x_3 = 2$",
-                "3-satrni 2 ga bo‘lamiz; natija: $x_1 = 5,\\; x_2 = 3,\\; x_3 = 1$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$R_1 \\leftarrow R_1 - 2R_3 \\implies x_1 = 5 - 2(2) = 1$; $R_2 \\leftarrow R_2 + R_3 \\implies x_2 = 3 + 2 = 5$; $x_3 = 2$."
-        },
-        {
-            "q": "Chiziqli tenglamalar sistemasi o‘zining bazis tenglamalar sistemasiga qanday munosabatda bo‘ladi (13-slayd, Teorema)?",
-            "opts": [
-                "Ekvivalent (teng kuchli) bo‘ladi",
-                "Qarama-qarshi bo‘ladi",
-                "Faqat nol yechimda ustma-ust tushadi",
-                "Bazis sistema ko‘proq tenglamaga ega bo‘ladi"
+                "Chiziqli tenglamalar sistemasi o‘zining bazis tenglamalar sistemasiga ekvivalentdir",
+                "Chiziqli tenglamalar sistemasi faqat bir jinsli sistemaga ekvivalentdir",
+                "Bazis tenglamalar sistemasi har doim yechimga ega emas",
+                "Bazis tenglamalar sistemasida erkli o‘zgaruvchilar qatnashmaydi"
             ],
             "ans": 0,
             "diff": "Oson",
             "exp": "6-ma’ruza (13-slayd, Teorema): Chiziqli tenglamalar sistemasi o‘zining bazis tenglamalar sistemasiga ekvivalent."
         },
         {
-            "q": "Birgalikda bo‘lgan chiziqli tenglamalar sistemasi cheksiz ko‘p yechimga ega bo‘lsa ($r < n$), uning bazis yechimlari soni cheksiz bo‘ladimi yoki chekli?",
+            "q": "Tenglamalar sistemasining «bazis yechimi» deb qanday yechimga aytiladi (13-14-slaydlar)?",
             "opts": [
-                "Chekli bo‘ladi va bazis minorlar soniga teng bo‘ladi ($\\le C_n^r$)",
-                "Cheksiz ko‘p bo‘ladi",
-                "Har doim faqat bitta bo‘ladi",
-                "Nolga teng bo‘ladi"
+                "Erkli o‘zgaruvchilarning qiymatlari nolga teng deb olinib, faqat bazis o‘zgaruvchilari noldan farqli bo‘lishi mumkin bo‘lgan yechimga",
+                "Bazis o‘zgaruvchilari nolga teng deb olinib, erkli o‘zgaruvchilari $1$ ga teng bo‘lgan yechimga",
+                "Barcha komponentlari bir-biriga teng bo‘lgan yechimga",
+                "Faqat bir jinsli sistemaning fundamental yechimiga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "6-ma’ruza (14-slayd): Tenglamalar sistemasi cheksiz ko‘p yechimga ega bo‘lsa-da, bazis yechimlar soni chekli bo‘ladi va bazis minorlar soniga teng bo‘ladi."
+            "exp": "6-ma’ruza (13-14-slaydlar, Ta’rif): Faqat bazis o‘zgaruvchilari noldan farqli bo‘lishi mumkin bo‘lgan yechim tenglamalar sistemasining bazis yechimi deyiladi. Bazis yechimda erkli o‘zgaruvchilarning qiymatlari nolga teng deb olinadi."
         },
         {
-            "q": "$\\begin{cases} x_1 + x_2 + x_3 = 6 \\\\ 2x_1 - x_2 + x_3 = 3 \\\\ x_1 + 2x_2 - x_3 = 2 \\end{cases}$ sistemani Gauss usulida yeching.",
+            "q": "Tenglamalar sistemasi cheksiz ko‘p yechimga ega bo‘lganda ($r < n$), uning bazis yechimlari soni haqida qanday tasdiq o‘rinli (14-slayd)?",
             "opts": [
-                "$x_1 = 1,\\quad x_2 = 2,\\quad x_3 = 3$",
-                "$x_1 = 2,\\quad x_2 = 1,\\quad x_3 = 3$",
-                "$x_1 = 3,\\quad x_2 = 2,\\quad x_3 = 1$",
-                "$x_1 = 2,\\quad x_2 = 2,\\quad x_3 = 2$"
+                "Tenglamalar sistemasi cheksiz ko‘p yechimga ega bo‘lsa-da, bazis yechimlar soni chekli bo‘ladi va bazis minorlar soniga teng bo‘ladi",
+                "Bazis yechimlar soni ham cheksiz ko‘p bo‘ladi",
+                "Bazis yechim umuman mavjud bo‘lmaydi",
+                "Bazis yechimlar soni har doim $1$ ga teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "6-ma’ruza (14-slayd): Tenglamalar sistemasi cheksiz ko‘p bo‘lsa-da, bazis yechimlar soni chekli bo‘ladi. Bazis yechimlar soni bazis minorlar soniga teng bo‘ladi."
+        },
+        {
+            "q": "Sistemada noma’lumlar soni $n$ va sistema rangi $r$ bo‘lsa, noma’lumlarni bazis va erkli o‘zgaruvchilarga ajratish usullari (guruhlari) soni qaysi formula bilan hisoblanadi (14-slayd)?",
+            "opts": [
+                "$C_n^r = \\frac{n!}{r! \\cdot (n - r)!}$",
+                "$C_n^r = \\frac{r!}{n! \\cdot (n - r)!}$",
+                "$A_n^r = \\frac{n!}{(n - r)!}$",
+                "$P_n = n! \\cdot r!$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "6-ma’ruza (14-slayd): $C_n^r = \\frac{n!}{r!(n-r)!}$, bu yerda $n$ — noma’lumlar soni, $r$ — rang."
+        },
+        {
+            "q": "Agar sistemada noma’lumlar soni $n$ va sistema rangi $r$ ($r < n$) bo‘lsa, har bir bazis guruhda nechta «bazis o‘zgaruvchi» va nechta «erkli o‘zgaruvchi» bo‘ladi (15-slayd)?",
+            "opts": [
+                "$r$ ta bazis o‘zgaruvchi va $n - r$ ta erkli o‘zgaruvchi bo‘ladi",
+                "$n - r$ ta bazis o‘zgaruvchi va $r$ ta erkli o‘zgaruvchi bo‘ladi",
+                "$n$ ta bazis o‘zgaruvchi va $r$ ta erkli o‘zgaruvchi bo‘ladi",
+                "Bazis va erkli o‘zgaruvchilar soni har doim teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "6-ma’ruza (15-slayd): Bazis o‘zgaruvchilar soni sistema rangi $r$ ga, erkli o‘zgaruvchilar soni esa $n - r$ ga teng."
+        },
+        {
+            "q": "Qanday shart bajarilganda tanlangan $r$ ta noma’lumlar guruhi haqiqatan ham «bazis o‘zgaruvchilar» bo‘la oladi (16-slayd)?",
+            "opts": [
+                "Shu $r$ ta noma’lumning koeffitsiyentlar ustunlaridan tuzilgan $r$-tartibli determinant (minor) noldan farqli bo‘lganda ($\\det \\ne 0$)",
+                "Shu noma’lumlarning koeffitsiyentlaridan tuzilgan minor nolga teng bo‘lganda ($\\det = 0$)",
+                "Tanlangan noma’lumlarning indekslari faqat toq sonlar bo‘lganda",
+                "Har qanday $r$ ta noma’lum hech qanday shartsiz bazis bo‘la oladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "1- va 3-tenglamani qo‘shsak $2x_1 + 3x_2 = 8$; 1-tenglamadan 2-tenglamani ayirsak $-x_1 + 2x_2 = 3 \\implies x_1 = 2x_2 - 3$. O‘rniga qo‘ysak $2(2x_2-3)+3x_2=8 \\implies 7x_2=14 \\implies x_2=2, x_1=1, x_3=3$."
+            "exp": "6-ma’ruza (16-slayd): $C_n^r$ ta guruh ichidan faqat mos $r$-tartibli minori noldan farqli ($\\ne 0$) bo‘lgan guruhlargina bazis o‘zgaruvchilar bo‘la oladi."
         },
         {
-            "q": "Kengaytirilgan matritsasi $\\begin{pmatrix} 1 & -2 & 3 & -1 & | & 4 \\\\ 0 & 1 & -2 & 2 & | & 1 \\\\ 0 & 0 & 0 & 0 & | & 0 \\end{pmatrix}$ ko‘rinishga kelgan sistemada nechta bazis va nechta erkli o‘zgaruvchi bor?",
+            "q": "Agar tanlangan $r$ ta noma’lumga mos keluvchi $r$-tartibli minor nolga teng bo‘lsa (16-slayd), bu guruh haqida qanday xulosa chiqariladi?",
             "opts": [
-                "$2$ ta bazis va $2$ ta erkli o‘zgaruvchi ($n=4, r=2$)",
-                "$3$ ta bazis va $1$ ta erkli o‘zgaruvchi ($n=4, r=3$)",
-                "$1$ ta bazis va $3$ ta erkli o‘zgaruvchi ($n=4, r=1$)",
-                "$4$ ta bazis va $0$ ta erkli o‘zgaruvchi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Noldan farqli satrlar soni $r = 2$, noma’lumlar soni $n = 4$. Demak bazis o‘zgaruvchilar $r = 2$ ta, erkli o‘zgaruvchilar $n - r = 4 - 2 = 2$ ta."
-        },
-        {
-            "q": "Yuqoridagi $\\begin{pmatrix} 1 & -2 & 3 & -1 & | & 4 \\\\ 0 & 1 & -2 & 2 & | & 1 \\end{pmatrix}$ sistemada $x_1, x_2$ bazis o‘zgaruvchilar va $x_3 = 0, x_4 = 0$ erkli o‘zgaruvchilar bo‘lgandagi bazis yechimni toping.",
-            "opts": [
-                "$(6;\\; 1;\\; 0;\\; 0)^T$",
-                "$(4;\\; 1;\\; 0;\\; 0)^T$",
-                "$(2;\\; 1;\\; 0;\\; 0)^T$",
-                "$(6;\\; -1;\\; 0;\\; 0)^T$"
+                "Ushbu noma’lumlar ustunlari chiziqli bog‘liq bo‘lgani sababli ular bazis o‘zgaruvchilar guruhini tashkil qila olmaydi va ulardan bazis yechim hosil bo‘lmaydi",
+                "Ushbu guruhga mos bazis yechimning barcha komponentlari $1$ ga teng bo‘ladi",
+                "Ushbu guruhdan cheksiz ko‘p bazis yechim chiqadi",
+                "Bu holatda sistema birgalikda bo‘lmay qoladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$x_3 = x_4 = 0$ bo‘lganda 2-satrdan $x_2 = 1$, 1-satrdan $x_1 - 2(1) = 4 \\implies x_1 = 6$. Bazis yechim: $(6, 1, 0, 0)^T$."
+            "exp": "6-ma’ruza (16-slayd): Masalan, 10 ta kombinatorik juftlikdan 4 tasida minor 0 ga teng bo‘lgani uchun ular bazis bo‘la olmaydi va faqat qolgan 6 tasidan bazis yechim topiladi."
         },
         {
-            "q": "Agar barcha komponentlari nomanfiy ($x_i \\ge 0$) bo‘lgan bazis yechim «tayanch yechim» deb atalsa, ma’ruzadagi 17-slaydda topilgan $X_{1b}=(3,1,0,0,0)^T,\\; X_{2b}=(3,0,0,-0.5,0)^T,\\; X_{3b}=(0,1,1.5,0,0)^T,\\; X_{4b}=(0,1,0,0,1)^T,\\; X_{5b}=(0,0,1.5,-0.5,0)^T,\\; X_{6b}=(0,0,0,-0.5,1)^T$ bazis yechimlardan nechtasi barcha komponentlari nomanfiy yechim hisoblanadi?",
+            "q": "Bazis yechimlar soni $N_{\\text{bazis}}$ va kombinatorik guruhlar soni $C_n^r$ orasida umumiy holda qanday munosabat o‘rinli?",
             "opts": [
-                "$3$ tasi ($X_{1b},\\; X_{3b}$ va $X_{4b}$)",
-                "$6$ tasi (barchasi)",
-                "$2$ tasi ($X_{2b}$ va $X_{5b}$)",
-                "$1$ tasi (faqat $X_{1b}$)"
+                "$1 \\le N_{\\text{bazis}} \\le C_n^r$ (bazis yechimlar soni noldan farqli bazis minorlar soniga teng bo‘lib, $C_n^r$ dan oshmaydi)",
+                "$N_{\\text{bazis}} > C_n^r$",
+                "$N_{\\text{bazis}} = n!$",
+                "$N_{\\text{bazis}} = 0$"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$X_{2b}, X_{5b}, X_{6b}$ larda $x_4 = -0.5 < 0$ manfiy komponent bor. Faqat $X_{1b}, X_{3b}, X_{4b}$ larda barcha komponentlar $\\ge 0$."
+            "exp": "Sistema rangi $r$ bo‘lgani uchun kamida bitta $r$-tartibli minor noldan farqli ($N_{\\text{bazis}} \\ge 1$) va jami $r$-tartibli minorlar soni $C_n^r$ dan oshmaydi."
         },
         {
-            "q": "Gauss usulida $\\begin{pmatrix} 1 & 2 & -1 & | & 3 \\\\ 3 & 7 & -2 & | & 11 \\\\ 2 & 4 & 1 & | & 9 \\end{pmatrix}$ matritsaning 1-ustunidagi $3$ va $2$ elementlarni nolga aylantirishdan keyin hosil bo‘ladigan ekvivalent matritsani toping.",
+            "q": "Tanlangan bazis o‘zgaruvchilar guruhi bo‘yicha bazis yechimni topish algoritmi qanday (17-slayd)?",
             "opts": [
-                "$\\begin{pmatrix} 1 & 2 & -1 & | & 3 \\\\ 0 & 1 & 1 & | & 2 \\\\ 0 & 0 & 3 & | & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 2 & -1 & | & 3 \\\\ 0 & 1 & -5 & | & 2 \\\\ 0 & 0 & -1 & | & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 2 & -1 & | & 3 \\\\ 0 & 13 & -5 & | & 20 \\\\ 0 & 8 & -1 & | & 15 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 2 & -1 & | & 3 \\\\ 0 & 1 & 1 & | & 11 \\\\ 0 & 0 & 3 & | & 9 \\end{pmatrix}$"
+                "Barcha $n - r$ ta erkli o‘zgaruvchilar $0$ ga teng deb olinib sistemadan tushirib qoldiriladi, hosil bo‘lgan $r \\times r$ kvadrat sistema yechilib $r$ ta bazis o‘zgaruvchi qiymati topiladi va $n$ o‘lchovli ustun-vektorga o‘z o‘rinlariga joylashtiriladi",
+                "Bazis o‘zgaruvchilar $0$ ga teng deb olinib, erkli o‘zgaruvchilar topiladi",
+                "Barcha o‘zgaruvchilar $1$ ga teng deb olinadi",
+                "Faqat ozod hadlar ustuni ko‘chirib yoziladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$R_2 - 3R_1 = (3-3,\\; 7-6,\\; -2-(-3) \\mid 11-9) = (0, 1, 1 \\mid 2)$. $R_3 - 2R_1 = (2-2,\\; 4-4,\\; 1-(-2) \\mid 9-6) = (0, 0, 3 \\mid 3)$."
+            "exp": "6-ma’ruza (17-slayd): Erkli o‘zgaruvchilarga $0$ berilganda $r$ ta tenglama va $r$ ta bazis noma’lumli ($\\det \\ne 0$) kvadrat sistema qoladi va uning yagona yechimi bazis yechimni beradi."
         },
         {
-            "q": "Yuqoridagi uchburchak matritsadan ($\\begin{pmatrix} 1 & 2 & -1 & | & 3 \\\\ 0 & 1 & 1 & | & 2 \\\\ 0 & 0 & 3 & | & 3 \\end{pmatrix}$) teskari yurish orqali $(x_1, x_2, x_3)$ yechimni toping.",
+            "q": "Gauss usulida to‘g‘ri yurishda navbatdagi qadamda bosh diagonalda $0$ elementi uchrab qolsa ($a_{kk} = 0$), algoritmni davom ettirish uchun nima qilinadi?",
             "opts": [
-                "$x_1 = 2,\\quad x_2 = 1,\\quad x_3 = 1$",
-                "$x_1 = 1,\\quad x_2 = 1,\\quad x_3 = 1$",
-                "$x_1 = 2,\\quad x_2 = 2,\\quad x_3 = 1$",
-                "$x_1 = 3,\\quad x_2 = 1,\\quad x_3 = 1$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$3x_3 = 3 \\implies x_3 = 1$; $x_2 + x_3 = 2 \\implies x_2 = 1$; $x_1 + 2(1) - 1 = 3 \\implies x_1 = 2$."
-        },
-        {
-            "q": "Agar sistemada 7 ta noma’lum ($n=7$) va 3 ta chiziqli erkli tenglama ($r=3$) bo‘lsa, har bir bazis yechimda kamida nechta nol komponent qatnashadi?",
-            "opts": [
-                "Kamida $n - r = 7 - 3 = 4$ ta nol komponent (erkli o‘zgaruvchilar)",
-                "Kamida $r = 3$ ta nol komponent",
-                "Faqat $1$ ta nol komponent",
-                "Nol komponent qatnashmaydi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Bazis yechimda barcha $n - r = 7 - 3 = 4$ ta erkli o‘zgaruvchi $0$ ga teng deb olinadi."
-        },
-        {
-            "q": "$\\begin{cases} x_1 + 3x_2 - 2x_3 = 4 \\\\ 2x_1 + 6x_2 - 4x_3 = 8 \\end{cases}$ sistemada $r(A)$ nechaga teng va bazis o‘zgaruvchilar soni nechta?",
-            "opts": [
-                "$r(A) = 1$; bazis o‘zgaruvchi $1$ ta, erkli o‘zgaruvchilar $2$ ta",
-                "$r(A) = 2$; bazis o‘zgaruvchilar $2$ ta, erkli o‘zgaruvchi $1$ ta",
-                "$r(A) = 3$; barcha o‘zgaruvchilar bazis",
-                "Sistema birgalikda emas"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "2-tenglama 1-tenglamaning 2 baravariga teng, shuning uchun bitta tenglama tashlab yuboriladi: $r = 1$, $n = 3$, bazis o‘zgaruvchi $1$ ta, erkli o‘zgaruvchilar $3 - 1 = 2$ ta."
-        },
-        {
-            "q": "Yuqoridagi $x_1 + 3x_2 - 2x_3 = 4$ tenglamada barcha 3 ta bazis yechimni toping.",
-            "opts": [
-                "$X_{1b} = (4, 0, 0)^T;\\quad X_{2b} = (0, 4/3, 0)^T;\\quad X_{3b} = (0, 0, -2)^T$",
-                "$X_{1b} = (1, 0, 0)^T;\\quad X_{2b} = (0, 3, 0)^T;\\quad X_{3b} = (0, 0, -2)^T$",
-                "$X_{1b} = (4, 4/3, -2)^T$ — faqat bitta bazis yechim bor",
-                "$X_{1b} = (0, 1, 1)^T;\\quad X_{2b} = (1, 0, 1)^T;\\quad X_{3b} = (1, 1, 0)^T$"
+                "Shu ustunning quyiroq qismida noldan farqli element qatnashgan biror satr bilan $k$-satrning o‘rni almashtiriladi",
+                "Sistema yechimga ega emas deb to‘xtatiladi",
+                "Butun satr $0$ ga ko‘paytiriladi",
+                "Ozod hadlar ustuni tashlab yuboriladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "1) $x_2=x_3=0 \\implies x_1=4$; 2) $x_1=x_3=0 \\implies 3x_2=4 \\implies x_2=4/3$; 3) $x_1=x_2=0 \\implies -2x_3=4 \\implies x_3=-2$."
+            "exp": "Tayanch (yetakchi) element nol bo‘lib qolsa, quyidagi satrlardan noldan farqli elementli satr yuqoriga ko‘chiriladi (satrlar o‘rni almashtiriladi)."
         },
         {
-            "q": "Gauss-Jordan usuli bilan bir vaqtning o‘zida qaysi ikkita muhim masalani yechishda keng foydalaniladi?",
+            "q": "Gauss-Jordan usulida $(A \\mid B)$ matritsani $(E \\mid X)$ ga keltirishda har bir tayanch element $a_{kk}$ ni $1$ ga tenglashtirish uchun qanday amal bajariladi?",
             "opts": [
-                "Chiziqli tenglamalar sistemasini yechish $(A|B) \\sim (E|X)$ hamda teskari matritsani topish $(A|E) \\sim (E|A^{-1})$",
-                "Faqat 2-tartibli determinantni hisoblash va vektor ko‘paytma topish",
-                "Matritsani transponirlash va izini topish",
-                "Gramm-Shmidt ortogonallash va aralash ko‘paytma"
+                "$k$-satrning barcha elementlari (shu jumladan ozod hadi ham) $a_{kk} \\ne 0$ tayanch elementga bo‘lib chiqiladi",
+                "$k$-satrning barcha elementlaridan $(a_{kk} - 1)$ soni ayirib chiqiladi",
+                "Faqat $a_{kk}$ element o‘chirilib o‘rniga $1$ yozib qo‘yiladi",
+                "$k$-ustun $a_{kk}$ ga bo‘linadi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "3-ma’ruza (11-slayd) va 6-ma’ruza (10-slayd): Gauss-Jordan eliminatsiyasi ham $(A|B)\\sim(E|X)$ sistemani yechishda, ham $(A|E)\\sim(E|A^{-1})$ teskari matritsani hisoblashda qo‘llaniladi."
+            "exp": "6-ma’ruza (12-slayd): Tenglama ekvivalentligi buzilmasligi uchun butun satr (ham koeffitsiyentlar, ham ozod had) $a_{kk}$ songa bo‘linadi."
+        },
+        {
+            "q": "Kramer qoidasi va Teskari matritsa usuliga nisbatan Gauss hamda Gauss-Jordan usullarining eng katta nazariy va amaliy ustunligi nimada?",
+            "opts": [
+                "Gauss va Gauss-Jordan usullari tenglamalar soni $m$ va noma’lumlar soni $n$ ixtiyoriy bo‘lgan hamda asosiy determinanti nolga teng bo‘lgan sistemalarga ham to‘liq qo‘llaniladi",
+                "Gauss usuli faqat 2-tartibli sistemalarga qo‘llaniladi",
+                "Kramer usuli Gauss usuliga qaraganda katta $n$ larda kamroq amal talab qiladi",
+                "Gauss usulida hech qachon kasr sonlar hosil bo‘lmaydi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Kramer va $X=A^{-1}B$ usullari faqat $m=n$ va $\\det(A) \\ne 0$ bo‘lganda ishlaydi; Gauss usuli esa ixtiyoriy $m \\times n$ sistemaning birgalikdaligini ham tekshiradi, umumiy yechimini ham topadi."
+        },
+        {
+            "q": "Agar sistemaning asosiy matritsasida ikkita noma’lumga (masalan $x_1$ va $x_3$ ga) mos keluvchi ustunlar o‘zaro proporsional bo‘lsa, bu ikkala noma’lum bir vaqtda bitta bazis guruhga kira oladimi (16-slayd)?",
+            "opts": [
+                "Yo‘q, kira olmaydi, chunki proporsional ustunlar qatnashgan har qanday minor determinantning 8-xossasiga ko‘ra nolga teng bo‘ladi",
+                "Ha, proporsional ustunlar har doim bazis tashkil qiladi",
+                "Faqat ozod hadlar nol bo‘lganda kira oladi",
+                "Faqat proporsionallik koeffitsiyenti musbat bo‘lganda kira oladi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "6-ma’ruza (15-16-slaydlar): $(2, 3)^T$ va $(4, 6)^T$ ustunlar proporsional bo‘lgani uchun ulardan tuzilgan minor $\\begin{vmatrix} 2 & 4 \\\\ 3 & 6 \\end{vmatrix} = 0$ bo‘lib, $x_1$ va $x_3$ birgalikda bazis bo‘la olmaydi."
+        },
+        {
+            "q": "Bazis tenglamalar sistemasini tuzishda asosiy matritsaning bazis minoriga kirmagan qolgan $m - r$ ta tenglamalari nima sababdan tashlab yuboriladi?",
+            "opts": [
+                "Chunki birgalikda bo‘lgan sistemada qolgan $m - r$ ta tenglama bazis tenglamalarning chiziqli kombinatsiyasi bo‘lib, yangi ma’lumot bermaydi (13-slayd, Teorema)",
+                "Chunki u tenglamalar noto‘g‘ri tuzilgan bo‘ladi",
+                "Chunki ularda noma’lumlar qatnashmaydi",
+                "Chunki ularning ozod hadlari har doim manfiy bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "6-ma’ruza (13-slayd): Chiziqli tenglamalar sistemasi o‘zining $r$ ta chiziqli erkli tenglamadan iborat bazis sistemasiga ekvivalent."
+        },
+        {
+            "q": "Agar $n$ ta noma’lumli chiziqli tenglamalar sistemasida $r(A) = r(A \\mid B) = r < n$ bo‘lsa, har bir bazis yechimda nechta o‘zgaruvchi majburiy ravishda $0$ ga tenglashtiriladi?",
+            "opts": [
+                "$n - r$ ta erkli o‘zgaruvchi majburiy ravishda $0$ ga tenglashtiriladi",
+                "$r$ ta bazis o‘zgaruvchi $0$ ga tenglashtiriladi",
+                "Barcha $n$ ta o‘zgaruvchi $0$ ga tenglashtiriladi",
+                "Faqat $1$ ta o‘zgaruvchi $0$ ga tenglashtiriladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "6-ma’ruza (14-15-slaydlar): Erkli o‘zgaruvchilar soni $n - r$ ta bo‘lib, bazis yechimda ularning barchasi nolga teng deb olinadi."
+        },
+        {
+            "q": "Gauss-Jordan usuli bilan $(A \\mid B)$ matritsa kanonik pog‘onali shaklga keltirilganda ($r < n$), bazis o‘zgaruvchilarga mos ustunlar qanday ko‘rinishga keladi?",
+            "opts": [
+                "$r$-tartibli birlik matritsa $E_r$ ning ustunlari (bitta $1$ va qolganlari $0$) ko‘rinishiga keladi",
+                "Barcha elementlari $1$ ga teng ustunlar ko‘rinishiga keladi",
+                "To‘liq nol ustunlar ko‘rinishiga keladi",
+                "Uchburchak ko‘rinishda qoladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Gauss-Jordan usulida har bir bazis ustunda tayanch element $1$ ga, undan yuqori va pastdagi barcha elementlar $0$ ga aylantiriladi."
+        },
+        {
+            "q": "Kanonik Gauss-Jordan shaklga keltirilgan $(E_r \\mid D \\mid d)$ matritsadan mos bazis yechim qanday o‘qib olinadi?",
+            "opts": [
+                "Erkli o‘zgaruvchilarga $0$ berilganda bazis o‘zgaruvchilarning qiymatlari to‘g‘ridan-to‘g‘ri o‘ng tomondagi $d$ ozod hadlar ustuniga teng bo‘lib chiqadi",
+                "Bazis o‘zgaruvchilar $D$ matritsa elementlariga teng bo‘ladi",
+                "Yana teskari yurish bajarish talab etiladi",
+                "Determinant hisoblash orqali topiladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "$x_{\\text{bazis}} + D x_{\\text{erkli}} = d$ da $x_{\\text{erkli}} = 0$ qo‘yilsa, darhol $x_{\\text{bazis}} = d$ hosil bo‘ladi!"
+        },
+        {
+            "q": "Agar sistemada $n$ ta noma’lum bo‘lib, uning rangi $r = 1$ bo‘lsa (bitta chiziqli erkli tenglama), kombinatorik bazis guruhlar soni $C_n^1$ nechaga teng bo‘ladi?",
+            "opts": [
+                "$C_n^1 = n$ taga teng (har bir noma’lum alohida bittadan bazis o‘zgaruvchi bo‘lishi mumkin, qolgan $n-1$ tasi erkli bo‘ladi)",
+                "$1$ taga teng",
+                "$n!$ taga teng",
+                "$n - 1$ taga teng"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "$C_n^1 = \\frac{n!}{1!(n-1)!} = n$."
+        },
+        {
+            "q": "Agar chiziqli tenglamalar sistemasida noma’lumlar soni $n$ va rang $r = n - 1$ bo‘lsa (1 ta erkli o‘zgaruvchi), bazis guruhlar soni $C_n^{n-1}$ nechaga teng?",
+            "opts": [
+                "$C_n^{n-1} = n$ taga teng",
+                "$n - 1$ taga teng",
+                "$1$ taga teng",
+                "$\\frac{n(n-1)}{2}$ taga teng"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Simmetriya xossasiga ko‘ra $C_n^{n-1} = C_n^1 = \\frac{n!}{(n-1)!1!} = n$."
+        },
+        {
+            "q": "Gauss usulida ikkita tenglama o‘rnini almashtirish yoki tenglamani noldan farqli songa ko‘paytirish sistemaning yechimlar to‘plamini o‘zgartiradimi?",
+            "opts": [
+                "Yo‘q, elementar almashtirishlar natijasida boshlang‘ich sistemaga teng kuchli (ekvivalent, ya’ni yechimlar to‘plami aynan bir xil bo‘lgan) sistema hosil bo‘ladi",
+                "Ha, yechimlar ishorasi o‘zgarib ketadi",
+                "Ha, yechimlar shu songa ko‘payib ketadi",
+                "Yechimlar soni kamayib ketadi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "Elementar satr almashtirishlar qaytariluvchi (invertible) bo‘lgani uchun sistemaning yechimlari to‘plamini mutlaqo o‘zgartirmaydi."
+        },
+        {
+            "q": "Nima uchun Gauss usulida to‘g‘ri yurishda biror satrni $0$ songa ko‘paytirish elementar almashtirish hisoblanmaydi va taqiqlanadi?",
+            "opts": [
+                "Chunki satrni $0$ ga ko‘paytirish shu tenglamani yo‘q qilib yuboradi (qaytarilmas amal) va matritsa rangini sun’iy ravishda kamaytirib, cheksiz ko‘p yot yechimlarni keltirib chiqaradi",
+                "Chunki nolga ko‘paytirish juda qiyin",
+                "Chunki nolga ko‘paytirilsa sistema yechimga ega bo‘lmay qoladi",
+                "Nolga ko‘paytirishga ruxsat beriladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "3-ma’ruza (15-slayd, 2-elementar almashtirish): Satrni faqat NOLDAN FARQLI ($k \\ne 0$) songa ko‘paytirish va bo‘lish mumkin."
+        },
+        {
+            "q": "Bir jinsli bo‘lmagan sistemaning har bir bazis yechimi shu sistemaning xususiy yechimi hisoblanadimi?",
+            "opts": [
+                "Ha, har bir bazis yechim sistemaning barcha tenglamalarini qanoatlantirgani sababli uning xususiy yechimi hisoblanadi (erkli o‘zgaruvchilar nolga teng bo‘lgan xususiy yechim)",
+                "Yo‘q, bazis yechim sistemaning yechimi hisoblanmaydi",
+                "Faqat nol vektor bazis yechim bo‘ladi",
+                "Bazis yechim faqat umumiy yechim bo‘la oladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "6-ma’ruza (13-14-slaydlar): Bazis yechim erkli o‘zgaruvchilarning $0$ qiymatlarida olingan xususiy yechimdir."
+        },
+        {
+            "q": "Gauss-Jordan usulida $(A \\mid B) \\sim (E \\mid X)$ zanjirini bajarish mohiyatan $A \\cdot X = B$ tenglamaning ikkala tomonini chapdan qaysi matritsaga ko‘paytirishga teng kuchli?",
+            "opts": [
+                "Chapdan $A^{-1}$ teskari matritsaga ko‘paytirishga ($A^{-1}AX = A^{-1}B \\iff EX = A^{-1}B$)",
+                "Chapdan $A^T$ matritsaga ko‘paytirishga",
+                "O‘ngdan $B^{-1}$ matritsaga ko‘paytirishga",
+                "Birlik matritsa $E$ ni qo‘shishga"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "$A$ ni $E$ ga keltiruvchi barcha elementar satr almashtirishlari ko‘paytmasi $A^{-1}$ ga teng bo‘lib, u bir vaqtda $B$ ustunni $X = A^{-1}B$ ga aylantiradi."
         }
     ]
 
     # =========================================================================
-    # MAVZU 7: Arifmetik va Chiziqli fazo, Bazisni almashtirish (30 ta savol)
+    # MAVZU 7: Arifmetik va Chiziqli fazo, Bazisni almashtirish (30 ta NAZARIY savol)
     # =========================================================================
     t7 = [
         {
-            "q": "$n$ ta sonning tartiblangan tizimi $X = (x_1, x_2, \\dots, x_n)^T$ nima deb ataladi va komponentlari haqiqiy hamda kompleks sonlardan iborat fazolar qanday belgilanadi?",
+            "q": "«$n$ o‘lchovli vektor» deb nimaga aytiladi va u qanday belgilanadi (4-slayd)?",
             "opts": [
-                "$n$ o‘lchovli vektor deyiladi; haqiqiy arifmetik fazo $\\mathbb{R}^n$, kompleks arifmetik fazo $\\mathbb{C}^n$ deb belgilanadi",
-                "Kvadrat matritsa deyiladi; $\\mathbb{Z}^n$ va $\\mathbb{Q}^n$ deb belgilanadi",
-                "Skalyar miqdor deyiladi; $E^1$ va $E^2$ deb belgilanadi",
-                "Minor deyiladi; $M_n$ va $A_n$ deb belgilanadi"
+                "$n$ ta sonning tartiblangan tizimiga $n$ o‘lchovli vektor deyiladi; lotin alifbosining bosh harflari ($A, B, \\dots, X, Y$) bilan ustun matritsa yoki $\\vec{a} = (a_1, a_2, \\dots, a_n)$ satr ko‘rinishida belgilanadi",
+                "$n$ ta sonning tartibsiz to‘plamiga aytiladi va yagona son bilan belgilanadi",
+                "Faqat tekislikdagi kesmaga aytiladi va $n \\le 2$ bo‘lishi shart",
+                "$n \\times n$ kvadrat matritsaga vektor deyiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (4, 19-slaydlar): $n$ ta sonning tartiblangan tizimiga $n$ o‘lchovli vektor deyiladi. Haqiqiy arifmetik vektor fazo $\\mathbb{R}^n$, kompleks arifmetik vektor fazo $\\mathbb{C}^n$."
+            "exp": "7-ma’ruza (4-slayd, Ta’rif): $n$ ta sonning tartiblangan tizimiga $n$ o‘lchovli vektor deyiladi."
         },
         {
-            "q": "Ma’ruzadagi 6-slayd misoli: $X = (2,\\; 5,\\; 3,\\; -4)^T$ va $Y = (-1,\\; 5,\\; 6,\\; 7)^T$ vektorlar uchun $X + Y$ va $5X$ vektorlarni toping.",
+            "q": "$n$ o‘lchovli $X$ va $Y$ vektorlar ustida qo‘shish ($Z = X + Y$) va songa ko‘paytirish ($\\lambda X$) chiziqli amallari qanday aniqlanadi (4-5-slaydlar)?",
             "opts": [
-                "$X + Y = (1,\\; 10,\\; 9,\\; 3)^T;\\qquad 5X = (10,\\; 25,\\; 15,\\; -20)^T$",
-                "$X + Y = (3,\\; 0,\\; -3,\\; -11)^T;\\qquad 5X = (7,\\; 10,\\; 8,\\; 1)^T$",
-                "$X + Y = (-2,\\; 25,\\; 18,\\; -28)^T;\\qquad 5X = (10,\\; 25,\\; 15,\\; 20)^T$",
-                "$X + Y = (1,\\; 10,\\; 9,\\; -3)^T;\\qquad 5X = (2,\\; 5,\\; 3,\\; -20)^T$"
+                "Xuddi matritsalardagi kabi mos komponentlarini qo‘shish ($x_i + y_i$) va har bir komponentni $\\lambda$ songa ko‘paytirish ($\\lambda x_i$) orqali aniqlanadi",
+                "Komponentlarni o‘zaro ko‘paytirib bitta songa keltirish orqali aniqlanadi",
+                "Faqat birinchi komponentga $\\lambda$ ni ko‘paytirish orqali aniqlanadi",
+                "Vektorlarni transponirlab determinant hisoblash orqali aniqlanadi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (6-slayd): $X+Y = (2-1, 5+5, 3+6, -4+7)^T = (1, 10, 9, 3)^T$; $5X = (10, 25, 15, -20)^T$."
+            "exp": "7-ma’ruza (4-5-slaydlar): $n$ o‘lchovli vektorlar ustida qo‘shish va songa ko‘paytirish amallari xuddi matritsalardagi kabi komponentma-komponent bajariladi."
         },
         {
-            "q": "Ikkita $n$ o‘lchovli $X$ va $Y$ vektorlarning skalyar ko‘paytmasi $(X, Y)$ qaysi formula bilan aniqlanadi?",
+            "q": "Vektorlar ustida chiziqli amallarning 8 ta asosiy xossasi (7-slayd) qaysi javobda to‘g‘ri ifodalangan?",
             "opts": [
-                "$(X, Y) = X^T Y = x_1 y_1 + x_2 y_2 + \\dots + x_n y_n$",
-                "$(X, Y) = (x_1 y_1,\\; x_2 y_2,\\; \\dots,\\; x_n y_n)^T$",
-                "$(X, Y) = (x_1 + y_1)(x_2 + y_2)\\dots(x_n + y_n)$",
-                "$(X, Y) = \\sqrt{x_1^2 + y_1^2}$"
+                "$1^\\circ.\\;X+Y=Y+X;\\quad 2^\\circ.\\;X+(Y+Z)=(X+Y)+Z;\\quad 3^\\circ.\\;X+\\Theta=X;\\quad 4^\\circ.\\;X+(-X)=\\Theta;\\quad 5^\\circ.\\;1\\cdot X=X;\\quad 6^\\circ.\\;(\\alpha+\\beta)X=\\alpha X+\\beta X;\\quad 7^\\circ.\\;\\alpha(X+Y)=\\alpha X+\\alpha Y;\\quad 8^\\circ.\\;\\alpha(\\beta X)=(\\alpha\\beta)X$",
+                "$1^\\circ.\\;X+Y=X-Y;\\quad 2^\\circ.\\;X+\\Theta=\\Theta;\\quad 3^\\circ.\\;1\\cdot X=\\Theta$",
+                "Vektorlar ustida qo‘shish amali kommutativ emas ($X+Y \\ne Y+X$)",
+                "Skalyar songa ko‘paytirishda $\\alpha(X+Y) = \\alpha X + Y$ bo‘ladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (8-slayd): $(X, Y) = X^T Y = Y^T X = x_1y_1 + x_2y_2 + \\dots + x_ny_n$ — mos koordinatalar ko‘paytmalarining yig‘indisiga teng son."
+            "exp": "7-ma’ruza (7-slayd): Ushbu 8 ta xossa chiziqli (vektor) fazo aksiomalarining asosini tashkil etadi."
         },
         {
-            "q": "Ma’ruzadagi 10-slayd misoli: $X = (2,\\; 5,\\; 3,\\; -4)^T$ va $Y = (-1,\\; 5,\\; 6,\\; 7)^T$ vektorlarning skalyar ko‘paytmasi $(X, Y)$ ni hisoblang.",
+            "q": "Ikkita bir xil o‘lchovli $X = (x_1, \\dots, x_n)^T$ va $Y = (y_1, \\dots, y_n)^T$ vektorlarning «skalyar ko‘paytmasi» $(X, Y)$ deb nimaga aytiladi (8-slayd)?",
             "opts": [
-                "$13$",
-                "$69$",
-                "$-13$",
-                "$17$"
+                "Shu vektorlar mos koordinatalari ko‘paytmalarining yig‘indisiga teng songa: $(X, Y) = x_1 y_1 + x_2 y_2 + \\dots + x_n y_n = X^T Y = Y^T X$",
+                "Mos koordinatalar ko‘paytmasidan tuzilgan yangi vektorga: $(x_1 y_1, \\dots, x_n y_n)^T$",
+                "Vektorlar uzunliklari yig‘indisiga: $|X| + |Y|$",
+                "3-tartibli determinantga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (10-slayd): $(X, Y) = 2(-1) + 5(5) + 3(6) + (-4)(7) = -2 + 25 + 18 - 28 = 13$."
+            "exp": "7-ma’ruza (8-slayd, Ta’rif): Ikkita bir xil o‘lchovli vektorlarning skalyar ko‘paytmasi deb mos koordinatalari ko‘paytmalari yig‘indisiga teng songa aytiladi."
         },
         {
-            "q": "$n$ o‘lchovli $X = (x_1, x_2, \\dots, x_n)^T$ vektorning uzunligi (moduli, normasi) $|X|$ va ikki vektor orasidagi burchak kosinusi $\\cos\\varphi$ formulalarini ko‘rsating.",
+            "q": "Vektorlarning skalyar ko‘paytmasi qanday 5 ta asosiy xossaga ega (11-slayd)?",
             "opts": [
-                "$|X| = \\sqrt{(X,X)} = \\sqrt{x_1^2 + x_2^2 + \\dots + x_n^2};\\qquad \\cos\\varphi = \\frac{(X, Y)}{|X| \\cdot |Y|}$",
-                "$|X| = x_1 + x_2 + \\dots + x_n;\\qquad \\cos\\varphi = (X, Y) \\cdot |X| \\cdot |Y|$",
-                "$|X| = x_1^2 + x_2^2 + \\dots + x_n^2;\\qquad \\cos\\varphi = \\frac{|X| + |Y|}{(X, Y)}$",
-                "$|X| = \\sqrt{|x_1| + |x_2| + \\dots + |x_n|};\\qquad \\cos\\varphi = \\frac{|X|}{|Y|}$"
+                "$1^\\circ.\\;(X,X) \\ge 0;\\quad 2^\\circ.\\;(X,X) = 0 \\iff X = \\Theta;\\quad 3^\\circ.\\;(X,Y) = (Y,X);\\quad 4^\\circ.\\;(X, Y+Z) = (X,Y)+(X,Z);\\quad 5^\\circ.\\;(\\lambda X, Y) = \\lambda(X,Y)$",
+                "$1^\\circ.\\;(X,X) < 0;\\quad 2^\\circ.\\;(X,Y) = -(Y,X);\\quad 3^\\circ.\\;(\\lambda X, Y) = \\lambda^2 (X,Y)$",
+                "Skalyar ko‘paytma natijasi har doim vektor bo‘ladi",
+                "$(X,X) = 0$ tenglik har qanday birlik vektor uchun o‘rinli"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (16, 18-slaydlar): $|X| = \\sqrt{(X,X)}$ va $\\cos\\varphi = \\frac{(X,Y)}{|X|\\cdot|Y|},\\; \\varphi \\in [0; \\pi]$."
+            "exp": "7-ma’ruza (11-slayd): Vektorlarning skalyar ko‘paytmasi nomanfiylik, aniqlanganlik, simmetriklik (kommutativlik) va chiziqlilik xossalariga ega."
         },
         {
-            "q": "4 o‘lchovli $X = (2,\\; -3,\\; 6,\\; 0)^T$ va $Y = (1,\\; 2,\\; 2,\\; -4)^T$ vektorlarning uzunliklari $|X|$ va $|Y|$ ni hisoblang.",
+            "q": "Ikki vektorning «vektor ko‘paytmasi» $[\\vec{a} \\times \\vec{b}]$ qanday formula orqali aniqlanadi (12-slayd)?",
             "opts": [
-                "$|X| = 7,\\quad |Y| = 5$",
-                "$|X| = 49,\\quad |Y| = 25$",
-                "$|X| = 5,\\quad |Y| = 7$",
-                "$|X| = \\sqrt{41},\\quad |Y| = 3$"
+                "$[\\vec{a} \\times \\vec{b}] = \\begin{vmatrix} \\vec{i} & \\vec{j} & \\vec{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix}$ 3-tartibli simvolik determinant orqali aniqlanuvchi vektor",
+                "$a_1 b_1 + a_2 b_2 + a_3 b_3$ skalyar yig‘indi orqali",
+                "$(\\vec{a} + \\vec{b}) / 2$ o‘rta arifmetik vektor orqali",
+                "2-tartibli determinant orqali aniqlanuvchi son"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "$|X| = \\sqrt{2^2 + (-3)^2 + 6^2 + 0^2} = \\sqrt{4 + 9 + 36} = \\sqrt{49} = 7$. $|Y| = \\sqrt{1^2 + 2^2 + 2^2 + (-4)^2} = \\sqrt{1 + 4 + 4 + 16} = \\sqrt{25} = 5$."
+            "exp": "7-ma’ruza (12-slayd): Ikki vektorning vektor ko‘paytmasi 1-satrida $\\vec{i}, \\vec{j}, \\vec{k}$ birlik ortlar turgan 3-tartibli determinant orqali hisoblanadi."
         },
         {
-            "q": "$\\mathbb{R}^n$ fazoda ixtiyoriy $X$ va $Y$ vektorlar uchun o‘rinli bo‘lgan $|(X, Y)| \\le |X| \\cdot |Y|$ va $|X + Y| \\le |X| + |Y|$ tengsizliklar qanday nomlanadi?",
+            "q": "Uchta $\\vec{a}, \\vec{b}, \\vec{c}$ vektorning «aralash ko‘paytmasi» $([\\vec{a} \\times \\vec{b}] \\cdot \\vec{c})$ qanday aniqlanadi (13-slayd)?",
             "opts": [
-                "Birinchisi — Koshi-Bunyakovskiy tengsizligi; ikkinchisi — uchburchak tengsizligi",
-                "Birinchisi — Laplas tengsizligi; ikkinchisi — Kramer tengsizligi",
-                "Birinchisi — Veyyershtrass tengsizligi; ikkinchisi — Pifagor tengsizligi",
-                "Ikkalasi ham Gramm-Shmidt tengsizligi deyiladi"
+                "Satrlari shu uchta vektorning koordinatalaridan tuzilgan $\\begin{vmatrix} a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\\\ c_1 & c_2 & c_3 \\end{vmatrix}$ 3-tartibli determinantga teng son",
+                "Uchta vektor uzunliklarining yig‘indisiga teng son",
+                "1-satrida $\\vec{i}, \\vec{j}, \\vec{k}$ turgan 3-tartibli determinantga teng vektor",
+                "Har bir koordinatalar ko‘paytmasi $a_1 b_1 c_1 + a_2 b_2 c_2 + a_3 b_3 c_3$"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (17, 20-slaydlar): $|X+Y| \\le |X|+|Y|$ — uchburchak tengsizligi; $|(X,Y)| \\le |X|\\cdot|Y|$ — Koshi-Bunyakovskiy tengsizligi."
+            "exp": "7-ma’ruza (13-slayd): Uchta vektorning aralash ko‘paytmasi ularning koordinatalaridan tuzilgan 3-tartibli determinantga teng."
         },
         {
-            "q": "Fazodagi ikki $\\vec{a} = (a_1, a_2, a_3)$ va $\\vec{b} = (b_1, b_2, b_3)$ vektorlarning vektor ko‘paytmasi $[\\vec{a} \\times \\vec{b}]$ ning moduli qanday geometrik ma’noni bildiradi?",
+            "q": "Vektorlarning skalyar va vektor ko‘paytmalarining geometrik ma’nolari: vektor proyeksiyasi $\\text{Pr}_{\\vec{a}}(\\vec{b})$ va ikki vektordan yasalgan parallelogramm yuzi $S$ qaysi formulalar bilan topiladi (14-slayd)?",
             "opts": [
-                "$\\vec{a}$ va $\\vec{b}$ vektorlardan yasalgan parallelogrammning yuzini: $S = |[\\vec{a} \\times \\vec{b}]| = |\\vec{a}|\\cdot|\\vec{b}|\\sin\\varphi$",
-                "$\\vec{a}$ va $\\vec{b}$ vektorlardan yasalgan parallelepiped hajmini",
-                "Ikki vektor orasidagi burchak kosinusini",
-                "Vektorlar yig‘indisining uzunligini"
+                "$\\text{Pr}_{\\vec{a}}(\\vec{b}) = |\\vec{b}| \\cos\\varphi;\\qquad S = |[\\vec{a} \\times \\vec{b}]| = |\\vec{a}| \\cdot |\\vec{b}| \\sin\\varphi$",
+                "$\\text{Pr}_{\\vec{a}}(\\vec{b}) = |\\vec{a}| \\sin\\varphi;\\qquad S = (\\vec{a}, \\vec{b})$",
+                "$\\text{Pr}_{\\vec{a}}(\\vec{b}) = |[\\vec{a} \\times \\vec{b}]|;\\qquad S = |\\vec{a}| + |\\vec{b}|$",
+                "$\\text{Pr}_{\\vec{a}}(\\vec{b}) = |\\vec{b}| / |\\vec{a}|;\\qquad S = |\\vec{a}| \\cdot |\\vec{b}| \\cos\\varphi$"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (12, 14-slaydlar): Parallelogrammning yuzi vektor ko‘paytmaning moduliga teng: $S = |[\\vec{a} \\times \\vec{b}]|$."
+            "exp": "7-ma’ruza (14-slayd): $\\text{Pr}_{\\vec{a}}(\\vec{b}) = |\\vec{b}|\\cos\\varphi$, parallelogramm yuzi esa vektor ko‘paytmaning moduliga teng: $S = |[\\vec{a} \\times \\vec{b}]| = |\\vec{a}|\\cdot|\\vec{b}|\\sin\\varphi$."
         },
         {
-            "q": "$\\vec{a} = (1,\\; 2,\\; -1)$ va $\\vec{b} = (2,\\; 0,\\; 1)$ vektorlarning vektor ko‘paytmasi $[\\vec{a} \\times \\vec{b}]$ ni va ulardan yasalgan parallelogramm yuzini toping.",
+            "q": "Uchta vektordan yasalgan parallelepiped hajmi $V_{\\text{par}}$ nimaga teng va qachon bu uchta vektor «komplanar» (bir tekislikda yotuvchi) bo‘ladi (15-slayd)?",
             "opts": [
-                "$[\\vec{a} \\times \\vec{b}] = (2,\\; -3,\\; -4);\\quad S = \\sqrt{29}$",
-                "$[\\vec{a} \\times \\vec{b}] = (2,\\; 3,\\; -4);\\quad S = \\sqrt{29}$",
-                "$[\\vec{a} \\times \\vec{b}] = (-2,\\; 3,\\; 4);\\quad S = 9$",
-                "$[\\vec{a} \\times \\vec{b}] = (0,\\; -3,\\; -4);\\quad S = 5$"
+                "$V_{\\text{par}} = |([\\vec{a} \\times \\vec{b}] \\cdot \\vec{c})|$ (aralash ko‘paytma moduliga teng); agar aralash ko‘paytma $0$ ga teng bo‘lsa, vektorlar komplanar bo‘ladi",
+                "$V_{\\text{par}} = |[\\vec{a} \\times \\vec{b}]|$; agar skalyar ko‘paytma $0$ ga teng bo‘lsa, komplanar bo‘ladi",
+                "$V_{\\text{par}} = |\\vec{a}| + |\\vec{b}| + |\\vec{c}|$; agar uzunliklari teng bo‘lsa, komplanar bo‘ladi",
+                "$V_{\\text{par}} = (\\vec{a}, \\vec{b}) \\cdot |\\vec{c}|$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (15-slayd): Uchta vektorning aralash ko‘paytmasi moduli parallelepiped hajmiga teng; aralash ko‘paytma nolga teng bo‘lsa, vektorlar komplanar (bir tekislikda yotuvchi) bo‘ladi."
+        },
+        {
+            "q": "$n$ o‘lchovli $X$ vektorning «uzunligi» (moduli, normasi) $|X|$ ta’rifi va formulasi qanday (16-slayd)?",
+            "opts": [
+                "Vektor komponentlari kvadratlari yig‘indisining kvadrat ildiziga teng songa aytiladi: $|X| = \\sqrt{(X,X)} = \\sqrt{x_1^2 + x_2^2 + \\dots + x_n^2}$",
+                "Vektor komponentlari yig‘indisiga teng songa aytiladi: $|X| = x_1 + x_2 + \\dots + x_n$",
+                "Vektor komponentlari kvadratlari yig‘indisiga (ildizsiz) aytiladi: $|X| = (X,X)$",
+                "Vektorning eng katta komponentiga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (16-slayd, Ta’rif): $|X| = \\sqrt{(X,X)} = \\sqrt{x_1^2 + x_2^2 + \\dots + x_n^2}$ songa $n$ o‘lchovli $X$ vektor uzunligi (moduli, normasi) deyiladi."
+        },
+        {
+            "q": "Vektorlarning uzunligi qanday 3 ta asosiy xossaga ega (17-slayd)?",
+            "opts": [
+                "$1^\\circ.\\;|X| \\ge 0;\\qquad 2^\\circ.\\;|\\lambda X| = |\\lambda| \\cdot |X|;\\qquad 3^\\circ.\\;|X + Y| \\le |X| + |Y|$ (uchburchak tengsizligi)",
+                "$1^\\circ.\\;|X| < 0;\\qquad 2^\\circ.\\;|\\lambda X| = \\lambda |X|;\\qquad 3^\\circ.\\;|X + Y| = |X| + |Y|$",
+                "$1^\\circ.\\;|X| = 1;\\qquad 2^\\circ.\\;|\\lambda X| = \\lambda^2 |X|;\\qquad 3^\\circ.\\;|X + Y| \\ge |X| + |Y|$",
+                "$|X \\cdot Y| = |X| + |Y|$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (17-slayd): Vektor uzunligi nomanfiylik, bir jinslilik ($|\\lambda X| = |\\lambda|\\cdot|X|$) va uchburchak tengsizligi ($|X+Y| \\le |X|+|Y|$) xossalariga ega."
+        },
+        {
+            "q": "Ikkita $n$ o‘lchovli noldan farqli $X$ va $Y$ vektorlar orasidagi burchak $\\varphi \\in [0; \\pi]$ qaysi formula bilan aniqlanadi (18-slayd)?",
+            "opts": [
+                "$\\cos\\varphi = \\frac{(X, Y)}{|X| \\cdot |Y|} = \\frac{\\sum_{i=1}^n x_i y_i}{\\sqrt{\\sum_{i=1}^n x_i^2} \\cdot \\sqrt{\\sum_{i=1}^n y_i^2}}$",
+                "$\\sin\\varphi = \\frac{(X, Y)}{|X| \\cdot |Y|}$",
+                "$\\cos\\varphi = (X, Y) \\cdot |X| \\cdot |Y|$",
+                "$\\text{tg}\\,\\varphi = \\frac{|X|}{|Y|}$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (18-slayd, Ta’rif): Ikki vektor orasidagi burchak kosinusi ularning skalyar ko‘paytmasini uzunliklari ko‘paytmasiga bo‘lish orqali topiladi."
+        },
+        {
+            "q": "«$n$ o‘lchovli arifmetik vektor fazo» deb nimaga aytiladi va haqiqiy hamda kompleks arifmetik vektor fazolar qanday belgilanadi (19-slayd)?",
+            "opts": [
+                "Barcha $n$ o‘lchovli vektorlar to‘plami chiziqli amallar (qo‘shish va songa ko‘paytirish) bilan birgalikda $n$ o‘lchovli arifmetik vektor fazo deyiladi; haqiqiysi $\\mathbb{R}^n$, kompleksi $\\mathbb{C}^n$ deb belgilanadi",
+                "Faqat $3$ ta vektordan iborat to‘plamga arifmetik fazo deyiladi",
+                "Komponentlari faqat butun sonlar bo‘lgan fazoga $\\mathbb{R}^n$ deyiladi",
+                "Chiziqli amallar kiritilmagan sonlar to‘plamiga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (19-slayd, Ta’rif): Komponentlari haqiqiy sonlardan iborat bo‘lsa haqiqiy arifmetik vektor fazo ($\\mathbb{R}^n$), kompleks sonlardan iborat bo‘lsa kompleks arifmetik vektor fazo ($\\mathbb{C}^n$) deyiladi."
+        },
+        {
+            "q": "**Koshi-Bunyakovskiy tengsizligi** haqidagi Teorema (20-slayd) qaysi javobda to‘g‘ri berilgan?",
+            "opts": [
+                "$\\mathbb{R}^n$ arifmetik fazodan olingan ixtiyoriy $X$ va $Y$ vektorlar uchun $|(X, Y)| \\le |X| \\cdot |Y|$ yoki $\\left|\\sum_{i=1}^n x_i y_i\\right| \\le \\sqrt{\\sum_{i=1}^n x_i^2} \\cdot \\sqrt{\\sum_{i=1}^n y_i^2}$ tengsizlik o‘rinli",
+                "$|(X, Y)| \\ge |X| \\cdot |Y|$ tengsizlik o‘rinli",
+                "$|(X, Y)| = |X| + |Y|$ tenglik o‘rinli",
+                "$|X - Y| \\ge |X| + |Y|$ tengsizlik o‘rinli"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (20-slayd, Teorema): $|(X, Y)| \\le |X| \\cdot |Y|$ — Koshi-Bunyakovskiy tengsizligi."
+        },
+        {
+            "q": "Umumiy «chiziqli (yoki vektor) fazo» $L$ ta’rifi (21-22-slaydlar) qanday?",
+            "opts": [
+                "Elementlari ixtiyoriy tabiatli bo‘lgan $L$ to‘plamda qo‘shish ($x+y \\in L$) va songa ko‘paytirish ($\\lambda x \\in L$) amallari kiritilgan bo‘lib, bu amallar 8 ta chiziqli fazo aksiomasini qanoatlantirsa, $L$ to‘plam chiziqli fazo deyiladi",
+                "Elementlari faqat geometrik yo‘nalishli kesmalardan iborat bo‘lgan to‘plamga aytiladi",
+                "Hech qanday aksioma bajarilishi talab etilmaydigan ixtiyoriy sonlar to‘plamiga aytiladi",
+                "Faqat ko‘paytirish va bo‘lish amallari kiritilgan to‘plamga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (21-22-slaydlar): $L$ to‘plamda yig‘indi va skalyar songa ko‘paytma aniqlangan bo‘lib, 8 ta aksioma bajarilsa, $L$ chiziqli fazo (haqiqiy yoki kompleks) deyiladi."
+        },
+        {
+            "q": "Chiziqli fazoning 5 ta xossasi (23-slayd) qaysi javobda to‘liq va to‘g‘ri berilgan?",
+            "opts": [
+                "1) Yagona nol vektor $\\Theta$ mavjud; 2) Har bir vektorga yagona qarama-qarshi $-X$ vektor mavjud; 3) $0 \\cdot X = \\Theta$; 4) $\\lambda \\cdot \\Theta = \\Theta$; 5) $\\lambda \\cdot X = \\Theta \\implies \\lambda = 0$ yoki $X = \\Theta$",
+                "1) Nol vektor bir nechta bo‘ladi; 2) $0 \\cdot X = X$; 3) $\\lambda \\cdot \\Theta = \\lambda$",
+                "1) Qarama-qarshi vektor mavjud emas; 2) $\\lambda \\cdot X = \\Theta$ faqat $\\lambda = 1$ da bajariladi",
+                "Chiziqli fazoda nol vektor bo‘lishi shart emas"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (23-slayd): Ushbu 5 ta xossa chiziqli fazoning 8 ta aksiomasidan mantiqan kelib chiqadi."
+        },
+        {
+            "q": "Chiziqli fazodagi $x_1, x_2, \\dots, x_n$ elementlar qachon «chiziqli bog‘liq» va qachon «chiziqli erkli» deyiladi (24-slayd)?",
+            "opts": [
+                "$\\lambda_1 x_1 + \\lambda_2 x_2 + \\dots + \\lambda_n x_n = \\Theta$ tenglik $\\lambda_i$ koeffitsiyentlardan kamida bittasi noldan farqli bo‘lganda bajarilsa — chiziqli bog‘liq; faqat barcha $\\lambda_1 = \\lambda_2 = \\dots = \\lambda_n = 0$ bo‘lgandagina bajarilsa — chiziqli erkli deyiladi",
+                "Barcha $\\lambda_i = 0$ da bajarilsa — chiziqli bog‘liq; noldan farqli $\\lambda_i$ larda bajarilsa — chiziqli erkli deyiladi",
+                "Elementlar yig‘indisi $1$ ga teng bo‘lsa — chiziqli erkli deyiladi",
+                "Elementlar juft-juft kollinear bo‘lsa — chiziqli erkli deyiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (24-slayd): Trivial bo‘lmagan kombinatsiyada $\\Theta$ hosil bo‘lsa chiziqli bog‘liq, faqat trivial ($\\lambda_i=0$) kombinatsiyada $\\Theta$ hosil bo‘lsa chiziqli erkli deyiladi."
+        },
+        {
+            "q": "$n$ o‘lchovli $L$ chiziqli fazoning «bazisi» va elementning «bazis bo‘yicha yoyilmasi» deb nimaga aytiladi (27-slayd)?",
+            "opts": [
+                "$L$ fazodagi har qanday $n$ ta chiziqli erkli vektorlar sistemasiga fazoning bazisi ($e_1, \\dots, e_n$) deyiladi; $x = \\mu_1 e_1 + \\mu_2 e_2 + \\dots + \\mu_n e_n$ tenglik esa $x$ elementning bazis bo‘yicha yoyilmasi deyiladi",
+                "$L$ fazodagi har qanday chiziqli bog‘liq vektorlar to‘plamiga bazis deyiladi",
+                "Faqat bitta nol vektordan iborat to‘plamga bazis deyiladi",
+                "$x = e_1 \\cdot e_2 \\cdot \\dots \\cdot e_n$ ko‘paytmaga bazis bo‘yicha yoyilma deyiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (27-slayd, Ta’riflar): $n$ o‘lchovli chiziqli fazoda har qanday $n$ ta chiziqli erkli vektorlar sistemasi bazis deyiladi."
+        },
+        {
+            "q": "Barcha 2-tartibli ($2 \\times 2$) matritsalar chiziqli fazosi $M^2$ ning standart bazisi nechta matritsadan iborat va bu fazoning o‘lchami nechaga teng (25-26-slaydlar)?",
+            "opts": [
+                "$e_1, e_2, e_3, e_4$ — $4$ ta bazis matritsadan iborat bo‘lib, $M^2$ fazo $4$ o‘lchovlidir",
+                "$2$ ta bazis matritsadan iborat bo‘lib, $2$ o‘lchovlidir",
+                "$1$ ta birlik matritsadan iborat bo‘lib, $1$ o‘lchovlidir",
+                "$8$ ta matritsadan iborat bo‘lib, $8$ o‘lchovlidir"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (26-slayd): Har bir $2 \\times 2$ matritsa $a_{11}e_1 + a_{12}e_2 + a_{21}e_3 + a_{22}e_4$ ko‘rinishda yoziladi va $e_1, e_2, e_3, e_4$ chiziqli erkli bo‘lgani uchun fazo $4$ o‘lchovli."
+        },
+        {
+            "q": "$L$ chiziqli fazoning $V$ qism to‘plami qachon $L$ fazoning «chiziqli qism fazosi» deyiladi (28-slayd)?",
+            "opts": [
+                "$V$ qism to‘plam ham $L$ da aniqlangan elementlarni qo‘shish ($x+y \\in V$) va songa ko‘paytirish ($\\lambda x \\in V$) amallariga nisbatan chiziqli fazo tashkil qilsa",
+                "$V$ qism to‘plamda nol vektor qatnashmasa",
+                "$V$ qism to‘plam faqat bitta nolmas elementdan iborat bo‘lsa",
+                "$V$ qism to‘plam chiziqli amallarga nisbatan yopiq bo‘lmasa"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (28-slayd): $L$ chiziqli fazoning $V$ qism to‘plami ham $L$ da aniqlangan qo‘shish va songa ko‘paytirish amallariga nisbatan chiziqli fazo tashkil qilsa, $V$ ga chiziqli qism fazo deyiladi."
+        },
+        {
+            "q": "Nima uchun $\\mathbb{R}^4$ fazoda $V_1 = \\{(x_1,x_2,x_3,x_4) : x_1 - 2x_3 = 0\\}$ to‘plam chiziqli qism fazo bo‘ladi, ammo $V_2 = \\{(x_1,x_2,x_3,x_4) : x_1 - 2x_3 = 1\\}$ to‘plam chiziqli qism fazo BO‘LA OLMAYDI (28-slayd)?",
+            "opts": [
+                "Chunki $V_1$ bir jinsli tenglama bilan berilgan bo‘lib, $\\Theta \\in V_1$, $x+y \\in V_1$ va $\\lambda x \\in V_1$ shartlarni qanoatlantiradi; $V_2$ da esa nol vektor yotmaydi va ikki element yig‘indisida $x_1+y_1 - 2(x_3+y_3) = 2 \\ne 1$ bo‘lib yopiqlik buziladi",
+                "Chunki $V_2$ da manfiy sonlar qatnashgan",
+                "Ikkalasi ham chiziqli qism fazo bo‘ladi",
+                "Hech biri chiziqli qism fazo bo‘la olmaydi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$[\\vec{a}\\times\\vec{b}] = \\begin{vmatrix} \\vec{i} & \\vec{j} & \\vec{k} \\\\ 1 & 2 & -1 \\\\ 2 & 0 & 1 \\end{vmatrix} = \\vec{i}(2-0) - \\vec{j}(1+2) + \\vec{k}(0-4) = (2, -3, -4)$. Yuzi: $S = \\sqrt{4 + 9 + 16} = \\sqrt{29}$."
+            "exp": "7-ma’ruza (28-slayd): Faqat bir jinsli chiziqli munosabatlar bilan berilgan to‘plamlar yig‘indi va songa ko‘paytirishga nisbatan yopiq bo‘lib, chiziqli qism fazo tashkil qiladi."
         },
         {
-            "q": "Uchta $\\vec{a}, \\vec{b}, \\vec{c}$ vektorning aralash ko‘paytmasi $([\\vec{a} \\times \\vec{b}] \\cdot \\vec{c})$ qanday geometrik ma’noga ega va u $0$ ga teng bo‘lsa vektorlar qanday ataladi?",
+            "q": "Bir bazisdan ($\\vec{e}_1, \\vec{e}_2, \\vec{e}_3$) ikkinchi bazisga ($\\vec{e}_1', \\vec{e}_2', \\vec{e}_3'$) o‘tishda «o‘tish matritsasi» $P$ qanday tuziladi (33-34-slaydlar)?",
             "opts": [
-                "Moduli shu vektorlardan yasalgan parallelepiped hajmiga teng ($V_{\\text{par}}$); agar $0$ ga teng bo‘lsa, vektorlar komplanar (bir tekislikda yotuvchi) bo‘ladi",
-                "Moduli uchburchak perimetriga teng; agar $0$ ga teng bo‘lsa, vektorlar o‘zaro perpendikulyar bo‘ladi",
-                "Moduli sfera hajmiga teng; agar $0$ ga teng bo‘lsa, vektorlar birlik vektor bo‘ladi",
-                "Faqat skalyar proyeksiya uzunligini ifodalaydi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "7-ma’ruza (13, 15-slaydlar): $V_{\\text{par}} = |([\\vec{a}\\times\\vec{b}]\\cdot\\vec{c})|$. Agar aralash ko‘paytma nolga teng bo‘lsa, bu vektorlar komplanar (bir tekislikda yotuvchi) bo‘ladi."
-        },
-        {
-            "q": "$\\vec{a} = (1,\\; 0,\\; 2)$, $\\vec{b} = (0,\\; 3,\\; 1)$ va $\\vec{c} = (2,\\; 1,\\; 5)$ vektorlardan yasalgan parallelepipedning hajmini toping.",
-            "opts": [
-                "$V = 4$",
-                "$V = 15$",
-                "$V = 3$",
-                "$V = 0$ (komplanar)"
+                "Yangi bazis vektorlarining ($\\vec{e}_1', \\vec{e}_2', \\vec{e}_3'$) eski bazis bo‘yicha yoyilma koordinatalari mos ravishda $P$ matritsaning ustunlari qilib yoziladi",
+                "Eski bazis vektorlari $P$ matritsaning satrlariga yoziladi",
+                "Vektorning o‘z koordinatalari bosh diagonalga yoziladi",
+                "O‘tish matritsasi har doim birlik matritsa $E$ ga teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "Aralash ko‘paytma: $\\begin{vmatrix} 1 & 0 & 2 \\\\ 0 & 3 & 1 \\\\ 2 & 1 & 5 \\end{vmatrix} = 1(15-1) - 0 + 2(0-6) = 14 - 12 = 2$... Diqqat: $14 - 12 = 2$! Demak $V = 2$."
+            "exp": "7-ma’ruza (33-34-slaydlar): $\\vec{e}_1', \\vec{e}_2', \\vec{e}_3'$ vektorlarning eski bazisdagi ustun-vektorlari ketma-ket qo‘yilib $P$ o‘tish matritsasi hosil qilinadi."
         },
         {
-            "q": "$\\vec{a} = (3,\\; 4,\\; 0)$ va $\\vec{b} = (2,\\; 1,\\; -2)$ vektorlar berilgan. $\\vec{b}$ vektorning $\\vec{a}$ vektor yo‘nalishidagi proyeksiyasi $\\text{Pr}_{\\vec{a}}(\\vec{b})$ ni toping.",
-            "opts": [
-                "$2$",
-                "$\\frac{10}{3}$",
-                "$5$",
-                "$\\frac{2}{5}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "7-ma’ruza (14-slayd): $\\text{Pr}_{\\vec{a}}(\\vec{b}) = |\\vec{b}|\\cos\\varphi = \\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{a}|} = \\frac{3\\cdot 2 + 4\\cdot 1 + 0\\cdot(-2)}{\\sqrt{3^2+4^2+0^2}} = \\frac{10}{5} = 2$."
-        },
-        {
-            "q": "Chiziqli fazoning 5 ta asosiy xossasiga (23-slayd) ko‘ra quyidagi tasdiqlardan qaysi biri TO‘G‘RI?",
-            "opts": [
-                "Har qanday chiziqli fazoda yagona nol vektor $\\Theta$ mavjud; $0 \\cdot X = \\Theta$; $\\lambda \\cdot \\Theta = \\Theta$; va $\\lambda X = \\Theta \\implies \\lambda = 0$ yoki $X = \\Theta$",
-                "Chiziqli fazoda nol vektor bir nechta bo‘lishi mumkin",
-                "$\\lambda X = \\Theta$ bo‘lsa, har doim faqat $\\lambda = 1$ bo‘ladi",
-                "Qarama-qarshi vektor faqat musbat vektorlar uchun mavjud"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "7-ma’ruza (23-slayd): Chiziqli fazoning 1–5-xossalarida aynan shu 5 ta tasdiq keltirilgan."
-        },
-        {
-            "q": "Ma’ruzadagi 25-26-slaydlar misoli: Barcha $2 \\times 2$ o‘lchamli haqiqiy matritsalar to‘plami $M^2$ chiziqli fazo tashkil qiladimi va uning o‘lchami (bazis matritsalari soni) nechaga teng?",
-            "opts": [
-                "Ha, chiziqli fazo tashkil qiladi va uning o‘lchami $4$ ga teng ($e_1, e_2, e_3, e_4$ bazis matritsalar)",
-                "Ha, chiziqli fazo tashkil qiladi va uning o‘lchami $2$ ga teng",
-                "Yo‘q, matritsalar to‘plami chiziqli fazo bo‘la olmaydi",
-                "Ha, o‘lchami cheksizga teng"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "7-ma’ruza (25-26-slaydlar): $M^2$ chiziqli fazo tashkil qiladi, uning kanonik bazisi $e_1=\\left(\\begin{smallmatrix}1&0\\\\0&0\\end{smallmatrix}\\right), e_2=\\left(\\begin{smallmatrix}0&1\\\\0&0\\end{smallmatrix}\\right), e_3=\\left(\\begin{smallmatrix}0&0\\\\1&0\\end{smallmatrix}\\right), e_4=\\left(\\begin{smallmatrix}0&0\\\\0&1\\end{smallmatrix}\\right)$ bo‘lib, fazo $4$ o‘lchovlidir."
-        },
-        {
-            "q": "Ma’ruzadagi 28-slayd misoli: Quyidagi to‘plamlardan qaysi biri $\\mathbb{R}^4$ chiziqli fazoning «chiziqli qism fazosi»ni tashkil qiladi?",
-            "opts": [
-                "$V = \\{(x_1, x_2, x_3, x_4) \\in \\mathbb{R}^4 : x_1 - 2x_3 = 0\\}$",
-                "$V = \\{(x_1, x_2, x_3, x_4) \\in \\mathbb{R}^4 : x_1 - 2x_3 = 5\\}$",
-                "$V = \\{(x_1, x_2, x_3, x_4) \\in \\mathbb{R}^4 : x_1^2 + x_2 = 0\\}$",
-                "$V = \\{(x_1, x_2, x_3, x_4) \\in \\mathbb{R}^4 : x_1 \\ge 1\\}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "7-ma’ruza (28-slayd): $x_1 - 2x_3 = 0 \\implies x_1 = 2x_3$ bo‘lib, $x+y \\in V$ va $\\lambda x \\in V$ shartlari bajariladi. Qolgan to‘plamlar yig‘indi va songa ko‘paytirishga nisbatan yopiq emas (hatto nol vektorni saqlamaydi)."
-        },
-        {
-            "q": "$n$ o‘lchovli $L$ chiziqli fazoda «fazoning bazisi» deb nimaga aytiladi va $x = \\mu_1 e_1 + \\mu_2 e_2 + \\dots + \\mu_n e_n$ tenglik nima deyiladi?",
-            "opts": [
-                "Har qanday $n$ ta chiziqli erkli vektorlar sistemasiga fazoning bazisi deyiladi; tenglik esa $x$ elementning bazis bo‘yicha yoyilmasi deyiladi",
-                "Har qanday $n+1$ ta chiziqli bog‘liq vektorlar sistemasiga bazis deyiladi",
-                "Faqat nol vektordan iborat to‘plamga bazis deyiladi",
-                "Ixtiyoriy 2 ta vektor juftligiga bazis deyiladi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "7-ma’ruza (27-slayd): $n$ o‘lchovli $L$ chiziqli fazoda har qanday $n$ ta chiziqli erkli vektorlar sistemasi bu fazoning bazisi deyiladi; $x = \\sum \\mu_i e_i$ esa bazis bo‘yicha yoyilmasi deyiladi."
-        },
-        {
-            "q": "Bir bazisdan ($\\vec{e}_1, \\vec{e}_2, \\vec{e}_3$) boshqa bazisga ($\\vec{e}_1', \\vec{e}_2', \\vec{e}_3'$) o‘tish matritsasi $P$ berilgan bo‘lsa, vektorning yangi bazisdagi koordinatalari $\\vec{x}'$ va eski bazisdagi koordinatalari $\\vec{x}$ orasidagi bog‘lanish qanday?",
+            "q": "Eski bazisdan yangi bazisga o‘tish matritsasi $P$ bo‘lsa, vektorning yangi bazisdagi koordinatalari $\\vec{x}'$ qaysi formula bilan topiladi (34-slayd)?",
             "opts": [
                 "$P \\cdot \\vec{x}' = \\vec{x} \\implies \\vec{x}' = P^{-1} \\cdot \\vec{x}$",
                 "$\\vec{x}' = P \\cdot \\vec{x}$",
-                "$\\vec{x}' = P^T \\cdot \\vec{x}$",
-                "$\\vec{x}' = \\vec{x} + P$"
+                "$\\vec{x}' = \\vec{x} \\cdot P$",
+                "$\\vec{x}' = P^T + \\vec{x}$"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "7-ma’ruza (34-slayd): $P \\cdot \\vec{x}' = \\vec{x}$ va bundan $\\vec{x}' = P^{-1} \\cdot \\vec{x}$."
+            "exp": "7-ma’ruza (34-slayd): $P \\cdot \\vec{x}' = \\vec{x}$ tenglikdan $\\vec{x}' = P^{-1} \\cdot \\vec{x}$ kelib chiqadi."
         },
         {
-            "q": "Ma’ruzadagi 33-34-slaydlar misoli: $\\vec{x}(2;\\; -1;\\; 5)$ vektor $\\vec{e}_1, \\vec{e}_2, \\vec{e}_3$ bazisda berilgan. Yangi bazis $\\begin{cases} \\vec{e}_1' = \\vec{e}_1 \\\\ \\vec{e}_2' = \\vec{e}_1 + \\vec{e}_2 \\\\ \\vec{e}_3' = \\vec{e}_1 + \\vec{e}_3 \\end{cases}$ bo‘lsa, o‘tish matritsasi $P$ va uning teskarisi $P^{-1}$ ni toping.",
+            "q": "O‘tish matritsasi $P$ qanday zaruriy xossaga ega?",
             "opts": [
-                "$P = \\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix},\\qquad P^{-1} = \\begin{pmatrix} 1 & -1 & -1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$",
-                "$P = \\begin{pmatrix} 1 & 0 & 0 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{pmatrix},\\qquad P^{-1} = \\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$",
-                "$P = \\begin{pmatrix} 1 & -1 & -1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix},\\qquad P^{-1} = \\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$",
-                "$P = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix},\\qquad P^{-1} = E$"
+                "$P$ har doim xosmas ($\\det(P) \\ne 0$) kvadrat matritsa bo‘ladi, chunki uning ustunlari yangi bazisning chiziqli erkli vektorlaridan iborat",
+                "$P$ har doim xos ($\\det(P) = 0$) matritsa bo‘ladi",
+                "$P$ har doim simmetrik matritsa bo‘ladi",
+                "$P$ ning teskarisi mavjud emas"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "7-ma’ruza (34-slayd): Yangi bazis vektorlari ustun qilib yozilsa $P = \\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$ va uning teskarisi $P^{-1} = \\begin{pmatrix} 1 & -1 & -1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$."
+            "exp": "Yangi bazis vektorlari chiziqli erkli bo‘lgani uchun $r(P) = n \\iff \\det(P) \\ne 0$, shu sababli $P^{-1}$ har doim mavjud."
         },
         {
-            "q": "Ma’ruzadagi 33-34-slaydlar misoli: Yuqoridagi masalada $\\vec{x}(2;\\; -1;\\; 5)$ vektorning yangi $\\vec{e}_1', \\vec{e}_2', \\vec{e}_3'$ bazisdagi koordinatalari $\\vec{x}' = P^{-1}\\vec{x}$ ni toping.",
+            "q": "Koshi-Bunyakovskiy tengsizligi $|(X, Y)| \\le |X| \\cdot |Y|$ nima sababdan ikki $n$ o‘lchovli vektor orasidagi burchak $\\cos\\varphi = \\frac{(X,Y)}{|X|\\cdot|Y|}$ tushunchasini kiritishni qonuniy (asosli) qiladi?",
             "opts": [
-                "$\\vec{x}' = (-2;\\; -1;\\; 5)^T$",
-                "$\\vec{x}' = (6;\\; -1;\\; 5)^T$",
-                "$\\vec{x}' = (2;\\; 1;\\; -5)^T$",
-                "$\\vec{x}' = (-2;\\; 1;\\; 5)^T$"
+                "Chunki $|(X, Y)| \\le |X|\\cdot|Y|$ tengsizlikdan $-1 \\le \\frac{(X, Y)}{|X| \\cdot |Y|} \\le 1$ ekanligi kelib chiqadi, kosinus funksiyasi esa aynan $[-1; 1]$ kesmada qiymat qabul qiladi",
+                "Chunki Koshi-Bunyakovskiy tengsizligi burchakni radian o‘rniga gradusda o‘lchaydi",
+                "Chunki skalyar ko‘paytma har doim musbat bo‘ladi",
+                "Chunki uzunliklar har doim $1$ ga teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "7-ma’ruza (18, 20-slaydlar): $|(X,Y)| / (|X||Y|) \\le 1$ bo‘lgani uchungina $[0; \\pi]$ oraliqda $\\cos\\varphi$ burchagi yagona ravishda aniqlanadi!"
+        },
+        {
+            "q": "Koshi-Bunyakovskiy tengsizligida $|(X, Y)| = |X| \\cdot |Y|$ aniq tenglik holati qachon va faqat qachon bajariladi?",
+            "opts": [
+                "$X$ va $Y$ vektorlar kollinear (chiziqli bog‘liq, ya’ni $Y = \\lambda X$) bo‘lganda ($\\cos\\varphi = \\pm 1$)",
+                "$X$ va $Y$ vektorlar o‘zaro ortogonal bo‘lganda ($\\cos\\varphi = 0$)",
+                "$X$ va $Y$ birlik vektorlar bo‘lganda",
+                "Hech qachon tenglik bajarilmaydi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "$|(X,Y)| = |X||Y||\\cos\\varphi| = |X||Y| \\iff |\\cos\\varphi| = 1 \\iff \\varphi = 0$ yoki $\\varphi = \\pi$ (vektorlar kollinear)."
+        },
+        {
+            "q": "$n$ o‘lchovli chiziqli fazoda chiziqli erkli vektorlarning maksimal soni nechtaga teng?",
+            "opts": [
+                "$n$ taga teng (yani fazoning o‘lchamiga teng; har qanday $n+1$ ta vektor albatta chiziqli bog‘liq bo‘ladi)",
+                "$n + 1$ taga teng",
+                "$n^2$ taga teng",
+                "Cheksiz ko‘p bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "7-ma’ruza (34-slayd): $\\vec{x}' = \\begin{pmatrix} 1 & -1 & -1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix} \\begin{pmatrix} 2 \\\\ -1 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} 2 - (-1) - 5 \\\\ -1 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} -2 \\\\ -1 \\\\ 5 \\end{pmatrix}$."
+            "exp": "Fazo o‘lchami $\\dim L = n$ shu fazodagi chiziqli erkli vektorlarning maksimal sonini bildiradi."
         },
         {
-            "q": "$\\mathbb{R}^2$ fazoda $\\vec{e}_1 = (1, 2)^T$ va $\\vec{e}_2 = (2, 3)^T$ bazis vektorlar hamda $\\vec{x} = (7, 11)^T$ vektor berilgan. $\\vec{x}$ vektorning shu bazisdagi $(\\mu_1, \\mu_2)$ koordinatalarini ($\\vec{x} = \\mu_1 \\vec{e}_1 + \\mu_2 \\vec{e}_2$) toping.",
+            "q": "Uchta $\\vec{a}, \\vec{b}, \\vec{c}$ vektorning komplanar (bir tekislikda yotuvchi) bo‘lishi ularning chiziqli bog‘liqligi nuqtai nazaridan nimani anglatadi?",
             "opts": [
-                "$\\mu_1 = 1,\\quad \\mu_2 = 3$",
-                "$\\mu_1 = 3,\\quad \\mu_2 = 2$",
-                "$\\mu_1 = -1,\\quad \\mu_2 = 4$",
-                "$\\mu_1 = 2,\\quad \\mu_2 = 2.5$"
+                "Ularning aralash ko‘paytmasi (determinanti) nolga teng bo‘lib, bu uchta vektor chiziqli bog‘liq ekanligini (ulardan biri qolgan ikkitasi orqali chiziqli ifodalanishini) anglatadi",
+                "Ular chiziqli erkli va $\\mathbb{R}^3$ da bazis tashkil qilishini anglatadi",
+                "Ular juft-juft ortogonal ekanligini anglatadi",
+                "Ularning uzunliklari nolga teng ekanligini anglatadi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$\\begin{cases} \\mu_1 + 2\\mu_2 = 7 \\\\ 2\\mu_1 + 3\\mu_2 = 11 \\end{cases} \\implies \\mu_1 = 1,\\; \\mu_2 = 3$ (chunki $1(1,2)^T + 3(2,3)^T = (7, 11)^T$)."
+            "exp": "7-ma’ruza (15-slayd): $\\mathbb{R}^3$ da uchta vektor komplanar $\\iff ([\\vec{a}\\times\\vec{b}]\\cdot\\vec{c}) = \\det(A) = 0 \\iff$ vektorlar chiziqli bog‘liq."
         },
         {
-            "q": "$\\vec{a} = (1,\\; 2,\\; 3)$, $\\vec{b} = (2,\\; -1,\\; 1)$ va $\\vec{c} = (3,\\; 1,\\; m)$ vektorlar $m$ parametrning qanday qiymatida komplanar (bir tekislikda yotuvchi) bo‘ladi?",
+            "q": "Agar vektorlar sistemasining biror qism sistemasi chiziqli bog‘liq bo‘lsa, butun vektorlar sistemasi haqida nima deyish mumkin?",
             "opts": [
-                "$m = 4$",
-                "$m = 2$",
-                "$m = -4$",
-                "$m = 0$"
+                "Butun vektorlar sistemasi ham albatta chiziqli bog‘liq bo‘ladi (qolgan vektorlar oldiga $0$ koeffitsiyent qo‘yish kifoya)",
+                "Butun sistema chiziqli erkli bo‘ladi",
+                "Butun sistema ortonormal bo‘ladi",
+                "Qism sistemaga qarab xulosa qilib bo‘lmaydi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "E’tibor bering: $\\vec{c}$ ning dastlabki ikki koordinatasi $\\vec{a} + \\vec{b}$ ga teng ($1+2=3,\\; 2+(-1)=1$). Komplanar bo‘lishi (determinant 0 bo‘lishi) uchun $m = 3 + 1 = 4$ bo‘lishi kerak."
+            "exp": "Qism sistema chiziqli bog‘liq bo‘lsa, unga yangi vektorlar qo‘shilganda ularning koeffitsiyentlarini $0$ deb olib, noldan farqli kombinatsiyada $\\Theta$ hosil qilish mumkin."
         },
         {
-            "q": "Ikki vektor $\\vec{a} = (1,\\; 1,\\; 0)$ va $\\vec{b} = (1,\\; 0,\\; 1)$ orasidagi burchak $\\varphi$ nechaga teng?",
+            "q": "Aksincha, agar $x_1, x_2, \\dots, x_m$ vektorlar sistemasi chiziqli erkli bo‘lsa, uning har qanday qism sistemasi qanday bo‘ladi?",
             "opts": [
-                "$\\varphi = 60^\\circ$ ($\\frac{\\pi}{3}$)",
-                "$\\varphi = 45^\\circ$ ($\\frac{\\pi}{4}$)",
-                "$\\varphi = 90^\\circ$ ($\\frac{\\pi}{2}$)",
-                "$\\varphi = 30^\\circ$ ($\\frac{\\pi}{6}$)"
+                "Har qanday qism sistemasi ham albatta chiziqli erkli bo‘ladi",
+                "Qism sistemasi chiziqli bog‘liq bo‘ladi",
+                "Qism sistemasida nol vektor qatnashadi",
+                "Faqat ikkita vektordan iborat qism sistemasi erkli bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$\\cos\\varphi = \\frac{1\\cdot 1 + 1\\cdot 0 + 0\\cdot 1}{\\sqrt{1^2+1^2}\\cdot\\sqrt{1^2+1^2}} = \\frac{1}{\\sqrt{2}\\cdot\\sqrt{2}} = \\frac{1}{2} \\implies \\varphi = 60^\\circ$."
-        },
-        {
-            "q": "Agar $|\\vec{a}| = 3$, $|\\vec{b}| = 4$ va ular orasidagi burchak $\\varphi = 60^\\circ$ bo‘lsa, $(\\vec{a}, \\vec{b})$ skalyar ko‘paytmani hamda $|\\vec{a} + \\vec{b}|$ uzunlikni toping.",
-            "opts": [
-                "$(\\vec{a}, \\vec{b}) = 6;\\qquad |\\vec{a} + \\vec{b}| = \\sqrt{37}$",
-                "$(\\vec{a}, \\vec{b}) = 12;\\qquad |\\vec{a} + \\vec{b}| = 5$",
-                "$(\\vec{a}, \\vec{b}) = 6;\\qquad |\\vec{a} + \\vec{b}| = \\sqrt{13}$",
-                "$(\\vec{a}, \\vec{b}) = 6\\sqrt{3};\\qquad |\\vec{a} + \\vec{b}| = 7$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$(\\vec{a},\\vec{b}) = |\\vec{a}||\\vec{b}|\\cos 60^\\circ = 3 \\cdot 4 \\cdot 0.5 = 6$. $|\\vec{a}+\\vec{b}| = \\sqrt{|\\vec{a}|^2 + 2(\\vec{a},\\vec{b}) + |\\vec{b}|^2} = \\sqrt{9 + 12 + 16} = \\sqrt{37}$."
-        },
-        {
-            "q": "Barcha $3 \\times 4$ o‘lchamli haqiqiy matritsalar chiziqli fazosining o‘lchami (bazis elementlari soni) nechaga teng?",
-            "opts": [
-                "$12$ ga teng ($3 \\cdot 4 = 12$)",
-                "$7$ ga teng ($3 + 4 = 7$)",
-                "$3$ ga teng ($\\min(3, 4) = 3$)",
-                "$4$ ga teng"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$m \\times n$ matritsalar chiziqli fazosining o‘lchami $m \\cdot n$ ga teng, demak $3 \\cdot 4 = 12$."
-        },
-        {
-            "q": "$X = (1, 2, -1, 3)^T$ va $Y = (2, 1, 4, -2)^T$ vektorlar uchun Koshi-Bunyakovskiy tengsizligi $|(X,Y)| \\le |X|\\cdot|Y|$ ning chap va o‘ng qismlari qiymatlarini hisoblang.",
-            "opts": [
-                "Chap qismi $|(X,Y)| = 6$; o‘ng qismi $|X|\\cdot|Y| = \\sqrt{15} \\cdot \\sqrt{25} = 5\\sqrt{15} \\approx 19.36$ ($6 \\le 19.36$)",
-                "Chap qismi $|(X,Y)| = 10$; o‘ng qismi $|X|\\cdot|Y| = 15$",
-                "Chap qismi $|(X,Y)| = 0$; o‘ng qismi $|X|\\cdot|Y| = 20$",
-                "Chap qismi $|(X,Y)| = 6$; o‘ng qismi $|X|\\cdot|Y| = 6$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$(X,Y) = 2 + 2 - 4 - 6 = -6 \\implies |(X,Y)| = 6$. $|X| = \\sqrt{1+4+1+9} = \\sqrt{15}$, $|Y| = \\sqrt{4+1+16+4} = 5$. Haqiqatan $6 \\le 5\\sqrt{15}$."
-        },
-        {
-            "q": "$\\lambda_1 x_1 + \\lambda_2 x_2 + \\dots + \\lambda_n x_n = \\Theta$ tenglik faqat $\\lambda_1 = \\lambda_2 = \\dots = \\lambda_n = 0$ bo‘lgandagina o‘rinli bo‘lsa, $x_1, x_2, \\dots, x_n$ vektorlar qanday ataladi?",
-            "opts": [
-                "Chiziqli erkli vektorlar deyiladi",
-                "Chiziqli bog‘liq (erksiz) vektorlar deyiladi",
-                "Komplanar vektorlar deyiladi",
-                "Kollinear vektorlar deyiladi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "7-ma’ruza (24-slayd): Faqat barcha koeffitsiyentlar nol bo‘lgandagina chiziqli kombinatsiya nol vektorga teng bo‘lsa, bunday elementlar chiziqli erkli deyiladi."
-        },
-        {
-            "q": "$\\mathbb{R}^3$ fazoda $\\vec{a}_1 = (1, 0, 0)$, $\\vec{a}_2 = (1, 1, 0)$ va $\\vec{a}_3 = (1, 1, 1)$ vektorlar bazis tashkil qiladimi va $\\vec{x} = (5, 3, 2)$ vektorning shu bazis bo‘yicha yoyilmasi koeffitsiyentlari $(\\mu_1, \\mu_2, \\mu_3)$ nimaga teng?",
-            "opts": [
-                "Ha, bazis tashkil qiladi ($\\det = 1 \\ne 0$); yoyilma koeffitsiyentlari: $\\mu_1 = 2,\\; \\mu_2 = 1,\\; \\mu_3 = 2$",
-                "Ha, bazis tashkil qiladi; yoyilma koeffitsiyentlari: $\\mu_1 = 5,\\; \\mu_2 = 3,\\; \\mu_3 = 2$",
-                "Yo‘q, bu vektorlar chiziqli bog‘liq",
-                "Ha; yoyilma koeffitsiyentlari: $\\mu_1 = 1,\\; \\mu_2 = 2,\\; \\mu_3 = 3$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$2(1,0,0) + 1(1,1,0) + 2(1,1,1) = (2+1+2,\\; 1+2,\\; 2) = (5, 3, 2)$. Demak $\\mu_1=2, \\mu_2=1, \\mu_3=2$."
-        },
-        {
-            "q": "Vektorlarning skalyar ko‘paytmasi xossalariga (11-slayd) ko‘ra, $(X, X) = 0$ tenglik qachon va faqat qachon o‘rinli bo‘ladi?",
-            "opts": [
-                "Faqat va faqat $X = \\Theta = (0, 0, \\dots, 0)^T$ nol vektor bo‘lganda",
-                "$X$ birlik vektor bo‘lganda",
-                "$X$ ning koordinatalari yig‘indisi $0$ ga teng bo‘lganda (masalan $(1, -1)^T$ da)",
-                "Ixtiyoriy manfiy koordinatali vektorda"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "7-ma’ruza (11-slayd, 2-xossa): $(X, X) = x_1^2 + \\dots + x_n^2 = 0 \\iff X = \\Theta$."
-        },
-        {
-            "q": "Agar uchta $\\vec{a}, \\vec{b}, \\vec{c}$ vektordan yasalgan parallelepiped hajmi $V = 12$ ga teng bo‘lsa, shu vektorlardan yasalgan uchburchakli piramida (tetraedr) hajmi nimaga teng bo‘ladi?",
-            "opts": [
-                "$V_{\\text{pir}} = \\frac{1}{6} V = 2$",
-                "$V_{\\text{pir}} = \\frac{1}{3} V = 4$",
-                "$V_{\\text{pir}} = \\frac{1}{2} V = 6$",
-                "$V_{\\text{pir}} = 12$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Analitik va chiziqli algebrada uchta vektordan yasalgan tetraedr hajmi parallelepiped hajmining $\\frac{1}{6}$ qismiga teng: $V_{\\text{pir}} = \\frac{1}{6}|([\\vec{a}\\times\\vec{b}]\\cdot\\vec{c})| = \\frac{12}{6} = 2$."
-        },
-        {
-            "q": "$\\mathbb{R}^4$ fazoda $V = \\{(x_1, x_2, x_3, x_4) : x_1 - 2x_3 = 0\\}$ chiziqli qism fazoning o‘lchami (bazisidagi vektorlar soni) nechaga teng?",
-            "opts": [
-                "$3$ ga teng (chunki $n = 4$ va $r = 1$ ta tenglama: $n - r = 3$)",
-                "$4$ ga teng",
-                "$1$ ga teng",
-                "$2$ ga teng"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "7-ma’ruza (28-slayd): $V = \\{(2x_3, x_2, x_3, x_4)\\}$ da 3 ta erkli parametr ($x_2, x_3, x_4$) bor, demak qism fazo o‘lchami $\\dim V = 4 - 1 = 3$."
+            "exp": "Agar biror qism sistema chiziqli bog‘liq bo‘lib qolsa, butun sistema ham bog‘liq bo‘lib qolar edi; demak chiziqli erkli sistemaning har qanday qism sistemasi ham chiziqli erklidir."
         }
     ]
-    # Fix question 11 in t7:
-    t7[10]["opts"] = ["$V = 2$", "$V = 15$", "$V = 26$", "$V = 0$ (komplanar)"]
 
     # =========================================================================
-    # MAVZU 8: Ortogonal va ortonormal vektorlar, Gramm-Shmidt (30 ta savol)
+    # MAVZU 8: Ortogonal va ortonormal vektorlar, Gramm-Shmidt (30 ta NAZARIY savol)
     # =========================================================================
     t8 = [
         {
-            "q": "Ma’ruzadagi 7-slayd misoli: $A = (2,\\; 5,\\; 3,\\; -4)^T$ va $B = (-1,\\; 5,\\; 6,\\; 7)^T$ vektorlar uchun $5A + 7B - 2A$ ifodani hisoblang.",
+            "q": "Nima uchun $n$ o‘lchovli vektorlar to‘plami chiziqli amallarga (qo‘shish va songa ko‘paytirishga) nisbatan «yopiq to‘plam» hosil qiladi deyiladi (6-slayd)?",
             "opts": [
-                "$(-1,\\; 50,\\; 51,\\; 37)^T$",
-                "$(1,\\; 50,\\; 51,\\; -37)^T$",
-                "$(13,\\; 50,\\; 51,\\; 37)^T$",
-                "$(-1,\\; 35,\\; 42,\\; 49)^T$"
+                "Chunki $n$ o‘lchovli vektorlar ustida bajarilgan chiziqli amallar natijasida yana shu to‘plamga tegishli $n$ o‘lchovli vektor hosil bo‘ladi",
+                "Chunki $n$ o‘lchovli vektorlar soni chekli bo‘ladi",
+                "Chunki $n$ o‘lchovli vektorlarni ko‘paytirganda skalyar son hosil bo‘ladi",
+                "Chunki barcha vektorlarning uzunligi $1$ dan oshmaydi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (7-slayd): $5A + 7B - 2A = 3A + 7B = (6, 15, 9, -12)^T + (-7, 35, 42, 49)^T = (-1, 50, 51, 37)^T$."
+            "exp": "8-ma’ruza (6-slayd): $n$ o‘lchovli vektorlar ustida bajarilgan chiziqli amallar natijasida yana $n$ o‘lchovli vektor hosil bo‘ladi. Shuning uchun bu to‘plam yopiq to‘plam hosil qiladi deyiladi."
         },
         {
-            "q": "$n$ o‘lchovli $m$ ta $A_1, A_2, \\dots, A_m$ vektorlardan tuzilgan $A$ matritsaning rangi $r(A)$ orqali vektorlarning chiziqli erkliligi qanday aniqlanadi?",
+            "q": "$n$ o‘lchovli $m$ ta $A_1, A_2, \\dots, A_m$ vektorlarning «chiziqli kombinatsiyasi» deb nimaga aytiladi (9-slayd)?",
             "opts": [
-                "Agar $r(A) = m$ bo‘lsa vektorlar sistemasi chiziqli erkli; agar $r(A) < m$ bo‘lsa chiziqli bog‘liq bo‘ladi",
-                "Agar $r(A) = 0$ bo‘lsa chiziqli erkli; agar $r(A) = m$ bo‘lsa chiziqli bog‘liq bo‘ladi",
-                "Agar $r(A) > m$ bo‘lsa chiziqli erkli bo‘ladi",
-                "Matritsa rangi orqali chiziqli erklilikni aniqlab bo‘lmaydi"
+                "$\\lambda_1 A_1 + \\lambda_2 A_2 + \\dots + \\lambda_m A_m$ ko‘rinishdagi yig‘indiga aytiladi (bu yerda $\\lambda_i \\in \\mathbb{R}$, $i=1,2,\\dots,m$)",
+                "$A_1 \\cdot A_2 \\cdot \\dots \\cdot A_m$ skalyar ko‘paytmaga aytiladi",
+                "Vektorlar uzunliklarining yig‘indisiga aytiladi",
+                "Vektorlardan tuzilgan determinantga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "8-ma’ruza (9-slayd, Ta’rif): $\\lambda_1 A_1 + \\lambda_2 A_2 + \\dots + \\lambda_m A_m$ yig‘indiga $A_1, A_2, \\dots, A_m$ vektorlarning chiziqli kombinatsiyasi deb ataladi."
+        },
+        {
+            "q": "$A_1, A_2, \\dots, A_m$ vektorlar sistemasidan tuzilgan $A$ matritsaning rangi $r(A)$ yordamida bu vektorlar sistemasining chiziqli bog‘liqligi yoki erkliligi qanday aniqlanadi (11-slayd)?",
+            "opts": [
+                "Agar $r(A) < m$ bo‘lsa vektorlar sistemasi chiziqli bog‘liq; agar $r(A) = m$ bo‘lsa chiziqli erkli bo‘ladi",
+                "Agar $r(A) = m$ bo‘lsa chiziqli bog‘liq; agar $r(A) < m$ bo‘lsa chiziqli erkli bo‘ladi",
+                "Agar $r(A) = 0$ bo‘lsagina chiziqli erkli bo‘ladi",
+                "Matritsa rangi vektorlarning chiziqli erkliligiga bog‘liq emas"
             ],
             "ans": 0,
             "diff": "Oson",
             "exp": "8-ma’ruza (11-slayd): Agar vektorlar sistemasida $r(A) < m$ bo‘lsa, u holda vektorlar sistemasi chiziqli bog‘liq, agar $r(A) = m$ bo‘lsa, chiziqli erkli bo‘ladi."
         },
         {
-            "q": "Ma’ruzadagi 12-slayd misoli: $A_1(1,\\; 4,\\; 5)$, $A_2(2,\\; -1,\\; 1)$ va $A_3(-1,\\; 1,\\; 3)$ vektorlardan tuzilgan determinant $M_3$ ni hisoblang va sistema chiziqli erkli yoki bog‘liqligini aniqlang.",
+            "q": "Agar vektorlar sistemasi chiziqli bog‘liq bo‘lsa, sistemadagi vektorlarning o‘zaro ifodalanishi haqida qanday tasdiq o‘rinli (13-slayd, Izoh)?",
             "opts": [
-                "$M_3 = -27 \\ne 0,\\quad r(A) = m = 3$, demak vektorlar sistemasi chiziqli erkli",
-                "$M_3 = 0,\\quad r(A) = 2 < 3$, demak vektorlar sistemasi chiziqli bog‘liq",
-                "$M_3 = 27 \\ne 0$, ammo vektorlar sistemasi chiziqli bog‘liq",
-                "$M_3 = -15 \\ne 0,\\quad r(A) = 2$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "8-ma’ruza (12-slayd): $M_3 = \\begin{vmatrix} 1 & 2 & -1 \\\\ 4 & -1 & 1 \\\\ 5 & 1 & 3 \\end{vmatrix} = -3 - 4 + 10 - 5 - 1 - 24 = -27 \\ne 0 \\implies r(A) = 3 = m$, sistema erkli."
-        },
-        {
-            "q": "Ikkita $n$ o‘lchovli nolmas $A_1$ va $A_2$ vektorlar qachon o‘zaro «ortogonal vektorlar» deyiladi?",
-            "opts": [
-                "Ularning skalyar ko‘paytmasi nolga teng bo‘lsa: $(A_1, A_2) = 0$ (orasidagi burchak $\\pi/2$ ga teng bo‘lsa)",
-                "Ularning skalyar ko‘paytmasi $1$ ga teng bo‘lsa: $(A_1, A_2) = 1$",
-                "Ularning uzunliklari o‘zaro teng bo‘lsa: $|A_1| = |A_2|$",
-                "Ularning mos koordinatalari proporsional bo‘lsa"
+                "Sistemadagi kamida bitta vektorni qolgan vektorlar orqali chiziqli kombinatsiya ko‘rinishida ifodalash mumkin",
+                "Sistemadagi hech bir vektorni boshqalari orqali ifodalab bo‘lmaydi",
+                "Sistemadagi barcha vektorlar o‘zaro ortogonal bo‘ladi",
+                "Sistemadagi barcha vektorlar birlik vektor bo‘ladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (13-15-slaydlar): Skalyar ko‘paytmasi nolga teng bo‘lgan ($(A_1, A_2) = 0$) vektorlar o‘zaro ortogonal (perpendikulyar) vektorlar deyiladi."
+            "exp": "8-ma’ruza (13-slayd, Izoh): Agar vektorlar sistemasi chiziqli bog‘liq bo‘lsa, sistemadagi (noldan farqli koeffitsiyentli) vektorni boshqalari orqali ifodalash mumkin."
         },
         {
-            "q": "Ma’ruzadagi 13-slayd misoli: $A_1(-1,\\; 2,\\; 0,\\; 3)$ va $A_2(4,\\; 2,\\; -5,\\; 0)$ vektorlar o‘zaro ortogonalmi?",
+            "q": "Ikkita $n$ o‘lchovli $A_1$ va $A_2$ vektorlar qachon o‘zaro «ortogonal vektorlar» deyiladi va real fazoda bu atama qaysi so‘z bilan almashtirilishi mumkin (13-slayd)?",
             "opts": [
-                "Ha, ortogonal, chunki $(A_1, A_2) = -1\\cdot 4 + 2\\cdot 2 + 0\\cdot(-5) + 3\\cdot 0 = -4 + 4 + 0 + 0 = 0$",
-                "Yo‘q, chunki $(A_1, A_2) = 8 \\ne 0$",
-                "Yo‘q, chunki ularning uzunliklari $1$ ga teng emas",
-                "Ha, chunki ularning koordinatalari yig‘indisi $0$ ga teng"
+                "Ularning skalyar ko‘paytmasi nolga teng bo‘lsa ($(A_1, A_2) = 0$); real fazo vektorlari uchun «perpendikulyar» iborasi bilan almashtirilishi mumkin",
+                "Ularning vektor ko‘paytmasi nolga teng bo‘lsa; «parallel» iborasi bilan almashtirilishi mumkin",
+                "Ularning skalyar ko‘paytmasi $1$ ga teng bo‘lsa; «kollinear» iborasi bilan almashtirilishi mumkin",
+                "Ularning yig‘indisi nolga teng bo‘lsa"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (13-slayd): $(A_1, A_2) = -4 + 4 + 0 + 0 = 0$, demak ortogonal."
+            "exp": "8-ma’ruza (13-slayd, Ta’rif): Ikkita $n$ o‘lchovli $A_1$ va $A_2$ vektorlarning skalyar ko‘paytmasi nolga teng bo‘lsa, ular o‘zaro ortogonal («perpendikulyar») vektorlar deyiladi."
         },
         {
-            "q": "Ma’ruzadagi 15-16-slaydlar misoli: $a$ parametrning qanday qiymatida $X = (3,\\; 0,\\; a,\\; -1)^T$ va $Y = (-2,\\; 5,\\; 6,\\; 0)^T$ vektorlar o‘zaro ortogonal bo‘ladi?",
+            "q": "Ikki vektor orasidagi burchak $\\varphi$ orqali ortogonal va ortonormal vektorlar qanday ta’riflanadi (14-slayd)?",
             "opts": [
-                "$a = 1$",
-                "$a = -1$",
-                "$a = 6$",
-                "$a = 0$"
+                "Ikki vektor orasidagi burchak $\\pi/2$ ga teng bo‘lsa ular ortogonal vektorlar deyiladi; ortogonal vektorlarning uzunliklari $1$ ga teng bo‘lsa, ortonormal vektorlar yoki ortlar deyiladi",
+                "Ikki vektor orasidagi burchak $0$ ga teng bo‘lsa ortogonal, uzunligi $2$ ga teng bo‘lsa ortonormal deyiladi",
+                "Orasidagi burchak $\\pi$ ga teng bo‘lgan vektorlar ortonormal deyiladi",
+                "Uzunliklari o‘zaro teng bo‘lgan ixtiyoriy vektorlar ortlar deyiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (15-16-slaydlar): $(X, Y) = 3(-2) + 0\\cdot 5 + a\\cdot 6 + (-1)\\cdot 0 = 6a - 6 = 0 \\implies a = 1$."
+            "exp": "8-ma’ruza (14-slayd): Ikki vektor orasidagi burchak $\\pi/2$ ga teng bo‘lsa ortogonal, uzunliklari $1$ ga teng bo‘lgan ortogonal vektorlar esa ortonormal vektorlar (ortlar) deyiladi."
         },
         {
-            "q": "$k$ parametrning qanday qiymatida $X = (2,\\; k,\\; -3,\\; 4)^T$ va $Y = (3,\\; -2,\\; 5,\\; k)^T$ vektorlar o‘zaro ortogonal bo‘ladi?",
+            "q": "Dekart koordinatalar sistemasi qanday vektorlarni asos (bazis) qilib olish orqali kiritiladi (14-slayd)?",
             "opts": [
-                "$k = 4.5$",
-                "$k = -4.5$",
-                "$k = 3$",
-                "$k = 2$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$(X, Y) = 6 - 2k - 15 + 4k = 2k - 9 = 0 \\implies k = 4.5$."
-        },
-        {
-            "q": "Ma’ruzadagi 17-slayd misoli: $A_1(3,\\; 2,\\; 1)$, $A_2(2,\\; -3,\\; 0)$ va $A_3(-3,\\; -2,\\; 13)$ vektorlar sistemasi haqida qaysi mulohaza to‘g‘ri?",
-            "opts": [
-                "Sistema ortogonal vektorlar sistemasidir, chunki $(A_1, A_2) = 0,\\; (A_1, A_3) = 0$ va $(A_2, A_3) = 0$",
-                "Sistema ortonormal bazisdir, chunki har bir vektor uzunligi $1$ ga teng",
-                "Sistema chiziqli bog‘liq sistemadir",
-                "$A_1$ va $A_2$ ortogonal, ammo $A_2$ va $A_3$ ortogonal emas"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "8-ma’ruza (17-slayd): $(A_1,A_2)=6-6+0=0$; $(A_1,A_3)=-9-4+13=0$; $(A_2,A_3)=-6+6+0=0$. Juft-juft ortogonal bo‘lgani uchun ortogonal vektorlar sistemasidir."
-        },
-        {
-            "q": "«Evklid fazosi» ($E^n$) va «ortonormal vektorlar sistemasi» deb nimaga aytiladi?",
-            "opts": [
-                "Elementlari orasida skalyar ko‘paytma aniqlangan chiziqli fazoga Evklid fazosi deyiladi; juft-juft ortogonal va har birining uzunligi $|\\vec{a}_i| = 1$ bo‘lgan sistemaga ortonormal sistema deyiladi",
-                "Faqat kompleks sonlardan iborat fazoga Evklid fazosi deyiladi; uzunligi $0$ ga teng vektorlarga ortonormal deyiladi",
-                "Skalyar ko‘paytmasi aniqlanmagan fazoga Evklid fazosi deyiladi",
-                "Barcha vektorlari kollinear bo‘lgan sistemaga ortonormal sistema deyiladi"
+                "Ortonormal vektorlarni (ortlarni: tekislikda $\\vec{i}, \\vec{j}$ va fazoda $\\vec{i}, \\vec{j}, \\vec{k}$) asos qilib olish orqali kiritiladi",
+                "Kollinear vektorlarni asos qilib olish orqali kiritiladi",
+                "Uzunligi nolga teng vektorlarni asos qilib olish orqali kiritiladi",
+                "Ixtiyoriy komplanar vektorlar orqali kiritiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (18-19, 32-slaydlar): Skalyar ko‘paytma kiritilgan chiziqli fazo Evklid fazosi ($E^n$) deyiladi. Har bir vektori normallangan ($|B_i|=1$) ortogonal sistema ortonormal sistema deyiladi."
+            "exp": "8-ma’ruza (14-slayd): Ortonormal vektorlarni asos qilib, Dekart koordinata sistemasini kiritamiz ($Oxy$ da $\\vec{a} = x\\vec{i}+y\\vec{j}$, $Oxyz$ da $\\vec{a} = a_1\\vec{i}+a_2\\vec{j}+a_3\\vec{k}$)."
         },
         {
-            "q": "Evklid fazosining ortonormal bazisi $\\{\\vec{e}_1, \\vec{e}_2, \\dots, \\vec{e}_n\\} \\subset E^n$ uchun $(\\vec{e}_i, \\vec{e}_k)$ skalyar ko‘paytma nimaga teng?",
+            "q": "Qanday vektorlar sistemasiga «ortogonal vektorlar sistemasi» deyiladi (17, 19-slaydlar)?",
             "opts": [
-                "$i = k$ bo‘lsa $1$ ga teng; $i \\ne k$ bo‘lsa $0$ ga teng (Kroneker deltasi $\\delta_{ik}$)",
-                "$i = k$ bo‘lsa $0$ ga teng; $i \\ne k$ bo‘lsa $1$ ga teng",
-                "Har doim $1$ ga teng",
-                "$i + k$ ga teng"
+                "$n$ o‘lchovli noldan farqli vektorlardan tarkib topgan va sistema vektorlarining har qanday ikki jufti o‘zaro ortogonal ($(A_i, A_j) = 0,\\; i \\ne j$) bo‘lgan sistemaga",
+                "Faqat birinchi va oxirgi vektori o‘zaro ortogonal bo‘lgan sistemaga",
+                "Barcha vektorlarining uzunligi $1$ ga teng, ammo o‘zaro burchagi ixtiyoriy bo‘lgan sistemaga",
+                "Chiziqli bog‘liq vektorlar sistemasiga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (20-slayd): $(\\vec{e}_i, \\vec{e}_k) = \\begin{cases} 1, & i = k \\\\ 0, & i \\ne k \\end{cases}$."
+            "exp": "8-ma’ruza (17, 19-slaydlar): Sistema vektorlarining har qanday ikki jufti o‘zaro ortogonal bo‘lsa, u holda bu sistemaga ortogonal vektorlar sistemasi deyiladi."
         },
         {
-            "q": "Nolmas vektorlardan iborat har qanday ortogonal vektorlar sistemasi chiziqli erkli bo‘ladimi yoki chiziqli bog‘liq?",
+            "q": "«Evklid fazosi» ($E^n$) deb qanday fazoga aytiladi va har qanday $\\mathbb{R}^n$ fazoni qanday qilib Evklid fazosiga aylantirish mumkin (18-slayd)?",
             "opts": [
-                "Har doim chiziqli erkli sistema bo‘ladi (23-slayd, Izoh)",
-                "Har doim chiziqli bog‘liq sistema bo‘ladi",
-                "Faqat 2 o‘lchovli fazoda chiziqli erkli bo‘ladi",
-                "Uzunliklari $1$ ga teng bo‘lsagina chiziqli erkli bo‘ladi"
+                "Elementlari orasida skalyar ko‘paytma aniqlangan chiziqli fazoga Evklid fazosi deyiladi; har qanday $\\mathbb{R}^n$ fazoda skalyar ko‘paytmani aniqlash bilan uni Evklid fazosiga aylantirish mumkin",
+                "Elementlari faqat $2 \\times 2$ matritsalardan iborat fazoga Evklid fazosi deyiladi",
+                "Skalyar ko‘paytmasi mavjud bo‘lmagan fazoga Evklid fazosi deyiladi",
+                "Faqat 1 o‘lchovli chiziqqa Evklid fazosi deyiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (23-slayd): Izoh: Har qanday nolmas vektorlardan iborat ortogonal vektorlar sistemasi chiziqli erkli sistemadir."
+            "exp": "8-ma’ruza (18-slayd): Agar chiziqli fazo elementlari orasida skalyar ko‘paytma aniqlangan bo‘lsa, bu fazoga Evklid fazosi ($E^n$) deyiladi."
         },
         {
-            "q": "Chiziqli erkli $A_1, A_2, \\dots, A_k$ vektorlar sistemasidan ortogonal $B_1, B_2, \\dots, B_k$ vektorlar sistemasini qurishning Gramm-Shmidt formulasi qaysi javobda to‘g‘ri berilgan?",
+            "q": "Evklid fazosida $\\{\\vec{a}_1, \\vec{a}_2, \\dots, \\vec{a}_n\\} \\subset E^n$ sistema qachon «ortonormal vektorlar sistemasi» deyiladi (19-slayd)?",
             "opts": [
-                "$B_1 = A_1,\\qquad B_t = A_t - \\sum_{i=1}^{t-1} \\frac{(B_i, A_t)}{(B_i, B_i)} B_i \\quad (t = 2, 3, \\dots, k)$",
-                "$B_1 = A_1,\\qquad B_t = A_t + \\sum_{i=1}^{t-1} (B_i, A_t) B_i$",
-                "$B_t = \\frac{A_t}{|A_t|}$",
-                "$B_t = A_t - A_{t-1}$"
+                "Sistema ortogonal vektorlar sistemasi bo‘lib ($(\\vec{a}_i, \\vec{a}_k) = 0, i \\ne k$), qo‘shimcha ravishda har bir vektorining uzunligi birga teng ($|\\vec{a}_i| = 1, i=1,2,\\dots,n$) bo‘lsa",
+                "Sistemadagi barcha vektorlarning uzunliklari yig‘indisi $1$ ga teng bo‘lsa",
+                "Sistemadagi vektorlar juft-juft parallel bo‘lsa",
+                "Vektorlarning skalyar ko‘paytmasi har doim $-1$ ga teng bo‘lsa"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (22, 29-slaydlar): Gramm-Shmidt ortogonallash formulasi: $B_1 = A_1,\\; B_t = A_t - \\sum_{i=1}^{t-1} \\frac{(B_i, A_t)}{(B_i, B_i)} B_i$."
+            "exp": "8-ma’ruza (19-slayd): Agar $\\{\\vec{a}_1, \\dots, \\vec{a}_n\\} \\subset E^n$ ortogonal vektorlar sistemasi bo‘lib, $|\\vec{a}_i| = 1$ ($i=1,\\dots,n$) bo‘lsa, bu sistemaga ortonormal vektorlar sistemasi deyiladi."
         },
         {
-            "q": "Ma’ruzadagi 24-25-slaydlar misoli: $\\vec{a}_1 = (2, 1, 3, -1),\\; \\vec{a}_2 = (7, 4, 3, -3),\\; \\vec{a}_3 = (1, 1, -6, 0),\\; \\vec{a}_4 = (5, 7, 7, 8)$ vektorlar sistemasini tekshirganda qaysi vektor chiziqli bog‘liq bo‘lib chiqadi va qaysi 3 tasi bazis tashkil qiladi?",
+            "q": "Evklid fazosining «ortonormal bazisi» deb nimaga aytiladi va uning vektorlari qanday munosabatni qanoatlantiradi (20-slayd)?",
             "opts": [
-                "$\\vec{a}_3 = \\vec{a}_2 - 3\\vec{a}_1$ chiziqli bog‘liq; $\\vec{a}_1, \\vec{a}_2, \\vec{a}_4$ vektorlar bazis tashkil qiladi",
-                "$\\vec{a}_4$ chiziqli bog‘liq; $\\vec{a}_1, \\vec{a}_2, \\vec{a}_3$ bazis tashkil qiladi",
-                "Barcha 4 ta vektor chiziqli erkli",
-                "$\\vec{a}_1$ va $\\vec{a}_2$ kollinear"
+                "$\\{\\vec{e}_1, \\vec{e}_2, \\dots, \\vec{e}_n\\} \\subset E^n$ vektorlar sistemasi $E^n$ fazoning bazisi bo‘lib, ortonormal vektorlar sistemasini tashkil qilsa; $(\\vec{e}_i, \\vec{e}_k) = 1$ ($i = k$ bo‘lsa) va $0$ ($i \\ne k$ bo‘lsa)",
+                "$(\\vec{e}_i, \\vec{e}_k) = 0$ ($i = k$ bo‘lsa) va $1$ ($i \\ne k$ bo‘lsa)",
+                "Barcha $i, k$ larda $(\\vec{e}_i, \\vec{e}_k) = 1$ bo‘lsa",
+                "Bazis vektorlarining uzunliklari $1, 2, \\dots, n$ ga teng bo‘lsa"
             ],
             "ans": 0,
-            "diff": "O'rta",
-            "exp": "8-ma’ruza (25-slayd): 2-satrdan 1-satrning 3 baravarini ayirsak $(7-6, 4-3, 3-9, -3+3) = (1, 1, -6, 0) = \\vec{a}_3$ hosil bo‘ladi. Demak $\\vec{a}_1, \\vec{a}_2, \\vec{a}_4$ bazis tashkil qiladi."
+            "diff": "Oson",
+            "exp": "8-ma’ruza (20-slayd): Ortonormal bazis uchun $(\\vec{e}_i, \\vec{e}_k) = \\begin{cases} 1, & i = k \\\\ 0, & i \\ne k \\end{cases}$ munosabat o‘rinli."
         },
         {
-            "q": "Ma’ruzadagi 26-27-slaydlar misoli: $\\vec{a}_1 = (2,\\; 1,\\; 3,\\; -1)$ va $\\vec{a}_2 = (7,\\; 4,\\; 3,\\; -3)$ vektorlarni Gramm-Shmidt formulasi bilan ortogonallashda $\\vec{b}_1 = \\vec{a}_1$ bo‘lsa, $\\vec{b}_2 = \\vec{a}_2 - \\frac{\\vec{b}_1 \\cdot \\vec{a}_2}{\\vec{b}_1 \\cdot \\vec{b}_1}\\vec{b}_1$ vektorni toping.",
+            "q": "**Gramm-Shmidt teoremasi** (21-slayd): Har qanday $n$ o‘lchovli haqiqiy Evklid fazosida ortonormallangan bazis mavjudligi haqidagi teorema qanday bayon etiladi?",
             "opts": [
-                "$\\vec{b}_2 = (3,\\; 2,\\; -3,\\; -1)$",
-                "$\\vec{b}_2 = (5,\\; 3,\\; 0,\\; -2)$",
-                "$\\vec{b}_2 = (1,\\; 5,\\; 1,\\; 10)$",
-                "$\\vec{b}_2 = (-3,\\; -2,\\; 3,\\; 1)$"
+                "Har qanday $n$ o‘lchovli haqiqiy Evklid fazosida ortonormallangan bazis mavjud (agar bazis ortonormallanmagan bo‘lsa, uni Gramm-Shmidt formulalari yordamida ortonormallash mumkin)",
+                "Faqat $n = 2$ va $n = 3$ o‘lchovli Evklid fazolaridagina ortonormallangan bazis mavjud",
+                "Ortonormallangan bazis faqat diagonal matritsalar fazosida mavjud",
+                "Ixtiyoriy bazisni ortonormallab bo‘lmaydi"
             ],
             "ans": 0,
-            "diff": "O'rta",
-            "exp": "8-ma’ruza (27-slayd): $\\vec{b}_1 \\cdot \\vec{a}_2 = 14 + 4 + 9 + 3 = 30$, $\\vec{b}_1 \\cdot \\vec{b}_1 = 4 + 1 + 9 + 1 = 15$. Nisbat $30/15 = 2$. Demak $\\vec{b}_2 = (7,4,3,-3) - 2(2,1,3,-1) = (3, 2, -3, -1)$."
+            "diff": "Oson",
+            "exp": "8-ma’ruza (21-22-slaydlar, Teorema): Har qanday $n$ o‘lchovli haqiqiy Evklid fazosida ortonormallangan bazis mavjud."
         },
         {
-            "q": "Ma’ruzadagi 27-slayd misoli: Yuqoridagi masalada $\\vec{a}_4 = (5,\\; 7,\\; 7,\\; 8)$ vektor uchun uchinchi ortogonal vektor $\\vec{b}_3 = \\vec{a}_4 - \\frac{\\vec{b}_1 \\cdot \\vec{a}_4}{\\vec{b}_1 \\cdot \\vec{b}_1}\\vec{b}_1 - \\frac{\\vec{b}_2 \\cdot \\vec{a}_4}{\\vec{b}_2 \\cdot \\vec{b}_2}\\vec{b}_2$ ni toping.",
+            "q": "Nolmas vektorlardan iborat har qanday ortogonal vektorlar sistemasining chiziqli erkliligi haqida qanday muhim xulosa o‘rinli (23-slayd, Izoh)?",
             "opts": [
-                "$\\vec{b}_3 = (1,\\; 5,\\; 1,\\; 10)$",
-                "$\\vec{b}_3 = (3,\\; 2,\\; -3,\\; -1)$",
-                "$\\vec{b}_3 = (5,\\; 7,\\; 7,\\; 8)$",
-                "$\\vec{b}_3 = (0,\\; 4,\\; 4,\\; 9)$"
+                "Har qanday nolmas vektorlardan iborat ortogonal vektorlar sistemasi chiziqli erkli sistemadir",
+                "Ortogonal vektorlar sistemasi har doim chiziqli bog‘liq bo‘ladi",
+                "Ortogonal sistema faqat vektorlar soni juft bo‘lganda chiziqli erkli bo‘ladi",
+                "Ortogonal sistemaning determinanti har doim nolga teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "8-ma’ruza (23-slayd, Izoh): Har qanday nolmas vektorlardan iborat ortogonal vektorlar sistemasi chiziqli erkli sistemadir."
+        },
+        {
+            "q": "Nima sababdan nolmas $B_1, B_2, \\dots, B_k$ ortogonal vektorlar sistemasi har doim chiziqli erkli bo‘lishini isbotlash juda oson?",
+            "opts": [
+                "$\\lambda_1 B_1 + \\dots + \\lambda_k B_k = \\Theta$ tenglikni $B_i$ ga skalyar ko‘paytirsak, $(B_i, B_j) = 0$ ($i \\ne j$) tufayli faqat $\\lambda_i (B_i, B_i) = 0$ qoladi va $|B_i| \\ne 0$ dan $\\lambda_i = 0$ kelib chiqadi",
+                "Chunki ortogonal vektorlarning barcha koordinatalari musbat bo‘ladi",
+                "Chunki ortogonal vektorlar bir to‘g‘ri chiziqda yotadi",
+                "Chunki ularning vektor ko‘paytmasi nolga teng"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "8-ma’ruza (27-slayd): $\\vec{b}_1 \\cdot \\vec{a}_4 = 10+7+21-8 = 30 \\implies 30/15 = 2$. $\\vec{b}_2 \\cdot \\vec{a}_4 = 15+14-21-8 = 0$. Demak $\\vec{b}_3 = \\vec{a}_4 - 2\\vec{b}_1 = (5,7,7,8) - (4,2,6,-2) = (1, 5, 1, 10)$."
+            "exp": "Har bir $i$ uchun $B_i$ ga skalyar ko‘paytirish qolgan barcha hadlarni nolga aylantiradi va $\\lambda_i |B_i|^2 = 0 \\implies \\lambda_i = 0$ ekanligini darhol ko‘rsatadi."
         },
         {
-            "q": "Ma’ruzadagi 28-slayd misoli: Hosil bo‘lgan $\\vec{b}_1 = (2, 1, 3, -1)$, $\\vec{b}_2 = (3, 2, -3, -1)$ va $\\vec{b}_3 = (1, 5, 1, 10)$ ortogonal vektorlarni normallashtirishda ularning uzunliklari $|\\vec{b}_1|, |\\vec{b}_2|, |\\vec{b}_3|$ nimaga teng?",
+            "q": "Chiziqli erkli $A_1, A_2, \\dots, A_k$ vektorlar sistemasi ustida ortogonal $B_1, B_2, \\dots, B_k$ vektorlar sistemasini qurish usuli qanday nomlanadi va qaysi formulalar bilan bajariladi (23, 29-slaydlar)?",
             "opts": [
-                "$|\\vec{b}_1| = \\sqrt{15},\\qquad |\\vec{b}_2| = \\sqrt{23},\\qquad |\\vec{b}_3| = \\sqrt{127}$",
-                "$|\\vec{b}_1| = 15,\\qquad |\\vec{b}_2| = 23,\\qquad |\\vec{b}_3| = 127$",
-                "$|\\vec{b}_1| = \\sqrt{14},\\qquad |\\vec{b}_2| = \\sqrt{22},\\qquad |\\vec{b}_3| = \\sqrt{126}$",
-                "$|\\vec{b}_1| = 5,\\qquad |\\vec{b}_2| = 5,\\qquad |\\vec{b}_3| = 11$"
+                "Vektorlar sistemasini «ortogonallash jarayoni» deyiladi va Gramm-Shmidt formulalari: $B_1 = A_1,\\; B_t = A_t - \\sum_{i=1}^{t-1} \\frac{(B_i, A_t)}{(B_i, B_i)} B_i$ yordamida amalga oshiriladi",
+                "Vektorlar sistemasini «transponirlash jarayoni» deyiladi va Kramer formulalari yordamida bajariladi",
+                "Laplas yoyilmasi deyiladi",
+                "Kroneker-Kapelli almashtirishi deyiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "8-ma’ruza (23, 29-slaydlar): Chiziqli erkli $A_1, \\dots, A_k$ sistemani ortogonal $B_1, \\dots, B_k$ sistema bilan almashtirish ortogonallash jarayoni deyiladi va Gramm-Shmidt formulalari bilan bajariladi."
+        },
+        {
+            "q": "Gramm-Shmidt formulalari bo‘yicha ikkinchi ($B_2$) va uchinchi ($B_3$) ortogonal vektorlar qanday yoziladi (30-slayd)?",
+            "opts": [
+                "$B_2 = A_2 - \\frac{(B_1, A_2)}{(B_1, B_1)} B_1;\\qquad B_3 = A_3 - \\frac{(B_1, A_3)}{(B_1, B_1)} B_1 - \\frac{(B_2, A_3)}{(B_2, B_2)} B_2$",
+                "$B_2 = A_2 + \\frac{(B_1, A_2)}{(B_1, B_1)} B_1;\\qquad B_3 = A_3 + B_2 + B_1$",
+                "$B_2 = A_2 - (B_1, A_2) B_1;\\qquad B_3 = A_3 - (B_2, A_3) B_2$",
+                "$B_2 = \\frac{A_2}{|A_2|};\\qquad B_3 = \\frac{A_3}{|A_3|}$"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "8-ma’ruza (28-slayd): $|\\vec{b}_1| = \\sqrt{4+1+9+1} = \\sqrt{15}$; $|\\vec{b}_2| = \\sqrt{9+4+9+1} = \\sqrt{23}$; $|\\vec{b}_3| = \\sqrt{1+25+1+100} = \\sqrt{127}$."
+            "exp": "8-ma’ruza (27, 30-slaydlar): Har bir yangi $A_t$ vektordan uning oldingi barcha qurilgan $B_1, \\dots, B_{t-1}$ ortogonal vektorlar yo‘nalishidagi proyeksiyalari ayirib tashlanadi."
         },
         {
-            "q": "Ma’ruzadagi 30-slayd misoli: $A_1(1,\\; 1,\\; 1)$, $A_2(0,\\; 1,\\; 1)$ va $A_3(0,\\; 0,\\; 1)$ vektorlar sistemasi ustida Gramm-Shmidt formulalari yordamida qurilgan $B_1, B_2, B_3$ ortogonal sistemani toping.",
+            "q": "Nol bo‘lmagan $B$ vektorning «normallangan» yoki «birlik vektori» deb qanday vektorga aytiladi (32-slayd)?",
             "opts": [
-                "$B_1 = (1,\\; 1,\\; 1),\\qquad B_2 = \\left(-\\frac{2}{3},\\; \\frac{1}{3},\\; \\frac{1}{3}\\right),\\qquad B_3 = \\left(0,\\; -\\frac{1}{2},\\; \\frac{1}{2}\\right)$",
-                "$B_1 = (1,\\; 1,\\; 1),\\qquad B_2 = \\left(\\frac{2}{3},\\; -\\frac{1}{3},\\; -\\frac{1}{3}\\right),\\qquad B_3 = \\left(0,\\; \\frac{1}{2},\\; \\frac{1}{2}\\right)$",
-                "$B_1 = (1,\\; 0,\\; 0),\\qquad B_2 = (0,\\; 1,\\; 0),\\qquad B_3 = (0,\\; 0,\\; 1)$",
-                "$B_1 = (1,\\; 1,\\; 1),\\qquad B_2 = (-1,\\; 1,\\; 1),\\qquad B_3 = (0,\\; -1,\\; 1)$"
+                "$\\frac{B}{|B|}$ vektorga (ya’ni $B$ vektorni o‘z uzunligi $|B|$ ga bo‘lishdan hosil bo‘lgan uzunligi $1$ ga teng vektorga) aytiladi",
+                "$B \\cdot |B|$ vektorga aytiladi",
+                "$B - |B|$ vektorga aytiladi",
+                "Koordinatalari faqat $0$ va $1$ sonlardan iborat har qanday vektorga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "8-ma’ruza (32-slayd): Nol bo‘lmagan $B$ vektorning normallangan yoki birlik vektori deb $\\frac{B}{|B|}$ vektorga aytiladi."
+        },
+        {
+            "q": "Agar $B_1, B_2, \\dots, B_k$ ortogonal vektorlar sistemasi bo‘lsa, undan «ortonormallangan vektorlar sistemasi» qanday hosil qilinadi (28, 32-slaydlar)?",
+            "opts": [
+                "Har bir vektorni o‘z uzunligiga bo‘lish (normallashtirish) orqali: $\\vec{c}_1 = \\frac{B_1}{|B_1|},\\; \\vec{c}_2 = \\frac{B_2}{|B_2|},\\; \\dots,\\; \\vec{c}_k = \\frac{B_k}{|B_k|}$",
+                "Har bir vektordan $B_1$ ni ayirib chiqish orqali",
+                "Barcha vektorlarni o‘zaro qo‘shib chiqish orqali",
+                "Vektorlarni transponirlash orqali"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "8-ma’ruza (28, 32-slaydlar): Har bir vektori normallangan (birlik vektor ko‘rinishga keltirilgan) ortogonal sistemaga ortonormallangan vektorlar sistemasi deyiladi."
+        },
+        {
+            "q": "Agar berilgan 4 ta vektordan ($\vec{a}_1, \\vec{a}_2, \\vec{a}_3, \\vec{a}_4$) ortonormallangan bazis qurish talab etilsa-yu, ulardan tuzilgan matritsani pog‘onali shaklga keltirganda 3-satr nolga aylanib ketsa (24-25-slaydlar), qanday yo‘l tutiladi?",
+            "opts": [
+                "Nolga aylangan satrga mos $\\vec{a}_3$ vektor chiziqli bog‘liq bo‘lgani uchun tashlab yuboriladi va qolgan chiziqli erkli $\\vec{a}_1, \\vec{a}_2, \\vec{a}_4$ bazis vektorlar ustida Gramm-Shmidt jarayoni bajariladi",
+                "Nol vektorning o‘zi normallashtiriladi",
+                "Barcha 4 ta vektor ustida Gramm-Shmidt jarayoni o‘zgarishsiz davom ettiriladi",
+                "Bunday sistemadan ortogonal sistema qurib bo‘lmaydi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "8-ma’ruza (24-26-slaydlar): Avval elementar almashtirishlar bilan chiziqli erkli bazis vektorlar ($\\vec{a}_1, \\vec{a}_2, \\vec{a}_4$) ajratib olinadi, so‘ngra ularga Gramm-Shmidt formulalari qo‘llaniladi."
+        },
+        {
+            "q": "Gramm-Shmidt jarayonida hosil qilingan $B_1, B_2, B_3$ vektorlar haqiqatan ham ortogonal sistema tashkil qilishini tekshirish sharti qanday (27, 31-slaydlar)?",
+            "opts": [
+                "Har bir juftlikning skalyar ko‘paytmasi nolga teng bo‘lishi: $(B_1, B_2) = 0,\\; (B_1, B_3) = 0$ va $(B_2, B_3) = 0$ tekshiriladi",
+                "Ularning yig‘indisi $B_1 + B_2 + B_3 = \\Theta$ bo‘lishi tekshiriladi",
+                "Ularning uzunliklari o‘zaro tengligi $|B_1| = |B_2| = |B_3|$ tekshiriladi",
+                "$(B_1, B_2) = 1$ bo‘lishi tekshiriladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "8-ma’ruza (27, 31-slaydlar): Tekshirish bosqichida $(B_1, B_2) = 0,\\; (B_1, B_3) = 0,\\; (B_2, B_3) = 0$ tengliklar bajarilishi ko‘rsatiladi."
+        },
+        {
+            "q": "Vektorni musbat $\\lambda > 0$ skalyar songa ko‘paytirish (masalan normallashtirishda $\\frac{1}{|B_i|}$ ga ko‘paytirish) uning boshqa vektorlarga ortogonallik xossasini buzmasligi qaysi skalyar ko‘paytma xossasiga asoslanadi?",
+            "opts": [
+                "$(\\lambda X, Y) = \\lambda (X, Y)$ chiziqlilik xossasiga: agar $(X, Y) = 0$ bo‘lsa, u holda $(\\frac{1}{|X|}X, \\frac{1}{|Y|}Y) = \\frac{1}{|X||Y|}(X, Y) = 0$ bo‘lib qolaveradi",
+                "Uchburchak tengsizligiga asoslanadi",
+                "Determinantning transponirlash xossasiga asoslanadi",
+                "Sarrius qoidasiga asoslanadi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Skalyar ko‘paytmaning 5-xossasiga ko‘ra skalyar ko‘paytuvchilar qavsdan tashqariga chiqadi va $0$ ga ko‘payib yana $0$ beradi."
+        },
+        {
+            "q": "Ortonormal bazis $\\{\\vec{e}_1, \\vec{e}_2, \\dots, \\vec{e}_n\\}$ ning oddiy (ortonormal bo‘lmagan) bazisdan eng muhim hisoblash afzalligi nimada?",
+            "opts": [
+                "Ixtiyoriy $\\vec{x}$ vektorning bazisdagi $x_i$ koordinatasini tenglamalar sistemasi yechmasdan, to‘g‘ridan-to‘g‘ri $x_i = (\\vec{x}, \\vec{e}_i)$ skalyar ko‘paytma orqali topish mumkin",
+                "Ortonormal bazisda vektorlar soni kamroq bo‘ladi",
+                "Ortonormal bazisda barcha vektorlar nolga teng bo‘ladi",
+                "Ortonormal bazisda skalyar ko‘paytma har doim $0$ ga teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "8-ma’ruza (30-31-slaydlar): $B_1 = (1,1,1)$; $B_2 = (0,1,1) - \\frac{2}{3}(1,1,1) = (-2/3, 1/3, 1/3)$; $B_3 = (0,0,1) - \\frac{1}{3}(1,1,1) - \\frac{1/3}{2/3}(-2/3, 1/3, 1/3) = (0, -1/2, 1/2)$."
+            "exp": "$\\vec{x} = \\sum_{k=1}^n x_k \\vec{e}_k$ ni $\\vec{e}_i$ ga skalyar ko‘paytirsak, $(\\vec{e}_k, \\vec{e}_i) = \\delta_{ki}$ tufayli darhol $(\\vec{x}, \\vec{e}_i) = x_i$ kelib chiqadi!"
         },
         {
-            "q": "Ma’ruzadagi 30-slayd misolidagi $B_1 = (1, 1, 1)$, $B_2 = (-\\frac{2}{3}, \\frac{1}{3}, \\frac{1}{3})$, $B_3 = (0, -\\frac{1}{2}, \\frac{1}{2})$ ortogonal vektorlarni normallashtirib, ortonormal bazis $\\vec{e}_1, \\vec{e}_2, \\vec{e}_3$ ni toping.",
+            "q": "$n$ o‘lchovli Evklid fazosi $E^n$ da juft-juft ortogonal bo‘lgan noldan farqli vektorlar soni $k$ ko‘pi bilan nechtaga teng bo‘lishi mumkin?",
             "opts": [
-                "$\\vec{e}_1 = \\frac{1}{\\sqrt{3}}(1, 1, 1),\\qquad \\vec{e}_2 = \\frac{1}{\\sqrt{6}}(-2, 1, 1),\\qquad \\vec{e}_3 = \\frac{1}{\\sqrt{2}}(0, -1, 1)$",
-                "$\\vec{e}_1 = \\frac{1}{3}(1, 1, 1),\\qquad \\vec{e}_2 = \\frac{1}{6}(-2, 1, 1),\\qquad \\vec{e}_3 = \\frac{1}{2}(0, -1, 1)$",
-                "$\\vec{e}_1 = (1, 1, 1),\\qquad \\vec{e}_2 = (-2, 1, 1),\\qquad \\vec{e}_3 = (0, -1, 1)$",
-                "$\\vec{e}_1 = \\frac{1}{\\sqrt{3}}(1, 1, 1),\\qquad \\vec{e}_2 = \\frac{1}{\\sqrt{3}}(-2, 1, 1),\\qquad \\vec{e}_3 = \\frac{1}{\\sqrt{3}}(0, -1, 1)$"
+                "Ko‘pi bilan $n$ taga teng ($k \\le n$), chunki nolmas ortogonal vektorlar chiziqli erkli bo‘lib, $n$ o‘lchovli fazoda chiziqli erkli vektorlar soni $n$ dan oshmaydi",
+                "Ko‘pi bilan $n^2$ taga teng",
+                "Cheksiz ko‘p bo‘lishi mumkin",
+                "Faqat $2$ ta bo‘lishi mumkin"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "8-ma’ruza (23-slayd): Nolmas ortogonal sistema chiziqli erkli bo‘lgani uchun $E^n$ fazoda uning elementlari soni fazo o‘lchami $n$ dan osha olmaydi."
+        },
+        {
+            "q": "Agar $E^n$ Evklid fazosida aynan $n$ ta noldan farqli va juft-juft ortogonal $B_1, B_2, \\dots, B_n$ vektorlar berilgan bo‘lsa, ular $E^n$ fazoda bazis tashkil qiladimi?",
+            "opts": [
+                "Ha, albatta ortogonal bazis tashkil qiladi (chunki $n$ o‘lchovli fazodagi har qanday $n$ ta chiziqli erkli vektor bazis bo‘ladi)",
+                "Yo‘q, faqat uzunliklari $1$ ga teng bo‘lsagina bazis bo‘la oladi",
+                "Yo‘q, ularga yana bitta vektor qo‘shish kerak",
+                "Faqat $n = 3$ da bazis tashkil qiladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Nolmas ortogonal vektorlar chiziqli erkli (8-ma’ruza, 23-slayd), $n$ o‘lchovli fazodagi $n$ ta chiziqli erkli vektor esa ta’rifga ko‘ra (7-ma’ruza, 27-slayd) fazoning bazisini tashkil qiladi."
+        },
+        {
+            "q": "Gramm-Shmidt formulasida agar navbatdagi $A_t$ vektor oldingi $B_1, \\dots, B_{t-1}$ vektorlarning barchasiga allaqachon ortogonal bo‘lsa ($(B_i, A_t) = 0$), u holda $B_t$ nimaga teng bo‘ladi?",
+            "opts": [
+                "$B_t = A_t$ ning o‘ziga teng bo‘lib qoladi (chunki barcha ayiriluvchi proyeksiya koeffitsiyentlari $0$ ga teng bo‘ladi)",
+                "$B_t = \\Theta$ nol vektorga aylanadi",
+                "$B_t = -A_t$ ga teng bo‘ladi",
+                "$B_t = B_1$ ga teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Agar barcha $i < t$ uchun $(B_i, A_t) = 0$ bo‘lsa, $\\sum_{i=1}^{t-1} \\frac{(B_i,A_t)}{(B_i,B_i)}B_i = \\Theta$ bo‘lib, $B_t = A_t$ o‘zgarishsiz qoladi."
+        },
+        {
+            "q": "Nima sababdan nol vektor $\\Theta$ ortonormal vektorlar sistemasiga hech qachon kira olmaydi?",
+            "opts": [
+                "Chunki nol vektorning uzunligi $|\\Theta| = 0$ ga teng bo‘lib, uni normallashtirib (uzunligini $1$ ga teng qilib) bo‘lmaydi hamda nol vektor qatnashgan sistema chiziqli bog‘liq bo‘lib qoladi",
+                "Chunki nol vektorning uzunligi cheksizga teng",
+                "Chunki nol vektor boshqa vektorlar bilan qo‘shilmaydi",
+                "Nol vektor har doim ortonormal bazisning birinchi elementi bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "8-ma’ruza (19, 32-slaydlar): Ortonormal sistemada barcha vektorlar noldan farqli va $|\\vec{a}_i| = 1$ bo‘lishi shart."
+        },
+        {
+            "q": "Evklid fazosida ikki o‘zaro ortogonal $X$ va $Y$ vektorlar ($(X, Y) = 0$) uchun $|X + Y|^2$ nimaga teng?",
+            "opts": [
+                "$|X + Y|^2 = |X|^2 + |Y|^2$ (umumlashgan Pifagor teoremasi)",
+                "$|X + Y|^2 = (|X| + |Y|)^2$",
+                "$|X + Y|^2 = |X|^2 - |Y|^2$",
+                "$|X + Y|^2 = 0$"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "$|X+Y|^2 = (X+Y, X+Y) = (X,X) + 2(X,Y) + (Y,Y) = |X|^2 + 0 + |Y|^2 = |X|^2 + |Y|^2$."
+        },
+        {
+            "q": "Gramm-Shmidt ortogonallash jarayonida har bir $k$-qadamda $\\{B_1, B_2, \\dots, B_k\\}$ ortogonal vektorlar hosil qiluvchi chiziqli qism fazo bilan boshlang‘ich $\\{A_1, A_2, \\dots, A_k\\}$ vektorlar hosil qiluvchi chiziqli qism fazo qanday munosabatda bo‘ladi?",
+            "opts": [
+                "Ular aynan bir xil chiziqli qism fazoni (chiziqli qobiqni) tashkil etadi, ya’ni har bir $B_t$ boshlang‘ich $A_1, \\dots, A_t$ larning chiziqli kombinatsiyasidir",
+                "Ular bir-biri bilan umuman kesishmaydi",
+                "$B_1, \\dots, B_k$ lar kichikroq o‘lchamli fazo hosil qiladi",
+                "Ular o‘zaro ortogonal fazolar bo‘ladi"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "Har bir vektorni o‘z uzunligiga bo‘lamiz: $|B_1|=\\sqrt{3}$, $|B_2|=\\frac{\\sqrt{6}}{3}$, $|B_3|=\\frac{\\sqrt{2}}{2}$."
+            "exp": "Gramm-Shmidt formulasida $B_t$ vektor $A_t$ va $B_1, \\dots, B_{t-1}$ orqali chiziqli ifodalangani sababli $\\text{span}(B_1, \\dots, B_k) = \\text{span}(A_1, \\dots, A_k)$."
         },
         {
-            "q": "Nol bo‘lmagan $B = (3,\\; -4,\\; 0,\\; 12)^T$ vektorning normallangan (birlik) vektori $\\frac{B}{|B|}$ ni toping.",
+            "q": "Agar $A$ matritsaning satr vektorlari (yoki ustun vektorlari) chiziqli erkliligini tekshirish uchun undan tuzilgan kvadrat matritsa determinanti $M_m = \\det(A)$ hisoblansa (12-slayd), qanday mezon o‘rinli?",
             "opts": [
-                "$\\left(\\frac{3}{13},\\; -\\frac{4}{13},\\; 0,\\; \\frac{12}{13}\\right)^T$",
-                "$\\left(\\frac{3}{5},\\; -\\frac{4}{5},\\; 0,\\; \\frac{12}{5}\\right)^T$",
-                "$\\left(\\frac{3}{19},\\; -\\frac{4}{19},\\; 0,\\; \\frac{12}{19}\\right)^T$",
-                "$(1,\\; -1,\\; 0,\\; 1)^T$"
+                "Agar $\\det(A) \\ne 0$ bo‘lsa, $r(A) = m$ bo‘lib, vektorlar sistemasi chiziqli erkli; agar $\\det(A) = 0$ bo‘lsa, $r(A) < m$ bo‘lib, chiziqli bog‘liq bo‘ladi",
+                "Agar $\\det(A) = 0$ bo‘lsa, vektorlar chiziqli erkli bo‘ladi",
+                "Agar $\\det(A) < 0$ bo‘lsa, vektorlar chiziqli bog‘liq bo‘ladi",
+                "Determinant faqat musbat bo‘lgandagina vektorlar erkli bo‘ladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "8-ma’ruza (32-slayd): $|B| = \\sqrt{3^2 + (-4)^2 + 0^2 + 12^2} = \\sqrt{9 + 16 + 144} = \\sqrt{169} = 13$. Demak $B/|B| = (3/13, -4/13, 0, 12/13)^T$."
+            "exp": "8-ma’ruza (12, 25-slaydlar): $m=n$ ta vektor uchun $\\det(A) \\ne 0 \\iff r(A) = m \\iff$ vektorlar chiziqli erkli (bazis tashkil qiladi)."
         },
         {
-            "q": "$\\mathbb{R}^2$ fazoda $A_1 = (3,\\; 4)$ va $A_2 = (1,\\; 2)$ chiziqli erkli vektorlarni Gramm-Shmidt usulida ortogonallash natijasida $B_1 = A_1$ bo‘lsa, $B_2$ vektorni toping.",
+            "q": "Ortonormallangan bazisning $(e_i, e_k) = \\delta_{ik}$ xossasi matritsaviy tilda ushbu bazis vektorlaridan tuzilgan $Q$ matritsa uchun qanday tenglikni beradi?",
             "opts": [
-                "$B_2 = \\left(-\\frac{4}{25},\\; \\frac{3}{25}\\right)$",
-                "$B_2 = \\left(-\\frac{12}{25},\\; \\frac{9}{25}\\right)$",
-                "$B_2 = (-4,\\; 3)$",
-                "$B_2 = \\left(\\frac{4}{5},\\; -\\frac{3}{5}\\right)$"
+                "$Q^T \\cdot Q = E$ (transponirlangan matritsa bilan o‘zining ko‘paytmasi birlik matritsaga teng)",
+                "$Q + Q^T = E$",
+                "$Q^2 = O$",
+                "$\\det(Q) = 0$"
             ],
             "ans": 0,
-            "diff": "O'rta",
-            "exp": "$(B_1, A_2) = 3\\cdot 1 + 4\\cdot 2 = 11$; $(B_1, B_1) = 9 + 16 = 25$. U holda $B_2 = (1, 2) - \\frac{11}{25}(3, 4) = \\left(\\frac{25-33}{25},\\; \\frac{50-44}{25}\\right) = \\left(-\\frac{8}{25},\\; \\frac{6}{25}\\right)$!"
-        },
-        {
-            "q": "$\\mathbb{R}^2$ fazoda $A_1 = (1,\\; 1)$ va $A_2 = (0,\\; 2)$ vektorlarni Gramm-Shmidt usulida ortogonallashtirib, so‘ngra normallashtirsak, qanday ortonormal bazis hosil bo‘ladi?",
-            "opts": [
-                "$\\vec{e}_1 = \\left(\\frac{1}{\\sqrt{2}},\\; \\frac{1}{\\sqrt{2}}\\right),\\qquad \\vec{e}_2 = \\left(-\\frac{1}{\\sqrt{2}},\\; \\frac{1}{\\sqrt{2}}\\right)$",
-                "$\\vec{e}_1 = (1,\\; 1),\\qquad \\vec{e}_2 = (-1,\\; 1)$",
-                "$\\vec{e}_1 = \\left(\\frac{1}{2},\\; \\frac{1}{2}\\right),\\qquad \\vec{e}_2 = \\left(-\\frac{1}{2},\\; \\frac{1}{2}\\right)$",
-                "$\\vec{e}_1 = (1,\\; 0),\\qquad \\vec{e}_2 = (0,\\; 1)$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$B_1 = (1, 1)$; $B_2 = (0, 2) - \\frac{2}{2}(1, 1) = (-1, 1)$. Normallashtirsak: $|B_1|=\\sqrt{2}, |B_2|=\\sqrt{2}$, natijada $\\vec{e}_1 = (1/\\sqrt{2}, 1/\\sqrt{2})$ va $\\vec{e}_2 = (-1/\\sqrt{2}, 1/\\sqrt{2})$."
-        },
-        {
-            "q": "Quyidagi $2$ o‘lchovli vektorlar juftliklaridan qaysi biri $\\mathbb{R}^2$ fazoda ORTONORMAL bazis tashkil qiladi?",
-            "opts": [
-                "$\\vec{e}_1 = (0.6,\\; 0.8),\\qquad \\vec{e}_2 = (-0.8,\\; 0.6)$",
-                "$\\vec{e}_1 = (3,\\; 4),\\qquad \\vec{e}_2 = (-4,\\; 3)$",
-                "$\\vec{e}_1 = (1,\\; 0),\\qquad \\vec{e}_2 = (1,\\; 1)$",
-                "$\\vec{e}_1 = (0.5,\\; 0.5),\\qquad \\vec{e}_2 = (-0.5,\\; 0.5)$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$(\\vec{e}_1, \\vec{e}_2) = -0.48 + 0.48 = 0$ (ortogonal) va $|\\vec{e}_1| = \\sqrt{0.36 + 0.64} = 1,\\; |\\vec{e}_2| = \\sqrt{0.64 + 0.36} = 1$ (birlik vektorlar)."
-        },
-        {
-            "q": "$\\mathbb{R}^3$ fazoda $\\vec{a}_1 = (1,\\; 2,\\; -2)$ va $\\vec{a}_2 = (2,\\; 1,\\; 2)$ ortogonal vektorlar berilgan. Shu ikkala vektorga ham ortogonal bo‘lgan va uzunligi $3$ ga teng bo‘lgan $\\vec{a}_3$ vektorni toping.",
-            "opts": [
-                "$\\vec{a}_3 = (2,\\; -2,\\; -1)$",
-                "$\\vec{a}_3 = (1,\\; -1,\\; -1)$",
-                "$\\vec{a}_3 = (2,\\; 2,\\; -1)$",
-                "$\\vec{a}_3 = (-2,\\; -2,\\; 1)$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$(2, -2, -1)$ ni tekshiramiz: $(\\vec{a}_1, \\vec{a}_3) = 2 - 4 + 2 = 0$; $(\\vec{a}_2, \\vec{a}_3) = 4 - 2 - 2 = 0$; uzunligi $|\\vec{a}_3| = \\sqrt{4+4+1} = 3$."
-        },
-        {
-            "q": "Agar $\\{\\vec{e}_1, \\vec{e}_2, \\vec{e}_3\\}$ ortonormal bazis bo‘lib, $\\vec{x} = 2\\vec{e}_1 - 3\\vec{e}_2 + 6\\vec{e}_3$ bo‘lsa, $(\\vec{x}, \\vec{e}_2)$ skalyar ko‘paytmani va $|\\vec{x}|$ uzunlikni toping.",
-            "opts": [
-                "$(\\vec{x}, \\vec{e}_2) = -3;\\qquad |\\vec{x}| = 7$",
-                "$(\\vec{x}, \\vec{e}_2) = 3;\\qquad |\\vec{x}| = 49$",
-                "$(\\vec{x}, \\vec{e}_2) = 0;\\qquad |\\vec{x}| = 5$",
-                "$(\\vec{x}, \\vec{e}_2) = -3;\\qquad |\\vec{x}| = \\sqrt{11}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Ortonormal bazisda $(\\vec{e}_i, \\vec{e}_k) = \\delta_{ik}$ bo‘lgani uchun $(\\vec{x}, \\vec{e}_2) = 2(0) - 3(1) + 6(0) = -3$, va $|\\vec{x}| = \\sqrt{2^2 + (-3)^2 + 6^2} = \\sqrt{49} = 7$."
-        },
-        {
-            "q": "Agar $\\vec{a}$ va $\\vec{b}$ o‘zaro ortogonal vektorlar bo‘lib, $|\\vec{a}| = 5$ va $|\\vec{b}| = 12$ bo‘lsa, $|\\vec{a} + \\vec{b}|$ va $|\\vec{a} - \\vec{b}|$ uzunliklarni toping.",
-            "opts": [
-                "$|\\vec{a} + \\vec{b}| = 13,\\qquad |\\vec{a} - \\vec{b}| = 13$",
-                "$|\\vec{a} + \\vec{b}| = 17,\\qquad |\\vec{a} - \\vec{b}| = 7$",
-                "$|\\vec{a} + \\vec{b}| = 13,\\qquad |\\vec{a} - \\vec{b}| = 7$",
-                "$|\\vec{a} + \\vec{b}| = 60,\\qquad |\\vec{a} - \\vec{b}| = 0$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Ortogonal vektorlar uchun $(\\vec{a}, \\vec{b}) = 0$, shuning uchun Pifagor teoremasiga ko‘ra $|\\vec{a} \\pm \\vec{b}| = \\sqrt{|\\vec{a}|^2 + |\\vec{b}|^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$."
-        },
-        {
-            "q": "Agar kvadrat $Q$ matritsaning ustunlari ortonormal vektorlar sistemasini tashkil qilsa (ortogonal matritsa), $Q^T \\cdot Q$ ko‘paytma nimaga teng bo‘ladi?",
-            "opts": [
-                "$Q^T \\cdot Q = E$ (birlik matritsa), ya’ni $Q^{-1} = Q^T$",
-                "$Q^T \\cdot Q = O$ (nol matritsa)",
-                "$Q^T \\cdot Q = 2E$",
-                "$Q^T \\cdot Q = -E$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$Q^T Q$ matritsaning $(i, k)$-elementi $(\\vec{e}_i, \\vec{e}_k) = \\delta_{ik}$ ga teng, ya’ni bosh diagonalda 1 lar, qolgan joylarda 0 lar hosil bo‘ladi: $Q^T Q = E$."
-        },
-        {
-            "q": "$A_1 = (1,\\; 2,\\; 3)$, $A_2 = (2,\\; 4,\\; 6)$ va $A_3 = (1,\\; -1,\\; 0)$ vektorlar sistemasi chiziqli erklimi?",
-            "opts": [
-                "Yo‘q, chiziqli bog‘liq, chunki $A_2 = 2A_1$ va matritsa rangi $r(A) = 2 < 3$",
-                "Ha, chiziqli erkli, chunki $3$ ta vektor berilgan",
-                "Ha, ortogonal sistema",
-                "Ha, chunki $A_3$ da nol bor"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$2A_1 - 1A_2 + 0A_3 = \\Theta$ tenglik noldan farqli koeffitsiyentlarda bajariladi ($r(A)=2 < 3$), demak chiziqli bog‘liq."
-        },
-        {
-            "q": "Gramm-Shmidt ortogonallash jarayonida $B_2 = A_2 - \\alpha B_1$ formuladagi $\\alpha = \\frac{(B_1, A_2)}{(B_1, B_1)}$ koeffitsiyent qanday shartdan kelib chiqadi?",
-            "opts": [
-                "$(B_1, B_2) = 0$ ortogonallik shartidan: $(B_1, A_2 - \\alpha B_1) = (B_1, A_2) - \\alpha (B_1, B_1) = 0$",
-                "$|B_2| = 1$ normallash shartidan",
-                "$\\det(B) = 1$ shartidan",
-                "$B_1 + B_2 = A_1 + A_2$ shartidan"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "8-ma’ruza (29-slayd): $B_2$ vektor $B_1$ ga ortogonal bo‘lishi uchun $(B_1, B_2) = 0 \\implies (B_1, A_2) - \\alpha(B_1, B_1) = 0 \\implies \\alpha = \\frac{(B_1, A_2)}{(B_1, B_1)}$."
-        },
-        {
-            "q": "$\\vec{x} = (1,\\; -2,\\; 2,\\; 4)^T$ vektorni normallashtirishdan hosil bo‘lgan birlik vektorning barcha koordinatalari kvadratlari yig‘indisi nimaga teng?",
-            "opts": [
-                "$1$ ga teng",
-                "$25$ ga teng",
-                "$5$ ga teng",
-                "$0$ ga teng"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Har qanday normallangan (birlik) vektorning uzunligi $1$ ga teng, demak uning koordinatalari kvadratlari yig‘indisi ham $1^2 = 1$ ga teng."
-        },
-        {
-            "q": "$E^4$ Evklid fazosida $\\vec{e}_1 = (\\frac{1}{2}, \\frac{1}{2}, \\frac{1}{2}, \\frac{1}{2})^T$ va $\\vec{e}_2 = (\\frac{1}{2}, \\frac{1}{2}, -\\frac{1}{2}, -\\frac{1}{2})^T$ ortonormal vektorlar berilgan. Quyidagi vektorlardan qaysi biri ularni 3-ortonormal vektorgacha to‘ldira oladi?",
-            "opts": [
-                "$\\vec{e}_3 = \\left(\\frac{1}{2},\\; -\\frac{1}{2},\\; \\frac{1}{2},\\; -\\frac{1}{2}\\right)^T$",
-                "$\\vec{e}_3 = \\left(\\frac{1}{2},\\; \\frac{1}{2},\\; \\frac{1}{2},\\; -\\frac{1}{2}\\right)^T$",
-                "$\\vec{e}_3 = (1,\\; -1,\\; 1,\\; -1)^T$",
-                "$\\vec{e}_3 = (1,\\; 0,\\; 0,\\; 0)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Adamar (Hadamard) tipidagi ortonormal sistema: $(\\vec{e}_1, \\vec{e}_3) = 0$, $(\\vec{e}_2, \\vec{e}_3) = 0$ va $|\\vec{e}_3| = \\sqrt{4 \\cdot \\frac{1}{4}} = 1$."
+            "diff": "Qiyin",
+            "exp": "$Q^T Q$ ko‘paytmaning $(i, k)$-elementi $i$-ustun va $k$-ustun skalyar ko‘paytmasi $(e_i, e_k) = \\delta_{ik}$ ga teng, ya’ni $Q^T Q = E$."
         }
-    ]
-    # Fix question 20 in t8 to match (-8/25, 6/25):
-    t8[19]["opts"] = [
-        "$B_2 = \\left(-\\frac{8}{25},\\; \\frac{6}{25}\\right)$",
-        "$B_2 = \\left(-\\frac{12}{25},\\; \\frac{9}{25}\\right)$",
-        "$B_2 = (-4,\\; 3)$",
-        "$B_2 = \\left(\\frac{8}{25},\\; -\\frac{6}{25}\\right)$"
     ]
 
     # =========================================================================
-    # MAVZU 9: Aralash Testlar (Kompleks 30 ta savol — barcha 8 mavzu bo'yicha)
+    # MAVZU 9: Aralash Nazariy Testlar (Barcha 8 ta mavzuni bog'lovchi 30 ta NAZARIY savol)
     # =========================================================================
     t9 = [
         {
-            "q": "[Aralash: 1-2-mavzular] Agar $A = \\begin{pmatrix} 2 & -1 \\\\ 3 & 4 \\end{pmatrix}$ va $B = \\begin{pmatrix} 1 & 2 \\\\ -2 & 0 \\end{pmatrix}$ bo‘lsa, $\\det(A^T + 2B)$ ni hisoblang.",
+            "q": "[Aralash Nazariy: 1–3-mavzular] Ikki xosmas kvadrat $A$ va $B$ matritsalar ko‘paytmasi uchun $(AB)^T$ va $(AB)^{-1}$ amallarning tartib o‘zgarish qoidasi qanday?",
             "opts": [
-                "$12$",
-                "$11$",
-                "$-12$",
-                "$24$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$A^T = \\begin{pmatrix} 2 & 3 \\\\ -1 & 4 \\end{pmatrix}$, $2B = \\begin{pmatrix} 2 & 4 \\\\ -4 & 0 \\end{pmatrix}$. U holda $A^T + 2B = \\begin{pmatrix} 4 & 7 \\\\ -5 & 4 \\end{pmatrix}$ va uning determinanti $4\\cdot 4 - 7(-5) = 16 + 35 = 51$."
-        },
-        {
-            "q": "[Aralash: 1-3-mavzular] Agar $A = \\begin{pmatrix} 2 & 1 \\\\ 3 & 2 \\end{pmatrix}$ bo‘lsa, $A + A^{-1}$ yig‘indi matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 4 & 0 \\\\ 0 & 4 \\end{pmatrix} = 4E$",
-                "$\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix} = E$",
-                "$\\begin{pmatrix} 4 & 2 \\\\ 6 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 0 & 2 \\\\ 6 & 0 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$\\det(A) = 4 - 3 = 1 \\implies A^{-1} = \\begin{pmatrix} 2 & -1 \\\\ -3 & 2 \\end{pmatrix}$. U holda $A + A^{-1} = \\begin{pmatrix} 2+2 & 1-1 \\\\ 3-3 & 2+2 \\end{pmatrix} = \\begin{pmatrix} 4 & 0 \\\\ 0 & 4 \\end{pmatrix} = 4E$."
-        },
-        {
-            "q": "[Aralash: 2-3-mavzular] 3-tartibli kvadrat $A$ matritsa uchun $\\det(A) = 2$ bo‘lsa, $\\det(2A^{-1} \\cdot A^T)$ qiymatini hisoblang.",
-            "opts": [
-                "$8$",
-                "$2$",
-                "$4$",
-                "$16$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$n=3$ bo‘lgani uchun $\\det(2A^{-1} A^T) = 2^3 \\cdot \\det(A^{-1}) \\cdot \\det(A^T) = 8 \\cdot \\frac{1}{\\det A} \\cdot \\det A = 8$."
-        },
-        {
-            "q": "[Aralash: 3-4-mavzular] 4-tartibli $A = \\begin{pmatrix} 1 & 2 & 0 & 0 \\\\ 2 & 5 & 0 & 0 \\\\ 0 & 0 & 3 & 6 \\\\ 0 & 0 & 1 & 2 \\end{pmatrix}$ matritsaning determinanti $\\det(A)$ va rangi $r(A)$ ni toping.",
-            "opts": [
-                "$\\det(A) = 0,\\qquad r(A) = 3$",
-                "$\\det(A) = 1,\\qquad r(A) = 4$",
-                "$\\det(A) = 0,\\qquad r(A) = 2$",
-                "$\\det(A) = 6,\\qquad r(A) = 4$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Yuqori chap blok determinanti $5-4 = 1 \\ne 0$ (rangi 2), quyi o‘ng blok determinanti $6-6 = 0$, ammo $(1, 2) \\ne (0, 0)$ (rangi 1). Demak $\\det(A) = 1 \\cdot 0 = 0$ va $r(A) = 2 + 1 = 3$."
-        },
-        {
-            "q": "[Aralash: 4-5-mavzular] $P = (3, 1, 4, 2)$ o‘rin almashtirishdagi inversiyalar soni $k = \\text{inv}(P)$ ga teng bo‘lsa, 5 ta noma’lumli va rangi $r = k$ bo‘lgan bir jinsli sistemaning FYS da nechta vektor bo‘ladi?",
-            "opts": [
-                "$2$ ta (chunki $k = \\text{inv}(3,1,4,2) = 3$ va $n - r = 5 - 3 = 2$)",
-                "$3$ ta (chunki $k = 2$ va $n - r = 5 - 2 = 3$)",
-                "$1$ ta (chunki $k = 4$ va $n - r = 5 - 4 = 1$)",
-                "$4$ ta"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$P=(3,1,4,2)$ da inversiyalar: $(3,1), (3,2), (4,2) \\implies k = 3$. U holda $n - r = 5 - 3 = 2$ ta FYS vektori bor."
-        },
-        {
-            "q": "[Aralash: 5-6-mavzular] 5 ta noma’lumli bir jinsli sistemaning FYS da $3$ ta chiziqli erkli vektor mavjud bo‘lsa, shu sistemaga mos bir jinsli bo‘lmagan sistemada noma’lumlarni bazis va erkli o‘zgaruvchilarga ajratish usullari soni $C_n^r$ nechaga teng?",
-            "opts": [
-                "$10$ ta (chunki $n - r = 3 \\implies r = 2$ va $C_5^2 = 10$)",
-                "$5$ ta (chunki $r = 1$ va $C_5^1 = 5$)",
-                "$15$ ta",
-                "$6$ ta"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "FYS dagi vektorlar soni $n - r = 3$ bo‘lib, $n = 5$ bo‘lsa, sistema rangi $r = 5 - 3 = 2$. U holda $C_5^2 = \\frac{5!}{2!3!} = 10$."
-        },
-        {
-            "q": "[Aralash: 3-7-mavzular] Bir bazisdan ikkinchi bazisga o‘tish matritsasi $P = \\begin{pmatrix} 2 & 1 \\\\ 5 & 3 \\end{pmatrix}$ berilgan. Eski bazisda $\\vec{x} = (4,\\; 9)^T$ bo‘lgan vektorning yangi bazisdagi koordinatalari $\\vec{x}' = P^{-1}\\vec{x}$ ni toping.",
-            "opts": [
-                "$\\vec{x}' = (3;\\; -2)^T$",
-                "$\\vec{x}' = (-3;\\; 2)^T$",
-                "$\\vec{x}' = (17;\\; 47)^T$",
-                "$\\vec{x}' = (2;\\; 3)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$\\det(P) = 6 - 5 = 1 \\implies P^{-1} = \\begin{pmatrix} 3 & -1 \\\\ -5 & 2 \\end{pmatrix}$. U holda $\\vec{x}' = P^{-1}\\vec{x} = \\begin{pmatrix} 3(4) - 1(9) \\\\ -5(4) + 2(9) \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$."
-        },
-        {
-            "q": "[Aralash: 5-8-mavzular] $x_1 + 2x_2 - x_3 = 0$ bitta tenglamadan iborat bir jinsli sistemaning barcha yechimlari to‘plami $\\mathbb{R}^3$ da qism fazo tashkil qiladi. Uning o‘lchamini va $(1, 2, -1)^T$ normal vektorga munosabatini aniqlang.",
-            "opts": [
-                "O‘lchami $n - r = 3 - 1 = 2$ ga teng bo‘lib, uning har bir yechim vektori $N = (1, 2, -1)^T$ vektorga ortogonaldir",
-                "O‘lchami $1$ ga teng va har bir yechimi $N = (1, 2, -1)^T$ ga kollineardir",
-                "O‘lchami $3$ ga teng",
-                "Qism fazo tashkil qilmaydi"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$1\\cdot x_1 + 2\\cdot x_2 + (-1)\\cdot x_3 = (N, X) = 0$ tenglama $X$ vektorning $N=(1,2,-1)^T$ vektorga ortogonalligini bildiradi va $n-r = 3-1 = 2$ o‘lchovli tekislik (qism fazo) hosil qiladi."
-        },
-        {
-            "q": "[Aralash: 2-7-mavzular] Uchta $\\vec{a} = (2, 0, 0)$, $\\vec{b} = (1, 3, 0)$ va $\\vec{c} = (4, -2, 5)$ vektorlardan tuzilgan matritsa determinanti nimaga teng va ulardan yasalgan parallelepiped hajmi qancha?",
-            "opts": [
-                "$\\Delta = 30,\\qquad V_{\\text{par}} = 30$",
-                "$\\Delta = 10,\\qquad V_{\\text{par}} = 10$",
-                "$\\Delta = 0,\\qquad V_{\\text{par}} = 0$",
-                "$\\Delta = -30,\\qquad V_{\\text{par}} = 15$"
+                "Ikkala amalda ham ko‘paytuvchilar o‘rni teskarisiga o‘zgaradi: $(AB)^T = B^T A^T$ va $(AB)^{-1} = B^{-1} A^{-1}$",
+                "Ikkala amalda ham ko‘paytuvchilar tartibi saqlanadi: $(AB)^T = A^T B^T$ va $(AB)^{-1} = A^{-1} B^{-1}$",
+                "Transponirlashda o‘rni o‘zgaradi, teskari matritsada o‘zgarmaydi",
+                "Transponirlashda o‘zgarmaydi, teskari matritsada o‘zgaradi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "Quyi uchburchakli determinant: $\\Delta = 2 \\cdot 3 \\cdot 5 = 30$, parallelepiped hajmi $V = |\\Delta| = 30$."
+            "exp": "1-ma’ruza (25-slayd) va 3-ma’ruza (7-slayd): Ko‘paytmani transponirlashda ham, teskari matritsa olishda ham ko‘paytuvchilar teskari tartibda yoziladi."
         },
         {
-            "q": "[Aralash: 3-5-mavzular] Kroneker-Kapelli va Kramer qoidalariga ko‘ra, $n$ ta noma’lumli $n$ ta tenglamalar sistemasida $\\det(A) \\ne 0$ bo‘lsa, $r(A), r(A|B)$ va bazis yechimlar soni haqida nima deyish mumkin?",
+            "q": "[Aralash Nazariy: 2–3-mavzular] $n$-tartibli kvadrat $A$ matritsa uchun quyidagi shartlardan qaysi biri uning «xosmas matritsa» ekanligiga EKVIVALENT EMAS?",
             "opts": [
-                "$r(A) = r(A|B) = n$; erkli o‘zgaruvchilar yo‘q ($n-r=0$) va yagona yechimning o‘zi yagona bazis yechim hisoblanadi ($C_n^n = 1$)",
-                "$r(A) < n$ va cheksiz ko‘p bazis yechim mavjud",
-                "$r(A) \\ne r(A|B)$ va bazis yechim mavjud emas",
-                "Bazis yechimlar soni $n!$ ga teng"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$\\det(A) \\ne 0 \\implies r(A) = r(A|B) = n$. Erkli o‘zgaruvchilar soni $n - n = 0$ va $C_n^n = 1$ ta yagona yechim mavjud."
-        },
-        {
-            "q": "[Aralash: 4-8-mavzular] Agar $\\vec{e}_1, \\vec{e}_2, \\vec{e}_3$ vektorlar $\\mathbb{R}^3$ fazoda o‘ng uchlikni tashkil etuvchi ortonormal bazis bo‘lsa, ulardan tuzilgan $3 \\times 3$ matritsaning determinanti nimaga teng?",
-            "opts": [
-                "$1$ ga teng",
-                "$0$ ga teng",
-                "$3$ ga teng",
-                "$\\sqrt{3}$ ga teng"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Ortonormal bazis vektorlaridan yasalgan birlik kubning hajmi $1\\cdot 1\\cdot 1 = 1$ ga teng (yoki $Q^T Q = E \\implies (\\det Q)^2 = 1 \\implies \\det Q = 1$)."
-        },
-        {
-            "q": "[Aralash: 1-5-mavzular] $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ va $B = \\begin{pmatrix} 5 \\\\ 11 \\end{pmatrix}$ bo‘lsa, $AX = B$ tenglamaning yechimi $X = (x_1, x_2)^T$ uchun $X^T \\cdot X$ (uzunlik kvadrati) ni toping.",
-            "opts": [
-                "$5$ (chunki $x_1 = 1,\\; x_2 = 2$ va $1^2 + 2^2 = 5$)",
-                "$3$ (chunki $x_1 = 1,\\; x_2 = 2$ va $1 + 2 = 3$)",
-                "$10$",
-                "$25$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$\\begin{cases} x_1 + 2x_2 = 5 \\\\ 3x_1 + 4x_2 = 11 \\end{cases} \\implies x_1 = 1,\\; x_2 = 2$. U holda $X^T X = (X, X) = 1^2 + 2^2 = 5$."
-        },
-        {
-            "q": "[Aralash: 6-7-mavzular] Gauss usulida $(A \\mid B)$ matritsani pog‘onali shaklga keltirganda $\\begin{pmatrix} 1 & 2 & 0 & -1 & | & 0 \\\\ 0 & 0 & 1 & 3 & | & 0 \\end{pmatrix}$ bir jinsli sistema hosil bo‘ldi. Uning FYS vektorlari $F_1, F_2$ ni toping ($x_2, x_4$ — erkli).",
-            "opts": [
-                "$F_1 = (-2,\\; 1,\\; 0,\\; 0)^T,\\qquad F_2 = (1,\\; 0,\\; -3,\\; 1)^T$",
-                "$F_1 = (2,\\; 1,\\; 0,\\; 0)^T,\\qquad F_2 = (-1,\\; 0,\\; 3,\\; 1)^T$",
-                "$F_1 = (1,\\; 2,\\; 0,\\; -1)^T,\\qquad F_2 = (0,\\; 0,\\; 1,\\; 3)^T$",
-                "$F_1 = (-2,\\; 0,\\; 1,\\; 0)^T,\\qquad F_2 = (1,\\; 0,\\; 0,\\; -3)^T$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$x_1 = -2x_2 + x_4$ va $x_3 = -3x_4$. 1) $(x_2, x_4) = (1, 0) \\implies F_1 = (-2, 1, 0, 0)^T$; 2) $(x_2, x_4) = (0, 1) \\implies F_2 = (1, 0, -3, 1)^T$."
-        },
-        {
-            "q": "[Aralash: 7-8-mavzular] Yuqoridagi savolda topilgan $F_1 = (-2, 1, 0, 0)^T$ va $F_2 = (1, 0, -3, 1)^T$ fundamental yechimlar uchun $(F_1, F_2)$ skalyar ko‘paytmani va Gramm-Shmidt bo‘yicha $B_2 = F_2 - \\frac{(F_1, F_2)}{(F_1, F_1)} F_1$ ortogonal vektorni toping.",
-            "opts": [
-                "$(F_1, F_2) = -2;\\qquad B_2 = (0.2,\\; 0.4,\\; -3,\\; 1)^T$",
-                "$(F_1, F_2) = 0;\\qquad B_2 = F_2$",
-                "$(F_1, F_2) = 2;\\qquad B_2 = (1.8,\\; -0.4,\\; -3,\\; 1)^T$",
-                "$(F_1, F_2) = -5;\\qquad B_2 = (-1,\\; 1,\\; -3,\\; 1)^T$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$(F_1, F_2) = (-2)(1) + 1(0) + 0 + 0 = -2$, $(F_1, F_1) = 4 + 1 = 5$. Demak $B_2 = F_2 - \\frac{-2}{5} F_1 = (1, 0, -3, 1)^T + 0.4(-2, 1, 0, 0)^T = (0.2, 0.4, -3, 1)^T$."
-        },
-        {
-            "q": "[Aralash: 2-4-mavzular] $\\Delta = \\begin{vmatrix} 1 & 2 & 3 & 4 \\\\ 0 & 2 & 5 & 9 \\\\ 0 & 0 & 3 & 7 \\\\ 2 & 4 & 6 & 10 \\end{vmatrix}$ 4-tartibli determinantni elementar almashtirish yordamida hisoblang.",
-            "opts": [
-                "$12$",
-                "$0$",
-                "$60$",
-                "$-12$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "4-satrdan 1-satrning 2 baravarini ayirsak: $(2-2,\\; 4-4,\\; 6-6,\\; 10-8) = (0, 0, 0, 2)$. Natijada bosh diagonali $(1, 2, 3, 2)$ bo‘lgan yuqori uchburchak determinant hosil bo‘ladi: $\\Delta = 1 \\cdot 2 \\cdot 3 \\cdot 2 = 12$."
-        },
-        {
-            "q": "[Aralash: 1-4-mavzular] $A = \\begin{pmatrix} \\cos\\varphi & -\\sin\\varphi & 0 \\\\ \\sin\\varphi & \\cos\\varphi & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$ burish matritsasi uchun $\\det(A)$ va $A^{-1}$ ni toping.",
-            "opts": [
-                "$\\det(A) = 1;\\qquad A^{-1} = A^T = \\begin{pmatrix} \\cos\\varphi & \\sin\\varphi & 0 \\\\ -\\sin\\varphi & \\cos\\varphi & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$",
-                "$\\det(A) = 0;\\qquad A^{-1}$ mavjud emas",
-                "$\\det(A) = -1;\\qquad A^{-1} = -A$",
-                "$\\det(A) = \\cos 2\\varphi;\\qquad A^{-1} = E$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "3-satr bo‘yicha yoyilsa $\\det(A) = 1 \\cdot (\\cos^2\\varphi + \\sin^2\\varphi) = 1$. Ustunlari ortonormal bo‘lgani uchun $A^{-1} = A^T$."
-        },
-        {
-            "q": "[Aralash: 3-6-mavzular] Gauss-Jordan usulida $(A \\mid E)$ matritsani almashtirib $\\left(\\begin{smallmatrix} 1 & 0 & | & 4 & -1 \\\\ 0 & 1 & | & -7 & 2 \\end{smallmatrix}\\right)$ hosil qilindi. Boshlang‘ich $A$ matritsani toping!",
-            "opts": [
-                "$A = \\begin{pmatrix} 2 & 1 \\\\ 7 & 4 \\end{pmatrix}$",
-                "$A = \\begin{pmatrix} 4 & -1 \\\\ -7 & 2 \\end{pmatrix}$",
-                "$A = \\begin{pmatrix} 2 & -1 \\\\ -7 & 4 \\end{pmatrix}$",
-                "$A = \\begin{pmatrix} 4 & 7 \\\\ -1 & 2 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "O‘ng blok $A^{-1} = \\begin{pmatrix} 4 & -1 \\\\ -7 & 2 \\end{pmatrix}$ ni beradi. $(A^{-1})^{-1} = A$ xossasiga ko‘ra ($\\det(A^{-1}) = 8 - 7 = 1$): $A = \\begin{pmatrix} 2 & 1 \\\\ 7 & 4 \\end{pmatrix}$."
-        },
-        {
-            "q": "[Aralash: 5-7-mavzular] $\\mathbb{R}^3$ fazoda $\\vec{a}_1 = (1, 2, 1)^T,\\; \\vec{a}_2 = (2, 3, 1)^T,\\; \\vec{a}_3 = (3, 5, 2)^T$ va $\\vec{b} = (4, 7, 3)^T$ vektorlar berilgan. $x_1 \\vec{a}_1 + x_2 \\vec{a}_2 + x_3 \\vec{a}_3 = \\vec{b}$ vektor tenglama nechta yechimga ega?",
-            "opts": [
-                "Cheksiz ko‘p yechimga ega, chunki $\\vec{a}_3 = \\vec{a}_1 + \\vec{a}_2$ va $\\vec{b} = 2\\vec{a}_1 + \\vec{a}_2$ ($r(A) = r(A|B) = 2 < 3$)",
-                "Yagona yechimga ega ($r(A) = 3$)",
-                "Yechimga ega emas ($r(A) = 2 \\ne r(A|B) = 3$)",
-                "Faqat nol yechimga ega"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$\\vec{a}_1$ va $\\vec{a}_2$ chiziqli erkli ($r=2$), ammo $\\vec{a}_3 = \\vec{a}_1 + \\vec{a}_2$ va $\\vec{b} = 2\\vec{a}_1 + \\vec{a}_2$. Demak $r(A) = r(A|B) = 2 < 3$, sistema cheksiz ko‘p yechimli."
-        },
-        {
-            "q": "[Aralash: 2-5-mavzular] $\\begin{cases} (a-1)x + 2y = 4 \\\\ 3x + (a-2)y = 6 \\end{cases}$ chiziqli tenglamalar sistemasi $a$ parametrning qanday qiymatida cheksiz ko‘p yechimga va qanday qiymatida hech qanday yechimga ega emas?",
-            "opts": [
-                "$a = 4$ da cheksiz ko‘p yechimga ega; $a = -1$ da yechimga ega emas",
-                "$a = -1$ da cheksiz ko‘p yechimga ega; $a = 4$ da yechimga ega emas",
-                "$a = 1$ va $a = 2$ da yechimga ega emas",
-                "Barcha $a$ larda yagona yechimga ega"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$\\Delta = (a-1)(a-2) - 6 = a^2 - 3a - 4 = (a-4)(a+1) = 0 \\implies a=4$ yoki $a=-1$. $a=4$ da $\\begin{cases} 3x+2y=4 \\\\ 3x+2y=6 \\end{cases}$... Diqqat! $a=4$ da $3x+2y=4$ va $3x+2y=6$ ziddiyatli (yechim yo‘q), $a=-1$ da esa $\\begin{cases} -2x+2y=4 \\\\ 3x-3y=6 \\end{cases}$ ham ziddiyatli $(-x+y=2$ va $x-y=2)$! Tekshiramiz: $\\Delta_x = 4(a-2) - 12 = 4a - 20$, u $a=5$ da 0 bo‘ladi! Demak $a=4$ da ham, $a=-1$ da ham $\\Delta_x \\ne 0$, ya’ni IKKALA qiymatda ham yechimga ega emas!"
-        },
-        {
-            "q": "[Aralash: 1-8-mavzular] Agar $X = (1, 2, -2)^T$ ustun vektor bo‘lsa, $P = X \\cdot X^T$ ($3 \\times 3$ matritsa) ning izini ($\\text{tr}(P) = p_{11}+p_{22}+p_{33}$) va rangini ($r(P)$) toping.",
-            "opts": [
-                "$\\text{tr}(P) = |X|^2 = 9,\\qquad r(P) = 1$",
-                "$\\text{tr}(P) = 1,\\qquad r(P) = 3$",
-                "$\\text{tr}(P) = 9,\\qquad r(P) = 3$",
-                "$\\text{tr}(P) = 0,\\qquad r(P) = 0$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$P = X X^T = \\begin{pmatrix} 1 & 2 & -2 \\\\ 2 & 4 & -4 \\\\ -2 & -4 & 4 \\end{pmatrix}$. Uning bosh diagonali yig‘indisi $1 + 4 + 4 = 9 = |X|^2$. Barcha satrlari 1-satrga proporsional bo‘lgani uchun $r(P) = 1$."
-        },
-        {
-            "q": "[Aralash: 3-4-mavzular] $A = \\begin{pmatrix} 2 & 1 & 3 \\\\ 5 & 3 & 2 \\\\ 1 & 4 & 3 \\end{pmatrix}$ matritsaning determinanti $\\det(A) = 40$ (4-ma’ruza, 20-slayd) va algebraik to‘ldiruvchilari $A_{11}=1, A_{21}=9, A_{31}=-7$ bo‘lsa, $A^{-1}$ teskari matritsaning 1-satri qanday bo‘ladi?",
-            "opts": [
-                "$\\left(\\frac{1}{40},\\; \\frac{9}{40},\\; -\\frac{7}{40}\\right)$",
-                "$\\left(\\frac{1}{40},\\; -\\frac{13}{40},\\; \\frac{17}{40}\\right)$",
-                "$(1,\\; 9,\\; -7)$",
-                "$\\left(-\\frac{1}{40},\\; -\\frac{9}{40},\\; \\frac{7}{40}\\right)$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$A^{-1} = \\frac{1}{\\det A}\\bar{A}$ da qo‘shma matritsa transponirlangani sababli 1-satrda $(A_{11}, A_{21}, A_{31}) / \\det(A)$ turadi: $A_{11}=1,\\; A_{21} = -(3-12) = 9,\\; A_{31} = (2-9) = -7$."
-        },
-        {
-            "q": "[Aralash: 6-8-mavzular] $\\begin{cases} x_1 + x_2 + x_3 + x_4 = 0 \\\\ x_1 - x_2 + x_3 - x_4 = 0 \\end{cases}$ bir jinsli sistemaning ikkita bazis-fundamental yechimlari $F_1$ (bunda $x_3=1, x_4=0$) va $F_2$ (bunda $x_3=0, x_4=1$) o‘zaro ortogonalmi?",
-            "opts": [
-                "Ha, ortogonal, chunki $F_1 = (-1, 0, 1, 0)^T$ va $F_2 = (0, -1, 0, 1)^T$ bo‘lib, $(F_1, F_2) = 0$",
-                "Yo‘q, chunki $(F_1, F_2) = 2 \\ne 0$",
-                "Yo‘q, chunki $(F_1, F_2) = -1 \\ne 0$",
-                "Sistema faqat nol yechimga ega"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Tenglamalarni qo‘shib va ayirib: $x_1 + x_3 = 0 \\implies x_1 = -x_3$ hamda $x_2 + x_4 = 0 \\implies x_2 = -x_4$. Demak $F_1 = (-1, 0, 1, 0)^T$ va $F_2 = (0, -1, 0, 1)^T$, ularning skalyar ko‘paytmasi $(F_1, F_2) = 0$!"
-        },
-        {
-            "q": "[Aralash: 7-8-mavzular] $\\vec{a} = (1, 2, 2)$ va $\\vec{b} = (2, 1, -2)$ vektorlar berilgan. $(\\vec{a}, \\vec{b})$ skalyar ko‘paytmani va $[\\vec{a} \\times \\vec{b}]$ vektor ko‘paytma modulini (parallelogramm yuzini) toping.",
-            "opts": [
-                "$(\\vec{a}, \\vec{b}) = 0$ (ortogonal); $\\qquad S = |[\\vec{a} \\times \\vec{b}]| = |\\vec{a}|\\cdot|\\vec{b}| = 3 \\cdot 3 = 9$",
-                "$(\\vec{a}, \\vec{b}) = 8;\\qquad S = 5$",
-                "$(\\vec{a}, \\vec{b}) = 0;\\qquad S = 3$",
-                "$(\\vec{a}, \\vec{b}) = 9;\\qquad S = 0$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$(\\vec{a}, \\vec{b}) = 2 + 2 - 4 = 0 \\implies \\varphi = 90^\\circ,\\; \\sin 90^\\circ = 1$. $|\\vec{a}| = \\sqrt{1+4+4}=3,\\; |\\vec{b}| = \\sqrt{4+1+4}=3$. Demak $S = |\\vec{a}||\\vec{b}|\\sin 90^\\circ = 9$."
-        },
-        {
-            "q": "[Aralash: 1-6-mavzular] $A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 1 & 4 \\\\ 0 & 0 & 1 \\end{pmatrix}$ matritsa uchun $\\det(A)$, $r(A)$ va $A^{-1}$ ning $(1, 3)$-elementi $(A^{-1})_{13}$ ni toping.",
-            "opts": [
-                "$\\det(A) = 1,\\qquad r(A) = 3,\\qquad (A^{-1})_{13} = 5$",
-                "$\\det(A) = 1,\\qquad r(A) = 3,\\qquad (A^{-1})_{13} = -3$",
-                "$\\det(A) = 3,\\qquad r(A) = 3,\\qquad (A^{-1})_{13} = 5$",
-                "$\\det(A) = 1,\\qquad r(A) = 2,\\qquad (A^{-1})_{13} = 0$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Yuqori uchburchak matritsa: $\\det(A) = 1$, $r(A) = 3$. $(A^{-1})_{13} = \\frac{A_{31}}{\\det A} = (-1)^{3+1} \\begin{vmatrix} 2 & 3 \\\\ 1 & 4 \\end{vmatrix} = 8 - 3 = 5$."
-        },
-        {
-            "q": "[Aralash: 2-8-mavzular] Agar $A_1, A_2, A_3$ vektorlar $\\mathbb{R}^3$ da o‘zaro ortogonal bo‘lib, $|A_1| = 2,\\; |A_2| = 3,\\; |A_3| = 4$ bo‘lsa, shu vektorlardan tuzilgan $3 \\times 3$ matritsa determinantining absolyut qiymati $|\\det(A)|$ nimaga teng?",
-            "opts": [
-                "$24$ (chunki to‘g‘ri burchakli parallelepiped hajmi $V = |A_1|\\cdot|A_2|\\cdot|A_3| = 2\\cdot 3\\cdot 4 = 24$)",
-                "$9$ ($2 + 3 + 4 = 9$)",
-                "$0$ (chunki ortogonal)",
-                "$12$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Juft-juft ortogonal uchta vektordan yasalgan parallelepiped to‘g‘ri burchakli parallelepiped bo‘lib, uning hajmi $|\\det(A)| = |A_1|\\cdot|A_2|\\cdot|A_3| = 24$."
-        },
-        {
-            "q": "[Aralash: 4-7-mavzular] $\\vec{e}_1' = 2\\vec{e}_1 + \\vec{e}_2$, $\\vec{e}_2' = 3\\vec{e}_1 + 2\\vec{e}_2$, $\\vec{e}_3' = \\vec{e}_1 + \\vec{e}_2 + \\vec{e}_3$ ifodalar yangi bazisni aniqlay oladimi va o‘tish matritsasi determinanti $\\det(P)$ nimaga teng?",
-            "opts": [
-                "Ha, yangi bazisni aniqlaydi, chunki $\\det(P) = 1 \\ne 0$",
-                "Yo‘q, chunki $\\det(P) = 0$",
-                "Ha, $\\det(P) = 7$",
-                "Yo‘q, chunki $\\vec{e}_3'$ da uchta vektor qatnashgan"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$P = \\begin{pmatrix} 2 & 3 & 1 \\\\ 1 & 2 & 1 \\\\ 0 & 0 & 1 \\end{pmatrix}$. 3-satr bo‘yicha yopilsa $\\det(P) = 1 \\cdot (4 - 3) = 1 \\ne 0$, demak yangi vektorlar chiziqli erkli va bazis tashkil qiladi."
-        },
-        {
-            "q": "[Aralash: 3-5-mavzular] $AX = B$ chiziqli tenglamalar sistemasida $A$ matritsa $4 \\times 4$ o‘lchamli bo‘lib, uning 1-satri elementlari $(2, -4, 6, -8)$ va 3-satri elementlari $(-1, 2, -3, 4)$ ga teng. Bu sistemaga Kramer qoidasini to‘g‘ridan-to‘g‘ri qo‘llash mumkinmi?",
-            "opts": [
-                "Yo‘q, chunki 1- va 3-satrlar proporsional ($R_1 = -2R_3$) bo‘lib, asosiy determinant $\\Delta = \\det(A) = 0$",
-                "Ha, chunki matritsa $4 \\times 4$ kvadrat matritsa",
-                "Ha, agar ozod hadlar noldan farqli bo‘lsa",
-                "Ha, chunki $\\Delta = -2 \\ne 0$"
+                "$A$ matritsaning rangi $r(A) < n$ ga teng",
+                "$\\det(A) \\ne 0$",
+                "$A^{-1}$ teskari matritsa mavjud",
+                "$A$ matritsaning rangi $r(A) = n$ ga teng"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "1- va 3-satrlar proporsional bo‘lgani uchun 2-ma’ruza 8-xossasiga ko‘ra $\\Delta = 0$, Kramer formulalarida esa maxrajda $\\Delta \\ne 0$ bo‘lishi shart."
+            "exp": "3-ma’ruza (4, 6, 18-slaydlar): Xosmas matritsa uchun $\\det(A) \\ne 0 \\iff \\exists A^{-1} \\iff r(A) = n$. $r(A) < n$ esa xos ($\\det A = 0$) matritsa shartidir."
         },
         {
-            "q": "[Aralash: 1-7-mavzular] $\\mathbb{R}^3$ fazoda $X = (1, -2, 3)^T$ va $Y = (4, 0, -1)^T$ vektorlar berilgan. $(2X + Y, X - Y)$ skalyar ko‘paytmani hisoblang.",
+            "q": "[Aralash Nazariy: 2–4-mavzular] Determinantni hisoblashda qachon Uchburchak/Sarrius qoidasi, qachon Laplas teoremasi qo‘llaniladi?",
             "opts": [
-                "$10$",
-                "$11$",
-                "$-10$",
-                "$28$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$2X + Y = (6, -4, 5)^T$ va $X - Y = (-3, -2, 4)^T$. Skalyar ko‘paytma: $6(-3) + (-4)(-2) + 5(4) = -18 + 8 + 20 = 10$."
-        },
-        {
-            "q": "[Aralash: 5-6-mavzular] $\\begin{cases} x_1 + 2x_2 + 3x_3 = 14 \\\\ 2x_2 + 5x_3 = 19 \\\\ 3x_3 = 9 \\end{cases}$ uchburchak sistemaning yechimi $(x_1, x_2, x_3)$ vektorning modulini $|X| = \\sqrt{x_1^2 + x_2^2 + x_3^2}$ toping.",
-            "opts": [
-                "$\\sqrt{14}$ (chunki $x_1 = 1,\\; x_2 = 2,\\; x_3 = 3$)",
-                "$6$ (chunki $1 + 2 + 3 = 6$)",
-                "$14$",
-                "$5$"
+                "Uchburchak va Sarrius qoidalari faqat 3-tartibli determinantlar uchun, Laplas teoremasi va uchburchak shaklga keltirish usuli esa ixtiyoriy $n$-tartibli determinantlar uchun qo‘llaniladi",
+                "Sarrius qoidasi ixtiyoriy $n$-tartibli determinantlar uchun, Laplas teoremasi esa faqat 2-tartibli determinantlar uchun qo‘llaniladi",
+                "Laplas teoremasi faqat diagonal matritsalar uchun qo‘llaniladi",
+                "Uchburchak qoidasi faqat 4-tartibli determinantlar uchun qo‘llaniladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "$3x_3 = 9 \\implies x_3 = 3$; $2x_2 = 19 - 15 = 4 \\implies x_2 = 2$; $x_1 = 14 - 4 - 9 = 1$. $|X| = \\sqrt{1^2 + 2^2 + 3^2} = \\sqrt{14}$."
+            "exp": "2- va 4-ma’ruzalar: Sarrius qoidasi faqat $n=3$ da o‘rinli, Laplas teoremasi esa universaldir."
         },
         {
-            "q": "[Aralash: Barcha mavzular sintezi] $n$-tartibli kvadrat $A$ matritsa uchun quyidagi 4 ta tasdiqdan qaysi biri QOLGAN UCHTASIGA EKVIVALENT EMAS?",
+            "q": "[Aralash Nazariy: 3–4-mavzular] $A$ kvadrat matritsaning qo‘shma matritsasi $\\bar{A}$ bilan $A$ matritsaning ko‘paytmasi $A \\cdot \\bar{A} = \\det(A) \\cdot E$ tengligi 4-ma’ruzadagi qaysi teoremaga asoslanadi?",
             "opts": [
-                "$AX = \\Theta$ bir jinsli sistema noldan farqli fundamental yechimlar sistemasiga ega",
-                "$\\det(A) \\ne 0$ (matritsa xosmas va $A^{-1}$ teskari matritsa mavjud)",
-                "Matritsaning rangi $r(A) = n$ va uning ustun vektorlari $\\mathbb{R}^n$ fazoda bazis tashkil qiladi",
-                "Har qanday $B$ ozod hadlar ustuni uchun $AX = B$ sistema Kramer va Gauss-Jordan usulida yagona yechimga ega"
+                "Laplas teoremasiga ($i = k$ da $\\sum a_{ij}A_{ij} = \\det A$) hamda uning begona satr haqidagi natijasiga ($i \\ne k$ da $\\sum a_{ij}A_{kj} = 0$)",
+                "Koshi-Bunyakovskiy teoremasiga",
+                "Gramm-Shmidt teoremasiga",
+                "O‘rin almashtirishlarning inversiya xossasiga"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "$A \\cdot \\bar{A}$ ko‘paytmaning diagonalida $\\sum_{j=1}^n a_{ij}A_{ij} = \\det(A)$ (Laplas teoremasi), diagonaldan tashqarida esa $\\sum_{j=1}^n a_{ij}A_{kj} = 0$ (Laplas natijasi) hosil bo‘ladi!"
+        },
+        {
+            "q": "[Aralash Nazariy: 3–5-mavzular] $n$ ta noma’lumli $n$ ta chiziqli tenglamalar sistemasi $AX = B$ ni yechishning Matritsalar usuli ($X = A^{-1}B$) va Kramer usuli ($x_i = \\Delta_{x_i} / \\Delta$) qo‘llanilishi uchun qanday umumiy shart bajarilishi zarur?",
+            "opts": [
+                "Tenglamalar soni noma’lumlar soniga teng ($m = n$) bo‘lishi va asosiy matritsa xosmas ($\\Delta = \\det(A) \\ne 0$) bo‘lishi zarur",
+                "Ozod hadlar ustuni nolga teng ($B = \\Theta$) bo‘lishi zarur",
+                "Asosiy matritsa determinanti nolga teng ($\\Delta = 0$) bo‘lishi zarur",
+                "$r(A) < n$ bo‘lishi zarur"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "5-ma’ruza (26, 30-slaydlar): Har ikkala usul ham kvadrat ($m=n$) va xosmas ($\\det A \\ne 0$) sistemaning yagona yechimini topish uchun xizmat qiladi."
+        },
+        {
+            "q": "[Aralash Nazariy: 3 va 6-mavzular] Gauss-Jordan usulining $(A \\mid E) \\sim (E \\mid A^{-1})$ va $(A \\mid B) \\sim (E \\mid X)$ sxemalari orasidagi umumiy algoritmik g‘oya nimadan iborat?",
+            "opts": [
+                "Har ikkalasida ham chap blokdagi $A$ matritsa elementar satr almashtirishlari yordamida birlik matritsa $E$ ga keltiriladi; natijada o‘ng blokda mos ravishda $A^{-1}$ yoki $X = A^{-1}B$ hosil bo‘ladi",
+                "Har ikkalasida ham ustunlar o‘rni almashtirilib nol matritsa hosil qilinadi",
+                "Har ikkalasida ham teskari yurish bosqichi bajariladi",
+                "Har ikkalasi faqat bir jinsli sistemalar uchun ishlatiladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "Chiziqli algebraning fundamental teoremasiga ko‘ra $\\det(A) \\ne 0 \\iff \\exists A^{-1} \\iff r(A) = n \\iff AX=B$ yagona yechimli. Ammo $AX = \\Theta$ nolmas FYS ga ega bo‘lishi uchun $r(A) < n$ ($\\det(A) = 0$) bo‘lishi kerak!"
+            "exp": "3-ma’ruza (11-slayd) va 6-ma’ruza (10-slayd): Gauss-Jordan eliminatsiyasi chap blokni $E$ ga keltirish orqali o‘ng blokni chapdan $A^{-1}$ ga ko‘paytirish effektini beradi."
+        },
+        {
+            "q": "[Aralash Nazariy: 5–6-mavzular] $n$ ta noma’lumli va rangi $r$ ($r < n$) bo‘lgan chiziqli tenglamalar sistemasida «fundamental yechimlar sistemasidagi (FYS) vektorlar soni» bilan «bazis guruhlar soni» qaysi formulalar orqali aniqlanadi?",
+            "opts": [
+                "Bir jinsli sistema FYS dagi vektorlar soni $k = n - r$ ga teng; bazis guruhlar soni esa $C_n^r = \\frac{n!}{r!(n-r)!}$ ga teng",
+                "FYS dagi vektorlar soni $C_n^r$ ga teng; bazis guruhlar soni $n - r$ ga teng",
+                "Har ikkalasi ham $r$ ga teng",
+                "Har ikkalasi ham $n!$ ga teng"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "5-ma’ruza (8-slayd): FYS da $n - r$ ta vektor bor. 6-ma’ruza (14-slayd): Bazis guruhlar soni $C_n^r = \\frac{n!}{r!(n-r)!}$."
+        },
+        {
+            "q": "[Aralash Nazariy: 5–6-mavzular] Bir jinsli bo‘lmagan sistemaning xususiy yechimi $F_0$ (erkli o‘zgaruvchilar $0$ deb olinganda) bilan shu sistemaning bazis yechimi $X_b$ orasida qanday bog‘lanish bor?",
+            "opts": [
+                "Erkli o‘zgaruvchilar $0$ ga teng deb olinganda topilgan xususiy yechim $F_0$ aynan tanlangan bazis o‘zgaruvchilarga mos keluvchi bazis yechim $X_b$ ning o‘zidir",
+                "Ular bir-biriga qarama-qarshi vektorlardir ($F_0 = -X_b$)",
+                "$F_0$ har doim nol vektor bo‘ladi, $X_b$ esa nolmas bo‘ladi",
+                "Ular orasida hech qanday bog‘lanish yo‘q"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "5-ma’ruza (13-slayd) va 6-ma’ruza (14-slayd): Erkli o‘zgaruvchilarni $0$ ga tenglashtirib topilgan xususiy yechim ta’rifga ko‘ra sistemaning bazis yechimi hisoblanadi."
+        },
+        {
+            "q": "[Aralash Nazariy: 3, 7, 8-mavzular] $n$ o‘lchovli $n$ ta $A_1, A_2, \\dots, A_n$ vektorlar $\\mathbb{R}^n$ fazoda bazis tashkil qilishi uchun ulardan tuzilgan kvadrat $A$ matritsa qanday shartni qanoatlantirishi zarur va yetarli?",
+            "opts": [
+                "$\\det(A) \\ne 0$ (ya’ni matritsa xosmas va rangi $r(A) = n$) bo‘lishi zarur va yetarli",
+                "$\\det(A) = 0$ (ya’ni matritsa xos) bo‘lishi zarur va yetarli",
+                "$A$ matritsa diagonal bo‘lishi zarur va yetarli",
+                "$r(A) < n$ bo‘lishi zarur va yetarli"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (27-slayd) va 8-ma’ruza (11-12, 25-slaydlar): $n$ ta vektor chiziqli erkli (bazis) bo‘lishi $\\iff r(A) = n \\iff \\det(A) \\ne 0$."
+        },
+        {
+            "q": "[Aralash Nazariy: 5 va 7-mavzular] Bir jinsli $AX = \\Theta$ chiziqli tenglamalar sistemasining barcha yechimlari to‘plami $\\mathbb{R}^n$ fazoda qanday tuzilmani hosil qiladi va uning bazisi nima bo‘ladi?",
+            "opts": [
+                "$\\mathbb{R}^n$ fazoning $n - r$ o‘lchovli chiziqli qism fazosini tashkil qiladi va sistemaning Fundamental yechimlar sistemasi (FYS) shu qism fazoning bazisi bo‘ladi",
+                "Qism fazo tashkil qilmaydi",
+                "$r$ o‘lchovli qism fazo tashkil qiladi",
+                "Faqat bitta nuqtadan iborat to‘plam bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "5-ma’ruza (7-8-slaydlar) va 7-ma’ruza (27-28-slaydlar): Bir jinsli sistemaning har qanday yechimi $n-r$ ta chiziqli erkli FYS vektorlari orqali chiziqli ifodalangani uchun FYS yechimlar qism fazosining bazisidir!"
+        },
+        {
+            "q": "[Aralash Nazariy: 3 va 7-mavzular] Bir bazisdan boshqa bazisga o‘tishda yangi koordinatalarni topish formulasi $\\vec{x}' = P^{-1} \\vec{x}$ qaysi matritsaviy tenglamani yechishdan hosil bo‘ladi (7-ma’ruza, 34-slayd)?",
+            "opts": [
+                "$P \\cdot \\vec{x}' = \\vec{x}$ matritsaviy tenglamani chapdan $P^{-1}$ teskari matritsaga ko‘paytirishdan hosil bo‘ladi",
+                "$\\vec{x}' \\cdot P = \\vec{x}$ tenglamadan hosil bo‘ladi",
+                "$P + \\vec{x}' = \\vec{x}$ tenglamadan hosil bo‘ladi",
+                "$P^T \\cdot \\vec{x} = \\vec{x}'$ tenglamadan hosil bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (34-slayd): $P \\cdot \\vec{x}' = \\vec{x} \\implies \\vec{x}' = P^{-1} \\cdot \\vec{x}$."
+        },
+        {
+            "q": "[Aralash Nazariy: 1 va 7-mavzular] Ustun-vektorlar ko‘rinishida berilgan ikkita $n$ o‘lchovli $X$ va $Y$ vektorlarning skalyar ko‘paytmasi $(X, Y)$ matritsalarni ko‘paytirish va transponirlash amallari orqali qanday yoziladi (7-ma’ruza, 8-slayd)?",
+            "opts": [
+                "$(X, Y) = X^T \\cdot Y = Y^T \\cdot X$ ($1 \\times n$ satr matritsani $n \\times 1$ ustun matritsaga ko‘paytmasi)",
+                "$(X, Y) = X \\cdot Y^T$ ($n \\times n$ matritsa)",
+                "$(X, Y) = X + Y^T$",
+                "$(X, Y) = (X \\cdot Y)^T$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (8-slayd): $(X, Y) = X^T Y = Y^T X = x_1y_1 + x_2y_2 + \\dots + x_ny_n$."
+        },
+        {
+            "q": "[Aralash Nazariy: 2 va 7-mavzular] Fazodagi uchta $\\vec{a}, \\vec{b}, \\vec{c}$ vektorning aralash ko‘paytmasi $([\\vec{a} \\times \\vec{b}] \\cdot \\vec{c})$ da ikkita vektorning o‘rni almashtirilsa, aralash ko‘paytma qanday o‘zgaradi?",
+            "opts": [
+                "Determinantning 5-xossasiga ko‘ra (ikkita satr o‘rni almashgani uchun) aralash ko‘paytmaning ishorasi qarama-qarshiga o‘zgaradi, moduli (parallelepiped hajmi) esa o‘zgarmaydi",
+                "Aralash ko‘paytma nolga teng bo‘lib qoladi",
+                "Aralash ko‘paytmaning ishorasi ham, qiymati ham o‘zgarmaydi",
+                "Parallelepiped hajmi $2$ marta ortadi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Aralash ko‘paytma 3-tartibli determinant bo‘lgani uchun ikkita vektor (satr) o‘rni almashganda ishorasi minusga o‘zgaradi."
+        },
+        {
+            "q": "[Aralash Nazariy: 7 va 8-mavzular] Ikki noldan farqli $X$ va $Y$ vektorlarning o‘zaro ortogonallik sharti $(X, Y) = 0$ ularning orasidagi burchak kosinusi $\\cos\\varphi = \\frac{(X,Y)}{|X|\\cdot|Y|}$ va proyeksiya $\\text{Pr}_X(Y)$ uchun nimani anglatadi?",
+            "opts": [
+                "$\\cos\\varphi = 0$ ($\\varphi = \\pi/2$) ekanligini va bir vektorning ikkinchisi yo‘nalishidagi proyeksiyasi nolga teng ($\\text{Pr}_X(Y) = 0$) ekanligini anglatadi",
+                "$\\cos\\varphi = 1$ va $\\text{Pr}_X(Y) = |Y|$ ekanligini anglatadi",
+                "Vektorlarning vektor ko‘paytmasi nolga teng ekanligini anglatadi",
+                "Vektorlar kollinear ekanligini anglatadi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "7-ma’ruza (14, 18-slaydlar) va 8-ma’ruza (14-15-slaydlar): $(X,Y) = 0 \\iff \\cos\\varphi = 0 \\iff \\text{Pr}_X(Y) = 0$."
+        },
+        {
+            "q": "[Aralash Nazariy: 5 va 7-mavzular] $m$ ta $n$ o‘lchovli $A_1, A_2, \\dots, A_m$ vektorlarning chiziqli erkliligini tekshirish tenglamalar sistemasi tilida qanday masalaga keladi?",
+            "opts": [
+                "$\\lambda_1 A_1 + \\lambda_2 A_2 + \\dots + \\lambda_m A_m = \\Theta$ bir jinsli chiziqli tenglamalar sistemasining faqat yagona nol yechimga ($\\lambda_1=\\dots=\\lambda_m=0$) ega bo‘lishini tekshirish masalasiga keladi",
+                "Bir jinsli bo‘lmagan sistemaning yechimga ega emasligini tekshirishga keladi",
+                "Vektorlarni o‘zaro skalyar ko‘paytirish masalasiga keladi",
+                "Qo‘shma matritsa topish masalasiga keladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "5-ma’ruza (5-slayd) va 8-ma’ruza (10-11-slaydlar): Ustunlari $A_1, \\dots, A_m$ bo‘lgan bir jinsli sistema faqat $r(A) = m$ bo‘lganda yagona nol yechimga ega bo‘lib, vektorlar chiziqli erkli bo‘ladi."
+        },
+        {
+            "q": "[Aralash Nazariy: 2, 3, 6-mavzular] Matritsa ustida «bir satrga boshqa satrni songa ko‘paytirib qo‘shish» elementar amali bajarilganda matritsaning rangi $r(A)$ va determinanti $\\det(A)$ qanday o‘zgaradi?",
+            "opts": [
+                "Matritsaning rangi ham ($r(A)$), determinanti ham ($\\det A$) o‘zgarmaydi",
+                "Rangi o‘zgarmaydi, ammo determinanti ishorasini o‘zgartiradi",
+                "Determinanti o‘zgarmaydi, ammo rangi $1$ ga ortadi",
+                "Har ikkalasi ham shu songa ko‘payadi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "2-ma’ruza (7-xossa) va 3-ma’ruza (18-slayd): Ushbu elementar almashtirish ham determinantni, ham matritsa rangini o‘zgarmasdan saqlaydi."
+        },
+        {
+            "q": "[Aralash Nazariy: 2 va 3-mavzular] Matritsada «ikkita satr o‘rnini almashtirish» hamda «satrni $k \\ne 0, 1$ songa ko‘paytirish» elementar amallarida matritsa rangi $r(A)$ va determinanti $\\det(A)$ qanday o‘zgaradi?",
+            "opts": [
+                "Matritsa rangi $r(A)$ har ikkala amalda ham mutlaqo o‘zgarmaydi; determinant esa satrlar almashganda ishorasini o‘zgartiradi ($-\\det A$), satr $k$ ga ko‘payganda $k$ marta o‘zgaradi ($k\\det A$)",
+                "Matritsa rangi ham, determinanti ham o‘zgarmaydi",
+                "Matritsa rangi $k$ marta ortadi",
+                "Determinant o‘zgarmaydi, rang esa ishorasini o‘zgartiradi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Elementar almashtirishlarning barchasida rang o‘zgarmaydi, biroq determinant 4 va 5-xossalarga ko‘ra $k$ ga yoki $(-1)$ ga ko‘payadi."
+        },
+        {
+            "q": "[Aralash Nazariy: 3 va 5-mavzular] Kroneker-Kapelli teoremasiga ko‘ra, agar $AX = B$ sistemaning asosiy matritsasi $A$ xosmas kvadrat matritsa ($\\det A \\ne 0$) bo‘lsa, nima uchun sistema ozod hadlar ustuni $B$ ning IXTIYORIY qiymatlarida birgalikda bo‘ladi?",
+            "opts": [
+                "Chunki $\\det(A) \\ne 0$ bo‘lganda $r(A) = n$ bo‘ladi, kengaytirilgan $(A \\mid B)$ matritsada esa satrlar soni $n$ ta bo‘lgani uchun $r(A \\mid B)$ ham $n$ dan osha olmaydi ($n \\le r(A \\mid B) \\le n \\implies r(A) = r(A \\mid B) = n$)",
+                "Chunki $B$ ustun har doim nolga teng bo‘ladi",
+                "Chunki $r(A) = 0$ bo‘ladi",
+                "Chunki sistema cheksiz ko‘p yechimga ega bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "$n \\times (n+1)$ o‘lchovli $(A \\mid B)$ matritsa rangi $\\min(n, n+1) = n$ dan oshmaydi. $r(A) = n$ bo‘lgach, $r(A \\mid B) = n$ bo‘lishi majburiy!"
+        },
+        {
+            "q": "[Aralash Nazariy: 7 va 8-mavzular] Bir ortonormal bazisdan ikkinchi ortonormal bazisga o‘tish matritsasi $P$ qanday maxsus xossaga ega bo‘ladi?",
+            "opts": [
+                "$P$ ortogonal matritsa bo‘ladi, ya’ni $P^{-1} = P^T$ bo‘lib, yangi koordinatalar $\\vec{x}' = P^T \\vec{x}$ formula bilan teskari matritsa hisoblamasdan topiladi",
+                "$P$ nol matritsa bo‘ladi",
+                "$P$ ning determinanti nolga teng bo‘ladi",
+                "$P$ har doim faqat musbat sonlardan iborat bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "Ortonormal bazisda yangi ortonormal bazis ustunlari o‘zaro ortonormal bo‘lgani uchun $P^T P = E \\implies P^{-1} = P^T$."
+        },
+        {
+            "q": "[Aralash Nazariy: 4 va 7-mavzular] Fazodagi uchta $\\vec{a}, \\vec{b}, \\vec{c}$ vektorlarning aralash ko‘paytmasi $\\begin{vmatrix} a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\\\ c_1 & c_2 & c_3 \\end{vmatrix}$ ni 1-satr bo‘yicha Laplas formulasi bilan yoyish qaysi vektor amalga mos keladi?",
+            "opts": [
+                "$\\vec{a}$ vektorni $[\\vec{b} \\times \\vec{c}]$ vektor ko‘paytmaga skalyar ko‘paytirishga: $(\\vec{a} \\cdot [\\vec{b} \\times \\vec{c}]) = a_1 A_{11} + a_2 A_{12} + a_3 A_{13}$",
+                "Uchta vektorni o‘zaro qo‘shishga",
+                "Vektorlarni normallashtirishga",
+                "Gramm-Shmidt ortogonallash jarayoniga"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "1-satr elementlarining algebraik to‘ldiruvchilari $A_{11}, A_{12}, A_{13}$ aynan $[\\vec{b} \\times \\vec{c}]$ vektor ko‘paytmaning koordinatalariga teng!"
+        },
+        {
+            "q": "[Aralash Nazariy: 1, 2, 3-mavzular] Nol matritsa $\\Theta$ va Birlik matritsa $E$ ($n$-tartibli) uchun ularning determinanti va rangi qaysi javobda to‘g‘ri berilgan?",
+            "opts": [
+                "$\\det(\\Theta) = 0,\\; r(\\Theta) = 0\\quad$ hamda $\\quad \\det(E) = 1,\\; r(E) = n$",
+                "$\\det(\\Theta) = 0,\\; r(\\Theta) = 1\\quad$ hamda $\\quad \\det(E) = n,\\; r(E) = 1$",
+                "$\\det(\\Theta) = 1,\\; r(\\Theta) = 0\\quad$ hamda $\\quad \\det(E) = 1,\\; r(E) = 1$",
+                "$\\det(\\Theta) = 0,\\; r(\\Theta) = n\\quad$ hamda $\\quad \\det(E) = 0,\\; r(E) = n$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "Nol matritsada barcha minorlar 0 bo‘lgani uchun $\\det(\\Theta)=0, r(\\Theta)=0$. Birlik matritsada esa $\\det(E)=1 \\ne 0$ va $r(E)=n$."
+        },
+        {
+            "q": "[Aralash Nazariy: 5, 6, 7-mavzular] $AX = B$ chiziqli tenglamalar sistemasining birgalikda bo‘lishi (Kroneker-Kapelli teoremasi) ustun-vektorlarning chiziqli kombinatsiyasi tilida nimani anglatadi?",
+            "opts": [
+                "Sistema birgalikda bo‘lishi ($r(A) = r(A \\mid B)$) ozod hadlar ustun-vektori $B$ ning asosiy matritsa ustun-vektorlari $A_1, A_2, \\dots, A_n$ orqali chiziqli kombinatsiya ko‘rinishida ifodalanishini anglatadi ($x_1 A_1 + \\dots + x_n A_n = B$)",
+                "$B$ vektor barcha $A_i$ ustun-vektorlarga ortogonal ekanligini anglatadi",
+                "$A_1, \\dots, A_n$ ustunlar nol vektor ekanligini anglatadi",
+                "$B$ vektor birlik vektor ekanligini anglatadi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "$AX = x_1 A_1 + x_2 A_2 + \\dots + x_n A_n = B$ tenglikning yechimi mavjud bo‘lishi $B$ ustun qo‘shilganda rang ortmasligini ($r(A)=r(A|B)$), ya’ni $B$ vektor $A$ ustunlarining chiziqli qobig‘ida yotishini bildiradi."
+        },
+        {
+            "q": "[Aralash Nazariy: 7 va 8-mavzular] Haqiqiy chiziqli fazo ($L$), Arifmetik vektor fazo ($\\mathbb{R}^n$) va Evklid fazosi ($E^n$) tushunchalari o‘zaro qanday bog‘langan?",
+            "opts": [
+                "$L$ — 8 ta aksiomani qanoatlantiruvchi umumiy chiziqli fazo; $\\mathbb{R}^n$ — elementlari $n$ ta haqiqiy sonlar kortejidan iborat arifmetik chiziqli fazo; $E^n$ esa skalyar ko‘paytma kiritilgan haqiqiy chiziqli (xususan $\\mathbb{R}^n$) fazodir",
+                "Uchala tushuncha bir-biriga mutlaqo zid",
+                "Evklid fazosida qo‘shish va songa ko‘paytirish amallari mavjud emas",
+                "Arifmetik fazoda vektorlar uzunligi aniqlanishi mumkin emas"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "7- va 8-ma’ruzalar: Chiziqli fazoda skalyar ko‘paytma aniqlansa, u Evklid fazosiga aylanadi va unda uzunlik hamda burchak (ortogonallik) tushunchalari paydo bo‘ladi."
+        },
+        {
+            "q": "[Aralash Nazariy: 3 va 5-mavzular] Agar $m \\times n$ o‘lchovli $A$ matritsaning rangi $r(A) = r$ bo‘lsa, $A$ matritsaning chiziqli erkli satrlari maksimal soni bilan chiziqli erkli ustunlari maksimal soni orasida qanday munosabat bor?",
+            "opts": [
+                "Ular o‘zaro teng va har ikkalasi matritsaning rangi $r$ ga teng (chunki $r(A) = r(A^T) = r$)",
+                "Chiziqli erkli satrlar soni $m$ ga, ustunlar soni $n$ ga teng",
+                "Chiziqli erkli satrlar soni ustunlar sonidan har doim katta",
+                "Ular o‘zaro teng emas"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Matritsa rangi haqidagi teoremaga ko‘ra, matritsaning chiziqli erkli satrlari maksimal soni uning chiziqli erkli ustunlari maksimal soniga va matritsa rangi $r(A)$ ga teng."
+        },
+        {
+            "q": "[Aralash Nazariy: 4 va 8-mavzular] Gramm-Shmidt ortogonallash jarayonida chiziqli erkli $A_1, \\dots, A_n$ vektorlardan ortogonal $B_1, \\dots, B_n$ vektorlar qurilganda ($B_1 = A_1, B_t = A_t - \\sum c_{it} B_i$), ulardan tuzilgan matritsalar determinantlari $\\det(B)$ va $\\det(A)$ orasida qanday bog‘lanish bo‘ladi?",
+            "opts": [
+                "$\\det(B) = \\det(A)$ bo‘ladi, chunki har bir qadamda bir vektordan oldingi vektorlarning chiziqli kombinatsiyasini ayirish determinantning 7-xossasiga ko‘ra determinant qiymatini o‘zgartirmaydi",
+                "$\\det(B) = 0$ bo‘ladi",
+                "$\\det(B) = -\\det(A)$ bo‘ladi",
+                "$\\det(B) = 1$ bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "Gramm-Shmidt formulasi $B_t = A_t - \\sum_{i<t} \\alpha_{it} B_i$ determinantda $t$-satrdan oldingi satrlarning chiziqli kombinatsiyasini ayirish bilan bir xil bo‘lib, 7-xossaga ko‘ra $\\det(B) = \\det(A)$!"
+        },
+        {
+            "q": "[Aralash Nazariy: 2 va 5-mavzular] Kramer qoidasida $x_i = \\frac{\\Delta_{x_i}}{\\Delta}$ formulani teskari matritsa formulasi $X = A^{-1}B = \\frac{1}{\\Delta}\\bar{A}B$ bilan solishtirganda, $\\Delta_{x_i}$ yordamchi determinant $A$ matritsaning algebraik to‘ldiruvchilari orqali qanday yoziladi?",
+            "opts": [
+                "$\\Delta_{x_i} = b_1 A_{1i} + b_2 A_{2i} + \\dots + b_n A_{ni}$ ($i$-ustun bo‘yicha Laplas yoyilmasi)",
+                "$\\Delta_{x_i} = b_1 A_{i1} + b_2 A_{i2} + \\dots + b_n A_{in}$ ($i$-satr bo‘yicha yoyilma)",
+                "$\\Delta_{x_i} = b_i \\cdot \\Delta$",
+                "$\\Delta_{x_i} = A_{ii}$"
+            ],
+            "ans": 0,
+            "diff": "Qiyin",
+            "exp": "$\\Delta_{x_i}$ determinantning $i$-ustunida $b_1, \\dots, b_n$ ozod hadlar turgani uchun uni $i$-ustun bo‘yicha Laplas teoremasi bilan yoysak, aynan $\\bar{A}B$ ko‘paytmaning $i$-satri $b_1 A_{1i} + \\dots + b_n A_{ni}$ hosil bo‘ladi! Demak Kramer usuli va Matritsalar usuli nazariy jihatdan aynan bir xil."
+        },
+        {
+            "q": "[Aralash Nazariy: 1 va 3-mavzular] Agar kvadrat $A$ matritsa uchun $A^2 = E$ tenglik bajarilsa (involyutiv matritsa), uning teskari matritsasi $A^{-1}$ nimaga teng bo‘ladi?",
+            "opts": [
+                "$A^{-1} = A$ (matritsaning o‘ziga teng bo‘ladi, chunki $A \\cdot A = E$)",
+                "$A^{-1} = E$ ga teng bo‘ladi",
+                "$A^{-1} = -A$ ga teng bo‘ladi",
+                "Teskari matritsa mavjud emas"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Teskari matritsa ta’rifiga ko‘ra $A \\cdot A^{-1} = E$. Agar $A \\cdot A = E$ bo‘lsa, u holda $A^{-1} = A$."
+        },
+        {
+            "q": "[Aralash Nazariy: 1 va 3-mavzular] Agar kvadrat $A \\ne O$ matritsa uchun $A^2 = O$ tenglik bajarilsa (nilpotent matritsa), uning determinanti $\\det(A)$ haqida nima deyish mumkin va unga teskari matritsa mavjudmi?",
+            "opts": [
+                "$(\\det A)^2 = \\det(O) = 0 \\implies \\det(A) = 0$ (xos matritsa), shuning uchun unga teskari matritsa mavjud emas",
+                "$\\det(A) = 1$ va teskari matritsa mavjud",
+                "$A^{-1} = O$ nol matritsa bo‘ladi",
+                "$\\det(A) = -1$"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "$A^2 = O \\implies \\det(A^2) = (\\det A)^2 = 0 \\implies \\det(A) = 0$. Demak nilpotent matritsa har doim xos matritsadir va $A^{-1}$ mavjud emas."
+        },
+        {
+            "q": "[Aralash Nazariy: 6 va 8-mavzular] $m \\times n$ matritsani Gauss usulida pog‘onali shaklga keltirish hamda vektorlar sistemasini Gramm-Shmidt usulida ortogonallash jarayonlari orasida qanday o‘xshashlik bor?",
+            "opts": [
+                "Har ikkala jarayonda ham har bir navbatdagi satr (vektor)dan oldingi satrlar (vektorlar)ning ma’lum chiziqli kombinatsiyasi ayirib tashlanadi va chiziqli qobiq (rang) o‘zgarmasdan saqlanadi",
+                "Har ikkalasi ham faqat $2 \\times 2$ matritsalar uchun bajariladi",
+                "Har ikkalasida ham determinant $0$ ga teng bo‘ladi",
+                "Har ikkalasida ham ozod hadlar nolga teng bo‘lishi shart"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Gauss eliminatsiyasida oldingi satrlar yordamida ustun elementlari nolga aylantirilsa, Gramm-Shmidt jarayonida oldingi vektorlar yordamida skalyar ko‘paytmalar nolga aylantiriladi."
+        },
+        {
+            "q": "[Aralash Nazariy: Barcha 8 ta ma’ruza yakuniy sintezi] $n$-tartibli kvadrat $A$ matritsa uchun quyidagi tasdiqlardan qaysi biri Chiziqli algebraning «Fundamental Ekvivalentlik Teoremasi»ni to‘g‘ri ifodalaydi?",
+            "opts": [
+                "$\\det(A) \\ne 0 \\iff \\exists A^{-1} \\iff r(A) = n \\iff AX=B$ har qanday $B$ da yagona yechimli $\\iff AX=\\Theta$ faqat nol yechimli $\\iff A$ ning ustunlari (satrlari) $\\mathbb{R}^n$ da bazis tashkil qiladi",
+                "$\\det(A) = 0 \\iff \\exists A^{-1} \\iff r(A) = n \\iff AX=\\Theta$ faqat nol yechimli",
+                "$\\det(A) \\ne 0 \\iff r(A) < n \\iff AX=B$ cheksiz ko‘p yechimli",
+                "$r(A) = 0 \\iff \\exists A^{-1} \\iff \\det(A) = 1$"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Bu Chiziqli algebraning barcha 8 ta ma’ruzasini yagona mantiqiy zanjirga birlashtiruvchi eng asosiy fundamental teoremadir!"
         }
     ]
-    # Fix question 1 and 19 in t9:
-    t9[0]["opts"] = ["$51$", "$12$", "$-19$", "$24$"]
-    t9[18]["q"] = "[Aralash: 2-5-mavzular] $\\begin{cases} (a-1)x + 2y = 3 \\\\ 3x + (a-2)y = 3 \\end{cases}$ chiziqli tenglamalar sistemasi $a$ parametrning qanday qiymatida cheksiz ko‘p yechimga va qanday qiymatida hech qanday yechimga ega emas?"
-    t9[18]["opts"] = [
-        "$a = 4$ da cheksiz ko‘p yechimga ega; $a = -1$ da yechimga ega emas",
-        "$a = -1$ da cheksiz ko‘p yechimga ega; $a = 4$ da yechimga ega emas",
-        "$a = 1$ va $a = 2$ da yechimga ega emas",
-        "Barcha $a$ larda yagona yechimga ega"
-    ]
-    t9[18]["exp"] = "$\\Delta = (a-1)(a-2) - 6 = (a-4)(a+1) = 0 \\implies a=4$ yoki $a=-1$. $a=4$ da ikkala tenglama $3x+2y=3$ ga aylanadi ($\\Delta=\\Delta_x=\\Delta_y=0$, cheksiz ko‘p yechim). $a=-1$ da esa $-2x+2y=3$ va $3x-3y=3$ ziddiyatli bo‘lib, yechimga ega emas!"
 
     return {5: t5, 6: t6, 7: t7, 8: t8, 9: t9}

@@ -1,1496 +1,1469 @@
 # -*- coding: utf-8 -*-
-# Part 1: Topics 1, 2, 3, 4 (30 questions each = 120 questions)
+# Part 1: Topics 1, 2, 3, 4 (30 PURE THEORETICAL questions each = 120 questions)
 
 def get_part1_questions():
-    q = []
-
     # =========================================================================
-    # MAVZU 1: Matritsalar va ular ustida amallar (30 ta savol)
+    # MAVZU 1: Matritsalar va ular ustida amallar (30 ta NAZARIY savol)
     # =========================================================================
     t1 = [
         {
-            "q": "«Matritsa» so‘zi lotincha so‘z bo‘lib, qanday lug‘aviy ma’noni bildiradi va qadimgi Xitoyda uni qanday atashgan?",
+            "q": "«Matritsa» so‘zi qaysi tildan olingan va qanday lug‘aviy ma’noni bildiradi?",
             "opts": [
-                "«Birinchi manba» ma’nosini bildiradi; qadimgi Xitoyda «Sehrli kvadrat» deb atashgan",
-                "«Tartibli jadval» ma’nosini bildiradi; qadimgi Xitoyda «Oltin jadval» deb atashgan",
-                "«Sonlar qatori» ma’nosini bildiradi; qadimgi Misrda «Piramida jadvali» deb atashgan",
-                "«To‘g‘ri burchak» ma’nosini bildiradi; qadimgi Yunonistonda «Logarifmik jadval» deb atashgan"
+                "Lotincha so‘z bo‘lib, «birinchi manba» (asos) ma’nosini bildiradi",
+                "Yunoncha so‘z bo‘lib, «to‘rtburchak jadval» ma’nosini bildiradi",
+                "Arabcha so‘z bo‘lib, «hisoblash tartibi» ma’nosini bildiradi",
+                "Inglizcha so‘z bo‘lib, «sonlar tarmog‘i» ma’nosini bildiradi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "1-ma’ruza (4-slayd): «Matritsa» so‘zi lotincha so‘z bo‘lib, «birinchi manba» ma’nosini bildiradi. Qadimgi Xitoyda uni «Sehrli kvadrat» deb atashgan."
+            "exp": "1-ma’ruza (4-slayd): «Matritsa» so‘zi lotincha so‘z bo‘lib, «birinchi manba» ma’nosini bildiradi."
+        },
+        {
+            "q": "Matritsa to‘g‘risidagi dastlabki ma’lumotlar qaysi davlatga borib taqaladi va u yerda matritsani qanday atashgan?",
+            "opts": [
+                "Qadimgi Xitoyga borib taqaladi va ular matritsani «Sehrli kvadrat» deb atashgan",
+                "Qadimgi Misrga borib taqaladi va uni «Oltin piramida» deb atashgan",
+                "Qadimgi Yunonistonga borib taqaladi va uni «Evklid jadvali» deb atashgan",
+                "Qadimgi Hindistonga borib taqaladi va uni «Shaxmat taxtasi» deb atashgan"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (4-slayd): Matritsa to‘g‘risidagi dastlabki ma’lumotlar qadimgi Xitoyga borib taqaladi. Ular matritsani «Sehrli kvadrat» deb atashgan."
         },
         {
             "q": "Matritsalar bo‘yicha fundamental nazariyani XVIII asrda birinchilardan bo‘lib kiritgan nemis olimi kim?",
             "opts": [
-                "Karl Veyyershtrass (Weierstrass)",
-                "Isaak Nyuton",
-                "Evklid",
-                "Pifagor"
+                "Veyyershtrass (Weierstrass)",
+                "Arximed",
+                "Dekart",
+                "Lobachevskiy"
             ],
             "ans": 0,
             "diff": "Oson",
             "exp": "1-ma’ruza (4-slayd): Matritsalar bo‘yicha fundamental nazariyani birinchilardan bo‘lib XVIII asrda nemis olimi Veyyershtrass kiritgan."
         },
         {
-            "q": "$m \\times n$ o‘lchovli $A$ matritsada nechta satr, nechta ustun va jami nechta element mavjud?",
+            "q": "$m \\times n$ o‘lchovli matritsa deb nimaga aytiladi?",
             "opts": [
-                "$m$ ta satr, $n$ ta ustun va $m \\cdot n$ ta element",
-                "$n$ ta satr, $m$ ta ustun va $m + n$ ta element",
-                "$m$ ta satr, $m$ ta ustun va $n^2$ ta element",
-                "$n$ ta satr, $n$ ta ustun va $2mn$ ta element"
+                "$m$ ta satrdan va $n$ ta ustundan iborat $m \\cdot n$ ta elementdan tuzilgan to‘g‘ri to‘rtburchakli jadvalga",
+                "$n$ ta satrdan va $m$ ta ustundan iborat $m + n$ ta elementli sonlar yig‘indisiga",
+                "Har doim satr va ustunlari soni teng bo‘lgan yagona songa",
+                "Faqat musbat sonlardan tashkil topgan uchburchak shaklidagi jadvalga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "$A_{m \\times n}$ yozuvda birinchi indeks $m$ — satrlar sonini, ikkinchi indeks $n$ — ustunlar sonini, $m \\cdot n$ esa jami elementlar sonini bildiradi."
+            "exp": "1-ma’ruza (5-6-slaydlar): $m$ ta satr va $n$ ta ustundan tashkil topgan $m \\cdot n$ ta elementli to‘g‘ri burchakli jadvalga $m \\times n$ o‘lchovli matritsa deyiladi."
         },
         {
-            "q": "Quyidagi $A = \\begin{pmatrix} 5 & 0 & -6 \\\\ 3 & -\\sqrt{2} & 1 \\end{pmatrix}$ matritsaning o‘lchamini hamda $a_{13} + a_{21}$ yig‘indisini toping.",
+            "q": "Matritsaning umumiy elementi $a_{ij}$ yozuvidagi $i$ va $j$ indekslari nimani ifodalaydi?",
             "opts": [
-                "O‘lchami $2 \\times 3$; yig‘indi $-3$ ga teng",
-                "O‘lchami $3 \\times 2$; yig‘indi $-3$ ga teng",
-                "O‘lchami $2 \\times 3$; yig‘indi $6$ ga teng",
-                "O‘lchami $2 \\times 2$; yig‘indi $-5$ ga teng"
+                "$i$ — element joylashgan satr tartib raqamini, $j$ — element joylashgan ustun tartib raqamini",
+                "$i$ — ustun tartib raqamini, $j$ — satr tartib raqamini",
+                "$i$ — matritsaning darajasini, $j$ — elementning ishorasini",
+                "$i$ va $j$ — matritsadagi jami elementlar sonini"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "Matritsa 2 ta satr va 3 ta ustundan iborat ($2 \\times 3$). $a_{13} = -6$ (1-satr, 3-ustun) va $a_{21} = 3$ (2-satr, 1-ustun). Ularning yig‘indisi: $-6 + 3 = -3$."
+            "exp": "1-ma’ruza (6-slayd): Matritsaning $i$-satr va $j$-ustun kesishmasidagi element $a_{ij}$ kabi belgilanadi."
         },
         {
-            "q": "$n$-tartibli kvadrat matritsaning yordamchi diagonali elementlari qaysi qatorda to‘g‘ri ko‘rsatilgan?",
+            "q": "Qanday matritsaga $n$-tartibli «kvadrat matritsa» deyiladi?",
             "opts": [
-                "$a_{1n},\\; a_{2,n-1},\\; \\dots,\\; a_{n1}$",
-                "$a_{11},\\; a_{22},\\; \\dots,\\; a_{nn}$",
-                "$a_{11},\\; a_{12},\\; \\dots,\\; a_{1n}$",
-                "$a_{11},\\; a_{21},\\; \\dots,\\; a_{n1}$"
+                "Satrlari soni ustunlari soniga teng bo‘lgan ($m = n$), ya’ni $n$ ta satr va $n$ ta ustundan iborat matritsaga",
+                "Barcha elementlari to‘liq kvadrat sonlardan iborat bo‘lgan ixtiyoriy matritsaga",
+                "Faqat $2$ ta satr va $2$ ta ustundan iborat matritsaga",
+                "Elementlari kvadrat ildiz ostida berilgan matritsaga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "1-ma’ruza (7-slayd): $a_{11}, a_{22}, \\dots, a_{nn}$ — asosiy diagonal, $a_{1n}, a_{2,n-1}, \\dots, a_{n1}$ esa yordamchi diagonal elementlaridir."
+            "exp": "1-ma’ruza (7-slayd): $n$ ta satrdan va $n$ ta ustundan iborat $n \\cdot n$ ta elementdan tuzilgan $n \\times n$ o‘lchovli matritsa kvadrat matritsa deyiladi."
         },
         {
-            "q": "Bosh diagonal elementlari $1$ ga teng bo‘lib, qolgan barcha elementlari $0$ ga teng bo‘lgan kvadrat matritsa nima deb ataladi?",
+            "q": "$n$-tartibli kvadrat matritsaning «asosiy (bosh) diagonali»ni qaysi elementlar tashkil etadi?",
             "opts": [
-                "Birlik matritsa ($E$)",
-                "Nol matritsa ($O$ yoki $\\Theta$)",
-                "Satr matritsa",
-                "Ustun matritsa"
+                "Yuqori chap burchakdan quyi o‘ng burchakka yo‘nalgan $a_{11}, a_{22}, \\dots, a_{nn}$ elementlar (satr va ustun indekslari bir xil bo‘lgan elementlar)",
+                "Yuqori o‘ng burchakdan quyi chap burchakka yo‘nalgan $a_{1n}, a_{2,n-1}, \\dots, a_{n1}$ elementlar",
+                "Birinchi satr va birinchi ustunning barcha elementlari",
+                "Matritsaning faqat chekkasida joylashgan barcha elementlar"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "1-ma’ruza (8-slayd): Bosh diagonalida faqat 1 lar, qolgan joylarida 0 lar turgan kvadrat matritsa birlik matritsa ($E$) deyiladi."
+            "exp": "1-ma’ruza (7-slayd): $a_{11}, a_{22}, \\dots, a_{nn}$ elementlar kvadrat matritsaning asosiy diagonalini tashkil qiladi."
         },
         {
-            "q": "Quyidagi amallardan qaysilari matritsalar ustida «chiziqli amallar» deb ataladi?",
+            "q": "$n$-tartibli kvadrat matritsaning «yordamchi diagonali»ni qaysi elementlar tashkil etadi?",
             "opts": [
-                "Matritsalarni qo‘shish, ayirish va songa ko‘paytirish",
-                "Matritsalarni o‘zaro ko‘paytirish va transponirlash",
-                "Determinantni hisoblash va teskari matritsa topish",
-                "Faqat ikki matritsani bir-biriga ko‘paytirish"
+                "$a_{1n},\\; a_{2,n-1},\\; \\dots,\\; a_{n1}$ elementlar",
+                "$a_{11},\\; a_{22},\\; \\dots,\\; a_{nn}$ elementlar",
+                "$a_{11},\\; a_{12},\\; \\dots,\\; a_{1n}$ elementlar",
+                "$a_{n1},\\; a_{n2},\\; \\dots,\\; a_{nn}$ elementlar"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (7-slayd): Yuqori o‘ng burchakdagi $a_{1n}$ dan quyi chap burchakdagi $a_{n1}$ gacha bo‘lgan elementlar yordamchi diagonal deyiladi."
+        },
+        {
+            "q": "«Satr matritsa» va «Ustun matritsa» o‘lchamlari qaysi javobda to‘g‘ri ko‘rsatilgan?",
+            "opts": [
+                "Satr matritsa o‘lchami $1 \\times n$ (bitta satr); Ustun matritsa o‘lchami $m \\times 1$ (bitta ustun)",
+                "Satr matritsa o‘lchami $n \\times 1$; Ustun matritsa o‘lchami $1 \\times m$",
+                "Har ikkalasining o‘lchami $n \\times n$",
+                "Satr matritsa $2 \\times n$, ustun matritsa $m \\times 2$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (8-slayd): Satr matritsa $(1 \\times n)$ bitta satrdan, ustun matritsa $(m \\times 1)$ esa bitta ustundan iborat bo‘ladi."
+        },
+        {
+            "q": "«Nol matritsa» ($O$ yoki $\\Theta$) deb qanday matritsaga aytiladi?",
+            "opts": [
+                "Barcha elementlari nolga teng bo‘lgan matritsaga ($a_{ij} = 0$)",
+                "Faqat bosh diagonali elementlari nolga teng bo‘lgan matritsaga",
+                "Determinanti nolga teng bo‘lgan har qanday matritsaga",
+                "Satrlari va ustunlari yig‘indisi nolga teng bo‘lgan matritsaga"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (8-slayd): Barcha elementlari nollardan iborat bo‘lgan matritsa nol matritsa deyiladi."
+        },
+        {
+            "q": "Qanday kvadrat matritsaga «diagonal matritsa» deyiladi?",
+            "opts": [
+                "Bosh diagonalidan tashqaridagi barcha elementlari nolga teng bo‘lgan ($a_{ij} = 0, i \\ne j$) kvadrat matritsaga",
+                "Faqat bosh diagonali elementlari nolga teng bo‘lgan matritsaga",
+                "Yordamchi diagonali elementlari $1$ ga teng bo‘lgan matritsaga",
+                "Barcha elementlari bir xil sondan iborat bo‘lgan matritsaga"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (8-slayd): Bosh diagonalidan tashqari barcha elementlari nolga teng bo‘lgan kvadrat matritsa diagonal matritsa deyiladi."
+        },
+        {
+            "q": "«Birlik matritsa» ($E$) deb qanday matritsaga aytiladi?",
+            "opts": [
+                "Bosh diagonali elementlari $1$ ga teng bo‘lib, qolgan barcha elementlari $0$ ga teng bo‘lgan diagonal kvadrat matritsaga",
+                "Barcha elementlari $1$ ga teng bo‘lgan kvadrat matritsaga",
+                "O‘lchami $1 \\times 1$ bo‘lgan matritsaga",
+                "Determinanti $1$ ga teng bo‘lgan ixtiyoriy matritsaga"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (8-slayd): Bosh diagonalida $1$ lar, qolgan barcha joylarida $0$ lar turgan kvadrat matritsa birlik matritsa deyiladi."
+        },
+        {
+            "q": "Ikki $A$ va $B$ matritsa qachon o‘zaro teng ($A = B$) deyiladi?",
+            "opts": [
+                "Ularning o‘lchamlari bir xil bo‘lib, barcha mos joylaridagi elementlari o‘zaro teng bo‘lganda ($a_{ij} = b_{ij}$)",
+                "Ularning determinantlari o‘zaro teng bo‘lganda ($\\det A = \\det B$)",
+                "Ularning elementlari soni teng bo‘lganda (masalan $2 \\times 3$ va $3 \\times 2$)",
+                "Ularning bosh diagonali elementlari yig‘indisi teng bo‘lganda"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Ikki matritsa teng bo‘lishi uchun avvalo bir xil $m \\times n$ o‘lchamga ega bo‘lishi va barcha $i, j$ larda $a_{ij} = b_{ij}$ bo‘lishi shart."
+        },
+        {
+            "q": "Matritsalar ustida «chiziqli amallar» deb qaysi amallarga aytiladi?",
+            "opts": [
+                "Matritsalarni qo‘shish, ayirish va matritsani songa ko‘paytirish amallariga",
+                "Matritsalarni bir-biriga ko‘paytirish va darajaga oshirish amallariga",
+                "Determinant hisoblash va teskari matritsa topish amallariga",
+                "Matritsani transponirlash va rangini hisoblash amallariga"
             ],
             "ans": 0,
             "diff": "Oson",
             "exp": "1-ma’ruza (10-slayd): Matritsalarni qo‘shish, ayirish va songa ko‘paytirish amallariga matritsalar ustida chiziqli amallar deyiladi."
         },
         {
-            "q": "Ma’ruzadagi misol asosida $A = \\begin{bmatrix} 3 & 5 \\\\ -1 & 4 \\end{bmatrix}$ va $B = \\begin{bmatrix} 2 & 0 \\\\ 6 & -3 \\end{bmatrix}$ matritsalar yig‘indisi $A + B$ ni toping.",
+            "q": "Matritsalarni qo‘shish va ayirish amallari qanday matritsalar uchun aniqlangan va qanday bajariladi?",
             "opts": [
-                "$\\begin{bmatrix} 5 & 5 \\\\ 5 & 1 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 1 & 5 \\\\ -7 & 7 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 6 & 0 \\\\ -6 & -12 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 5 & 0 \\\\ 5 & 7 \\end{bmatrix}$"
+                "Faqat bir xil o‘lchamli matritsalar uchun aniqlangan bo‘lib, ularning mos elementlari qo‘shiladi yoki ayriladi ($c_{ij} = a_{ij} \\pm b_{ij}$)",
+                "Ixtiyoriy o‘lchamli matritsalar uchun aniqlangan bo‘lib, satrlar ustunlarga qo‘shiladi",
+                "Faqat kvadrat matritsalar uchun aniqlangan bo‘lib, diagonal elementlari qo‘shiladi",
+                "Birinchi matritsa ustunlari soni ikkinchi matritsa satrlari soniga teng bo‘lganda bajariladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "1-ma’ruza (13-slayd): Mos elementlar qo‘shiladi: $3+2=5$, $5+0=5$, $-1+6=5$, $4+(-3)=1$."
+            "exp": "1-ma’ruza (11-12-slaydlar): Bir xil o‘lchamli matritsalarnigina qo‘shish va ayirish mumkin bo‘lib, bu amallar mos elementlar ustida bajariladi."
         },
         {
-            "q": "Ma’ruzadagi misol asosida $A = \\begin{pmatrix} 5 & 2 & -3 \\\\ 0 & 4 & 1 \\\\ 7 & -2 & 6 \\end{pmatrix}$ va $B = \\begin{pmatrix} 2 & 1 & 4 \\\\ 3 & 0 & -1 \\\\ 1 & 5 & 2 \\end{pmatrix}$ matritsalar ayirmasi $C = A - B$ ni toping.",
+            "q": "Matritsalar ustidagi chiziqli amallar qanday arifmetik qonunlarga bo‘ysunadi (10-slayd)?",
             "opts": [
-                "$\\begin{pmatrix} 3 & 1 & -7 \\\\ -3 & 4 & 2 \\\\ 6 & -7 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 7 & 3 & 1 \\\\ 3 & 4 & 0 \\\\ 8 & 3 & 8 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & 1 & 1 \\\\ -3 & 4 & 0 \\\\ 6 & 3 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -3 & -1 & 7 \\\\ 3 & -4 & -2 \\\\ -6 & 7 & -4 \\end{pmatrix}$"
+                "O‘rin almashtirish (kommutativlik), guruhlash (assotsiativlik) va taqsimot (distributivlik) qonunlariga bo‘ysunadi",
+                "Faqat guruhlash qonuniga bo‘ysunadi, o‘rin almashtirish qonuniga bo‘ysunmaydi",
+                "Hech qanday arifmetik qonunga bo‘ysunmaydi",
+                "Qo‘shishda o‘rin almashtirilsa ishora qarama-qarshiga o‘zgaradi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (10-slayd): Chiziqli amallar o‘rin almashtirish ($A+B=B+A$), guruhlash ($A+(B+C)=(A+B)+C$) va taqsimot qonunlariga bo‘ysunadi."
+        },
+        {
+            "q": "Matritsalar ustidagi chiziqli amallarning 8 ta xossasiga ko‘ra, nol matritsa $\\Theta$ va qarama-qarshi matritsa $-A$ uchun qaysi tengliklar o‘rinli?",
+            "opts": [
+                "$A + \\Theta = A,\\qquad A + (-A) = \\Theta,\\qquad 1 \\cdot A = A$",
+                "$A + \\Theta = \\Theta,\\qquad A + (-A) = 2A,\\qquad 1 \\cdot A = E$",
+                "$A + \\Theta = E,\\qquad A - A = 1$",
+                "$A \\cdot \\Theta = A,\\qquad A + (-A) = E$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (10-slayd, 6, 7, 8-xossalar): $A + \\Theta = A$, $A + (-A) = \\Theta$ va $1 \\cdot A = A$."
+        },
+        {
+            "q": "Matritsani songa ko‘paytirish ta’rifi qaysi javobda to‘g‘ri bayon etilgan?",
+            "opts": [
+                "Matritsani biror $k$ songa ko‘paytirish uchun berilgan son matritsaning HAR BIR elementiga ko‘paytiriladi ($c_{ij} = k \\cdot a_{ij}$)",
+                "Berilgan $k$ son faqat matritsaning birinchi satri yoki birinchi ustuni elementlariga ko‘paytiriladi",
+                "Berilgan $k$ son faqat matritsaning bosh diagonali elementlariga ko‘paytiriladi",
+                "Matritsaning har bir elementiga $k$ soni qo‘shib chiqiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (15-16-slaydlar): Matritsani songa ko‘paytirishda berilgan son matritsaning har bir elementiga ko‘paytiriladi (determinantdan farqli ravishda!)."
+        },
+        {
+            "q": "Matritsani songa ko‘paytirishning taqsimot (distributivlik) va guruhlash xossalari qaysi qatorda to‘g‘ri ko‘rsatilgan?",
+            "opts": [
+                "$k(A + B) = kA + kB,\\qquad (k + n)A = kA + nA,\\qquad k(nA) = (kn)A$",
+                "$k(A + B) = kA + B,\\qquad (k + n)A = knA$",
+                "$k(A + B) = k^2 A + k^2 B,\\qquad k(nA) = (k+n)A$",
+                "$k(A + B) = (A + B)^k$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (10-slayd, 3, 4, 5-xossalar): Skalyar ko‘paytuvchiga nisbatan distributivlik va assotsiativlik xossalari o‘rinli."
+        },
+        {
+            "q": "Ikki matritsani ko‘paytirish ($A \\cdot B$) ta’rifi va mavjudlik sharti qanday?",
+            "opts": [
+                "Birinchi matritsaning ustunlari soni ikkinchi matritsaning satrlari soniga teng bo‘lishi kerak; satr elementlari mos ustun elementlariga ko‘paytirilib qo‘shiladi",
+                "Ikki matritsa faqat bir xil o‘lchamli bo‘lganda ko‘paytiriladi va mos elementlari o‘zaro ko‘paytiriladi ($c_{ij} = a_{ij}b_{ij}$)",
+                "Birinchi matritsaning satrlari soni ikkinchi matritsaning satrlari soniga teng bo‘lishi kerak",
+                "Ixtiyoriy o‘lchamli ikki matritsani har doim ko‘paytirish mumkin"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "1-ma’ruza (18-19-slaydlar): Matritsalarni ko‘paytirish uchun birinchi matritsaning ustunlari soni ikkinchi matritsaning satrlari soniga teng bo‘lishi kerak. Satrlar ustunlarga ko‘paytiriladi."
+        },
+        {
+            "q": "Agar $A$ matritsa $m \\times n$ o‘lchamli, $B$ matritsa esa $n \\times k$ o‘lchamli bo‘lsa, ularning ko‘paytmasi $C = A \\cdot B$ qanday o‘lchamga ega bo‘ladi?",
+            "opts": [
+                "$m \\times k$ o‘lchamga ega bo‘ladi",
+                "$n \\times n$ o‘lchamga ega bo‘ladi",
+                "$m \\times n$ o‘lchamga ega bo‘ladi",
+                "$k \\times m$ o‘lchamga ega bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "$A_{m \\times n} \\cdot B_{n \\times k} = C_{m \\times k}$, ya’ni natijaviy matritsa birinchi matritsa satrlari soni ($m$) va ikkinchi matritsa ustunlari soni ($k$) ga ega bo‘ladi."
+        },
+        {
+            "q": "Matritsalarni ko‘paytirish amali o‘rin almashtirish (kommutativlik) qonuniga bo‘ysunadimi?",
+            "opts": [
+                "Umumiy holda bo‘ysunmaydi ($AB \\ne BA$); hatto $AB$ mavjud bo‘lganda $BA$ mavjud bo‘lmasligi ham mumkin",
+                "Ha, har qanday $A$ va $B$ matritsalar uchun $AB = BA$ tenglik doimo o‘rinli",
+                "Faqat $2 \\times 2$ matritsalar uchun har doim $AB = BA$ o‘rinli",
+                "Ko‘paytirishda o‘rin almashsa faqat ishora o‘zgaradi ($AB = -BA$)"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "1-ma’ruza (14-slayd): $c_{11}=5-2=3, c_{12}=2-1=1, c_{13}=-3-4=-7; c_{21}=0-3=-3, c_{22}=4-0=4, c_{23}=1-(-1)=2; c_{31}=7-1=6, c_{32}=-2-5=-7, c_{33}=6-2=4$."
+            "exp": "Matritsalarni ko‘paytirish nokommutativ amaldir: umumiy holda $AB \\ne BA$. Maxsus $AB = BA$ shartni qanoatlantiruvchi matritsalargina kommutativ (o‘rin almashinuvchi) matritsalar deyiladi."
         },
         {
-            "q": "$A = \\begin{bmatrix} 1 & -3 \\\\ 4 & 2 \\end{bmatrix}$ va $B = \\begin{bmatrix} -2 & 5 \\\\ 0 & -3 \\end{bmatrix}$ bo‘lsa, $3A - 2B$ matritsani hisoblang.",
+            "q": "Matritsalarni ko‘paytirish amalining 5 ta asosiy xossasi (21-slayd) qaysi javobda to‘liq va to‘g‘ri berilgan?",
             "opts": [
-                "$\\begin{bmatrix} 7 & -19 \\\\ 12 & 12 \\end{bmatrix}$",
-                "$\\begin{bmatrix} -1 & 1 \\\\ 12 & 0 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 7 & 1 \\\\ 12 & 0 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 5 & -14 \\\\ 8 & 9 \\end{bmatrix}$"
+                "$1^\\circ.\\;(kA)B = k(AB) = A(kB);\\quad 2^\\circ.\\;(A+B)C = AC+BC;\\quad 3^\\circ.\\;A(B+C) = AB+AC;\\quad 4^\\circ.\\;A(BC) = (AB)C;\\quad 5^\\circ.\\;AE = EA = A$",
+                "$1^\\circ.\\;AB = BA;\\quad 2^\\circ.\\;(AB)^2 = A^2 B^2;\\quad 3^\\circ.\\;AE = E;\\quad 4^\\circ.\\;A+E = A$",
+                "$1^\\circ.\\;(kA)B = k^2 AB;\\quad 2^\\circ.\\;(A+B)C = A + BC;\\quad 3^\\circ.\\;AE = O$",
+                "$1^\\circ.\\;A(BC) \\ne (AB)C;\\quad 2^\\circ.\\;AE \\ne EA$"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$3A = \\begin{bmatrix} 3 & -9 \\\\ 12 & 6 \\end{bmatrix}$, $2B = \\begin{bmatrix} -4 & 10 \\\\ 0 & -6 \\end{bmatrix}$. U holda $3A - 2B = \\begin{bmatrix} 3-(-4) & -9-10 \\\\ 12-0 & 6-(-6) \\end{bmatrix} = \\begin{bmatrix} 7 & -19 \\\\ 12 & 12 \\end{bmatrix}$."
+            "exp": "1-ma’ruza (21-slayd): Ko‘paytirish amali skalyar ko‘paytuvchini chiqarish, chap va o‘ng taqsimot, guruhlash ($A(BC)=(AB)C$) hamda birlik matritsa ($AE=EA=A$) xossalariga ega."
         },
         {
-            "q": "$A_{m \\times n}$ matritsani $B_{p \\times q}$ matritsaga $A \\cdot B$ tartibda ko‘paytirish mumkin bo‘lishi uchun qaysi shart bajarilishi zarur va hosil bo‘lgan matritsa o‘lchami qanday bo‘ladi?",
+            "q": "Ikki nolmas matritsaning ko‘paytmasi nol matritsaga teng bo‘lishi ($A \\ne O, B \\ne O$, ammo $A \\cdot B = O$) mumkinmi?",
             "opts": [
-                "$n = p$ bo‘lishi shart; natija $m \\times q$ o‘lchamli bo‘ladi",
-                "$m = q$ bo‘lishi shart; natija $n \\times p$ o‘lchamli bo‘ladi",
-                "$m = p$ va $n = q$ bo‘lishi shart; natija $m \\times n$ bo‘ladi",
-                "Ixtiyoriy o‘lchamda ko‘paytirish mumkin; natija $p \\times n$ bo‘ladi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "1-ma’ruza (18-slayd): Birinchi matritsaning ustunlari soni ($n$) ikkinchi matritsaning satrlari soniga ($p$) teng bo‘lishi kerak. Natija $m \\times q$ o‘lchamli matritsa bo‘ladi."
-        },
-        {
-            "q": "Ma’ruzadagi misol asosida $A = \\begin{pmatrix} 1 & 2 \\\\ 0 & 8 \\\\ 1 & 3 \\end{pmatrix}$ va $B = \\begin{pmatrix} 6 & 5 \\\\ 4 & 0 \\end{pmatrix}$ matritsalar ko‘paytmasi $A \\cdot B$ ni toping.",
-            "opts": [
-                "$\\begin{pmatrix} 14 & 5 \\\\ 32 & 0 \\\\ 18 & 5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 6 & 10 \\\\ 0 & 0 \\\\ 4 & 0 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 14 & 32 & 18 \\\\ 5 & 0 & 5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 10 & 5 \\\\ 32 & 8 \\\\ 18 & 3 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "1-ma’ruza (19-slayd): $c_{11}=1\\cdot6+2\\cdot4=14, c_{12}=1\\cdot5+2\\cdot0=5$; $c_{21}=0\\cdot6+8\\cdot4=32, c_{22}=0$; $c_{31}=1\\cdot6+3\\cdot4=18, c_{32}=1\\cdot5+3\\cdot0=5$."
-        },
-        {
-            "q": "Ma’ruzadagi misol asosida $A = \\begin{bmatrix} 2 & 3 \\\\ 1 & 4 \\end{bmatrix}$ va $B = \\begin{bmatrix} 5 & 0 \\\\ 1 & 2 \\end{bmatrix}$ matritsalar ko‘paytmasi $C = A \\times B$ ni toping.",
-            "opts": [
-                "$\\begin{bmatrix} 13 & 6 \\\\ 9 & 8 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 10 & 0 \\\\ 1 & 8 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 13 & 9 \\\\ 6 & 8 \\end{bmatrix}$",
-                "$\\begin{bmatrix} 7 & 6 \\\\ 9 & 6 \\end{bmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "1-ma’ruza (20-slayd): $c_{11}=2\\cdot5+3\\cdot1=13, c_{12}=2\\cdot0+3\\cdot2=6, c_{21}=1\\cdot5+4\\cdot1=9, c_{22}=1\\cdot0+4\\cdot2=8$."
-        },
-        {
-            "q": "Ma’ruzadagi 19-slayd misoli: $A = \\begin{pmatrix} 2 & 3 & 4 \\\\ 4 & 5 & 2 \\\\ 9 & 8 & 2 \\end{pmatrix}$ va $B = \\begin{pmatrix} 5 & 8 \\\\ 1 & 4 \\\\ 4 & 3 \\end{pmatrix}$ bo‘lsa, $A \\cdot B$ ko‘paytmani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 29 & 40 \\\\ 33 & 58 \\\\ 61 & 110 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 29 & 33 & 61 \\\\ 40 & 58 & 110 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 25 & 40 \\\\ 33 & 52 \\\\ 61 & 104 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 10 & 24 \\\\ 4 & 20 \\\\ 36 & 24 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "1-satr: $(2\\cdot5+3\\cdot1+4\\cdot4;\\; 2\\cdot8+3\\cdot4+4\\cdot3) = (29; 40)$. 2-satr: $(20+5+8;\\; 32+20+6) = (33; 58)$. 3-satr: $(45+8+8;\\; 72+32+6) = (61; 110)$."
-        },
-        {
-            "q": "$A = \\begin{pmatrix} 1 & -2 & 3 \\end{pmatrix}$ satr matritsa va $B = \\begin{pmatrix} 4 \\\\ 5 \\\\ -1 \\end{pmatrix}$ ustun matritsa berilgan. $A \\cdot B$ ko‘paytmani toping.",
-            "opts": [
-                "$\\begin{pmatrix} -9 \\end{pmatrix}$ (o‘lchami $1 \\times 1$)",
-                "$\\begin{pmatrix} 4 & -10 & -3 \\end{pmatrix}$ (o‘lchami $1 \\times 3$)",
-                "$\\begin{pmatrix} 9 \\end{pmatrix}$ (o‘lchami $1 \\times 1$)",
-                "Ko‘paytirib bo‘lmaydi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$A_{1\\times 3} \\cdot B_{3\\times 1} = C_{1\\times 1}$. Elementi: $1\\cdot 4 + (-2)\\cdot 5 + 3\\cdot(-1) = 4 - 10 - 3 = -9$."
-        },
-        {
-            "q": "Endi aksincha, $B = \\begin{pmatrix} 2 \\\\ -1 \\\\ 3 \\end{pmatrix}$ ($3 \\times 1$) ustun matritsani $A = \\begin{pmatrix} 1 & 4 & -2 \\end{pmatrix}$ ($1 \\times 3$) satr matritsaga ko‘paytma $B \\cdot A$ ni toping.",
-            "opts": [
-                "$\\begin{pmatrix} 2 & 8 & -4 \\\\ -1 & -4 & 2 \\\\ 3 & 12 & -6 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -8 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 2 & -1 & 3 \\\\ 1 & 4 & -2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 2 & -4 & -6 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$B_{3\\times 1} \\cdot A_{1\\times 3}$ ko‘paytma $3 \\times 3$ kvadrat matritsa beradi: har bir ustun elementi satr elementlariga ko‘paytiriladi."
-        },
-        {
-            "q": "Matritsalarni ko‘paytirish va transponirlash xossalariga ko‘ra quyidagi tengliklardan qaysi biri BARCHA mos o‘lchamli $A, B$ matritsalar uchun to‘g‘ri?",
-            "opts": [
-                "$(AB)^T = B^T A^T$",
-                "$(AB)^T = A^T B^T$",
-                "$AB = BA$",
-                "$(A+B)^2 = A^2 + 2AB + B^2$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "1-ma’ruza (25-slayd, 4-xossa): Ko‘paytmani transponirlashda ko‘paytuvchilar o‘rni almashadi: $(AB)^T = B^T A^T$. Umumiy holda $AB \\ne BA$ bo‘lgani uchun $(A+B)^2 = A^2 + AB + BA + B^2$."
-        },
-        {
-            "q": "Ma’ruzadagi 23-24-slaydlar asosida: $A = \\begin{pmatrix} 1 & 4 & -2 \\\\ 0 & 3 & 5 \\end{pmatrix}$ matritsaning transponirlangani $A^T$ ni toping.",
-            "opts": [
-                "$\\begin{pmatrix} 1 & 0 \\\\ 4 & 3 \\\\ -2 & 5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 0 & 3 & 5 \\\\ 1 & 4 & -2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -2 & 4 & 1 \\\\ 5 & 3 & 0 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 4 \\\\ 0 & 3 \\\\ -2 & 5 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "1-ma’ruza (23-slayd): $2 \\times 3$ matritsa transponirlanganda $3 \\times 2$ matritsaga aylanadi: 1-satr $(1, 4, -2)$ 1-ustunga, 2-satr $(0, 3, 5)$ 2-ustunga o‘tadi."
-        },
-        {
-            "q": "Ma’ruzadagi 26-slayd misoli: $A = \\begin{pmatrix} 2 & -1 \\\\ 3 & 7 \\end{pmatrix}$, $B = \\begin{pmatrix} 4 & 1 & -3 \\\\ 0 & 8 & 2 \\end{pmatrix}$, $C = \\begin{pmatrix} 1 & 2 \\\\ -3 & 1 \\\\ -1 & 4 \\end{pmatrix}$ bo‘lsa, $2A^T - 3BC$ ni hisoblang.",
-            "opts": [
-                "$\\begin{pmatrix} -8 & 15 \\\\ 76 & -34 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 8 & -15 \\\\ -76 & 34 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -8 & -15 \\\\ 76 & 34 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 16 & -3 \\\\ -80 & 62 \\end{pmatrix}$"
+                "Ha, matritsalar algebrasida nolning bo‘luvchilari mavjud bo‘lib, ikki nolmas matritsa ko‘paytmasi nol matritsa bo‘lishi mumkin",
+                "Yo‘q, xuddi haqiqiy sonlardagi kabi $A \\cdot B = O$ bo‘lsa, albatta $A = O$ yoki $B = O$ bo‘lishi shart",
+                "Faqat birlik matritsalar ko‘paytmasi nol matritsa bo‘ladi",
+                "Faqat o‘lchami $1 \\times 1$ bo‘lgan matritsalarda shunday bo‘lishi mumkin"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "1-ma’ruza (26-slayd): $A^T = \\begin{pmatrix} 2 & 3 \\\\ -1 & 7 \\end{pmatrix} \\Rightarrow 2A^T = \\begin{pmatrix} 4 & 6 \\\\ -2 & 14 \\end{pmatrix}$. $BC = \\begin{pmatrix} 4 & -3 \\\\ -26 & 16 \\end{pmatrix} \\Rightarrow 3BC = \\begin{pmatrix} 12 & -9 \\\\ -78 & 48 \\end{pmatrix}$. Ayirma: $\\begin{pmatrix} 4-12 & 6-(-9) \\\\ -2-(-78) & 14-48 \\end{pmatrix} = \\begin{pmatrix} -8 & 15 \\\\ 76 & -34 \\end{pmatrix}$."
+            "exp": "Sonlardan farqli ravishda, ikki xos ($\\det = 0$) nolmas matritsaning ko‘paytmasi nol matritsa $\\Theta$ berishi mumkin."
         },
         {
-            "q": "$A = \\begin{pmatrix} 2 & -1 \\\\ 3 & -2 \\end{pmatrix}$ matritsa uchun $A^2 = A \\cdot A$ ni hisoblang.",
+            "q": "Matritsani «transponirlash» deb nimaga aytiladi va u qanday belgilanadi?",
             "opts": [
-                "$\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 4 & 1 \\\\ 9 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 7 & -4 \\\\ 12 & -7 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$A^2 = \\begin{pmatrix} 2 & -1 \\\\ 3 & -2 \\end{pmatrix} \\begin{pmatrix} 2 & -1 \\\\ 3 & -2 \\end{pmatrix} = \\begin{pmatrix} 4-3 & -2+2 \\\\ 6-6 & -3+4 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix} = E$ (involyutiv matritsa)."
-        },
-        {
-            "q": "Agar $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & -1 \\end{pmatrix}$ va $f(x) = x^2 - 2x + 3$ ko‘phad berilgan bo‘lsa, $f(A) = A^2 - 2A + 3E$ matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 8 & -4 \\\\ -6 & 12 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 5 & -4 \\\\ -6 & 9 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 8 & 0 \\\\ 0 & 12 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 6 & -2 \\\\ -3 & 10 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$A^2 = \\begin{pmatrix} 1+6 & 2-2 \\\\ 3-3 & 6+1 \\end{pmatrix} = \\begin{pmatrix} 7 & 0 \\\\ 0 & 7 \\end{pmatrix}$. U holda $A^2 - 2A + 3E = \\begin{pmatrix} 7-2+3 & 0-4+0 \\\\ 0-6+0 & 7+2+3 \\end{pmatrix} = \\begin{pmatrix} 8 & -4 \\\\ -6 & 12 \\end{pmatrix}$."
-        },
-        {
-            "q": "$2X + \\begin{pmatrix} 3 & -5 \\\\ 4 & 0 \\end{pmatrix} = \\begin{pmatrix} 9 & 1 \\\\ -2 & 8 \\end{pmatrix}$ tenglamadan $X$ matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 3 & 3 \\\\ -3 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 6 & 6 \\\\ -6 & 8 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 6 & -2 \\\\ 1 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & -2 \\\\ 1 & 4 \\end{pmatrix}$"
+                "Matritsaning satr elementlarini mos ustun elementlariga, ustun elementlarini esa mos satr elementlariga almashtirishga aytiladi va $A^T$ kabi belgilanadi",
+                "Matritsaning barcha elementlari ishorasini qarama-qarshiga almashtirishga aytiladi va $-A$ kabi belgilanadi",
+                "Matritsaning bosh va yordamchi diagonallarini o‘zaro almashtirishga aytiladi",
+                "Matritsaning determinantini hisoblash amaliga aytiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "$2X = \\begin{pmatrix} 9-3 & 1-(-5) \\\\ -2-4 & 8-0 \\end{pmatrix} = \\begin{pmatrix} 6 & 6 \\\\ -6 & 8 \\end{pmatrix} \\implies X = \\begin{pmatrix} 3 & 3 \\\\ -3 & 4 \\end{pmatrix}$."
+            "exp": "1-ma’ruza (22-24-slaydlar): Matritsani transponirlash deb uning satr elementlarini ustun elementlariga, ustun elementlarini esa satr elementlariga almashtirishga aytiladi."
         },
         {
-            "q": "$A = \\begin{pmatrix} 1 & 3 & -2 \\\\ 2 & 0 & 4 \\\\ -1 & 5 & 1 \\end{pmatrix}$ va $B = \\begin{pmatrix} 3 & 1 & 2 \\\\ -2 & 4 & 0 \\\\ 5 & -1 & 3 \\end{pmatrix}$ bo‘lsa, $C = A \\cdot B$ ko‘paytmaning faqat $c_{23}$ (2-satr, 3-ustun) elementini toping.",
+            "q": "Agar $A$ matritsa $m \\times n$ o‘lchamli bo‘lsa va uning $(i, j)$-elementi $a_{ij}$ bo‘lsa, transponirlangan $A^T$ matritsaning o‘lchami va $(j, i)$-elementi qanday bo‘ladi?",
             "opts": [
-                "$16$",
-                "$12$",
-                "$-2$",
-                "$8$"
+                "O‘lchami $n \\times m$ bo‘ladi va $(A^T)_{ji} = a_{ij}$ tenglik bajariladi",
+                "O‘lchami $m \\times n$ bo‘lib qoladi va $(A^T)_{ij} = -a_{ij}$ bo‘ladi",
+                "O‘lchami $m \\times m$ kvadrat shaklga keladi",
+                "O‘lchami $n \\times n$ bo‘ladi va $(A^T)_{ij} = 1/a_{ij}$ bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$c_{23}$ ni topish uchun $A$ ning 2-satri $(2, 0, 4)$ ni $B$ ning 3-ustuni $(2, 0, 3)^T$ ga ko‘paytiramiz: $c_{23} = 2\\cdot 2 + 0\\cdot 0 + 4\\cdot 3 = 4 + 12 = 16$."
+            "exp": "1-ma’ruza (23-24-slaydlar): $m \\times n$ matritsa transponirlanganda satr va ustunlar soni o‘rin almashib, $n \\times m$ o‘lchamli matritsa hosil bo‘ladi."
         },
         {
-            "q": "Agar kvadrat matritsa uchun $A^T = A$ shart bajarilsa, bunday matritsa qanday ataladi? Quyidagi $A = \\begin{pmatrix} 4 & x-2 \\\\ 3 & 7 \\end{pmatrix}$ matritsa $x$ ning qanday qiymatida shunday matritsa bo‘ladi?",
+            "q": "Transponirlangan matritsaning 4 ta asosiy xossasi (25-slayd) qaysi javobda to‘g‘ri berilgan?",
             "opts": [
-                "Simmetrik matritsa; $x = 5$",
-                "Simmetrik matritsa; $x = -1$",
-                "Diagonal matritsa; $x = 2$",
-                "Birlik matritsa; $x = 3$"
+                "$1^\\circ.\\;(A^T)^T = A;\\qquad 2^\\circ.\\;(A + B)^T = A^T + B^T;\\qquad 3^\\circ.\\;(kA)^T = kA^T;\\qquad 4^\\circ.\\;(AB)^T = B^T A^T$",
+                "$1^\\circ.\\;(A^T)^T = -A;\\qquad 2^\\circ.\\;(A + B)^T = A^T B^T;\\qquad 3^\\circ.\\;(AB)^T = A^T B^T$",
+                "$1^\\circ.\\;(A^T)^T = E;\\qquad 2^\\circ.\\;(kA)^T = \\frac{1}{k}A^T;\\qquad 4^\\circ.\\;(AB)^T = A^T B^T$",
+                "$1^\\circ.\\;(A^T)^T = A^2;\\qquad 2^\\circ.\\;(A + B)^T = A + B^T$"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$A^T = A$ bo‘lgan matritsa simmetrik matritsa deyiladi. $a_{12} = a_{21}$ bo‘lishi uchun $x - 2 = 3 \\implies x = 5$ bo‘lishi kerak."
+            "exp": "1-ma’ruza (25-slayd): Transponirlashning 4 ta fundamental xossasi, ayniqsa 4-xossa $(AB)^T = B^T A^T$ juda muhim."
         },
         {
-            "q": "Kvadrat matritsaning bosh diagonali elementlari yig‘indisi matritsaning izi ($\\text{tr}(A)$) deyiladi. $A = \\begin{pmatrix} 2 & -5 & 8 \\\\ 4 & -3 & 1 \\\\ 0 & 7 & 9 \\end{pmatrix}$ matritsaning asosiy diagonali elementlari yig‘indisi bilan yordamchi diagonali elementlari yig‘indisi ayirmasini toping.",
+            "q": "Uchta mos o‘lchamli $A, B, C$ matritsalar ko‘paytmasini transponirlash $(ABC)^T$ nimaga teng?",
             "opts": [
-                "$3$",
-                "$8$",
-                "$5$",
-                "$13$"
+                "$(ABC)^T = C^T B^T A^T$",
+                "$(ABC)^T = A^T B^T C^T$",
+                "$(ABC)^T = B^T A^T C^T$",
+                "$(ABC)^T = C B A$"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "Asosiy diagonal yig‘indisi: $2 + (-3) + 9 = 8$. Yordamchi diagonal yig‘indisi: $8 + (-3) + 0 = 5$. Ularning ayirmasi: $8 - 5 = 3$."
+            "exp": "Ko‘paytmani transponirlash xossasiga ko‘ra $((AB)C)^T = C^T (AB)^T = C^T B^T A^T$."
         },
         {
-            "q": "Agar $A$ matritsa $3 \\times 4$ o‘lchamli, $B$ matritsa esa $2 \\times 4$ o‘lchamli bo‘lsa, quyidagi ifodalardan qaysi birini hisoblash MUMKIN?",
+            "q": "Qanday kvadrat matritsaga «simmetrik matritsa» deyiladi?",
             "opts": [
-                "$A \\cdot B^T$",
-                "$A \\cdot B$",
-                "$A + B$",
-                "$A^T \\cdot B$"
+                "Transponirlanganda o‘ziga teng bo‘lgan ($A^T = A$, ya’ni barcha $i, j$ lar uchun $a_{ij} = a_{ji}$) kvadrat matritsaga",
+                "Bosh diagonali elementlari o‘zaro teng bo‘lgan ixtiyoriy matritsaga",
+                "Transponirlanganda ishorasi qarama-qarshiga o‘zgaruvchi ($A^T = -A$) matritsaga",
+                "Satrlari soni juft bo‘lgan to‘g‘ri burchakli matritsaga"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$B$ ning o‘lchami $2 \\times 4$ bo‘lsa, $B^T$ ning o‘lchami $4 \\times 2$ bo‘ladi. U holda $A_{3 \\times 4} \\cdot (B^T)_{4 \\times 2}$ ko‘paytma mavjud va $3 \\times 2$ o‘lchamli matritsa hosil bo‘ladi."
+            "exp": "Agar kvadrat matritsaning bosh diagonalga nisbatan simmetrik joylashgan elementlari o‘zaro teng bo‘lsa ($a_{ij} = a_{ji}$), u holda $A^T = A$ bo‘lib, u simmetrik matritsa deyiladi."
         },
         {
-            "q": "$A = \\begin{pmatrix} 1 & a \\\\ 0 & 1 \\end{pmatrix}$ matritsa berilgan bo‘lsa, $A^n$ ($n \\in \\mathbb{N}$) matritsani toping.",
+            "q": "Umumiy holda ikkita kvadrat $A$ va $B$ matritsalar yig‘indisining kvadrati $(A + B)^2 = (A + B)(A + B)$ nimaga teng?",
             "opts": [
-                "$\\begin{pmatrix} 1 & na \\\\ 0 & 1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & a^n \\\\ 0 & 1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} n & na \\\\ 0 & n \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 0 \\\\ na & 1 \\end{pmatrix}$"
+                "$A^2 + AB + BA + B^2$ ga teng (chunki umumiy holda $AB \\ne BA$)",
+                "Har doim $A^2 + 2AB + B^2$ ga teng",
+                "Har doim $A^2 + B^2$ ga teng",
+                "$A^2 - B^2$ ga teng"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "$A^2 = \\begin{pmatrix} 1 & a \\\\ 0 & 1 \\end{pmatrix}\\begin{pmatrix} 1 & a \\\\ 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 1 & 2a \\\\ 0 & 1 \\end{pmatrix}$, matematik induksiya bo‘yicha $A^n = \\begin{pmatrix} 1 & na \\\\ 0 & 1 \\end{pmatrix}$."
-        },
-        {
-            "q": "$A = \\begin{pmatrix} 3 & -2 \\\\ 1 & 4 \\end{pmatrix}$ va $B = \\begin{pmatrix} -1 & 2 \\\\ 5 & 0 \\end{pmatrix}$ bo‘lsa, $AB - BA$ kommutator matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} -12 & 12 \\\\ 6 & 12 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 0 & 0 \\\\ 0 & 0 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -13 & 6 \\\\ 19 & 2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 12 & -12 \\\\ -6 & -12 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$AB = \\begin{pmatrix} -13 & 6 \\\\ 19 & 2 \\end{pmatrix}$, $BA = \\begin{pmatrix} -1 & 10 \\\\ 15 & -10 \\end{pmatrix}$. U holda $AB - BA = \\begin{pmatrix} -12 & -4 \\\\ 4 & 12 \\end{pmatrix}$... Tekshiramiz: $AB_{12} = 3\\cdot 2 + (-2)\\cdot 0 = 6$; $BA_{11} = -3 + 2 = -1, BA_{12} = 2 + 8 = 10, BA_{21} = 15 + 0 = 15, BA_{22} = -10 + 0 = -10$. Demak $AB - BA = \\begin{pmatrix} -12 & -4 \\\\ 4 & 12 \\end{pmatrix}$."
-        },
-        {
-            "q": "$A = \\begin{pmatrix} 2 & 1 \\\\ -1 & 3 \\end{pmatrix}$ va $B = \\begin{pmatrix} 1 & -2 \\\\ 4 & 0 \\end{pmatrix}$ bo‘lsa, $(A + B)^T$ matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 3 & 3 \\\\ -1 & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & -1 \\\\ 3 & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 5 \\\\ -3 & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & 3 \\\\ 1 & -3 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$A + B = \\begin{pmatrix} 3 & -1 \\\\ 3 & 3 \\end{pmatrix}$. Uni transponirlasak: $(A+B)^T = \\begin{pmatrix} 3 & 3 \\\\ -1 & 3 \\end{pmatrix}$."
-        },
-        {
-            "q": "Diagonal matritsalar ko‘paytmasi $\\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & -3 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix} \\cdot \\begin{pmatrix} 4 & 0 & 0 \\\\ 0 & -2 & 0 \\\\ 0 & 0 & -1 \\end{pmatrix}$ nimaga teng?",
-            "opts": [
-                "$\\begin{pmatrix} 8 & 0 & 0 \\\\ 0 & 6 & 0 \\\\ 0 & 0 & -5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 6 & 0 & 0 \\\\ 0 & -5 & 0 \\\\ 0 & 0 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 8 & 0 & 0 \\\\ 0 & -6 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -2 & 0 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 6 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Diagonal matritsalarni ko‘paytirishda mos diagonal elementlari o‘zaro ko‘paytiriladi: $2\\cdot 4=8,\\; (-3)\\cdot(-2)=6,\\; 5\\cdot(-1)=-5$."
+            "exp": "Taqsimot qonuniga ko‘ra $(A+B)(A+B) = A^2 + AB + BA + B^2$. Faqat $AB = BA$ (o‘rin almashinuvchi) bo‘lgandagina u $A^2 + 2AB + B^2$ ga aylanadi."
         }
-    ]
-    # Fix question 28 options to match exact calculation:
-    t1[27]["opts"] = [
-        "$\\begin{pmatrix} -12 & -4 \\\\ 4 & 12 \\end{pmatrix}$",
-        "$\\begin{pmatrix} 0 & 0 \\\\ 0 & 0 \\end{pmatrix}$",
-        "$\\begin{pmatrix} -13 & 6 \\\\ 19 & 2 \\end{pmatrix}$",
-        "$\\begin{pmatrix} 12 & 4 \\\\ -4 & -12 \\end{pmatrix}$"
     ]
 
     # =========================================================================
-    # MAVZU 2: Determinantlar nazariyasi va asosiy xossalari (30 ta savol)
+    # MAVZU 2: Determinantlar nazariyasi va asosiy xossalari (30 ta NAZARIY savol)
     # =========================================================================
     t2 = [
         {
-            "q": "Ikkinchi tartibli $\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix}$ determinant qaysi formula bilan hisoblanadi?",
+            "q": "Determinant tushunchasi dastlab matematikaning qaysi masalasini yechishda foydalanilgan va keyinchalik qayerlarga tatbiq etilgan?",
             "opts": [
-                "$a_{11} \\cdot a_{22} - a_{12} \\cdot a_{21}$",
-                "$a_{11} \\cdot a_{22} + a_{12} \\cdot a_{21}$",
-                "$a_{11} \\cdot a_{12} - a_{21} \\cdot a_{22}$",
-                "$a_{12} \\cdot a_{21} - a_{11} \\cdot a_{22}$"
+                "Dastlab chiziqli tenglamalar sistemasini yechishda foydalanilgan; keyinchalik xos sonlarni topishga, differensial tenglamalarni yechishga va vektor hisobiga keng tatbiq etilgan",
+                "Dastlab faqat geometrik shakllar perimetrini topishda ishlatilgan",
+                "Dastlab ehtimollar nazariyasida paydo bo‘lib, faqat statistikada qo‘llanilgan",
+                "Dastlab sonlarni tub ko‘paytuvchilarga ajratish uchun kiritilgan"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (15-slayd): 2-tartibli determinant bosh diagonal elementlari ko‘paytmasidan yordamchi diagonal elementlari ko‘paytmasini ayirish bilan topiladi."
+            "exp": "2-ma’ruza (4-slayd): Determinant tushunchasidan dastlab chiziqli tenglamalar sistemasini yechishda foydalanilgan bo‘lib, keyinchalik xos sonlarni topishga, differensial tenglamalar va vektor hisobiga keng tatbiq etilgan."
         },
         {
-            "q": "Ma’ruzadagi 15-slayd misoli: $\\begin{vmatrix} -4 & 9 \\\\ -3 & 7 \\end{vmatrix}$ determinantni hisoblang.",
+            "q": "Determinant qanday matritsalar uchun aniqlanadi va uning natijasi nima bo‘ladi?",
             "opts": [
-                "$-1$",
-                "$1$",
-                "$-55$",
-                "$55$"
+                "Faqat kvadrat ($n \\times n$) matritsalar uchun aniqlanadi va natijasi ma’lum qoida bo‘yicha hisoblanadigan yagona son bo‘ladi",
+                "Ixtiyoriy $m \\times n$ to‘g‘ri burchakli matritsa uchun aniqlanadi va natijasi yangi matritsa bo‘ladi",
+                "Faqat ustun matritsalar uchun aniqlanadi va natijasi vektor bo‘ladi",
+                "Faqat diagonal matritsalar uchun aniqlanadi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (15-slayd): $(-4)\\cdot 7 - 9\\cdot(-3) = -28 + 27 = -1$."
+            "exp": "Determinant faqat kvadrat matritsaga mos qo‘yiluvchi skalyar (son) miqdordir va $\\det(A)$, $|A|$ yoki $\\Delta$ kabi belgilanadi."
         },
         {
-            "q": "Agar determinantning biror satr yoki biror ustun elementlarining barchasi nolga teng bo‘lsa (1-xossa), uning qiymati nimaga teng bo‘ladi?",
+            "q": "2-tartibli $\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix}$ determinant qaysi formula bilan aniqlanadi?",
             "opts": [
-                "$0$ ga teng bo‘ladi",
-                "$1$ ga teng bo‘ladi",
-                "$-1$ ga teng bo‘ladi",
-                "Qolgan elementlar yig‘indisiga teng bo‘ladi"
+                "$a_{11} \\cdot a_{22} - a_{12} \\cdot a_{21}$ (bosh diagonal ko‘paytmasidan yordamchi diagonal ko‘paytmasi ayriladi)",
+                "$a_{11} \\cdot a_{22} + a_{12} \\cdot a_{21}$ (ikkala diagonal ko‘paytmalari qo‘shiladi)",
+                "$a_{11} \\cdot a_{12} - a_{21} \\cdot a_{22}$ (satr elementlari ko‘paytmalari ayriladi)",
+                "$(a_{11} + a_{22}) - (a_{12} + a_{21})$"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (5-slayd, 1-xossa): Nol satr yoki nol ustunga ega determinantning qiymati har doim nolga teng."
+            "exp": "2-ma’ruza (15-slayd): 2-tartibli determinant $\\Delta = a_{11} \\cdot a_{22} - a_{12} \\cdot a_{21}$ formula bilan aniqlanadi."
         },
         {
-            "q": "Ma’ruzadagi 6-7-slaydlar asosida: $\\Delta_1 = \\begin{vmatrix} 4 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 5 \\end{vmatrix}$ va $\\Delta_2 = \\begin{vmatrix} 1 & 3 & 7 \\\\ 0 & -2 & 9 \\\\ 0 & 0 & 3 \\end{vmatrix}$ determinantlarning qiymatlarini toping.",
+            "q": "Determinantning 1-xossasi: Agar determinantning biror satr yoki biror ustun elementlarining barchasi nolga teng bo‘lsa, uning qiymati nimaga teng bo‘ladi?",
             "opts": [
-                "$\\Delta_1 = 60,\\quad \\Delta_2 = -6$",
-                "$\\Delta_1 = 12,\\quad \\Delta_2 = 6$",
-                "$\\Delta_1 = 60,\\quad \\Delta_2 = 21$",
-                "$\\Delta_1 = 0,\\quad \\Delta_2 = -6$"
+                "Nolga teng bo‘ladi ($\\Delta = 0$)",
+                "Birga teng bo‘ladi ($\\Delta = 1$)",
+                "Qolgan satr elementlari ko‘paytmasiga teng bo‘ladi",
+                "Aniqlab bo‘lmaydi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (6-7-slaydlar): Diagonal va uchburchakli matritsaning determinanti bosh diagonal elementlari ko‘paytmasiga teng: $\\Delta_1 = 4\\cdot 3\\cdot 5 = 60$, $\\Delta_2 = 1\\cdot(-2)\\cdot 3 = -6$."
+            "exp": "2-ma’ruza (5-slayd, 1-xossa): Agar determinantning biror satr yoki biror ustun elementlarining barchasi nolga teng bo‘lsa, uning qiymati nolga teng bo‘ladi."
         },
         {
-            "q": "Determinantda ikkita satr (yoki ikkita ustun) o‘rinlari mos ravishda almashtirilsa (5-xossa), determinant qanday o‘zgaradi?",
+            "q": "Determinantning 2-xossasi: Diagonal matritsaning determinanti nimaga teng?",
             "opts": [
-                "Absolyut qiymati saqlanib, ishorasi qarama-qarshiga o‘zgaradi",
-                "Qiymati umuman o‘zgarmaydi",
-                "Qiymati $0$ ga teng bo‘lib qoladi",
-                "Qiymati $2$ marta ortadi"
+                "Diagonal elementlarining ko‘paytmasiga teng ($a_{11} \\cdot a_{22} \\cdot \\dots \\cdot a_{nn}$)",
+                "Diagonal elementlarining yig‘indisiga teng ($a_{11} + a_{22} + \\dots + a_{nn}$)",
+                "Har doim nolga teng",
+                "Har doim birga teng"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (9-slayd, 5-xossa): Determinantda ikkita satr yoki ustun o‘rni almashtirilsa, determinantning ishorasi o‘zgaradi."
+            "exp": "2-ma’ruza (6-slayd, 2-xossa): Diagonal matritsaning determinanti diagonal elementlarining ko‘paytmasiga teng."
         },
         {
-            "q": "Ma’ruzadagi 9-slayd misoli: $\\Delta_1 = \\begin{vmatrix} 1 & 0 & 3 \\\\ 5 & 3 & 2 \\\\ 4 & 2 & 1 \\end{vmatrix}$ va uning 1- va 3-satrlari o‘rni almashtirilgan $\\Delta_2 = \\begin{vmatrix} 4 & 2 & 1 \\\\ 5 & 3 & 2 \\\\ 1 & 0 & 3 \\end{vmatrix}$ determinantlarni toping.",
+            "q": "Determinantning 3-xossasi: Yuqori yoki quyi uchburchakli matritsaning determinanti nimaga teng?",
             "opts": [
-                "$\\Delta_1 = -7,\\quad \\Delta_2 = 7$",
-                "$\\Delta_1 = 7,\\quad \\Delta_2 = -7$",
-                "$\\Delta_1 = -7,\\quad \\Delta_2 = -7$",
-                "$\\Delta_1 = 13,\\quad \\Delta_2 = -13$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "2-ma’ruza (9-slayd): $\\Delta_1 = 3 + 30 + 0 - 36 - 4 - 0 = -7$. 1- va 3-satrlar o‘rni almashgani uchun $\\Delta_2 = -\\Delta_1 = 7$."
-        },
-        {
-            "q": "Ma’ruzadagi 12-slayd misoli: $\\begin{vmatrix} 6 & 8 & 4 \\\\ 12 & 6 & 8 \\\\ 3 & 4 & 2 \\end{vmatrix}$ determinantning qiymati nimaga teng va qaysi xossaga ko‘ra?",
-            "opts": [
-                "$0$ ga teng, chunki 1-satr va 3-satr elementlari mos ravishda proporsional ($k=2$)",
-                "$72$ ga teng, chunki uchburchakli determinant",
-                "$192$ ga teng, Sarrius qoidasiga ko‘ra",
-                "$-24$ ga teng, chunki 2-satr juft sonlardan iborat"
+                "Uning bosh diagonal elementlari ko‘paytmasiga teng ($a_{11} \\cdot a_{22} \\cdot \\dots \\cdot a_{nn}$)",
+                "Uning yordamchi diagonal elementlari ko‘paytmasiga teng",
+                "Noldan farqli barcha elementlari yig‘indisiga teng",
+                "Bosh diagonal elementlari yig‘indisiga teng"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (12-slayd, 8-xossa): 1-satr $(6, 8, 4) = 2 \\cdot (3, 4, 2)$, ya’ni 1- va 3-satrlar proporsional bo‘lgani uchun determinant nolga teng."
+            "exp": "2-ma’ruza (7-slayd, 3-xossa): Yuqori yoki quyi uchburchakli matritsaning determinanti uning bosh diagonal elementlari ko‘paytmasiga teng."
         },
         {
-            "q": "Determinantning biror satr elementlariga boshqa satrning mos elementlarini ixtiyoriy $k$ songa ko‘paytirib qo‘shilsa (7-xossa), determinantning qiymati qanday o‘zgaradi?",
+            "q": "Determinantning 4-xossasi: Determinantning biror satr yoki biror ustun elementlarini $k \\ne 0$ songa ko‘paytirish qanday natijaga olib keladi?",
             "opts": [
-                "O‘zgarmaydi",
-                "$k$ marta ortadi",
-                "Ishorasi qarama-qarshiga o‘zgaradi",
-                "$k$ songa ko‘payadi"
+                "Determinantning qiymati shu $k$ songa ko‘payadi; aksincha, biror satr yoki ustunning umumiy ko‘paytuvchisini determinant belgisidan tashqariga chiqarish mumkin",
+                "Determinantning qiymati $k^n$ marta ortadi",
+                "Determinantning qiymati o‘zgarmaydi",
+                "Determinantning qiymati $k$ ga bo‘linadi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (11-slayd, 7-xossa): Bunday elementar almashtirishda determinantning qiymati o‘zgarmaydi."
+            "exp": "2-ma’ruza (8-slayd, 4-xossa): Biror satr yoki ustun elementlarini $k$ songa ko‘paytirish determinantni shu songa ko‘paytirishga teng kuchlidir."
         },
         {
-            "q": "Transponirlash natijasida determinantning qiymati qanday o‘zgaradi (9-xossa)? Ma’ruzadagi $\\begin{vmatrix} 2 & -4 & 3 \\\\ 3 & 1 & 5 \\\\ -1 & -2 & 1 \\end{vmatrix}$ determinant qiymatini toping.",
+            "q": "Matritsani $k$ songa ko‘paytirish bilan determinantni $k$ songa ko‘paytirish orasida qanday muhim nazariy farq bor?",
             "opts": [
-                "O‘zgarmaydi; qiymati $39$ ga teng",
-                "Ishorasi o‘zgaradi; qiymati $-39$ ga teng",
-                "O‘zgarmaydi; qiymati $27$ ga teng",
-                "Teskari songa aylanadi; qiymati $1/39$ ga teng"
+                "Matritsani $k$ songa ko‘paytirganda barcha elementlar $k$ ga ko‘payadi ($\\det(kA) = k^n \\det A$); determinantni $k$ ga ko‘paytirganda esa faqat bitta satr yoki bitta ustun elementlari $k$ ga ko‘payadi",
+                "Ikkala amal mutlaqo bir xil bajariladi va $\\det(kA) = k \\det(A)$ bo‘ladi",
+                "Determinantni songa ko‘paytirganda barcha elementlar shu songa ko‘paytiriladi",
+                "Matritsani songa ko‘paytirganda faqat bosh diagonal elementlari ko‘paytiriladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "2-ma’ruza (13-slayd, 9-xossa): $\\det(A^T) = \\det(A) = 2(1+10) - (-4)(3+5) + 3(-6+1) = 22 + 32 - 15 = 39$."
+            "exp": "$n$-tartibli $kA$ matritsada $n$ ta satrning har biri $k$ ga ko‘paygani uchun 4-xossaga ko‘ra har bir satrdan $k$ tashqariga chiqadi va $\\det(kA) = k^n \\det(A)$ bo‘ladi."
         },
         {
-            "q": "Ma’ruzadagi 19-20-slaydlar misoli: Uchburchak va Sarrius qoidalaridan foydalanib $\\begin{vmatrix} 2 & 1 & -1 \\\\ 3 & 4 & 0 \\\\ 5 & 1 & 2 \\end{vmatrix}$ determinantni hisoblang.",
+            "q": "Determinantning 5-xossasi: Determinantda ikkita satr yoki ikkita ustun o‘rinlari mos ravishda almashtirilsa, determinant qanday o‘zgaradi?",
             "opts": [
-                "$27$",
-                "$-1$",
-                "$13$",
-                "$-27$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "2-ma’ruza (19-20-slaydlar): $2\\cdot 4\\cdot 2 + (-1)\\cdot 3\\cdot 1 + 1\\cdot 5\\cdot 0 - (-1\\cdot 4\\cdot 5 + 1\\cdot 3\\cdot 2 + 2\\cdot 1\\cdot 0) = (16 - 3 + 0) - (-20 + 6 + 0) = 13 - (-14) = 27$."
-        },
-        {
-            "q": "Determinantning $a_{ij}$ elementiga mos $M_{ij}$ minori va $A_{ij}$ algebraik to‘ldiruvchisi orasidagi bog‘lanish formulasini ko‘rsating.",
-            "opts": [
-                "$A_{ij} = (-1)^{i+j} M_{ij}$",
-                "$A_{ij} = (-1)^{i \\cdot j} M_{ij}$",
-                "$A_{ij} = (-1)^{i-j} + M_{ij}$",
-                "$M_{ij} = (-1)^{i+j} A_{ij}^2$"
+                "Determinantning ishorasi qarama-qarshiga o‘zgaradi ($\\Delta' = -\\Delta$)",
+                "Determinantning qiymati va ishorasi o‘zgarmaydi",
+                "Determinantning qiymati nolga aylanadi",
+                "Determinantning qiymati teskari songa ($1/\\Delta$) aylanadi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (21-slayd): $A_{ij} = (-1)^{i+j} M_{ij}$, bu yerda $M_{ij}$ — $i$-satr va $j$-ustunni o‘chirishdan hosil bo‘lgan $(n-1)$-tartibli determinant."
+            "exp": "2-ma’ruza (9-slayd, 5-xossa): Determinantda ikkita satr yoki ustun o‘rinlari mos ravishda almashtirilsa, determinantning ishorasi o‘zgaradi."
         },
         {
-            "q": "Ma’ruzadagi 22-slayd misoli: $\\det(A) = \\begin{vmatrix} 2 & 1 & 3 \\\\ 5 & 3 & 2 \\\\ 1 & 4 & 3 \\end{vmatrix}$ determinant uchun $M_{11}$ minor va $A_{11}$ algebraik to‘ldiruvchini toping.",
+            "q": "Determinantning 6-xossasi: Agar determinant ikkita bir xil satr yoki ikkita bir xil ustunga ega bo‘lsa, uning qiymati nimaga teng bo‘ladi?",
             "opts": [
-                "$M_{11} = 1,\\quad A_{11} = 1$",
-                "$M_{11} = 1,\\quad A_{11} = -1$",
-                "$M_{11} = 17,\\quad A_{11} = 17$",
-                "$M_{11} = -1,\\quad A_{11} = 1$"
+                "Nolga teng bo‘ladi ($\\Delta = 0$)",
+                "Shu satr elementlari ko‘paytmasining ikki baravariga teng bo‘ladi",
+                "Birga teng bo‘ladi ($\\Delta = 1$)",
+                "Manfiy songa teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "2-ma’ruza (22-slayd): $M_{11} = \\begin{vmatrix} 3 & 2 \\\\ 4 & 3 \\end{vmatrix} = 9 - 8 = 1$; $A_{11} = (-1)^{1+1} M_{11} = 1$."
+            "exp": "2-ma’ruza (10-slayd, 6-xossa): Agar determinant ikkita bir xil satr yoki ustunga ega bo‘lsa, uning qiymati nolga teng bo‘ladi."
         },
         {
-            "q": "Ma’ruzadagi 22-slayd misoli: $\\det(A) = \\begin{vmatrix} 2 & 1 & 3 \\\\ 5 & 3 & 2 \\\\ 1 & 4 & 3 \\end{vmatrix}$ determinant uchun $M_{32}$ minor va $A_{32}$ algebraik to‘ldiruvchini toping.",
+            "q": "Determinantning 7-xossasi: Agar determinantning biror satr (ustun) elementlariga boshqa bir satr (ustun)ning mos elementlarini ixtiyoriy songa ko‘paytirib qo‘shilsa, uning qiymati qanday o‘zgaradi?",
             "opts": [
-                "$M_{32} = -11,\\quad A_{32} = 11$",
-                "$M_{32} = -11,\\quad A_{32} = -11$",
-                "$M_{32} = 11,\\quad A_{32} = -11$",
-                "$M_{32} = 7,\\quad A_{32} = -7$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "2-ma’ruza (22-slayd): 3-satr va 2-ustun o‘chirilsa, $M_{32} = \\begin{vmatrix} 2 & 3 \\\\ 5 & 2 \\end{vmatrix} = 4 - 15 = -11$. $A_{32} = (-1)^{3+2} \\cdot (-11) = 11$."
-        },
-        {
-            "q": "Ma’ruzadagi 22-slayd misoli: $\\det(A) = \\begin{vmatrix} 2 & 1 & 3 \\\\ 5 & 3 & 2 \\\\ 1 & 4 & 3 \\end{vmatrix}$ determinant uchun $M_{23}$ minor va $A_{23}$ algebraik to‘ldiruvchini toping.",
-            "opts": [
-                "$M_{23} = 7,\\quad A_{23} = -7$",
-                "$M_{23} = 7,\\quad A_{23} = 7$",
-                "$M_{23} = -7,\\quad A_{23} = 7$",
-                "$M_{23} = 9,\\quad A_{23} = -9$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "2-ma’ruza (22-slayd): 2-satr va 3-ustun o‘chirilsa, $M_{23} = \\begin{vmatrix} 2 & 1 \\\\ 1 & 4 \\end{vmatrix} = 8 - 1 = 7$. $A_{23} = (-1)^{2+3} \\cdot 7 = -7$."
-        },
-        {
-            "q": "Agar 3-tartibli kvadrat $A$ matritsaning determinanti $\\det(A) = -2$ bo‘lsa, har bir elementi $3$ ga ko‘paytirilgan $3A$ matritsaning determinanti $\\det(3A)$ nimaga teng?",
-            "opts": [
-                "$-54$",
-                "$-6$",
-                "$-18$",
-                "$54$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "4-xossaga ko‘ra, $3A$ matritsaning HAR BIR (3 ta) satridan $3$ ko‘paytuvchi determinant belgisidan tashqariga chiqadi: $\\det(3A) = 3^3 \\cdot \\det(A) = 27 \\cdot (-2) = -54$."
-        },
-        {
-            "q": "$\\begin{vmatrix} \\cos\\alpha & -\\sin\\alpha \\\\ \\sin\\alpha & \\cos\\alpha \\end{vmatrix}$ determinantning qiymatini toping.",
-            "opts": [
-                "$1$",
-                "$\\cos 2\\alpha$",
-                "$0$",
-                "$\\sin 2\\alpha$"
+                "Uning qiymati o‘zgarmaydi",
+                "Uning qiymati shu ko‘paytirilgan songa ko‘payadi",
+                "Uning ishorasi qarama-qarshiga o‘zgaradi",
+                "Uning qiymati nolga teng bo‘lib qoladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "$\\cos\\alpha \\cdot \\cos\\alpha - (-\\sin\\alpha)\\cdot\\sin\\alpha = \\cos^2\\alpha + \\sin^2\\alpha = 1$."
+            "exp": "2-ma’ruza (11-slayd, 7-xossa): Biror satr (ustun) elementlariga boshqa bir satr (ustun)ning mos elementlarini ixtiyoriy songa ko‘paytirib qo‘shilsa, determinantning qiymati o‘zgarmaydi."
         },
         {
-            "q": "$\\begin{vmatrix} x - 1 & 3 \\\\ 4 & x + 3 \\end{vmatrix} = 0$ tenglamaning ildizlarini toping.",
+            "q": "Determinantning 8-xossasi: Agar determinantning ikki satr (ustun) elementlari mos ravishda proporsional bo‘lsa, uning qiymati nimaga teng bo‘ladi va nima uchun?",
             "opts": [
-                "$x_1 = -5,\\quad x_2 = 3$",
-                "$x_1 = 5,\\quad x_2 = -3$",
-                "$x_1 = -3,\\quad x_2 = 4$",
-                "$x_1 = 1,\\quad x_2 = -15$"
+                "Nolga teng bo‘ladi ($\\Delta = 0$), chunki proporsionallik koeffitsiyentini tashqariga chiqarsak, ikkita bir xil satrli determinant hosil bo‘ladi",
+                "Proporsionallik koeffitsiyenti $k$ ga teng bo‘ladi",
+                "Birga teng bo‘ladi",
+                "Proporsionallik koeffitsiyenti kvadratiga teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$(x-1)(x+3) - 12 = 0 \\implies x^2 + 2x - 15 = 0 \\implies (x+5)(x-3) = 0 \\implies x_1 = -5,\\; x_2 = 3$."
+            "exp": "2-ma’ruza (12-slayd, 8-xossa): Ikki satr (ustun) proporsional bo‘lsa, 4 va 6-xossalarga ko‘ra $\\Delta = k \\cdot 0 = 0$ bo‘ladi."
         },
         {
-            "q": "3-tartibli $\\begin{vmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9 \\end{vmatrix}$ determinantning qiymatini hisoblang.",
+            "q": "Determinantning 9-xossasi: Matritsani transponirlash natijasida determinantning qiymati qanday o‘zgaradi?",
             "opts": [
-                "$0$",
-                "$45$",
-                "$-12$",
-                "$24$"
+                "O‘zgarmaydi, ya’ni $\\det(A^T) = \\det(A)$",
+                "Ishorasi qarama-qarshiga o‘zgaradi: $\\det(A^T) = -\\det(A)$",
+                "Teskari qiymatga aylanadi: $\\det(A^T) = 1/\\det(A)$",
+                "Nolga teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "2-ma’ruza (13-slayd, 9-xossa): Transponirlash natijasida determinantning qiymati o‘zgarmaydi. Shu sababli satrlar uchun o‘rinli bo‘lgan barcha xossalar ustunlar uchun ham o‘rinli."
+        },
+        {
+            "q": "3-tartibli determinantning to‘liq yoyilmasi formulasida nechta ko‘paytma (had) ishtirok etadi?",
+            "opts": [
+                "$6$ ta ko‘paytma: $3$ tasi plyus ($+$) ishora bilan va $3$ tasi minus ($-$) ishora bilan",
+                "$9$ ta ko‘paytma: barchasi plyus ishora bilan",
+                "$3$ ta ko‘paytma: faqat diagonal elementlar",
+                "$4$ ta ko‘paytma: $2$ tasi plyus va $2$ tasi minus ishora bilan"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "2-ma’ruza (16-slayd): $\\Delta = a_{11}a_{22}a_{33} + a_{13}a_{21}a_{32} + a_{12}a_{23}a_{31} - (a_{13}a_{22}a_{31} + a_{11}a_{23}a_{32} + a_{12}a_{21}a_{33})$."
+        },
+        {
+            "q": "3-tartibli determinantni hisoblashning «Uchburchak qoidasi»da qaysi elementlar ko‘paytmasi musbat (plyus) ishora bilan olinadi?",
+            "opts": [
+                "Bosh diagonal elementlari ko‘paytmasi hamda asosi bosh diagonalga parallel bo‘lgan ikkita uchburchak uchlaridagi elementlar ko‘paytmalari",
+                "Yordamchi diagonal elementlari ko‘paytmasi hamda asosi yordamchi diagonalga parallel bo‘lgan ikkita uchburchak uchlaridagi elementlar ko‘paytmalari",
+                "1-satr, 2-satr va 3-satr elementlarining o‘zaro ko‘paytmalari",
+                "Faqat burchaklarda joylashgan 4 ta element ko‘paytmasi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "3-satrdan 2-satrni va 2-satrdan 1-satrni ayirsak, ikkita bir xil $(3, 3, 3)$ satr hosil bo‘ladi, demak $\\Delta = 0$."
+            "exp": "2-ma’ruza (17, 19-slaydlar): Uchburchak qoidasida bosh diagonal va unga parallel asosli 2 ta uchburchak plyus, yordamchi diagonal va unga parallel asosli 2 ta uchburchak minus ishora bilan olinadi."
         },
         {
-            "q": "3-tartibli $\\begin{vmatrix} 3 & -1 & 2 \\\\ 1 & 2 & -1 \\\\ 2 & 3 & 4 \\end{vmatrix}$ determinantni hisoblang.",
+            "q": "3-tartibli determinantni hisoblashning «Sarrius qoidasi» qanday amalga oshiriladi?",
             "opts": [
-                "$35$",
-                "$21$",
-                "$-35$",
-                "$17$"
+                "Determinant ostiga 1- va 2-satrlar qaytadan ko‘chirib yoziladi, so‘ngra bosh diagonalga parallel 3 ta chiziq ko‘paytmalari qo‘shilib, yordamchi diagonalga parallel 3 ta chiziq ko‘paytmalari ayriladi",
+                "Determinant ostiga 2- va 3-satrlar teskari tartibda yozilib, ustunlar yig‘indisi olinadi",
+                "Determinant 2-tartibli determinantga bo‘lib yuboriladi",
+                "Barcha satr elementlari qo‘shib chiqiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "2-ma’ruza (18, 20-slaydlar): Sarrius sxemasida determinant ostiga dastlabki ikkita satr ($a_{11}, a_{12}, a_{13}$ va $a_{21}, a_{22}, a_{23}$) yozilib, 3 ta asosiy va 3 ta yordamchi diagonal chiziqlari bo‘yicha ko‘paytmalar hisoblanadi."
+        },
+        {
+            "q": "Determinantning $a_{ij}$ elementiga mos «minor» ($M_{ij}$) deb nimaga aytiladi?",
+            "opts": [
+                "$n$-tartibli determinantda $a_{ij}$ element turgan $i$-satr va $j$-ustunni o‘chirishdan qolgan $(n-1)$-tartibli determinantga",
+                "$a_{ij}$ elementning $(-1)^{i+j}$ ga ko‘paytmasiga",
+                "$i$-satr va $j$-ustun elementlarining skalyar ko‘paytmasiga",
+                "Determinantning eng kichik elementiga"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "2-ma’ruza (21-slayd): $M_{ij}$ minor deb $i$-satr va $j$-ustunni o‘chirishdan hosil bo‘lgan $(n-1)$-tartibli determinantga aytiladi."
+        },
+        {
+            "q": "Determinantning $a_{ij}$ elementiga mos «algebraik to‘ldiruvchi» ($A_{ij}$) deb nimaga aytiladi?",
+            "opts": [
+                "$A_{ij} = (-1)^{i+j} M_{ij}$ formula bilan aniqlanuvchi miqdorga, ya’ni $(-1)^{i+j}$ ishora bilan olingan $M_{ij}$ minorga",
+                "$A_{ij} = (-1)^{i \\cdot j} M_{ij}$ formula bilan aniqlanuvchi miqdorga",
+                "$A_{ij} = a_{ij} \\cdot M_{ij}$ ko‘paytmaga",
+                "$A_{ij} = \\Delta - M_{ij}$ ayirmaga"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "2-ma’ruza (21-22-slaydlar): $A_{ij} = (-1)^{i+j} M_{ij}$."
+        },
+        {
+            "q": "$a_{ij}$ elementning algebraik to‘ldiruvchisi $A_{ij}$ va minori $M_{ij}$ qachon o‘zaro teng ($A_{ij} = M_{ij}$) va qachon qarama-qarshi ishorali ($A_{ij} = -M_{ij}$) bo‘ladi?",
+            "opts": [
+                "Indekslar yig‘indisi $i + j$ juft bo‘lsa $A_{ij} = M_{ij}$; agar $i + j$ toq bo‘lsa $A_{ij} = -M_{ij}$ bo‘ladi",
+                "Indekslar ko‘paytmasi $i \\cdot j$ juft bo‘lsa $A_{ij} = M_{ij}$, toq bo‘lsa $A_{ij} = -M_{ij}$ bo‘ladi",
+                "$a_{ij} > 0$ bo‘lsa $A_{ij} = M_{ij}$, $a_{ij} < 0$ bo‘lsa $A_{ij} = -M_{ij}$ bo‘ladi",
+                "Har doim $A_{ij} = M_{ij}$ bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "$(-1)^{i+j}$ daraja ko‘rsatkichi $i+j$ juft bo‘lganda $+1$ ga, toq bo‘lganda esa $-1$ ga teng."
+        },
+        {
+            "q": "Birlik matritsa $E$ ning determinanti $\\det(E)$ nimaga teng?",
+            "opts": [
+                "Har qanday $n$ tartib uchun $\\det(E) = 1$ ga teng",
+                "$\\det(E) = n$ ga teng",
+                "$\\det(E) = 0$ ga teng",
+                "$\\det(E) = (-1)^n$ ga teng"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "Birlik matritsa diagonal matritsa bo‘lib, uning barcha diagonal elementlari $1$ ga teng. 2-xossaga ko‘ra $\\det(E) = 1 \\cdot 1 \\cdot \\dots \\cdot 1 = 1$."
+        },
+        {
+            "q": "Agar determinantning biror satri elementlari ikki qo‘shiluvchining yig‘indisidan ($a_{i1}+b_{i1},\\; a_{i2}+b_{i2},\\; \\dots,\\; a_{in}+b_{in}$) iborat bo‘lsa, determinant qanday xossaga ega?",
+            "opts": [
+                "Bunday determinant mos ravishda $i$-satrida $a_{ij}$ va $b_{ij}$ elementlar turgan, qolgan satrlari esa o‘zgarmagan ikkita determinantning yig‘indisiga teng",
+                "Barcha satrlari qo‘shilgan ikkita matritsa determinantlari yig‘indisiga ($\\det(A+B) = \\det A + \\det B$) teng",
+                "Ikkita determinantning ko‘paytmasiga teng",
+                "Qiymati nolga teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "$\\Delta = 3(8+3) - (-1)(4+2) + 2(3-4) = 33 + 6 - 2 = 37$... Tekshiramiz: $3(2\\cdot4 - (-1)\\cdot3) - (-1)(1\\cdot4 - (-1)\\cdot2) + 2(1\\cdot3 - 2\\cdot2) = 3(11) + 1(6) + 2(-1) = 33 + 6 - 2 = 37$."
+            "exp": "Determinant chiziqlilik xossasiga ko‘ra bitta satr (yoki ustun) bo‘yicha ikkita determinant yig‘indisiga ajraladi (ammo umuman $\\det(A+B) \\ne \\det A + \\det B$)."
         },
         {
-            "q": "Yordamchi diagonalga nisbatan uchburchakli bo‘lgan $\\begin{vmatrix} 0 & 0 & 4 \\\\ 0 & 3 & 7 \\\\ 2 & -5 & 9 \\end{vmatrix}$ determinantni hisoblang.",
+            "q": "Ikki bir xil tartibli kvadrat $A$ va $B$ matritsalar ko‘paytmasining determinanti $\\det(A \\cdot B)$ nimaga teng?",
             "opts": [
-                "$-24$",
-                "$24$",
-                "$0$",
-                "$-36$"
+                "Ularning determinantlari ko‘paytmasiga teng: $\\det(A \\cdot B) = \\det(A) \\cdot \\det(B)$",
+                "Ularning determinantlari yig‘indisiga teng: $\\det(A \\cdot B) = \\det(A) + \\det(B)$",
+                "$\\det(A \\cdot B) = \\det(A) - \\det(B)$",
+                "Ko‘paytma determinanti faqat diagonal matritsalar uchun topiladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "1- va 3-ustunlar o‘rnini almashtirsak, ishora minusga o‘zgaradi va bosh diagonali $(4, 3, 2)$ bo‘lgan quyi uchburchakli determinant hosil bo‘ladi: $\\Delta = -(4 \\cdot 3 \\cdot 2) = -24$."
+            "exp": "Ko‘paytmaning determinanti haqidagi teoremaga ko‘ra $\\det(AB) = \\det(A) \\cdot \\det(B)$."
         },
         {
-            "q": "Agar $\\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & k \\end{vmatrix} = 5$ bo‘lsa, $\\begin{vmatrix} d & e & f \\\\ 2a & 2b & 2c \\\\ g+d & h+e & k+f \\end{vmatrix}$ determinant nimaga teng?",
+            "q": "Agar determinantda satrlar (yoki ustunlar) o‘rni ketma-ket $k$ marta almashtirilsa, determinantning ishorasi qanday o‘zgaradi?",
             "opts": [
-                "$-10$",
-                "$10$",
-                "$5$",
-                "$-5$"
+                "$(-1)^k$ ko‘paytuvchiga ko‘payadi (ya’ni $k$ juft bo‘lsa ishora saqlanadi, $k$ toq bo‘lsa qarama-qarshiga o‘zgaradi)",
+                "Har doim minus ishoraga o‘zgaradi",
+                "Har doim plyus ishoraga o‘zgaradi",
+                "$k$ marta ortadi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "5-xossaga ko‘ra har bitta o‘rin almashtirishda determinant $(-1)$ ga ko‘payadi, $k$ marta almashtirilganda esa $(-1)^k$ ga ko‘payadi."
+        },
+        {
+            "q": "Agar determinantning biror satri qolgan satrlarining chiziqli kombinatsiyasidan iborat bo‘lsa, determinantning qiymati nimaga teng bo‘ladi?",
+            "opts": [
+                "Nolga teng bo‘ladi ($\\Delta = 0$)",
+                "Chiziqli kombinatsiya koeffitsiyentlari yig‘indisiga teng bo‘ladi",
+                "Birga teng bo‘ladi",
+                "Chiziqli kombinatsiya koeffitsiyentlari ko‘paytmasiga teng bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "7-xossaga ko‘ra qolgan satrlarni mos koeffitsiyentlar bilan ayirib tashlasak, ushbu satr to‘liq nol satrga aylanadi va 1-xossaga ko‘ra $\\Delta = 0$ bo‘ladi."
+        },
+        {
+            "q": "Uchinchi tartibli determinantda $M_{23}$ minori qaysi elementlardan tuzilgan 2-tartibli determinant hisoblanadi?",
+            "opts": [
+                "2-satr va 3-ustunni o‘chirishdan qolgan $\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{31} & a_{32} \\end{vmatrix}$ determinant",
+                "3-satr va 2-ustunni o‘chirishdan qolgan $\\begin{vmatrix} a_{11} & a_{13} \\\\ a_{21} & a_{23} \\end{vmatrix}$ determinant",
+                "1-satr va 1-ustunni o‘chirishdan qolgan $\\begin{vmatrix} a_{22} & a_{23} \\\\ a_{32} & a_{33} \\end{vmatrix}$ determinant",
+                "2-satr va 2-ustunni o‘chirishdan qolgan determinant"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "2-ma’ruza (22-slayd): $M_{23}$ da birinchi indeks $2$ — o‘chiriladigan satrni, ikkinchi indeks $3$ — o‘chiriladigan ustunni bildiradi."
+        },
+        {
+            "q": "Kvadrat $A$ matritsaning darajasi $A^m$ ($m \\in \\mathbb{N}$) ning determinanti $\\det(A^m)$ nimaga teng?",
+            "opts": [
+                "$(\\det A)^m$ ga teng",
+                "$m \\cdot \\det(A)$ ga teng",
+                "$\\det(mA)$ ga teng",
+                "$(\\det A)^{1/m}$ ga teng"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "Ko‘paytma determinanti xossasiga ko‘ra $\\det(A^m) = \\det(A \\cdot A \\cdot \\dots \\cdot A) = (\\det A)^m$."
+        },
+        {
+            "q": "Agar $n$-tartibli kvadrat matritsaning barcha elementlari ishorasi qarama-qarshiga o‘zgartirilsa ($-A$ matritsa), uning determinanti $\\det(-A)$ nimaga teng bo‘ladi?",
+            "opts": [
+                "$(-1)^n \\det(A)$ ga teng (ya’ni $n$ juft bo‘lsa $\\det(A)$ ga, $n$ toq bo‘lsa $-\\det(A)$ ga teng)",
+                "Har doim $-\\det(A)$ ga teng",
+                "Har doim $\\det(A)$ ga teng",
+                "Nolga teng"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "$-A = (-1) \\cdot A$ bo‘lgani uchun har bir $n$ ta satrdan $(-1)$ ko‘paytuvchi chiqib, $\\det(-A) = (-1)^n \\det(A)$ bo‘ladi."
+        },
+        {
+            "q": "Yordamchi diagonali ustidagi (yoki ostidagi) barcha elementlari nolga teng bo‘lgan $n$-tartibli uchburchak determinantning qiymati nimaga teng?",
+            "opts": [
+                "$(-1)^{\\frac{n(n-1)}{2}} \\cdot a_{1n} a_{2,n-1} \\dots a_{n1}$ ga, ya’ni ishora ko‘paytuvchisi bilan olingan yordamchi diagonal elementlari ko‘paytmasiga",
+                "Bosh diagonal elementlari ko‘paytmasiga",
+                "Har doim plyus ishora bilan olingan yordamchi diagonal elementlari ko‘paytmasiga",
+                "Har doim nolga teng"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "1) 1- va 2-satr almashgani uchun ishora minus bo‘ladi ($-1$); 2) 2-satrdan $2$ ko‘paytuvchi chiqadi ($-2$); 3) 3-satrga 1-satrning qo‘shilishi qiymatni o‘zgartirmaydi (7-xossa). Natija: $-2 \\cdot 5 = -10$."
+            "exp": "Ustunlarni teskari tartibda joylashtirish uchun $\\frac{n(n-1)}{2}$ marta o‘rin almashtirish bajariladi va bosh diagonal ko‘paytmasiga keladi."
         },
         {
-            "q": "$\\begin{vmatrix} 2 & x & 1 \\\\ 1 & 3 & 2 \\\\ 0 & 4 & 5 \\end{vmatrix} = 11$ tenglamadan $x$ ni toping.",
+            "q": "Kososimmetrik ($A^T = -A$) matritsaning tartibi $n$ toq son bo‘lsa (masalan $n = 3$ yoki $n = 5$), uning determinanti har doim nimaga teng bo‘ladi?",
             "opts": [
-                "$x = 0$",
-                "$x = 2$",
-                "$x = -1$",
-                "$x = 3$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "1-satr bo‘yicha yoyamiz: $2(15-8) - x(5-0) + 1(4-0) = 11 \\implies 14 - 5x + 4 = 11 \\implies 18 - 5x = 11$... Agar o‘ng tomon $18$ bo‘lsa $x=0$ chiqadi. Keling tenglamani $= 18$ deb olamiz!"
-        },
-        {
-            "q": "3-tartibli determinantni Sarrius qoidasi bilan hisoblashda determinant ostiga qaysi satrlar ko‘chirib yoziladi?",
-            "opts": [
-                "1-satr va 2-satr o‘z tartibida ko‘chirib yoziladi",
-                "2-satr va 3-satr teskari tartibda yoziladi",
-                "Faqat 3-satr ikki marta ko‘chirib yoziladi",
-                "Bosh diagonal elementlari ustun qilib yoziladi"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "2-ma’ruza (18, 20-slaydlar): Sarrius qoidasida 3-tartibli determinant ostiga 1- va 2-satrlar ($a_{11}, a_{12}, a_{13}$ hamda $a_{21}, a_{22}, a_{23}$) ko‘chirib yoziladi."
-        },
-        {
-            "q": "$A = \\begin{pmatrix} 5 & -2 & 1 \\\\ 0 & 3 & -4 \\\\ 2 & 1 & 6 \\end{pmatrix}$ matritsaning barcha diagonal elementlariga mos algebraik to‘ldiruvchilar yig‘indisi $A_{11} + A_{22} + A_{33}$ ni toping.",
-            "opts": [
-                "$65$",
-                "$57$",
-                "$49$",
-                "$50$"
+                "Har doim $0$ ga teng bo‘ladi (chunki $\\det(A) = \\det(A^T) = \\det(-A) = (-1)^n \\det(A) = -\\det(A) \\implies \\det(A) = 0$)",
+                "Har doim $1$ ga teng bo‘ladi",
+                "Har doim $-1$ ga teng bo‘ladi",
+                "Bosh diagonal elementlari ko‘paytmasiga teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "$A_{11} = \\begin{vmatrix} 3 & -4 \\\\ 1 & 6 \\end{vmatrix} = 18 - (-4) = 22$; $A_{22} = \\begin{vmatrix} 5 & 1 \\\\ 2 & 6 \\end{vmatrix} = 30 - 2 = 28$; $A_{33} = \\begin{vmatrix} 5 & -2 \\\\ 0 & 3 \\end{vmatrix} = 15 - 0 = 15$. Yig‘indi: $22 + 28 + 15 = 65$."
+            "exp": "9 va 4-xossalarga ko‘ra toq tartibli kososimmetrik matritsa uchun $\\det(A) = -\\det(A) \\implies 2\\det(A) = 0 \\implies \\det(A) = 0$ (Yakobi teoremasi)."
         },
         {
-            "q": "$\\begin{vmatrix} -2 & -2 & 3 \\\\ -2 & -4 & -1 \\\\ 1 & 7 & 1 \\end{vmatrix}$ 3-tartibli determinantni hisoblang.",
+            "q": "Determinantning 7-xossasini qo‘llashda o‘zgartirilayotgan satrning o‘zini biror $k \\ne 1$ songa ko‘paytirib, unga boshqa satrni qo‘shish determinant qiymatini o‘zgartiradimi?",
             "opts": [
-                "$-38$",
-                "$38$",
-                "$-22$",
-                "$50$"
+                "Ha, o‘zgartiradi: o‘zgartirilayotgan satrning o‘zi $k$ ga ko‘paytirilsa, determinant ham $k$ marta ortib ketadi! 7-xossada o‘zgartirilayotgan satrning o‘zi $1$ koeffitsiyent bilan qolishi shart",
+                "Yo‘q, har qanday holatda ham determinant o‘zgarmaydi",
+                "Determinant nolga aylanib qoladi",
+                "Faqat ishorasi o‘zgaradi"
             ],
             "ans": 0,
-            "diff": "O'rta",
-            "exp": "$\\Delta = (-2)(-4 - (-7)) - (-2)(-2 - (-1)) + 3(-14 - (-4)) = (-2)(3) + 2(-1) + 3(-10) = -6 - 2 - 30 = -38$."
-        },
-        {
-            "q": "$\\begin{vmatrix} -1 & -3 & 0 \\\\ -2 & 2 & 0 \\\\ -8 & -8 & -2 \\end{vmatrix}$ 3-tartibli determinantni hisoblang.",
-            "opts": [
-                "$16$",
-                "$-16$",
-                "$26$",
-                "$8$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "3-ustunda ikkita nol bor! 3-ustun bo‘yicha yopilsa: $\\Delta = (-2) \\cdot (-1)^{3+3} \\begin{vmatrix} -1 & -3 \\\\ -2 & 2 \\end{vmatrix} = -2 \\cdot (-2 - 6) = -2 \\cdot (-8) = 16$."
-        },
-        {
-            "q": "Agar $A$ va $B$ matritsalar $3 \\times 3$ o‘lchamli bo‘lib, $\\det(A) = 4$ va $\\det(B) = -3$ bo‘lsa, $\\det(A^T \\cdot B^2)$ ni toping.",
-            "opts": [
-                "$36$",
-                "$-36$",
-                "$-12$",
-                "$48$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$\\det(A^T \\cdot B^2) = \\det(A^T) \\cdot (\\det B)^2 = \\det(A) \\cdot (-3)^2 = 4 \\cdot 9 = 36$."
-        },
-        {
-            "q": "Ma’ruzadagi 11-slayd misoli: $\\begin{vmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 5 \\\\ 3 & 5 & 1 \\end{vmatrix}$ determinantning qiymatini toping.",
-            "opts": [
-                "$-1$",
-                "$1$",
-                "$0$",
-                "$-5$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "2-ma’ruza (11-slayd): 2-satrdan 1-satrning 2 baravarini ayirsak $(0, 0, -1)$ hosil bo‘ladi. Yoyib hisoblasak: $\\Delta = -1$."
-        },
-        {
-            "q": "Ma’ruzadagi 8-slayd misoli: $3 \\cdot \\begin{vmatrix} 2 & 7 & 3 \\\\ 5 & 6 & 8 \\\\ 1 & 4 & 2 \\end{vmatrix}$ ifodaning qiymatini toping.",
-            "opts": [
-                "$-36$",
-                "$36$",
-                "$-12$",
-                "$12$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "2-ma’ruza (8-slayd): Determinantning o‘zi $2(12-32) - 7(10-8) + 3(20-6) = -40 - 14 + 42 = -12$ ga teng. $3 \\cdot (-12) = -36$."
-        },
-        {
-            "q": "3-tartibli determinantda $a_{21}, a_{12}, a_{32}, a_{23}$ elementlarning algebraik to‘ldiruvchilari oldidagi $(-1)^{i+j}$ ishora ko‘paytuvchilari qanday bo‘ladi?",
-            "opts": [
-                "Barchasida minus ($-1$) bo‘ladi, chunki $i+j$ yig‘indi toq son",
-                "Barchasida plyus ($+1$) bo‘ladi, chunki $i+j$ yig‘indi juft son",
-                "$a_{21}$ va $a_{12}$ da plyus, qolganlarida minus",
-                "$a_{23}$ va $a_{32}$ da plyus, qolganlarida minus"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "$2+1=3,\\; 1+2=3,\\; 3+2=5,\\; 2+3=5$ — barchasida indekslar yig‘indisi toq bo‘lgani uchun $(-1)^{i+j} = -1$ bo‘ladi."
+            "diff": "Qiyin",
+            "exp": "Bu talabalar eng ko‘p xato qiladigan nuqta: 7-xossada $R_i \\leftarrow R_i + k R_j$ da determinant o‘zgarmaydi, ammo $R_i \\leftarrow m R_i + k R_j$ qilinsa, determinant $m$ marta ortib ketadi!"
         }
     ]
-    # Fix question 19 and 22 in t2:
-    t2[18]["opts"] = ["$37$", "$21$", "$-37$", "$17$"]
-    t2[21]["q"] = "$\\begin{vmatrix} 2 & x & 1 \\\\ 1 & 3 & 2 \\\\ 0 & 4 & 5 \\end{vmatrix} = 18$ tenglamadan $x$ ni toping."
 
     # =========================================================================
-    # MAVZU 3: Teskari matritsa, Matritsaning rangi, AX=B (30 ta savol)
+    # MAVZU 3: Teskari matritsa, Matritsaning rangi, AX=B (30 ta NAZARIY savol)
     # =========================================================================
     t3 = [
         {
-            "q": "Kvadrat matritsaning determinanti nolga teng bo‘lsa ($\\det A = 0$) va noldan farqli bo‘lsa ($\\det A \\ne 0$), ular mos ravishda qanday ataladi?",
+            "q": "Qanday kvadrat matritsaga «xos matritsa» (maxsus matritsa) deyiladi?",
             "opts": [
-                "$\\det A = 0$ bo‘lsa — xos matritsa; $\\det A \\ne 0$ bo‘lsa — xosmas matritsa",
-                "$\\det A = 0$ bo‘lsa — xosmas matritsa; $\\det A \\ne 0$ bo‘lsa — xos matritsa",
-                "$\\det A = 0$ bo‘lsa — birlik matritsa; $\\det A \\ne 0$ bo‘lsa — diagonal matritsa",
-                "$\\det A = 0$ bo‘lsa — qo‘shma matritsa; $\\det A \\ne 0$ bo‘lsa — transponirlangan matritsa"
+                "Determinanti nolga teng bo‘lgan ($\\det(A) = 0$) kvadrat matritsaga",
+                "Determinanti noldan farqli bo‘lgan ($\\det(A) \\ne 0$) kvadrat matritsaga",
+                "Determinanti $1$ ga teng bo‘lgan kvadrat matritsaga",
+                "Barcha elementlari musbat bo‘lgan matritsaga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "3-ma’ruza (4-slayd): Determinanti nolga teng kvadrat matritsa xos matritsa, determinanti noldan farqli matritsa esa xosmas matritsa deyiladi."
+            "exp": "3-ma’ruza (4-slayd): Kvadrat matritsaning determinanti nolga teng bo‘lsa, u holda bunday matritsaga xos matritsa deyiladi."
         },
         {
-            "q": "Ma’ruzadagi 4-slayd misoli: $A = \\begin{pmatrix} 1 & -2 \\\\ -5 & 10 \\end{pmatrix}$ va $B = \\begin{pmatrix} 1 & -2 & 3 \\\\ 0 & 4 & -1 \\\\ 5 & 0 & 0 \\end{pmatrix}$ matritsalarning determinantlarini va turini aniqlang.",
+            "q": "Qanday kvadrat matritsaga «xosmas matritsa» (maxsusmas matritsa) deyiladi?",
             "opts": [
-                "$|A| = 0$ (xos matritsa); $|B| = -50 \\ne 0$ (xosmas matritsa)",
-                "$|A| = 20$ (xosmas matritsa); $|B| = 0$ (xos matritsa)",
-                "$|A| = 0$ (xos matritsa); $|B| = 50$ (xosmas matritsa)",
-                "Ikkalasi ham xos matritsa"
+                "Determinanti noldan farqli bo‘lgan ($\\det(A) \\ne 0$) kvadrat matritsaga",
+                "Determinanti nolga teng bo‘lgan ($\\det(A) = 0$) kvadrat matritsaga",
+                "Satr va ustunlari soni har xil bo‘lgan to‘g‘ri burchakli matritsaga",
+                "Nol matritsaga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "3-ma’ruza (4-slayd): $|A| = 10 - 10 = 0$ (xos matritsa); $|B| = 10 - 60 = -50 \\ne 0$ (xosmas matritsa)."
+            "exp": "3-ma’ruza (4-slayd): Determinanti noldan farqli bo‘lgan kvadrat matritsaga xosmas matritsa deyiladi."
         },
         {
-            "q": "$A$ kvadrat matritsaga «qo‘shma matritsa» $\\bar{A}$ deb nimaga aytiladi?",
+            "q": "$A$ kvadrat matritsaga «qo‘shma matritsa» ($\\bar{A}$) deb qanday matritsaga aytiladi?",
             "opts": [
-                "Har bir $a_{ij}$ elementni unga mos $A_{ij}$ algebraik to‘ldiruvchisi bilan almashtirib, hosil bo‘lgan matritsani transponirlashdan chiqqan matritsaga",
-                "Har bir $a_{ij}$ elementni $-a_{ij}$ bilan almashtirilgan matritsaga",
-                "Matritsaning barcha minorlaridan tuzilgan transponirlanmagan matritsaga",
-                "Matritsaning bosh diagonal elementlarini o‘zaro almashtirishdan hosil bo‘lgan matritsaga"
+                "$A$ matritsaning har bir $a_{ij}$ elementini unga mos $A_{ij}$ algebraik to‘ldiruvchisi bilan almashtirishdan tuzilgan matritsani transponirlash natijasida hosil bo‘lgan matritsaga",
+                "$A$ matritsaning har bir elementini uning minori $M_{ij}$ bilan almashtirilgan va transponirlanmagan matritsaga",
+                "$A$ matritsani $(-1)$ songa ko‘paytirishdan hosil bo‘lgan matritsaga",
+                "$A$ matritsaning satrlarini teskari tartibda yozishdan hosil bo‘lgan matritsaga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "3-ma’ruza (5-slayd): $A$ kvadrat matritsaning har bir $a_{ij}$ elementini unga mos algebraik to‘ldiruvchisi bilan almashtirishdan tuzilgan matritsani transponirlash natijasida hosil bo‘lgan matritsa qo‘shma matritsa $\\bar{A}$ deyiladi."
+            "exp": "3-ma’ruza (5-slayd): Har bir $a_{ij}$ elementni unga mos algebraik to‘ldiruvchisi bilan almashtirishdan tuzilgan matritsani transponirlash natijasida hosil bo‘lgan matritsa qo‘shma matritsa $\\bar{A}$ deyiladi."
         },
         {
-            "q": "Teskari matritsa ta’rifi va mavjudlik sharti qaysi javobda to‘g‘ri berilgan?",
+            "q": "Qo‘shma matritsa $\\bar{A}$ ning 1-satri qaysi algebraik to‘ldiruvchilardan tashkil topadi?",
             "opts": [
-                "$AA^{-1} = A^{-1}A = E$ tenglik bajarilsa, $A^{-1}$ teskari matritsa deyiladi va u faqat xosmas ($\\det A \\ne 0$) matritsa uchun mavjud",
-                "$A + A^{-1} = E$ tenglik bajarilsa va $\\det A = 0$ bo‘lganda mavjud",
-                "$AA^{-1} = O$ tenglik bajarilsa va ixtiyoriy to‘g‘ri burchakli matritsa uchun mavjud",
-                "Faqat diagonal matritsalar uchun teskari matritsa mavjud"
+                "Transponirlangani sababli 1-ustun elementlarining algebraik to‘ldiruvchilaridan: $(A_{11},\\; A_{21},\\; \\dots,\\; A_{n1})$",
+                "1-satr elementlarining algebraik to‘ldiruvchilaridan: $(A_{11},\\; A_{12},\\; \\dots,\\; A_{1n})$",
+                "Bosh diagonal algebraik to‘ldiruvchilaridan: $(A_{11},\\; A_{22},\\; \\dots,\\; A_{nn})$",
+                "Oxirgi satr algebraik to‘ldiruvchilaridan"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "3-ma’ruza (5-6-slaydlar): Algebraik to‘ldiruvchilar matritsasi transponirlanganda 1-ustun $(A_{11}, A_{21}, \\dots, A_{n1})^T$ qo‘shma matritsaning 1-satriga aylanadi."
+        },
+        {
+            "q": "$A$ kvadrat matritsaga «teskari matritsa» ($A^{-1}$) deb qanday matritsaga aytiladi?",
+            "opts": [
+                "$A A^{-1} = A^{-1} A = E$ tenglikni qanoatlantiruvchi kvadrat matritsaga (bu yerda $E$ — birlik matritsa)",
+                "$A + A^{-1} = O$ tenglikni qanoatlantiruvchi matritsaga",
+                "$A \\cdot A^{-1} = O$ tenglikni qanoatlantiruvchi matritsaga",
+                "Har bir elementi $1 / a_{ij}$ ga teng bo‘lgan matritsaga"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "3-ma’ruza (6-slayd): $AA^{-1} = A^{-1}A = E$ bo‘lib, $A^{-1} = \\frac{1}{\\det A}\\bar{A}$ faqat xosmas ($\\det A \\ne 0$) matritsa uchun mavjud."
+            "exp": "3-ma’ruza (6-slayd): $A$ kvadrat matritsa uchun $AA^{-1} = A^{-1}A = E$ tenglik bajarilsa, $A^{-1}$ matritsa $A$ matritsaga teskari matritsa deyiladi."
         },
         {
-            "q": "Teskari matritsa xossalariga ko‘ra quyidagi tengliklardan qaysi biri NOTO‘G‘RI?",
+            "q": "Kvadrat $A$ matritsa uchun teskari matritsa $A^{-1}$ mavjud bo‘lishining zarur va yetarli sharti nima?",
             "opts": [
-                "$(AB)^{-1} = A^{-1} B^{-1}$",
+                "$A$ matritsa xosmas bo‘lishi, ya’ni $\\det(A) \\ne 0$ bo‘lishi",
+                "$A$ matritsa xos bo‘lishi, ya’ni $\\det(A) = 0$ bo‘lishi",
+                "$A$ matritsaning barcha elementlari noldan farqli bo‘lishi",
+                "$A$ matritsa simmetrik ($A^T = A$) bo‘lishi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (6-slayd, Izoh): Xosmas matritsa ($\\det(A) \\ne 0$) uchun teskari matritsa mavjud. Xos matritsaga teskari matritsa mavjud emas."
+        },
+        {
+            "q": "Teskari matritsani determinant va qo‘shma matritsa orqali topish formulasi qaysi javobda to‘g‘ri berilgan?",
+            "opts": [
+                "$A^{-1} = \\frac{1}{\\det(A)} \\bar{A} \\quad (\\det(A) \\ne 0)$",
+                "$A^{-1} = \\det(A) \\cdot \\bar{A}$",
+                "$A^{-1} = \\frac{1}{\\det(A)} A^T$",
+                "$A^{-1} = -\\frac{1}{\\det(A)} A$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (6-slayd): $A^{-1} = \\frac{1}{\\det(A)} \\bar{A}$."
+        },
+        {
+            "q": "Teskari matritsaning 1-xossasi: Teskari matritsa determinanti $\\det(A^{-1})$ bilan boshlang‘ich matritsa determinanti $\\det(A)$ orasida qanday bog‘lanish bor?",
+            "opts": [
                 "$\\det(A^{-1}) = \\frac{1}{\\det(A)}$",
-                "$(A^{-1})^{-1} = A$",
-                "$(A^{-1})^T = (A^T)^{-1}$"
+                "$\\det(A^{-1}) = -\\det(A)$",
+                "$\\det(A^{-1}) = \\det(A)$",
+                "$\\det(A^{-1}) = (\\det A)^2$"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "3-ma’ruza (7-slayd): 4-xossaga ko‘ra $(AB)^{-1} = B^{-1} A^{-1}$ bo‘ladi, ya’ni tartib teskarisiga o‘zgaradi!"
+            "exp": "3-ma’ruza (7-slayd, 1-xossa): $AA^{-1} = E \\implies \\det(A)\\det(A^{-1}) = 1 \\implies \\det(A^{-1}) = \\frac{1}{\\det(A)}$."
         },
         {
-            "q": "Ma’ruzadagi 10-slayd misoli: $A = \\begin{pmatrix} 1 & -2 & 3 \\\\ 0 & 4 & -1 \\\\ 5 & 0 & 0 \\end{pmatrix}$ matritsa uchun qo‘shma matritsa $\\bar{A}$ ni toping.",
+            "q": "Teskari matritsaning 2 va 3-xossalariga ko‘ra, $(A^{-1})^{-1}$ va $(A^p)^{-1}$ ifodalar nimaga teng?",
             "opts": [
-                "$\\begin{pmatrix} 0 & 0 & -10 \\\\ -5 & -15 & 1 \\\\ -20 & -10 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 0 & -5 & -20 \\\\ 0 & -15 & -10 \\\\ -10 & 1 & 4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 0 & 0 & 10 \\\\ 5 & 15 & -1 \\\\ 20 & 10 & -4 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 4 & 0 & 0 \\\\ -10 & -15 & -5 \\\\ -10 & 1 & 0 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "3-ma’ruza (10-slayd): Algebraik to‘ldiruvchilar: $A_{11}=0, A_{12}=-5, A_{13}=-20; A_{21}=0, A_{22}=-15, A_{23}=-10; A_{31}=-10, A_{32}=1, A_{33}=4$. Transponirlash natijasida $\\bar{A} = \\begin{pmatrix} 0 & 0 & -10 \\\\ -5 & -15 & 1 \\\\ -20 & -10 & 4 \\end{pmatrix}$."
-        },
-        {
-            "q": "Ma’ruzadagi 8-slayd misoli: $A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 0 \\end{pmatrix}$ matritsaning determinanti $\\det(A) = 27$ bo‘lsa, uning teskari matritsasi $A^{-1}$ ni toping.",
-            "opts": [
-                "$\\frac{1}{27} \\begin{pmatrix} -48 & 24 & -3 \\\\ 42 & -21 & 6 \\\\ -3 & 6 & -3 \\end{pmatrix}$",
-                "$\\frac{1}{27} \\begin{pmatrix} -48 & 42 & -3 \\\\ 24 & -21 & 6 \\\\ -3 & 6 & -3 \\end{pmatrix}$",
-                "$\\frac{1}{27} \\begin{pmatrix} 48 & -24 & 3 \\\\ -42 & 21 & -6 \\\\ 3 & -6 & 3 \\end{pmatrix}$",
-                "$\\frac{1}{9} \\begin{pmatrix} -16 & 8 & -1 \\\\ 14 & -7 & 2 \\\\ 1 & 2 & 1 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "3-ma’ruza (8-9-slaydlar): $A_{11}=-48, A_{21}=24, A_{31}=-3; A_{12}=42, A_{22}=-21, A_{32}=6; A_{13}=-3, A_{23}=6, A_{33}=-3$ va $\\det A = 27$."
-        },
-        {
-            "q": "Teskari matritsani Gauss-Jordan usuli bilan topishda qanday blok-matritsa tuziladi va qanday ko‘rinishga keltiriladi?",
-            "opts": [
-                "$(A \\mid E)$ matritsa elementar satr almashtirishlari yordamida $(E \\mid A^{-1})$ ko‘rinishga keltiriladi",
-                "$(A \\mid B)$ matritsa $(E \\mid X)$ ko‘rinishga keltiriladi",
-                "$(E \\mid A)$ matritsa $(A^T \\mid E)$ ko‘rinishga keltiriladi",
-                "$(A \\mid A^T)$ matritsa $(E \\mid E)$ ko‘rinishga keltiriladi"
+                "$(A^{-1})^{-1} = A\\quad$ va $\\quad (A^p)^{-1} = (A^{-1})^p$",
+                "$(A^{-1})^{-1} = E\\quad$ va $\\quad (A^p)^{-1} = p A^{-1}$",
+                "$(A^{-1})^{-1} = A^T\\quad$ va $\\quad (A^p)^{-1} = A^p$",
+                "$(A^{-1})^{-1} = -A\\quad$ va $\\quad (A^p)^{-1} = -A^{-p}$"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "3-ma’ruza (11-slayd): Gauss-Jordan usulida $(A \\mid E) \\sim (E \\mid A^{-1})$ sxemasi qo‘llaniladi."
+            "exp": "3-ma’ruza (7-slayd, 2 va 3-xossalar): $(A^{-1})^{-1} = A$ va $(A^p)^{-1} = (A^{-1})^p$."
         },
         {
-            "q": "Ma’ruzadagi 11-slayd misoli: Gauss-Jordan usuli yordamida $A = \\begin{pmatrix} 1 & 1 & 1 \\\\ 1 & 2 & -1 \\\\ 2 & 2 & 4 \\end{pmatrix}$ matritsaning teskari matritsasi $A^{-1}$ ni toping.",
+            "q": "Teskari matritsaning 4 va 5-xossalariga ko‘ra, ko‘paytmaning teskarisi $(AB)^{-1}$ va transponirlangan matritsaning teskarisi $(A^T)^{-1}$ nimaga teng?",
             "opts": [
-                "$\\begin{pmatrix} 5 & -1 & -3/2 \\\\ -3 & 1 & 1 \\\\ -1 & 0 & 1/2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 5 & -3 & -1 \\\\ -1 & 1 & 0 \\\\ -3/2 & 1 & 1/2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & -1 & 3/2 \\\\ 3 & 1 & -1 \\\\ 1 & 0 & 1/2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 5 & 1 & 3/2 \\\\ -3 & 1 & -1 \\\\ -1 & 0 & -1/2 \\end{pmatrix}$"
+                "$(AB)^{-1} = B^{-1} A^{-1}\\quad$ va $\\quad (A^T)^{-1} = (A^{-1})^T$",
+                "$(AB)^{-1} = A^{-1} B^{-1}\\quad$ va $\\quad (A^T)^{-1} = A$",
+                "$(AB)^{-1} = (BA)^{-1}\\quad$ va $\\quad (A^T)^{-1} = -A^{-1}$",
+                "$(AB)^{-1} = B^T A^T\\quad$ va $\\quad (A^T)^{-1} = A^T$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (7-slayd, 4 va 5-xossalar): $(AB)^{-1} = B^{-1}A^{-1}$ va $(A^{-1})^T = (A^T)^{-1}$."
+        },
+        {
+            "q": "Teskari matritsani topishning «Gauss-Jordan usuli» mohiyati nimadan iborat?",
+            "opts": [
+                "$(A \\mid E)$ blok-matritsa tuzilib, elementar satr almashtirishlari yordamida chap blok birlik matritsa $E$ ga keltirilganda, o‘ng blokda $A^{-1}$ hosil bo‘ladi: $(A \\mid E) \\sim (E \\mid A^{-1})$",
+                "$(A \\mid B)$ matritsa tuzilib, uchburchak shaklga keltiriladi",
+                "$A$ matritsaning barcha minorlari Sarrius qoidasi bilan hisoblanadi",
+                "$A$ matritsadan birlik matritsa $E$ ayirib tashlanadi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (11-slayd): Teskari matritsani topishning Gauss-Jordan usuli $(A \\mid E) \\sim (E \\mid A^{-1})$ sxemaga asoslanadi."
+        },
+        {
+            "q": "$m \\times n$ o‘lchovli $A$ matritsaning «matritsa osti minori» va uning «tartibi» deb nimaga aytiladi?",
+            "opts": [
+                "Bir nechta satr yoki ustunlarni o‘chirishdan hosil bo‘lgan kvadrat matritsa determinantiga osti minori, shu kvadrat matritsaning tartibiga esa osti minorining tartibi deyiladi",
+                "Matritsaning barcha elementlari ko‘paytmasiga osti minori, elementlar soniga esa uning tartibi deyiladi",
+                "Faqat $1 \\times 1$ o‘lchamli elementlarga osti minori deyiladi",
+                "Matritsaning satrlari va ustunlari ayirmasiga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (12-slayd): $m \\times n$ o‘lchovli $A$ matritsaning bir nechta satr yoki ustunlarini o‘chirishdan hosil bo‘lgan kvadrat matritsa determinantiga matritsa osti minori deyiladi."
+        },
+        {
+            "q": "Agar berilgan matritsa kvadrat shaklda ($n \\times n$) bo‘lsa, uning eng katta tartibli osti minori nimaga teng (12-slayd)?",
+            "opts": [
+                "Berilgan kvadrat matritsaning o‘z determinantiga teng ($n$-tartibli)",
+                "Har doim $0$ ga teng",
+                "$(n-1)$-tartibli minorga teng",
+                "$1$-tartibli minorga teng"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (12-slayd): Agar berilgan matritsa kvadrat shaklda bo‘lsa, uning eng katta tartibli minori o‘ziga (o‘z determinantiga) teng."
+        },
+        {
+            "q": "$A$ matritsaning «rangi» ($\\text{rang}(A)$ yoki $r(A)$) deb nimaga aytiladi?",
+            "opts": [
+                "Uning noldan farqli eng katta osti minori tartibiga aytiladi",
+                "Uning noldan farqli barcha osti minorlari qiymatlari yig‘indisiga aytiladi",
+                "Matritsadagi jami satrlar va ustunlar soni ko‘paytmasiga aytiladi",
+                "Matritsaning eng katta elementiga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (13-slayd): $A$ matritsaning rangi deb, uning noldan farqli eng katta minori tartibiga aytiladi va $\\text{rang}(A)$ yoki $r(A)$ kabi belgilanadi."
+        },
+        {
+            "q": "Matritsaning «elementar almashtirishlari» (15-17-slaydlar) deb qanday 5 ta amalga aytiladi?",
+            "opts": [
+                "1) Satr/ustunlar o‘rnini almashtirish; 2) Satr/ustunni $k \\ne 0$ songa ko‘paytirish/bo‘lish; 3) Nol satr/ustunni tashlab yuborish; 4) Transponirlash; 5) Bir satr/ustunni $k \\ne 0$ songa ko‘paytirib boshqasiga qo‘shish",
+                "1) Matritsani kvadratga oshirish; 2) Barcha elementlarga son qo‘shish; 3) Diagonalni o‘chirish; 4) Teskari matritsa olish; 5) Skalyar ko‘paytirish",
+                "Faqat satr elementlarini nolga ko‘paytirish va ustunlarni qo‘shish",
+                "Har bir elementdan kvadrat ildiz chiqarish"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (15-17-slaydlar): Aynan shu 5 ta amal matritsaning elementar almashtirishlari hisoblanadi."
+        },
+        {
+            "q": "Matritsa rangining 1-xossasi: $m \\times n$ o‘lchovli $A$ matritsa uchun $r(A)$ qanday tengsizlikni qanoatlantiradi va nol matritsa $E^0$ ning rangi nimaga teng?",
+            "opts": [
+                "$0 \\le r(A) \\le \\min(m, n);\\qquad r(E^0) = 0$",
+                "$1 \\le r(A) \\le \\max(m, n);\\qquad r(E^0) = 1$",
+                "$0 \\le r(A) \\le m + n;\\qquad r(E^0) = m$",
+                "$r(A) = m \\cdot n;\\qquad r(E^0) = 0$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (18-slayd, 1-xossa): $0 \\le r(A) \\le \\min(m, n)$ va $r(E^0) = 0$."
+        },
+        {
+            "q": "Matritsa rangining 2-xossasi: Matritsa ustida elementar almashtirishlar bajarilganda uning rangi qanday o‘zgaradi?",
+            "opts": [
+                "Elementar almashtirishlarda matritsa rangi o‘zgarmaydi",
+                "Satrlar o‘rni almashtirilsa rangi ishorasini o‘zgartiradi",
+                "Satr songa ko‘paytirilsa rangi ham shu songa ko‘payadi",
+                "Nol satr tashlab yuborilsa rangi $1$ ga kamayadi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (18-slayd, 2-xossa): Elementar almashtirishlarda matritsa rangi o‘zgarmaydi."
+        },
+        {
+            "q": "Matritsa rangining 3-xossasi: $n$-tartibli kvadrat $A$ matritsa uchun $\\det(A) \\ne 0$ bo‘lishi uning rangi haqida nimani bildiradi?",
+            "opts": [
+                "$\\det(A) \\ne 0 \\iff r(A) = n$ (ya’ni xosmas kvadrat matritsaning rangi uning tartibiga teng)",
+                "$\\det(A) \\ne 0 \\iff r(A) = 0$",
+                "$\\det(A) \\ne 0 \\iff r(A) = n - 1$",
+                "$\\det(A) \\ne 0 \\iff r(A) = \\det(A)$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (18-slayd, 3-xossa): $n$-tartibli kvadrat $A$ matritsa uchun $\\det(A) \\ne 0$ bo‘lsa, $r(A) = n$."
+        },
+        {
+            "q": "Elementar almashtirishlar yordamida matritsa pog‘onali (trapetsiya) ko‘rinishga keltirildi va unda $\\tilde{a}_{11} \\ne 0, \\tilde{a}_{22} \\ne 0, \\dots, \\tilde{a}_{pp} \\ne 0$ ($p$ ta noldan farqli satr) hosil bo‘ldi (19-slayd). Matritsaning rangi nimaga teng?",
+            "opts": [
+                "$r(A) = p$ (noldan farqli pog‘onali satrlar soniga teng)",
+                "$r(A) = \\tilde{a}_{11} \\cdot \\tilde{a}_{22} \\cdot \\dots \\cdot \\tilde{a}_{pp}$",
+                "$r(A) = n - p$",
+                "$r(A) = p + 1$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (19-slayd): Pog‘onali matritsada $\\tilde{a}_{11} \\ne 0, \\dots, \\tilde{a}_{pp} \\ne 0$ bo‘lsa, $r(A) = p$."
+        },
+        {
+            "q": "$n$ ta noma’lumli $n$ ta chiziqli tenglamalar sistemasi $AX = B$ da asosiy matritsa determinanti $|A| \\ne 0$ bo‘lsa, uning yechimi teskari matritsa orqali qanday yoziladi?",
+            "opts": [
+                "$X = A^{-1} B$",
+                "$X = B A^{-1}$",
+                "$X = A B^{-1}$",
+                "$X = \\frac{B}{A}$"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (23-slayd): Agar $|A| \\ne 0$ bo‘lsa, $A^{-1}$ mavjud va $X = A^{-1}B$."
+        },
+        {
+            "q": "Nima uchun matritsalar algebrasida bir matritsani ikkinchi matritsaga to‘g‘ridan-to‘g‘ri «bo‘lish» ($B / A$) amali kiritilmaydi, balki teskari matritsaga ko‘paytirish ($A^{-1}B$ yoki $BA^{-1}$) ishlatiladi?",
+            "opts": [
+                "Chunki matritsalarni ko‘paytirish nokommutativ ($A^{-1}B \\ne BA^{-1}$) bo‘lib, chapdan va o‘ngdan ko‘paytirish har xil natija beradi hamda faqat $\\det(A) \\ne 0$ bo‘lgandagina $A^{-1}$ mavjud",
+                "Chunki kasr chizig‘ini yozish noqulay",
+                "Chunki har doim $A^{-1}B = BA^{-1}$ bo‘ladi",
+                "Chunki teskari matritsa faqat nol matritsalar uchun mavjud"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Matritsalarni ko‘paytirish o‘rin almashinish qonuniga bo‘ysunmagani uchun $AX = B \\implies X = A^{-1}B$ va $XA = B \\implies X = BA^{-1}$ bir-biridan farq qiladi."
+        },
+        {
+            "q": "Kvadrat $A$ matritsa uchun $A \\cdot A^{-1} = E$ tenglikni tekshirish nimani tasdiqlaydi (9-slayd)?",
+            "opts": [
+                "Topilgan $A^{-1}$ matritsa haqiqatan ham $A$ matritsaning teskari matritsasi ekanligini tasdiqlaydi",
+                "$A$ matritsa xos matritsa ekanligini tasdiqlaydi",
+                "$A$ matritsa simmetrik ekanligini tasdiqlaydi",
+                "$A$ matritsaning rangi $0$ ga teng ekanligini tasdiqlaydi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (9-slayd): Teskari matritsa topilgach, $A^{-1} \\cdot A = A \\cdot A^{-1} = E$ bajarilishi orqali natija to‘g‘riligi tekshiriladi."
+        },
+        {
+            "q": "2-tartibli xosmas $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ matritsa uchun qo‘shma matritsa $\\bar{A}$ va teskari matritsa $A^{-1}$ qanday ko‘rinishda bo‘ladi?",
+            "opts": [
+                "$\\bar{A} = \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix},\\qquad A^{-1} = \\frac{1}{ad - bc} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$",
+                "$\\bar{A} = \\begin{pmatrix} a & -c \\\\ -b & d \\end{pmatrix},\\qquad A^{-1} = \\frac{1}{ad + bc} \\begin{pmatrix} a & -c \\\\ -b & d \\end{pmatrix}$",
+                "$\\bar{A} = \\begin{pmatrix} -a & b \\\\ c & -d \\end{pmatrix},\\qquad A^{-1} = \\begin{pmatrix} 1/a & 1/b \\\\ 1/c & 1/d \\end{pmatrix}$",
+                "$\\bar{A} = \\begin{pmatrix} d & b \\\\ c & a \\end{pmatrix},\\qquad A^{-1} = (ad - bc)\\begin{pmatrix} d & b \\\\ c & a \\end{pmatrix}$"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "2-tartibli matritsa uchun $A_{11}=d, A_{12}=-c, A_{21}=-b, A_{22}=a$. Transponirlanganda bosh diagonal elementlari ($a$ va $d$) o‘rin almashadi, yordamchi diagonal elementlari ($b$ va $c$) ishorasini o‘zgartiradi."
+        },
+        {
+            "q": "Diagonal elementlari noldan farqli bo‘lgan $D = \\text{diag}(d_1, d_2, \\dots, d_n)$ diagonal matritsaning teskari matritsasi $D^{-1}$ qanday topiladi?",
+            "opts": [
+                "Har bir diagonal elementini o‘zining teskarisiga almashtirish orqali: $D^{-1} = \\text{diag}\\left(\\frac{1}{d_1},\\; \\frac{1}{d_2},\\; \\dots,\\; \\frac{1}{d_n}\\right)$",
+                "Diagonal elementlarining ishorasini qarama-qarshiga o‘zgartirish orqali",
+                "Diagonal elementlarini teskari tartibda yozish orqali",
+                "Diagonal matritsaga teskari matritsa mavjud emas"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "$\\text{diag}(d_1, \\dots, d_n) \\cdot \\text{diag}(1/d_1, \\dots, 1/d_n) = \\text{diag}(1, \\dots, 1) = E$."
+        },
+        {
+            "q": "Agar Gauss-Jordan usulida $(A \\mid E)$ matritsani satr almashtirishlari bilan $(E \\mid A^{-1})$ ga keltirayotganda chap blokda to‘liq nollardan iborat satr paydo bo‘lsa, bu nimani bildiradi?",
+            "opts": [
+                "$\\det(A) = 0$ (matritsa xos) ekanligini va berilgan $A$ matritsaga teskari matritsa mavjud emasligini bildiradi",
+                "$A^{-1}$ matritsaning barcha elementlari nolga teng ekanligini bildiradi",
+                "$A$ matritsa birlik matritsa ekanligini bildiradi",
+                "Ustunlarni almashtirib davom ettirish kerakligini bildiradi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Chap blokda nol satr paydo bo‘lishi $r(A) < n \\iff \\det(A) = 0$ ekanligini anglatadi, demak $A^{-1}$ mavjud emas."
+        },
+        {
+            "q": "Matritsada kamida bitta noldan farqli element mavjud bo‘lsa ($A \\ne E^0$), uning rangi $r(A)$ haqida nima deyish mumkin?",
+            "opts": [
+                "$r(A) \\ge 1$ bo‘ladi (chunki kamida bitta 1-tartibli osti minori noldan farqli)",
+                "$r(A) = 0$ bo‘ladi",
+                "$r(A)$ har doim satrlar soniga teng bo‘ladi",
+                "$r(A) < 0$ bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "3-ma’ruza (12, 18-slaydlar): Har bir element 1-tartibli minor bo‘lgani uchun kamida bitta nolmas element bo‘lsa $r(A) \\ge 1$."
+        },
+        {
+            "q": "Agar $A$ matritsaning rangi $r(A) = r$ bo‘lsa, uning tartibi $r$ dan katta bo‘lgan barcha osti minorlari ($M_{r+1}, M_{r+2}, \\dots$) nimaga teng bo‘ladi?",
+            "opts": [
+                "Barchasi $0$ ga teng bo‘ladi (aks holda rang $r$ dan katta bo‘lar edi)",
+                "Barchasi $1$ ga teng bo‘ladi",
+                "Barchasi manfiy sonlarga teng bo‘ladi",
+                "Kamida bittasi noldan farqli bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Ta’rifga ko‘ra rang — noldan farqli ENG KATTA minor tartibidir. Demak $r$ dan katta tartibli barcha minorlar $0$ ga teng."
+        },
+        {
+            "q": "$n$-tartibli xosmas $A$ matritsaning qo‘shma matritsasi $\\bar{A}$ ning determinanti $\\det(\\bar{A})$ nimaga teng?",
+            "opts": [
+                "$(\\det A)^{n-1}$ ga teng (chunki $A \\cdot \\bar{A} = \\det(A) \\cdot E \\implies \\det(A)\\det(\\bar{A}) = (\\det A)^n$)",
+                "$\\det(A)$ ga teng",
+                "$\\frac{1}{\\det(A)}$ ga teng",
+                "$1$ ga teng"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "3-ma’ruza (11-slayd): $(A|E) \\sim (E|A^{-1})$ zanjiri yakunida o‘ng blokda $\\begin{pmatrix} 5 & -1 & -3/2 \\\\ -3 & 1 & 1 \\\\ -1 & 0 & 1/2 \\end{pmatrix}$ hosil bo‘ladi."
+            "exp": "$A^{-1} = \\frac{1}{\\det A}\\bar{A} \\implies \\bar{A} = (\\det A) A^{-1}$. U holda $\\det(\\bar{A}) = (\\det A)^n \\det(A^{-1}) = (\\det A)^{n-1}$."
         },
         {
-            "q": "$A = \\begin{pmatrix} 3 & 5 \\\\ 1 & 2 \\end{pmatrix}$ 2-tartibli matritsaning teskari matritsasi $A^{-1}$ ni toping.",
+            "q": "Agar kvadrat $A$ matritsaning teskari matritsasi o‘zining transponirlanganiga teng bo‘lsa ($A^{-1} = A^T$), bunday matritsa qanday ataladi?",
             "opts": [
-                "$\\begin{pmatrix} 2 & -5 \\\\ -1 & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 2 & -1 \\\\ -5 & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & -5 \\\\ -1 & 2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -2 & 5 \\\\ 1 & -3 \\end{pmatrix}$"
+                "Ortogonal matritsa deyiladi",
+                "Simmetrik matritsa deyiladi",
+                "Xos matritsa deyiladi",
+                "Nilpotent matritsa deyiladi"
             ],
             "ans": 0,
-            "diff": "Oson",
-            "exp": "$\\det(A) = 6 - 5 = 1$. 2-tartibli matritsa uchun bosh diagonal elementlari o‘rni almashadi, yordamchi diagonal ishorasi o‘zgaradi: $A^{-1} = \\begin{pmatrix} 2 & -5 \\\\ -1 & 3 \\end{pmatrix}$."
+            "diff": "O'rta",
+            "exp": "$A^T A = A A^T = E \\iff A^{-1} = A^T$ shartni qanoatlantiruvchi kvadrat matritsa ortogonal matritsa deyiladi."
         },
         {
-            "q": "$A = \\begin{pmatrix} 7 & -3 & 8 \\\\ 4 & -1 & 4 \\\\ 4 & -2 & 5 \\end{pmatrix}$ matritsa uchun teskari matritsa $A^{-1}$ ni toping.",
+            "q": "Ikki matritsa ko‘paytmasining rangi $r(A \\cdot B)$ ularning alohida ranglari $r(A)$ va $r(B)$ bilan qanday tengsizlik orqali bog‘langan?",
             "opts": [
-                "$\\begin{pmatrix} 3 & -1 & -4 \\\\ -4 & 3 & 4 \\\\ -4 & 2 & 5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & -4 & -4 \\\\ -1 & 3 & 2 \\\\ -4 & 4 & 5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -3 & 1 & 4 \\\\ 4 & -3 & -4 \\\\ 4 & -2 & -5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 7 & 4 & 4 \\\\ -3 & -1 & -2 \\\\ 8 & 4 & 5 \\end{pmatrix}$"
+                "$r(A \\cdot B) \\le \\min(r(A),\\; r(B))$ (ko‘paytmaning rangi ko‘paytuvchilarning ranglaridan oshmaydi)",
+                "$r(A \\cdot B) = r(A) \\cdot r(B)$",
+                "$r(A \\cdot B) = r(A) + r(B)$",
+                "$r(A \\cdot B) \\ge \\max(r(A),\\; r(B))$"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "$\\det(A) = 7(-5+8) - (-3)(20-16) + 8(-8+4) = 21 + 12 - 32 = 1$. Qo‘shma matritsa: $A^{-1} = \\begin{pmatrix} 3 & -1 & -4 \\\\ -4 & 3 & 4 \\\\ -4 & 2 & 5 \\end{pmatrix}$."
-        },
-        {
-            "q": "$A$ matritsaning rangi $r(A)$ deb nimaga aytiladi va $m \\times n$ o‘lchovli matritsa uchun u qanday oraliqda yotadi?",
-            "opts": [
-                "Noldan farqli eng katta tartibli osti minori tartibiga aytiladi; $0 \\le r(A) \\le \\min(m, n)$",
-                "Noldan farqli barcha elementlar soniga aytiladi; $0 \\le r(A) \\le m \\cdot n$",
-                "Satrlar va ustunlar soni yig‘indisiga aytiladi; $r(A) = m + n$",
-                "Eng kichik tartibli minor qiymatiga aytiladi; $1 \\le r(A) \\le \\max(m, n)$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "3-ma’ruza (13, 18-slaydlar): $A$ matritsaning rangi uning noldan farqli eng katta minori tartibiga teng va $0 \\le r(A) \\le \\min(m, n)$."
-        },
-        {
-            "q": "Ma’ruzadagi 12-slayd misoli: $3 \\times 2$ o‘lchovli $A = \\begin{pmatrix} 1 & -2 \\\\ -2 & 4 \\\\ 3 & -7 \\end{pmatrix}$ matritsada 3-tartibli minorlar bormi va uning rangi nechaga teng?",
-            "opts": [
-                "3-tartibli minorlar yo‘q (chunki o‘lchami $3 \\times 2$); rangi $r(A) = 2$",
-                "Bitta 3-tartibli minori bor; rangi $r(A) = 3$",
-                "3-tartibli minorlar yo‘q; rangi $r(A) = 1$",
-                "3-tartibli minorlar 3 ta; rangi $r(A) = 2$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "3-ma’ruza (12-slayd): $3 \\times 2$ matritsada 3-tartibli minor yo‘q. 2-tartibli minori $\\begin{vmatrix} 1 & -2 \\\\ 3 & -7 \\end{vmatrix} = -7 + 6 = -1 \\ne 0$ bo‘lgani uchun $r(A) = 2$."
-        },
-        {
-            "q": "Quyidagilardan qaysi biri matritsaning rangi o‘zgarmaydigan 5 ta «elementar almashtirishlar» qatoriga KIRMAYDI?",
-            "opts": [
-                "Matritsaning har bir elementiga bir xil $k \\ne 0$ sonni qo‘shib chiqish",
-                "Satrlar (yoki ustunlar) o‘rnini almashtirish va transponirlash",
-                "Biror satr (yoki ustun) elementlarini noldan farqli songa ko‘paytirish va nol satrni tashlab yuborish",
-                "Biror satr elementlarini noldan farqli songa ko‘paytirib, boshqa satr mos elementlariga qo‘shish"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "3-ma’ruza (15-17-slaydlar): Barcha elementlarga bitta sonni qo‘shib chiqish elementar almashtirish emas va u matritsa rangini o‘zgartirib yuborishi mumkin."
-        },
-        {
-            "q": "Ma’ruzadagi 14-slayd misoli: $4 \\times 6$ o‘lchovli $A = \\begin{pmatrix} 5 & 6 & 0 & 0 & 1 & 2 \\\\ 3 & 4 & 1 & -2 & 0 & 0 \\\\ 0 & 1 & -1 & -3 & 1 & 1 \\\\ -2 & 0 & -2 & -1 & 0 & -1 \\end{pmatrix}$ matritsaning dastlabki 4 ta ustunidan tuzilgan $M_4$ minori va rangi $r(A)$ nimaga teng?",
-            "opts": [
-                "$M_4 = -45 \\ne 0,\\quad r(A) = 4$",
-                "$M_4 = 0,\\quad r(A) = 3$",
-                "$M_4 = 45 \\ne 0,\\quad r(A) = 6$",
-                "$M_4 = -15 \\ne 0,\\quad r(A) = 2$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "3-ma’ruza (14-slayd): $M_4 = 5(-15) - 6(-5) = -75 + 30 = -45 \\ne 0$. Eng katta mumkin bo‘lgan tartib $\\min(4, 6) = 4$ bo‘lgani uchun $r(A) = 4$."
-        },
-        {
-            "q": "Ma’ruzadagi 20-slayd misoli: $A = \\begin{pmatrix} 3 & 1 & -1 & -1 \\\\ 3 & -1 & 1 & -2 \\\\ -5 & -2 & 3 & 1 \\end{pmatrix}$ matritsaning rangini aniqlang.",
-            "opts": [
-                "$r(A) = 3$",
-                "$r(A) = 2$",
-                "$r(A) = 4$",
-                "$r(A) = 1$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "3-ma’ruza (20-slayd): Elementar almashtirishlar natijasida matritsa $\\begin{pmatrix} 1 & -1 & 3 & -1 \\\\ 0 & 1 & 1 & -1 \\\\ 0 & 0 & 6 & -3 \\end{pmatrix}$ pog‘onali shaklga keladi, $p = 3$ ta noldan farqli satr bor, demak $r(A) = 3$."
-        },
-        {
-            "q": "Ma’ruzadagi 21-slayd misoli: $A = \\begin{pmatrix} 1 & -2 & 1 & 3 \\\\ 3 & 1 & 0 & 7 \\\\ 2 & 3 & -1 & 4 \\end{pmatrix}$ matritsaning rangini aniqlang.",
-            "opts": [
-                "$r(A) = 2$",
-                "$r(A) = 3$",
-                "$r(A) = 1$",
-                "$r(A) = 4$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "3-ma’ruza (21-slayd): 2-satrdan 1-satrning 3 baravarini, 3-satrdan 1-satrning 2 baravarini ayirsak, 2- va 3-satrlar bir xil $(0, 7, -3, -2)$ bo‘lib qoladi. Biri nolga aylanib tashlab yuboriladi va $r(A) = 2$ chiqadi."
-        },
-        {
-            "q": "$k$ parametrning qanday qiymatida $A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 5 & 7 \\\\ 3 & 7 & k \\end{pmatrix}$ matritsaning rangi $2$ ga teng bo‘ladi?",
-            "opts": [
-                "$k = 10$",
-                "$k = 9$",
-                "$k = 0$",
-                "$k = 12$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "1- va 2-satrlar chiziqli erkli ($M_2 = 5-4=1 \\ne 0$). 3-satr 1- va 2-satr yig‘indisiga teng bo‘lsa ($3=1+2, 7=2+5$), u holda $k = 3 + 7 = 10$ da $\\det(A)=0$ bo‘lib, $r(A)=2$ bo‘ladi."
-        },
-        {
-            "q": "Agar $n$-tartibli kvadrat $A$ matritsa uchun $\\det(A) \\ne 0$ bo‘lsa, uning rangi $r(A)$ va nol matritsa $E^0$ ning rangi $r(E^0)$ nimaga teng?",
-            "opts": [
-                "$r(A) = n,\\quad r(E^0) = 0$",
-                "$r(A) = n - 1,\\quad r(E^0) = 1$",
-                "$r(A) = 1,\\quad r(E^0) = 0$",
-                "$r(A) = n^2,\\quad r(E^0) = 0$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "3-ma’ruza (18-slayd): Matritsa rangining 1 va 3-xossalariga ko‘ra $r(E^0) = 0$ va $\\det(A) \\ne 0 \\implies r(A) = n$."
-        },
-        {
-            "q": "Ma’ruzadagi 23-24-slaydlar misoli: $\\begin{cases} 2x_1 + 2x_2 - 3x_3 = 5 \\\\ x_1 - x_2 + x_3 = 0 \\\\ 3x_1 + x_2 + x_3 = 2 \\end{cases}$ sistemaning asosiy matritsasi determinanti $|A|$ va teskari matritsasi $A^{-1}$ ni toping.",
-            "opts": [
-                "$|A| = -12;\\quad A^{-1} = -\\frac{1}{12}\\begin{pmatrix} -2 & -5 & -1 \\\\ 2 & 11 & -5 \\\\ 4 & 4 & -4 \\end{pmatrix}$",
-                "$|A| = 12;\\quad A^{-1} = \\frac{1}{12}\\begin{pmatrix} -2 & 2 & 4 \\\\ -5 & 11 & 4 \\\\ -1 & -5 & -4 \\end{pmatrix}$",
-                "$|A| = -12;\\quad A^{-1} = \\frac{1}{12}\\begin{pmatrix} -2 & -5 & -1 \\\\ 2 & 11 & -5 \\\\ 4 & 4 & -4 \\end{pmatrix}$",
-                "$|A| = -6;\\quad A^{-1} = -\\frac{1}{6}\\begin{pmatrix} -2 & -5 & -1 \\\\ 2 & 11 & -5 \\\\ 4 & 4 & -4 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "3-ma’ruza (23-24-slaydlar): $|A| = -12 \\ne 0$ va $A^{-1} = -\\frac{1}{12}\\begin{pmatrix} -2 & -5 & -1 \\\\ 2 & 11 & -5 \\\\ 4 & 4 & -4 \\end{pmatrix}$."
-        },
-        {
-            "q": "$\\begin{pmatrix} 2 & 1 \\\\ 5 & 3 \\end{pmatrix} X = \\begin{pmatrix} 4 & -1 \\\\ 11 & -2 \\end{pmatrix}$ matritsaviy tenglamadan $X$ matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 1 & -1 \\\\ 2 & 1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 2 & 1 \\\\ 0 & -1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 2 \\\\ -1 & 1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & -1 \\\\ -2 & 1 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$A = \\begin{pmatrix} 2 & 1 \\\\ 5 & 3 \\end{pmatrix} \\implies \\det(A)=1,\\; A^{-1} = \\begin{pmatrix} 3 & -1 \\\\ -5 & 2 \\end{pmatrix}$. U holda $X = A^{-1}B = \\begin{pmatrix} 3 & -1 \\\\ -5 & 2 \\end{pmatrix} \\begin{pmatrix} 4 & -1 \\\\ 11 & -2 \\end{pmatrix} = \\begin{pmatrix} 12-11 & -3+2 \\\\ -20+22 & 5-4 \\end{pmatrix} = \\begin{pmatrix} 1 & -1 \\\\ 2 & 1 \\end{pmatrix}$."
-        },
-        {
-            "q": "$X \\cdot \\begin{pmatrix} 3 & 2 \\\\ 4 & 3 \\end{pmatrix} = \\begin{pmatrix} 1 & 0 \\\\ 2 & 1 \\end{pmatrix}$ matritsaviy tenglamadan $X$ matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 3 & -2 \\\\ 2 & -1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 3 & 2 \\\\ -2 & -1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 7 & 2 \\\\ 4 & 3 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -3 & 2 \\\\ -2 & 1 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$XA = B \\implies X = B A^{-1}$. Bu yerda $\\det(A) = 9-8=1$, $A^{-1} = \\begin{pmatrix} 3 & -2 \\\\ -4 & 3 \\end{pmatrix}$. Demak $X = \\begin{pmatrix} 1 & 0 \\\\ 2 & 1 \\end{pmatrix}\\begin{pmatrix} 3 & -2 \\\\ -4 & 3 \\end{pmatrix} = \\begin{pmatrix} 3 & -2 \\\\ 2 & -1 \\end{pmatrix}$."
-        },
-        {
-            "q": "Diagonal matritsa $D = \\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & -4 & 0 \\\\ 0 & 0 & 0.5 \\end{pmatrix}$ ning teskari matritsasi $D^{-1}$ ni toping.",
-            "opts": [
-                "$\\begin{pmatrix} 0.5 & 0 & 0 \\\\ 0 & -0.25 & 0 \\\\ 0 & 0 & 2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -2 & 0 & 0 \\\\ 0 & 4 & 0 \\\\ 0 & 0 & -0.5 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & -4 & 0 \\\\ 0 & 0 & 2 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 0.5 & 0 & 0 \\\\ 0 & 0.25 & 0 \\\\ 0 & 0 & -2 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Diagonal matritsaning teskarisini topishda har bir diagonal elementi o‘zining teskarisiga ($1/d_{ii}$) almashtiriladi: $1/2 = 0.5,\\; 1/(-4) = -0.25,\\; 1/0.5 = 2$."
-        },
-        {
-            "q": "Agar 3-tartibli kvadrat $A$ matritsa uchun $\\det(A) = 5$ bo‘lsa, $\\det(A^{-1})$ va $\\det((A^3)^{-1})$ qiymatlarini toping.",
-            "opts": [
-                "$\\det(A^{-1}) = \\frac{1}{5},\\quad \\det((A^3)^{-1}) = \\frac{1}{125}$",
-                "$\\det(A^{-1}) = -5,\\quad \\det((A^3)^{-1}) = -125$",
-                "$\\det(A^{-1}) = \\frac{1}{5},\\quad \\det((A^3)^{-1}) = \\frac{1}{15}$",
-                "$\\det(A^{-1}) = 5,\\quad \\det((A^3)^{-1}) = 125$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "3-ma’ruza (7-slayd): $\\det(A^{-1}) = \\frac{1}{\\det A} = \\frac{1}{5}$ va $(A^3)^{-1} = (A^{-1})^3 \\implies \\det((A^3)^{-1}) = (\\frac{1}{5})^3 = \\frac{1}{125}$."
-        },
-        {
-            "q": "$x$ ning qanday qiymatlarida $A = \\begin{pmatrix} x & 2 & 0 \\\\ 1 & x+1 & 2 \\\\ 0 & 1 & 1 \\end{pmatrix}$ matritsaga teskari matritsa MAVJUD EMAS (ya’ni matritsa xos bo‘ladi)?",
-            "opts": [
-                "$x_1 = 1,\\quad x_2 = 2$",
-                "$x_1 = -1,\\quad x_2 = -2$",
-                "$x_1 = 0,\\quad x_2 = 3$",
-                "$x_1 = -1,\\quad x_2 = 2$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$\\det(A) = x(x+1 - 2) - 2(1 - 0) = x(x-1) - 2 = x^2 - x - 2 = (x-2)(x+1) = 0 \\implies x_1 = -1,\\; x_2 = 2$."
-        },
-        {
-            "q": "$A = \\begin{pmatrix} 1 & 2 & 3 & 4 \\\\ 2 & 4 & 6 & 8 \\\\ -1 & -2 & -3 & -4 \\end{pmatrix}$ matritsaning rangini toping.",
-            "opts": [
-                "$r(A) = 1$",
-                "$r(A) = 2$",
-                "$r(A) = 3$",
-                "$r(A) = 4$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "2-satr va 3-satr 1-satrga proporsional ($R_2 = 2R_1, R_3 = -R_1$). Elementar almashtirishda faqat bitta noldan farqli satr qoladi, demak $r(A) = 1$."
-        },
-        {
-            "q": "$A = \\begin{pmatrix} 4 & -2 \\\\ -6 & 3 \\end{pmatrix}$ matritsaning barcha 1-tartibli minorlari soni nechta va 2-tartibli minori nimaga teng?",
-            "opts": [
-                "1-tartibli minorlari 4 ta; 2-tartibli minori $0$ ga teng",
-                "1-tartibli minorlari 2 ta; 2-tartibli minori $24$ ga teng",
-                "1-tartibli minorlari 4 ta; 2-tartibli minori $-24$ ga teng",
-                "1-tartibli minorlari yo‘q; 2-tartibli minori $0$ ga teng"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Har bir element 1-tartibli minor hosil qiladi (jami 4 ta). 2-tartibli minor: $4\\cdot 3 - (-2)(-6) = 12 - 12 = 0$."
-        },
-        {
-            "q": "Agar $A$ kvadrat matritsa uchun $A^2 - 4A + E = O$ tenglik o‘rinli bo‘lsa, $A^{-1}$ teskari matritsa $A$ va $E$ orqali qanday ifodalanadi?",
-            "opts": [
-                "$A^{-1} = 4E - A$",
-                "$A^{-1} = A - 4E$",
-                "$A^{-1} = 4A - E$",
-                "$A^{-1} = A + 4E$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$A^2 - 4A + E = O \\implies E = 4A - A^2 = A(4E - A)$. Ta’rifga ko‘ra $A \\cdot A^{-1} = E$ bo‘lgani uchun $A^{-1} = 4E - A$."
-        },
-        {
-            "q": "Agar $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 7 \\end{pmatrix}$ bo‘lsa, $(A^T)^{-1}$ matritsani toping.",
-            "opts": [
-                "$\\begin{pmatrix} 7 & -3 \\\\ -2 & 1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 7 & -2 \\\\ -3 & 1 \\end{pmatrix}$",
-                "$\\begin{pmatrix} 1 & 3 \\\\ 2 & 7 \\end{pmatrix}$",
-                "$\\begin{pmatrix} -7 & 3 \\\\ 2 & -1 \\end{pmatrix}$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "$A^T = \\begin{pmatrix} 1 & 3 \\\\ 2 & 7 \\end{pmatrix}$, uning determinanti $7 - 6 = 1$. Demak $(A^T)^{-1} = \\begin{pmatrix} 7 & -3 \\\\ -2 & 1 \\end{pmatrix}$."
-        },
-        {
-            "q": "5-tartibli pog‘onali matritsaning bosh diagonalida $3$ ta noldan farqli element bo‘lib, oxirgi $2$ ta satri to‘liq nollardan iborat bo‘lsa, uning rangi nechaga teng?",
-            "opts": [
-                "$r(A) = 3$",
-                "$r(A) = 5$",
-                "$r(A) = 2$",
-                "$r(A) = 0$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "3-ma’ruza (19-slayd): Pog‘onali matritsaning rangi undagi noldan farqli satrlar (pog‘onalar) soni $p$ ga teng, ya’ni $r(A) = 3$."
+            "exp": "Chiziqli algebraning fundamental xossasiga ko‘ra matritsalarni ko‘paytirishda rang ortishi mumkin emas: $r(AB) \\le \\min(r(A), r(B))$."
         }
-    ]
-    # Fix question 25 in t3 so ans=0 matches (x-2)(x+1)=0:
-    t3[24]["opts"] = [
-        "$x_1 = -1,\\quad x_2 = 2$",
-        "$x_1 = 1,\\quad x_2 = 2$",
-        "$x_1 = -1,\\quad x_2 = -2$",
-        "$x_1 = 0,\\quad x_2 = 3$"
     ]
 
     # =========================================================================
-    # MAVZU 4: Yuqori tartibli determinantlar va Laplas teoremasi (30 ta savol)
+    # MAVZU 4: Yuqori tartibli determinantlar va Laplas teoremasi (30 ta NAZARIY)
     # =========================================================================
     t4 = [
         {
-            "q": "$n$-tartibli kvadrat matritsaning determinanti deb nechta ko‘paytmaning algebraik yig‘indisiga aytiladi?",
+            "q": "$n$-tartibli kvadrat $A$ matritsaning $n$-tartibli determinanti ta’rifi qaysi javobda to‘g‘ri berilgan (5, 10-slaydlar)?",
             "opts": [
-                "$n!$ ta ko‘paytmaning algebraik yig‘indisiga",
-                "$n^2$ ta ko‘paytmaning yig‘indisiga",
-                "$2^n$ ta ko‘paytmaning yig‘indisiga",
-                "$2n$ ta ko‘paytmaning yig‘indisiga"
+                "Matritsaning har bir satridan va har bir ustunidan bittadan olingan $n$ ta element ko‘paytmalaridan iborat, jami $n!$ ta hadning $(-1)^s$ ishoralar bilan olingan algebraik yig‘indisiga aytiladi",
+                "Matritsaning barcha $n^2$ ta elementlari yig‘indisiga aytiladi",
+                "Matritsaning faqat bosh va yordamchi diagonallari elementlari ko‘paytmalari ayirmasiga aytiladi",
+                "Matritsaning satr elementlari kvadratlari yig‘indisiga aytiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "4-ma’ruza (5, 10-slaydlar): $n$-tartibli determinant har bir satr va har bir ustundan bittadan olingan $n$ ta element ko‘paytmalaridan iborat jami $n!$ ta hadning algebraik yig‘indisiga teng."
+            "exp": "4-ma’ruza (5, 10-slaydlar): $A$ matritsaning $n$-tartibli determinanti deb, har bir satr va ustundan bittadan element qatnashgan $n!$ ta ko‘paytmaning algebraik yig‘indisiga aytiladi."
         },
         {
-            "q": "4-tartibli va 5-tartibli determinantlarning to‘liq yoyilmasida mos ravishda nechta had (ko‘paytma) qatnashadi?",
+            "q": "«$n$-tartibli o‘rin almashtirish» deb nimaga aytiladi va u qanday belgilanadi?",
             "opts": [
-                "4-tartiblida $24$ ta, 5-tartiblida $120$ ta had",
-                "4-tartiblida $16$ ta, 5-tartiblida $25$ ta had",
-                "4-tartiblida $8$ ta, 5-tartiblida $10$ ta had",
-                "4-tartiblida $12$ ta, 5-tartiblida $60$ ta had"
+                "$1, 2, 3, \\dots, n$ sonlarning ma’lum bir tartibda joylashtirib yozilishiga aytiladi va $P$ harfi bilan belgilanadi",
+                "Matritsaning satrlarini ustunlarga almashtirishga aytiladi va $A^T$ bilan belgilanadi",
+                "Sonlarni bir-biriga qo‘shish amaliga aytiladi",
+                "Faqat juft sonlar to‘plamiga aytiladi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "$4! = 1\\cdot 2\\cdot 3\\cdot 4 = 24$ ta va $5! = 1\\cdot 2\\cdot 3\\cdot 4\\cdot 5 = 120$ ta had qatnashadi."
+            "exp": "4-ma’ruza (6-slayd): $1, 2, 3, \\dots, n$ sonlarning biror bir tartibda yozilishiga $n$-tartibli o‘rin almashtirish deyiladi va $P$ harfi bilan belgilanadi."
         },
         {
-            "q": "$\\{1, 2, 3, \\dots, n\\}$ to‘plamdagi juft va toq o‘rin almashtirishlar soni nechta va bitta transpozitsiyada (ikkita element o‘rnini almashtirganda) o‘rin almashtirish juft-toqligi qanday o‘zgaradi?",
+            "q": "$\\{1, 2, 3, \\dots, n\\}$ to‘plamdagi barcha mumkin bo‘lgan o‘rin almashtirishlar soni nechtaga teng?",
             "opts": [
-                "Juft va toq o‘rin almashtirishlar o‘zaro teng ($\\frac{n!}{2}$ tadan); ikkita element o‘rni almashtirilsa juft-toqligi qarama-qarshiga o‘zgaradi",
-                "Juft o‘rin almashtirishlar ko‘proq bo‘ladi; o‘rni almashtirilsa juft-toqlik o‘zgarmaydi",
-                "Toq o‘rin almashtirishlar $n$ ta bo‘ladi; o‘rni almashtirilsa inversiya nolga aylanadi",
-                "Har biri $n!$ tadan bo‘ladi"
+                "$n! = 1 \\cdot 2 \\cdot 3 \\cdot \\dots \\cdot n$ taga teng",
+                "$2^n$ taga teng",
+                "$n^2$ taga teng",
+                "$\\frac{n(n-1)}{2}$ taga teng"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "4-ma’ruza (8-slayd): Barcha o‘rin almashtirishlar $n!$ ta bo‘lib, ularning teng yarmi ($n!/2$) juft, qolgan yarmi ($n!/2$) toq bo‘ladi. Ikkita element o‘rni almashsa juft-toqlik o‘zgaradi."
+            "exp": "4-ma’ruza (8-slayd, 1-xossa): $\\{1, 2, 3, \\dots, n\\}$ to‘plamdagi barcha o‘rin almashtirishlar soni $n!$ ga teng."
         },
         {
-            "q": "Ma’ruzadagi 7-slayd misoli: $P = (1, 4, 3, 2)$ o‘rin almashtirishdagi inversiyalar soni $\\text{inv}(P)$ ni va uning juft-toqligini toping.",
+            "q": "$P$ o‘rin almashtirishda ikkita son qachon «inversiya» tashkil qiladi deyiladi?",
             "opts": [
-                "$\\text{inv}(P) = 3$ (toq o‘rin almashtirish)",
-                "$\\text{inv}(P) = 2$ (juft o‘rin almashtirish)",
-                "$\\text{inv}(P) = 4$ (juft o‘rin almashtirish)",
-                "$\\text{inv}(P) = 1$ (toq o‘rin almashtirish)"
+                "Agar $m > k$ bo‘lib, katta $m$ soni kichik $k$ sonidan chapda joylashgan bo‘lsa, ular inversiya tashkil qiladi deyiladi",
+                "Agar kichik son katta sondan chapda joylashgan bo‘lsa",
+                "Agar ikkita sonning yig‘indisi juft bo‘lsa",
+                "Agar ikkita son ketma-ket (yonma-yon) joylashgan bo‘lsa"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "4-ma’ruza (7-slayd): 1 dan chapda katta son yo‘q ($0$), 4 dan chapda yo‘q ($0$), 3 dan chapda 4 bor ($1$), 2 dan chapda 4 va 3 bor ($2$). Jami $\\text{inv}(P) = 0 + 0 + 1 + 2 = 3$ (toq)."
+            "exp": "4-ma’ruza (7-slayd): Agar $m > k$ bo‘lib, $m$ soni $k$ sonidan chapda joylashgan bo‘lsa, u holda $P$ o‘rin almashtirishda bu sonlar inversiya tashkil qiladi deyiladi."
         },
         {
-            "q": "$P = (4, 2, 5, 1, 3)$ o‘rin almashtirishdagi inversiyalar soni $\\text{inv}(P)$ ni va unga mos $(-1)^{\\text{inv}(P)}$ ishorani toping.",
+            "q": "$P$ o‘rin almashtirish qachon «juft» va qachon «toq» o‘rin almashtirish deyiladi?",
             "opts": [
-                "$\\text{inv}(P) = 6$, ishorasi $+1$ (juft)",
-                "$\\text{inv}(P) = 5$, ishorasi $-1$ (toq)",
-                "$\\text{inv}(P) = 7$, ishorasi $-1$ (toq)",
-                "$\\text{inv}(P) = 4$, ishorasi $+1$ (juft)"
+                "Undagi inversiyalarning umumiy soni $\\text{inv} P$ juft son bo‘lsa — juft, toq son bo‘lsa — toq o‘rin almashtirish deyiladi",
+                "Elementlar soni $n$ juft bo‘lsa — juft, $n$ toq bo‘lsa — toq deyiladi",
+                "Birinchi elementi juft son bo‘lsa — juft, toq son bo‘lsa — toq deyiladi",
+                "Oxirgi elementi juft son bo‘lsa — juft deyiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (7-slayd): $\\text{inv} P$ soni juft yoki toq bo‘lganiga qarab $P$ o‘rin almashtirish juft yoki toq deyiladi."
+        },
+        {
+            "q": "O‘rin almashtirishlarning 2-xossasi: $\\{1, 2, 3, \\dots, n\\}$ ($n \\ge 2$) to‘plamdagi juft va toq o‘rin almashtirishlar soni haqida qanday tasdiq o‘rinli?",
+            "opts": [
+                "Juft va toq o‘rin almashtirishlar soni o‘zaro teng bo‘lib, har biri $\\frac{n!}{2}$ tadan bo‘ladi",
+                "Juft o‘rin almashtirishlar soni toqlardan $2$ marta ko‘p bo‘ladi",
+                "Barcha o‘rin almashtirishlar juft bo‘ladi",
+                "Juft o‘rin almashtirishlar $n$ ta, toqlar esa $n! - n$ ta bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (8-slayd, 2-xossa): Juft va toq o‘rin almashtirishlar soni o‘zaro teng, ya’ni har biri $\\frac{n!}{2}$ tadan."
+        },
+        {
+            "q": "O‘rin almashtirishlarning 3-xossasi: O‘rin almashtirishda ixtiyoriy ikkita elementning o‘rni o‘zaro almashtirilsa (transpozitsiya qilinsa), nima yuz beradi?",
+            "opts": [
+                "O‘rin almashtirishning juft-toqligi qarama-qarshisiga o‘zgaradi (juft bo‘lsa toqqa, toq bo‘lsa juftga aylanadi)",
+                "O‘rin almashtirishning juft-toqligi o‘zgarmaydi",
+                "Inversiyalar soni har doim $0$ ga teng bo‘lib qoladi",
+                "Inversiyalar soni $2$ marta ortadi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (8-slayd, 3-xossa): O‘rin almashtirishda ikkita elementning o‘rni almashtirilsa, uning juft-toqligi o‘zgaradi."
+        },
+        {
+            "q": "«O‘rinlashtirish» ($F$) deb nimaga aytiladi va uning juft-toqligi qanday aniqlanadi (9-slayd)?",
+            "opts": [
+                "$\\{1, 2, \\dots, n\\}$ sonlar to‘plamini o‘zini o‘ziga o‘zaro bir qiymatli akslantirishga aytiladi; $F = \\binom{P_1}{P_2}$ da $P_1 = (1, 2, \\dots, n)$ bo‘lsa, $P_2$ juft bo‘lganda $F$ juft, $P_2$ toq bo‘lganda $F$ toq bo‘ladi",
+                "Faqat ikkita sonning yig‘indisiga o‘rinlashtirish deyiladi",
+                "Matritsani nol matritsaga ko‘paytirishga aytiladi",
+                "O‘rinlashtirish faqat toq bo‘lishi mumkin"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "Inversiyalar: $(4,2), (4,1), (4,3)$ — 3 ta; $(2,1)$ — 1 ta; $(5,1), (5,3)$ — 2 ta. Jami: $3 + 1 + 2 = 6$ ta (juft), $(-1)^6 = +1$."
+            "exp": "4-ma’ruza (9-slayd): $\\{1, 2, \\dots, n\\}$ sonlar to‘plamini o‘zini o‘ziga akslantiruvchi o‘zaro bir qiymatli akslantirish o‘rinlashtirish deyiladi."
         },
         {
-            "q": "5-tartibli determinant yoyilmasida $a_{13} a_{25} a_{32} a_{41} a_{54}$ ko‘paytma qanday ishora bilan qatnashadi?",
+            "q": "$n$-tartibli determinant ta’rifidan kelib chiqadigan 3 ta asosiy natija (10-slayd) qaysi javobda to‘g‘ri ko‘rsatilgan?",
             "opts": [
-                "Minus ($-$) ishora bilan, chunki $\\text{inv}(3, 5, 2, 1, 4) = 5$ (toq)",
-                "Plyus ($+$) ishora bilan, chunki $\\text{inv}(3, 5, 2, 1, 4) = 4$ (juft)",
-                "Plyus ($+$) ishora bilan, chunki $\\text{inv}(3, 5, 2, 1, 4) = 6$ (juft)",
-                "Ushbu ko‘paytma determinant yoyilmasiga kirmaydi"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Birinchi indekslar $(1,2,3,4,5)$ tartiblangan. Ikkinchi indekslar $P=(3,5,2,1,4)$ uchun inversiyalar: 3 dan keyin $(2,1)$ — 2 ta; 5 dan keyin $(2,1,4)$ — 3 ta; 2 dan keyin $(1)$ — 1 ta... Diqqat! $2+3+1 = 6$ ta! Demak $\\text{inv}=6$ (juft) va ishora PLYUS!"
-        },
-        {
-            "q": "Ma’ruzadagi 18-slayd: Laplas teoremasi va uning muhim natijasi qaysi javobda to‘g‘ri bayon etilgan?",
-            "opts": [
-                "Determinant ixtiyoriy satr (ustun) elementlari bilan o‘z algebraik to‘ldiruvchilari ko‘paytmalari yig‘indisiga teng; boshqa satr algebraik to‘ldiruvchilari bilan ko‘paytmalari yig‘indisi esa $0$ ga teng",
-                "Determinant faqat 1-satr elementlari yig‘indisiga teng; boshqa satrlar bilan ko‘paytmasi $1$ ga teng",
-                "Determinant bosh diagonal va yordamchi diagonal yig‘indisiga teng",
-                "Laplas teoremasi faqat 2-tartibli determinantlar uchun o‘rinli"
+                "1) Determinant $n!$ ta hadning yig‘indisidan iborat; 2) Har bir hadda har bir satr va ustundan bittadan element qatnashadi; 3) Ko‘paytmalarning yarmi o‘z ishorasi ($+$) bilan, qolgan yarmi qarama-qarshi ($-$) ishora bilan olinadi",
+                "1) Determinant $n$ ta haddan iborat; 2) Barcha hadlar plyus ishora bilan olinadi; 3) Faqat diagonal elementlar qatnashadi",
+                "1) Determinant $2n$ ta haddan iborat; 2) Barcha hadlar minus ishora bilan olinadi",
+                "1) Determinantda bitta satrdan bir nechta element bitta ko‘paytmada qatnashishi mumkin"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "4-ma’ruza (18-slayd): $\\Delta = \\sum_{j=1}^n a_{ij}A_{ij}$, va Natija: biror satr elementlari bilan boshqa satr elementlari algebraik to‘ldiruvchilari ko‘paytmalarining yig‘indisi nolga teng."
+            "exp": "4-ma’ruza (10-slayd, Natija): Aynan shu 3 ta xulosa $n$-tartibli determinant ta’rifining bevosita natijalaridir."
         },
         {
-            "q": "Ma’ruzadagi 11-12-slaydlar misoli: 4-tartibli $\\Delta = \\begin{vmatrix} 1 & 0 & 3 & 2 \\\\ 2 & -1 & 4 & 1 \\\\ 3 & 2 & 1 & 5 \\\\ 1 & 0 & 6 & 2 \\end{vmatrix}$ determinantni 2-ustun bo‘yicha yoyib hisoblang.",
+            "q": "Determinantni hisoblashning 1-usulida (qator elementlari bo‘yicha yoyishda) qaysi satr yoki ustunni tanlash eng samarali hisoblanadi (11-slayd)?",
             "opts": [
-                "$-21$",
-                "$21$",
-                "$-14$",
-                "$42$"
+                "Tarkibida eng ko‘p nol ($0$) element qatnashgan satr yoki ustunni tanlash, chunki nol elementlarning algebraik to‘ldiruvchilarini hisoblash talab etilmaydi",
+                "Faqat eng katta sonlar qatnashgan satrni tanlash",
+                "Har doim faqat oxirgi ustunni tanlash",
+                "Nol elementlari umuman bo‘lmagan satrni tanlash"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (11-slayd): Determinantning eng ko‘p nol element qatnashgan qatori aniqlanib, shu qator bo‘yicha yoyib chiqiladi."
+        },
+        {
+            "q": "Determinantni hisoblashning 2-usulida (nollar hosil qilib yoyish usulida) qanday ketma-ketlik bajariladi (12-slayd)?",
+            "opts": [
+                "Elementar almashtirish (7-xossa) yordamida tanlangan satr yoki ustunda bitta noldan farqli element qolgunicha qolgan elementlar nolga keltiriladi va so‘ngra shu qator bo‘yicha yoyiladi",
+                "Barcha satrlar bir-biriga ko‘paytirib chiqiladi",
+                "Determinantning barcha elementlaridan bir xil son ayirib tashlanadi",
+                "Determinant Sarrius qoidasi bilan bo‘laklarga ajratiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (12-slayd): Biror qator elementlarini 7-xossa yordamida nolga keltirib, so‘ngra shu qator bo‘yicha yopilsa, $(n-1)$-tartibli bittagina determinantni hisoblash kifoya bo‘ladi."
+        },
+        {
+            "q": "Qanday determinantga «uchburchak shaklidagi determinant» deyiladi va u qanday hisoblanadi (13-slayd)?",
+            "opts": [
+                "Bosh diagonalidan yuqoridagi yoki pastdagi barcha elementlari nollardan iborat bo‘lgan determinantga aytiladi; uning qiymati bosh diagonali elementlari ko‘paytmasiga teng",
+                "Faqat $3 \\times 3$ o‘lchamli har qanday determinantga aytiladi",
+                "Bosh diagonali elementlari nollardan iborat determinantga aytiladi",
+                "Uchta burchagida nollar turgan determinantga aytiladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (13-slayd): Bosh diagonalidan yuqoridagi yoki pastdagi barcha elementlari nollardan iborat determinant uchburchak shaklidagi determinant deyiladi va uning qiymati bosh diagonal elementlari ko‘paytmasiga teng."
+        },
+        {
+            "q": "Har qanday yuqori tartibli determinantni uchburchak shakliga keltirib hisoblash mumkinmi (13-slayd)?",
+            "opts": [
+                "Ha, determinantning xossalaridan (elementar satr/ustun almashtirishlaridan) foydalanib har qanday determinantni uchburchak shakliga keltirib hisoblash mumkin",
+                "Yo‘q, faqat simmetrik determinantlarnigina uchburchak shakliga keltirish mumkin",
+                "Yo‘q, faqat 2-tartibli determinantlarni uchburchak shakliga keltirish mumkin",
+                "Faqat barcha elementlari musbat bo‘lgan determinantlarni keltirish mumkin"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (13-slayd): Har qanday determinantni uchburchak shakliga keltirib hisoblash mumkin."
+        },
+        {
+            "q": "**Laplas teoremasi** (18-slayd) qanday ta’riflanadi?",
+            "opts": [
+                "Determinantning qiymati uning ixtiyoriy satr (yoki ustun) elementlari bilan shu elementlarga mos algebraik to‘ldiruvchilar ko‘paytmalarining yig‘indisiga teng: $\\Delta = \\sum_{j=1}^n a_{ij} A_{ij}$",
+                "Determinantning qiymati uning barcha satr elementlari bilan minorlari yig‘indisiga teng",
+                "Determinantning qiymati faqat bosh diagonal elementlari va ularning algebraik to‘ldiruvchilari ko‘paytmasiga teng",
+                "Determinantning qiymati satrlar sonining faktorialiga teng"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (18-slayd): Laplas teoremasi: Determinantning qiymati uning ixtiyoriy satr (ustun) elementlari bilan shu elementlarga mos algebraik to‘ldiruvchilar ko‘paytmalari yig‘indisiga teng."
+        },
+        {
+            "q": "**Laplas teoremasining natijasi** (18-slayd): Determinantning biror satri (ustuni) elementlari bilan uning BOSHQA satri (ustuni) elementlariga mos algebraik to‘ldiruvchilar ko‘paytmalarining yig‘indisi nimaga teng?",
+            "opts": [
+                "Har doim nolga teng ($\\sum_{j=1}^n a_{ij} A_{kj} = 0$, bunda $i \\ne k$)",
+                "Determinantning o‘ziga teng ($\\Delta$)",
+                "Qarama-qarshi ishorali determinantga teng ($-\\Delta$)",
+                "Birga teng ($1$)"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (18-slayd, Natija): Determinantning biror satr (ustun) elementlari bilan uning boshqa satri (ustuni) elementlari algebraik to‘ldiruvchilari ko‘paytmalarining yig‘indisi nolga teng."
+        },
+        {
+            "q": "Laplas teoremasi va uning natijasini Kroneker deltasi $\\delta_{ik}$ yordamida yagona formula ko‘rinishida qanday yozish mumkin?",
+            "opts": [
+                "$\\sum_{j=1}^n a_{ij} A_{kj} = \\delta_{ik} \\cdot \\Delta = \\begin{cases} \\Delta, & i = k \\\\ 0, & i \\ne k \\end{cases}$",
+                "$\\sum_{j=1}^n a_{ij} A_{kj} = \\Delta^2$",
+                "$\\sum_{j=1}^n a_{ij} A_{kj} = i + k$",
+                "$\\sum_{j=1}^n a_{ij} A_{kj} = \\begin{cases} 0, & i = k \\\\ \\Delta, & i \\ne k \\end{cases}$"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "4-ma’ruza (11-12-slaydlar): 2-satrni 2 ga ko‘paytirib 3-satrga qo‘shsak, 2-ustunda faqat $a_{22}=-1$ qoladi: $\\Delta = -1 \\cdot (-1)^{2+2} \\begin{vmatrix} 1 & 3 & 2 \\\\ 7 & 9 & 7 \\\\ 1 & 6 & 2 \\end{vmatrix} = -21$."
+            "exp": "Aynan shu fundamental ayniyat $A \\cdot \\bar{A} = \\det(A) \\cdot E$ va teskari matritsa formulasining asosini tashkil etadi!"
         },
         {
-            "q": "Ma’ruzadagi 14-15-slaydlar misoli: $\\Delta = \\begin{vmatrix} 2 & -4 & 1 & 5 \\\\ 1 & -3 & 2 & 5 \\\\ 2 & 2 & 0 & -3 \\\\ 3 & -1 & 1 & 2 \\end{vmatrix}$ determinantni uchburchak shakliga keltirib hisoblang.",
+            "q": "Umumiy Laplas teoremasiga (16-17-slaydlar) ko‘ra, 5-tartibli determinantni 2 ta satr (masalan 1- va 3-satrlar) bo‘yicha yoyganda qanday ko‘paytmalar yig‘indisi hosil bo‘ladi?",
             "opts": [
-                "$-14$",
-                "$14$",
-                "$-28$",
-                "$7$"
+                "Shu 2 ta satrda joylashgan 2-tartibli minorlar bilan ularga mos 3-tartibli algebraik to‘ldiruvchilarning ko‘paytmalari yig‘indisi ($C_5^2 = 10$ ta had)",
+                "Faqat 1-tartibli elementlar bilan 4-tartibli minorlar ko‘paytmasi",
+                "5 ta 2-tartibli determinantlarning o‘zaro ko‘paytmasi",
+                "1- va 3-satr elementlarining skalyar ko‘paytmasi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "4-ma’ruza (14-15-slaydlar): Satr almashtirishlari natijasida bosh diagonalda $1, 2, -1, 7$ elementli yuqori uchburchak determinant hosil bo‘ladi: $\\Delta = 1 \\cdot 2 \\cdot (-1) \\cdot 7 = -14$."
+            "exp": "4-ma’ruza (16-17-slaydlar): 2 ta satr tanlanganda $C_5^2 = 10$ ta yig‘indi qatnashib, har bir hadda 2-tartibli minor va uning 3-tartibli qo‘shimcha minori $(-1)^{i_1+i_2+j_1+j_2}$ ishora bilan ko‘paytiriladi."
         },
         {
-            "q": "Ma’ruzadagi 16-17-slaydlar misoli: 5-tartibli $\\begin{vmatrix} 0 & 1 & 1 & 0 & 0 \\\\ -1 & 2 & 3 & -2 & -1 \\\\ 0 & 5 & 0 & 1 & 0 \\\\ 1 & 0 & -2 & -3 & 2 \\\\ -1 & 0 & 0 & 1 & 1 \\end{vmatrix}$ determinantni 1- va 3-satrlar bo‘yicha Laplas teoremasi yordamida hisoblang.",
+            "q": "Umumiy Laplas teoremasida $i_1, i_2$ satrlar va $j_1, j_2$ ustunlar kesishmasida joylashgan 2-tartibli minorning algebraik to‘ldiruvchisi oldidagi ishora ko‘paytuvchisi qanday aniqlanadi (17-slayd)?",
             "opts": [
-                "$61$",
-                "$-61$",
-                "$45$",
-                "$55$"
+                "$(-1)^{i_1 + i_2 + j_1 + j_2}$ formula bilan",
+                "$(-1)^{i_1 \\cdot i_2 \\cdot j_1 \\cdot j_2}$ formula bilan",
+                "Har doim $+1$ bo‘ladi",
+                "$(-1)^{(i_1 - j_1)}$ formula bilan"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "4-ma’ruza (17-slayd): Masalan, 1- va 3-satr hamda 2- va 3-ustun tanlanganda ishora $(-1)^{1+3+2+3}$ ko‘rinishda olinadi."
+        },
+        {
+            "q": "3-tartibli determinant uchun yozilgan «Laplas formulasi» (19-slayd) qaysi qatorlar bo‘yicha yoyilmalarni o‘z ichiga oladi?",
+            "opts": [
+                "1-, 2-, 3-satrlar hamda 1-, 2-, 3-ustunlar bo‘yicha — jami 6 ta o‘zaro teng yoyilmani",
+                "Faqat 1-satr va 1-ustun bo‘yicha 2 ta yoyilmani",
+                "Faqat bosh va yordamchi diagonal bo‘yicha yoyilmalarni",
+                "Faqat juft tartibli satrlar bo‘yicha yoyilmani"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (19-slayd): $\\Delta = a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13} = a_{21}A_{21}+\\dots = a_{13}A_{13}+a_{23}A_{23}+a_{33}A_{33}$ — barcha 3 ta satr va 3 ta ustun bo‘yicha yoyilmalar o‘zaro teng."
+        },
+        {
+            "q": "Determinantning bosh diagonali elementlari ko‘paytmasi $a_{11} a_{22} \\dots a_{nn}$ determinantning to‘liq yoyilmasiga qanday ishora bilan kiradi?",
+            "opts": [
+                "Har doim plyus ($+$) ishora bilan kiradi, chunki $(1, 2, \\dots, n)$ o‘rin almashtirishda inversiyalar yo‘q ($\\text{inv} = 0$, juft)",
+                "Har doim minus ($-$) ishora bilan kiradi",
+                "$n$ juft bo‘lsa plyus, $n$ toq bo‘lsa minus ishora bilan kiradi",
+                "Elementlarning ishorasiga qarab o‘zgaradi"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "Bosh diagonal elementlarining ustun indekslari $(1, 2, \\dots, n)$ tabiiy tartibda bo‘lgani uchun $\\text{inv}(1, 2, \\dots, n) = 0$ va $(-1)^0 = +1$."
+        },
+        {
+            "q": "$n$-tartibli determinantda yordamchi diagonal elementlari ko‘paytmasi $a_{1n} a_{2,n-1} \\dots a_{n1}$ oldidagi $(-1)^s$ ishora ko‘paytuvchisi uchun $s = \\text{inv}(n, n-1, \\dots, 2, 1)$ nimaga teng?",
+            "opts": [
+                "$s = \\frac{n(n-1)}{2}$ ga teng",
+                "$s = n$ ga teng",
+                "$s = n!$ ga teng",
+                "$s = 0$ ga teng"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "4-ma’ruza (16-17-slaydlar): 1- va 3-satrlarda noldan farqli faqat 3 ta 2-tartibli minor bor. Ularni mos 3-tartibli algebraik to‘ldiruvchilariga ko‘paytirib qo‘shsak: $(-1)(-5)(13) + (2-3+2-3) + (-1)(2) = 65 - 2 - 2 = 61$."
+            "exp": "$(n, n-1, \\dots, 1)$ teskari tartibda har bir element o‘zidan keyingi barcha elementlar bilan inversiya hosil qiladi: $(n-1) + (n-2) + \\dots + 1 = \\frac{n(n-1)}{2}$."
         },
         {
-            "q": "Ma’ruzadagi 20-slayd misoli: $\\Delta = \\begin{vmatrix} 2 & 1 & 3 \\\\ 5 & 3 & 2 \\\\ 1 & 4 & 3 \\end{vmatrix}$ determinantni 1-satr bo‘yicha Laplas formulasi bilan yoyib hisoblang.",
+            "q": "Agar $P = (i_1, i_2, \\dots, i_n)$ o‘rin almashtirishda ketma-ket $2m$ marta (juft marta) ikkita element o‘rni almashtirilsa (transpozitsiya qilinsa), uning juft-toqligi qanday bo‘ladi?",
             "opts": [
-                "$40$",
-                "$27$",
-                "$-40$",
-                "$54$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "4-ma’ruza (20-slayd): $\\Delta = 2A_{11} + A_{12} + 3A_{13} = 2(9-8) - (15-2) + 3(20-3) = 2 - 13 + 51 = 40$."
-        },
-        {
-            "q": "Ma’ruzadagi 21-slayd misoli: Determinant xossalaridan foydalanib $\\begin{vmatrix} 5 & 6 & 1 \\\\ 5 & 2 & 3 \\\\ 11 & 5 & 0 \\end{vmatrix}$ determinantni hisoblang.",
-            "opts": [
-                "$-46$",
-                "$46$",
-                "$0$",
-                "$-23$"
+                "Boshlang‘ich juft-toqligi saqlanib qoladi (o‘zgarmaydi)",
+                "Qarama-qarshisiga o‘zgaradi",
+                "Har doim toq bo‘lib qoladi",
+                "Inversiyalar soni nolga teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "4-ma’ruza (21-slayd b-misol): 1-ustundan 3-ustunning 2 baravarini, so‘ngra yana 3-ustunni ayirib soddalashtirsak: $\\begin{vmatrix} 2 & 6 & 1 \\\\ -1 & 2 & 3 \\\\ 11 & 5 & 0 \\end{vmatrix} = 1(-5 - 22) - 3(10 - 66) = -27 + 168 = 141$... To‘g‘ridan-to‘g‘ri hisoblaymiz: $5(0-15) - 6(0-33) + 1(25-22) = -75 + 198 + 3 = 126$."
+            "exp": "Har bitta transpozitsiya juft-toqlikni qarama-qarshiga o‘zgartirgani sababli, juft ($2m$) marta transpozitsiya boshlang‘ich juft-toqlikni qaytaradi."
         },
         {
-            "q": "Ma’ruzadagi 22-slayd 2-misoli: $\\begin{vmatrix} \\beta b_1 + \\gamma c_1 & b_1 & c_1 \\\\ \\beta b_2 + \\gamma c_2 & b_2 & c_2 \\\\ \\beta b_3 + \\gamma c_3 & b_3 & c_3 \\end{vmatrix}$ determinantni yoymasdan hisoblang.",
+            "q": "Yuqori tartibli determinantni uchburchak shakliga keltirayotganda $i$-satrni o‘zidan yuqoridagi $k$-satr yordamida nolga aylantirish uchun qanday elementar amal bajariladi?",
             "opts": [
-                "$0$",
-                "$\\beta + \\gamma$",
-                "$\\beta \\cdot \\gamma$",
-                "$1$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "4-ma’ruza (22-slayd): 1-ustundan 2-ustunning $\\beta$ baravarini va 3-ustunning $\\gamma$ baravarini ayirsak, 1-ustun to‘liq nollardan iborat bo‘lib qoladi, demak $\\Delta = 0$."
-        },
-        {
-            "q": "Ma’ruzadagi 22-slayd 3-misoli: $\\Delta_a = \\begin{vmatrix} 5 & 3 \\\\ 7 & -4 \\end{vmatrix}$, $\\Delta_b = \\begin{vmatrix} 4 & -7 \\\\ -2 & -3 \\end{vmatrix}$ va $\\Delta_d = \\begin{vmatrix} \\text{tg}\\,x & -1 \\\\ 1 & \\text{tg}\\,x \\end{vmatrix}$ determinantlarni hisoblang.",
-            "opts": [
-                "$\\Delta_a = -41,\\quad \\Delta_b = -26,\\quad \\Delta_d = \\frac{1}{\\cos^2 x}$",
-                "$\\Delta_a = 1,\\quad \\Delta_b = -26,\\quad \\Delta_d = 1$",
-                "$\\Delta_a = -41,\\quad \\Delta_b = 2,\\quad \\Delta_d = \\text{tg}^2 x - 1$",
-                "$\\Delta_a = 41,\\quad \\Delta_b = 26,\\quad \\Delta_d = \\frac{1}{\\sin^2 x}$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "4-ma’ruza (22-slayd): $\\Delta_a = -20 - 21 = -41$; $\\Delta_b = -12 - 14 = -26$; $\\Delta_d = \\text{tg}^2 x - (-1) = \\text{tg}^2 x + 1 = \\frac{1}{\\cos^2 x}$."
-        },
-        {
-            "q": "Ma’ruzadagi 23-slayd 1-tenglamasi: $\\begin{vmatrix} x + 3 & 2 \\\\ 7 & x - 2 \\end{vmatrix} = 0$ tenglamani yeching.",
-            "opts": [
-                "$x_1 = -5,\\quad x_2 = 4$",
-                "$x_1 = 5,\\quad x_2 = -4$",
-                "$x_1 = -3,\\quad x_2 = 2$",
-                "$x_1 = -4,\\quad x_2 = 3$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "4-ma’ruza (23-slayd): $(x+3)(x-2) - 14 = 0 \\implies x^2 + x - 20 = 0 \\implies (x+5)(x-4) = 0 \\implies x_1 = -5,\\; x_2 = 4$."
-        },
-        {
-            "q": "Ma’ruzadagi 23-slayd 2-tenglamasi: $\\begin{vmatrix} \\sin 2x & -\\cos 2x \\\\ \\sin 3x & \\cos 3x \\end{vmatrix} = 0$ trigonometrik tenglamani yeching.",
-            "opts": [
-                "$x = \\frac{\\pi k}{5},\\quad k \\in \\mathbb{Z}$",
-                "$x = \\pi k,\\quad k \\in \\mathbb{Z}$",
-                "$x = \\frac{\\pi}{10} + \\frac{\\pi k}{5},\\quad k \\in \\mathbb{Z}$",
-                "$x = \\frac{\\pi k}{6},\\quad k \\in \\mathbb{Z}$"
+                "$k$-satr elementlari $-\\frac{a_{ik}}{a_{kk}}$ songa ko‘paytirilib, $i$-satrning mos elementlariga qo‘shiladi ($a_{kk} \\ne 0$)",
+                "$i$-satr elementlaridan $a_{ik}$ soni ayirib tashlanadi",
+                "$i$-satr va $k$-satr mos elementlari bir-biriga ko‘paytiriladi",
+                "$i$-satr nol songa ko‘paytiriladi"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "4-ma’ruza (23-slayd): $\\sin 2x \\cos 3x - (-\\cos 2x)\\sin 3x = \\sin(2x + 3x) = \\sin 5x = 0 \\implies 5x = \\pi k \\implies x = \\frac{\\pi k}{5},\\; k \\in \\mathbb{Z}$."
+            "exp": "$a_{ik} + \\left(-\\frac{a_{ik}}{a_{kk}}\\right) a_{kk} = 0$ bo‘lib, determinantning 7-xossasiga ko‘ra determinant qiymati o‘zgarmaydi."
         },
         {
-            "q": "Ma’ruzadagi 24-slayd 1-misoli: 4-tartibli $\\begin{vmatrix} 4 & 0 & -3 & 5 \\\\ 3 & 2 & -2 & 1 \\\\ 1 & 3 & 1 & 0 \\\\ 5 & 6 & 2 & -1 \\end{vmatrix}$ determinantni uchburchak shakliga keltirib hisoblang.",
+            "q": "Determinantning biror satri (yoki ustuni) faqat bitta noldan farqli $a_{ij}$ elementga ega bo‘lib, qolgan barcha elementlari $0$ ga teng bo‘lsa, Laplas teoremasiga ko‘ra determinant nimaga teng?",
             "opts": [
-                "$15$",
-                "$-15$",
-                "$25$",
-                "$0$"
+                "$\\Delta = a_{ij} A_{ij} = (-1)^{i+j} a_{ij} M_{ij}$ ga teng (ya’ni determinant tartibi bittaga pasayadi)",
+                "$\\Delta = 0$ ga teng",
+                "$\\Delta = a_{ij}$ ga teng",
+                "$\\Delta = M_{ij}$ ga teng (ishora va $a_{ij}$ ko‘paytmasisiz)"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "4-ma’ruza (12, 18-slaydlar): Qolgan barcha qo‘shiluvchilar nolga teng bo‘lgani uchun yig‘indida faqat bitta $a_{ij} A_{ij} = (-1)^{i+j} a_{ij} M_{ij}$ had qoladi."
+        },
+        {
+            "q": "Kvadrat bloklardan tuzilgan blok-diagonal $\\begin{vmatrix} A & O \\\\ O & B \\end{vmatrix}$ determinantning qiymati nimaga teng?",
+            "opts": [
+                "$\\det(A) \\cdot \\det(B)$ ga teng",
+                "$\\det(A) + \\det(B)$ ga teng",
+                "$0$ ga teng",
+                "$\\det(A) - \\det(B)$ ga teng"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "Umumiy Laplas teoremasiga ko‘ra blok-diagonal va blok-uchburchakli matritsaning determinanti diagonal bloklar determinantlari ko‘paytmasiga teng."
+        },
+        {
+            "q": "Agar $n$-tartibli determinantning barcha algebraik to‘ldiruvchilari $A_{ij} = 0$ bo‘lsa, determinantning o‘zi $\\Delta$ haqida nima deyish mumkin?",
+            "opts": [
+                "Laplas formulasiga ko‘ra $\\Delta = \\sum_{j=1}^n a_{ij} A_{ij} = 0$ bo‘ladi",
+                "$\\Delta = 1$ bo‘ladi",
+                "$\\Delta = n!$ bo‘ladi",
+                "Determinant noldan farqli bo‘ladi"
+            ],
+            "ans": 0,
+            "diff": "Oson",
+            "exp": "Ixtiyoriy satr bo‘yicha Laplas yoyilmasida barcha $A_{ij}=0$ bo‘lsa, $\\Delta = 0$ bo‘lishi kelib chiqadi."
+        },
+        {
+            "q": "$n$-tartibli Vandermond determinanti (satrlari $1, x_i, x_i^2, \\dots, x_i^{n-1}$ darajalardan iborat determinant) qachon va faqat qachon nolga teng bo‘ladi?",
+            "opts": [
+                "$x_1, x_2, \\dots, x_n$ sonlar orasida kamida ikkitasi o‘zaro teng bo‘lganda ($x_i = x_j, i \\ne j$)",
+                "Barcha $x_i$ sonlar manfiy bo‘lganda",
+                "Sonlardan bittasi $0$ ga teng bo‘lganda",
+                "Har doim nolga teng bo‘ladi"
             ],
             "ans": 0,
             "diff": "Qiyin",
-            "exp": "3-satrni $(1, 3, 1, 0)$ asos qilib, qolgan satrlarni nolga aylantirib hisoblasak, determinantning aniq qiymati $15$ ga teng chiqadi."
+            "exp": "Vandermond determinanti $\\prod_{1 \\le j < i \\le n} (x_i - x_j)$ ga teng bo‘lib, faqat ikkita $x_i = x_j$ bo‘lganda (ikkita bir xil satr hosil bo‘lib) nolga aylanadi."
         },
         {
-            "q": "Ma’ruzadagi 24-slayd 2-misoli: 4-tartibli $\\begin{vmatrix} 2 & -3 & 2 & 4 \\\\ -3 & 2 & 2 & 5 \\\\ 1 & 5 & -3 & 0 \\\\ 0 & -1 & 1 & 2 \\end{vmatrix}$ determinantni uchburchak shakliga keltirib hisoblang.",
+            "q": "Nima sababdan yuqori tartibli ($n \\ge 4$) determinantlarni hisoblashda Sarrius yoki Uchburchak qoidasini qo‘llab bo‘lmaydi?",
             "opts": [
-                "$-86$",
-                "$86$",
-                "$-43$",
-                "$64$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "3-satr $(1, 5, -3, 0)$ yordamida 1-ustunda nollar hosil qilib, 3-tartibli determinantga tushiramiz va uchburchak shaklga keltirsak $\\Delta = -86$ chiqadi."
-        },
-        {
-            "q": "Blok-uchburchakli 4-tartibli $\\begin{vmatrix} 2 & 3 & 0 & 0 \\\\ 1 & 4 & 0 & 0 \\\\ 7 & -2 & 3 & -1 \\\\ 5 & 9 & 2 & 4 \\end{vmatrix}$ determinantni Laplas teoremasi bilan hisoblang.",
-            "opts": [
-                "$70$",
-                "$14$",
-                "$5$",
-                "$-70$"
+                "Chunki $n \\ge 4$ da determinant yoyilmasida $n!$ ta ($4! = 24$ ta, $5! = 120$ ta) had bo‘lib, diagonal chiziqlar esa faqat $2n$ ta hadni qamrab oladi xolos",
+                "Chunki $n \\ge 4$ da diagonal elementlar mavjud bo‘lmaydi",
+                "Chunki 4-tartibli determinant har doim nolga teng bo‘ladi",
+                "Chunki 4-tartibli determinantda minorlar aniqlanmagan"
             ],
             "ans": 0,
             "diff": "O'rta",
-            "exp": "1- va 2-satr bo‘yicha Laplas teoremasiga ko‘ra blok-uchburchakli determinant diagonal bloklar determinantlari ko‘paytmasiga teng: $\\begin{vmatrix} 2 & 3 \\\\ 1 & 4 \\end{vmatrix} \\cdot \\begin{vmatrix} 3 & -1 \\\\ 2 & 4 \\end{vmatrix} = (8 - 3) \\cdot (12 + 2) = 5 \\cdot 14 = 70$."
+            "exp": "$n=3$ da $3! = 6 = 2 \\cdot 3$ mos keladi, ammo $n=4$ da $4! = 24 \\ne 8$ bo‘lgani uchun oddiy diagonallar usuli 16 ta hadni tashlab ketadi!"
         },
         {
-            "q": "$A = \\begin{pmatrix} 3 & -2 & 5 & 1 \\\\ 4 & 0 & -1 & 2 \\\\ 7 & 3 & 2 & -4 \\\\ 1 & 9 & 6 & 8 \\end{pmatrix}$ matritsa berilgan. $4 A_{11} + 0 \\cdot A_{12} + (-1) A_{13} + 2 A_{14}$ yig‘indini (2-satr elementlarining 1-satr algebraik to‘ldiruvchilari bilan ko‘paytmasi yig‘indisini) toping.",
+            "q": "$F = \\begin{pmatrix} P_1 \\\\ P_2 \\end{pmatrix}$ o‘rinlashtirishda ustunlar o‘rnini ixtiyoriy almashtirib, yuqori qatorni $(1, 2, \\dots, n)$ tabiiy tartibga keltirish mumkinmi?",
             "opts": [
-                "$0$",
-                "$\\det(A)$",
-                "$-\\det(A)$",
-                "$1$"
+                "Ha, har bir ustunda yuqori va quyi elementni birgalikda ko‘chirish akslantirishning o‘zini ham, juft-toqligini ham o‘zgartirmaydi",
+                "Yo‘q, ustunlar o‘rnini almashtirish taqiqlanadi",
+                "Ustunlar almashtirilsa o‘rinlashtirish buziladi",
+                "Faqat juft tartibli o‘rinlashtirishlarda mumkin"
+            ],
+            "ans": 0,
+            "diff": "O'rta",
+            "exp": "4-ma’ruza (9-slayd): Ustunlarni juftligi bilan o‘rin almashtirganda $P_1$ va $P_2$ da bir vaqtda transpozitsiya yuz berib, umumiy juft-toqlik saqlanadi."
+        },
+        {
+            "q": "Agar $n$-tartibli determinantning bitta satri (yoki ustuni) barcha elementlari $0$ ga teng bo‘lsa, bu faktni Laplas teoremasi orqali qanday izohlash mumkin?",
+            "opts": [
+                "Nol satr (ustun) bo‘yicha Laplas yoyilmasi yozilganda $\\Delta = 0 \\cdot A_{i1} + 0 \\cdot A_{i2} + \\dots + 0 \\cdot A_{in} = 0$ hosil bo‘ladi",
+                "Nol satrning barcha algebraik to‘ldiruvchilari nolga teng bo‘ladi",
+                "Nol satrli determinantga Laplas teoremasini qo‘llab bo‘lmaydi",
+                "Laplas teoremasi bo‘yicha $\\Delta = 1$ chiqadi"
             ],
             "ans": 0,
             "diff": "Oson",
-            "exp": "4-ma’ruza (18-slayd, Natija): Determinantning biror satri (2-satr) elementlarini boshqa satri (1-satr) algebraik to‘ldiruvchilariga ko‘paytirib qo‘shilsa, yig‘indi har doim $0$ ga teng!"
-        },
-        {
-            "q": "6-tartibli determinantda yordamchi diagonal elementlari ko‘paytmasi $a_{16} a_{25} a_{34} a_{43} a_{52} a_{61}$ qanday ishora bilan kiradi?",
-            "opts": [
-                "Minus ($-$) ishora bilan, chunki $\\text{inv}(6,5,4,3,2,1) = 15$ (toq)",
-                "Plyus ($+$) ishora bilan, chunki $\\text{inv}(6,5,4,3,2,1) = 12$ (juft)",
-                "Plyus ($+$) ishora bilan, chunki $n=6$ juft son",
-                "Minus ($-$) ishora bilan, chunki $\\text{inv}(6,5,4,3,2,1) = 5$ (toq)"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "$(6,5,4,3,2,1)$ o‘rin almashtirishda har bir juftlik inversiya tashkil qiladi: $\\text{inv} = \\frac{6 \\cdot 5}{2} = 15$ (toq son). Demak $(-1)^{15} = -1$."
-        },
-        {
-            "q": "$P = (5, k, 2, m, 1)$ 5-tartibli o‘rin almashtirish juft o‘rin almashtirish bo‘lishi uchun $k$ va $m$ ($\\{3, 4\\}$ to‘plamdan) qanday bo‘lishi kerak?",
-            "opts": [
-                "$k = 3,\\quad m = 4$",
-                "$k = 4,\\quad m = 3$",
-                "Har ikkala holatda ham juft bo‘ladi",
-                "Hech qachon juft bo‘la olmaydi"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "Agar $k=3, m=4$ bo‘lsa, $P=(5, 3, 2, 4, 1)$: 5 dan keyin 4 ta, 3 dan keyin 2 ta $(2,1)$, 2 dan keyin 1 ta $(1)$, 4 dan keyin 1 ta $(1)$. Jami $\\text{inv} = 4 + 2 + 1 + 1 = 8$ (juft!)."
-        },
-        {
-            "q": "4-tartibli $\\begin{vmatrix} 1 & 1 & 1 & 1 \\\\ 1 & 2 & 3 & 4 \\\\ 1 & 3 & 6 & 10 \\\\ 1 & 4 & 10 & 20 \\end{vmatrix}$ (Paskal uchburchagi) determinantning qiymatini hisoblang.",
-            "opts": [
-                "$1$",
-                "$24$",
-                "$0$",
-                "$20$"
-            ],
-            "ans": 0,
-            "diff": "Qiyin",
-            "exp": "Ketma-ket har bir satrdan oldingi satrni ayirib chiqsak, bosh diagonalida faqat $1$ lar turgan quyi/yuqori uchburchak determinantga keladi va $\\Delta = 1$ bo‘ladi."
-        },
-        {
-            "q": "O‘rinlashtirish $F = \\begin{pmatrix} 1 & 2 & 3 & 4 \\\\ 3 & 1 & 4 & 2 \\end{pmatrix}$ ning juft yoki toqligini aniqlang.",
-            "opts": [
-                "Toq o‘rinlashtirish ($\\text{inv} = 3$)",
-                "Juft o‘rinlashtirish ($\\text{inv} = 2$)",
-                "Juft o‘rinlashtirish ($\\text{inv} = 4$)",
-                "Toq o‘rinlashtirish ($\\text{inv} = 1$)"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "4-ma’ruza (9-slayd): Yuqori qator $(1,2,3,4)$ tartiblangan bo‘lsa, $F$ ning juft-toqligi quyi qator $P_2 = (3,1,4,2)$ ning juft-toqligi bilan bir xil: $(3,1), (3,2), (4,2) \\implies \\text{inv} = 3$ (toq)."
-        },
-        {
-            "q": "4-tartibli $\\begin{vmatrix} 3 & 0 & 0 & 0 \\\\ 5 & -2 & 0 & 0 \\\\ 1 & 4 & 4 & 0 \\\\ -7 & 8 & 9 & -1 \\end{vmatrix}$ quyi uchburchakli determinantni hisoblang.",
-            "opts": [
-                "$24$",
-                "$-24$",
-                "$0$",
-                "$12$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "4-ma’ruza (13-slayd): Uchburchak shaklidagi determinant qiymati bosh diagonal elementlari ko‘paytmasiga teng: $3 \\cdot (-2) \\cdot 4 \\cdot (-1) = 24$."
-        },
-        {
-            "q": "$\\begin{vmatrix} x & 0 & 0 & 0 \\\\ 2 & x-1 & 0 & 0 \\\\ 5 & 3 & x+2 & 0 \\\\ 9 & -4 & 7 & x-3 \\end{vmatrix} = 0$ tenglamaning barcha ildizlari yig‘indisini toping.",
-            "opts": [
-                "$2$",
-                "$-2$",
-                "$6$",
-                "$0$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Uchburchakli determinant: $x(x-1)(x+2)(x-3) = 0$. Ildizlari: $0, 1, -2, 3$. Ularning yig‘indisi: $0 + 1 - 2 + 3 = 2$."
-        },
-        {
-            "q": "3-tartibli Vandermond determinanti $\\begin{vmatrix} 1 & 1 & 1 \\\\ 2 & 3 & 5 \\\\ 4 & 9 & 25 \\end{vmatrix}$ ni hisoblang.",
-            "opts": [
-                "$6$",
-                "$12$",
-                "$-6$",
-                "$30$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "Vandermond determinanti formulasi $(x_2-x_1)(x_3-x_1)(x_3-x_2) = (3-2)(5-2)(5-3) = 1 \\cdot 3 \\cdot 2 = 6$."
-        },
-        {
-            "q": "5-tartibli determinantni Laplas teoremasi bo‘yicha 2 ta satr tanlab yoyganda jami nechta 2-tartibli minor qatnashishi mumkin?",
-            "opts": [
-                "$C_5^2 = 10$ ta",
-                "$5! = 120$ ta",
-                "$5 \\cdot 2 = 10$ ta emas, $25$ ta",
-                "$C_5^3 = 6$ ta"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "4-ma’ruza (16-slayd): 5 ta ustundan 2 tasini tanlash usullari soni $C_5^2 = \\frac{5!}{2!3!} = 10$ ta bo‘lgani uchun yoyilmada 10 ta yig‘indi qatnashadi."
-        },
-        {
-            "q": "$\\begin{vmatrix} 1 & 2 & 0 & 0 \\\\ 3 & 7 & 0 & 0 \\\\ 0 & 0 & 4 & 3 \\\\ 0 & 0 & 2 & 2 \\end{vmatrix}$ determinantning qiymatini toping.",
-            "opts": [
-                "$2$",
-                "$9$",
-                "$-2$",
-                "$14$"
-            ],
-            "ans": 0,
-            "diff": "Oson",
-            "exp": "Blok-diagonal determinant: $\\begin{vmatrix} 1 & 2 \\\\ 3 & 7 \\end{vmatrix} \\cdot \\begin{vmatrix} 4 & 3 \\\\ 2 & 2 \\end{vmatrix} = (7 - 6) \\cdot (8 - 6) = 1 \\cdot 2 = 2$."
-        },
-        {
-            "q": "4-tartibli $\\begin{vmatrix} 0 & a & 0 & 0 \\\\ b & 0 & 0 & 0 \\\\ 0 & 0 & 0 & c \\\\ 0 & 0 & d & 0 \\end{vmatrix}$ determinantni hisoblang.",
-            "opts": [
-                "$abcd$",
-                "$-abcd$",
-                "$0$",
-                "$ab + cd$"
-            ],
-            "ans": 0,
-            "diff": "O'rta",
-            "exp": "1- va 2-satrlarni hamda 3- va 4-satrlarni o‘zaro almashtirsak (2 marta satr almashinuvi ishorani o‘zgartirmaydi: $(-1)^2 = +1$), diagonalda $b, a, d, c$ hosil bo‘ladi va $\\Delta = abcd$."
+            "exp": "Laplas formulasi $\\Delta = \\sum_{j=1}^n a_{ij} A_{ij}$ da barcha $a_{ij} = 0$ bo‘lsa, yig‘indi bevosita $0$ ga teng bo‘ladi."
         }
     ]
-    # Fix question 6 and 12 in t4:
-    t4[5]["opts"] = [
-        "Plyus ($+$) ishora bilan, chunki $\\text{inv}(3, 5, 2, 1, 4) = 6$ (juft)",
-        "Minus ($-$) ishora bilan, chunki $\\text{inv}(3, 5, 2, 1, 4) = 5$ (toq)",
-        "Minus ($-$) ishora bilan, chunki $\\text{inv}(3, 5, 2, 1, 4) = 7$ (toq)",
-        "Ushbu ko‘paytma determinant yoyilmasiga kirmaydi"
-    ]
-    t4[11]["opts"] = ["$126$", "$-126$", "$0$", "$46$"]
 
     return {1: t1, 2: t2, 3: t3, 4: t4}
