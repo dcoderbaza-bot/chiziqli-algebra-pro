@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiziqli Algebra — Virtual Professor & Test Platformasi | Cyber University</title>
+  <meta name="description" content="Cyber University Davlat Universiteti — Chiziqli algebra fanidan har bir mavzudan 30 tadan test savollari, Aralash testlar, Professor konspekti va Matritsa laboratoriyasi." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- KaTeX (Matematik formulalarni yuqori sifatda chizish uchun) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Kreativ Binafsha Dizayn Stillari -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="antialiased selection:bg-fuchsia-500 selection:text-white">
+
+  <!-- Kosmik Binafsha Aurora va Matematik Tor Fon -->
+  <div class="cosmic-bg"></div>
+  <div class="math-grid-overlay"></div>
+
+  <!-- Suzib yuruvchi matematik formulalar dekoratsiyasi -->
+  <div class="floating-math text-6xl top-24 left-8">det(A) ≠ 0</div>
+  <div class="floating-math text-7xl top-1/3 right-10" style="animation-delay: -5s;">AX = B</div>
+  <div class="floating-math text-6xl bottom-20 left-16" style="animation-delay: -9s;">e<sup>iπ</sup> = −1</div>
+  <div class="floating-math text-5xl bottom-28 right-1/4" style="animation-delay: -12s;">rang(A) = rang(A|B)</div>
+
+  <!-- YUQORI NAVIGATSIYA PANELI (STICKY HEADER) -->
+  <header class="sticky top-0 z-50 purple-header-glass no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
+      <!-- Brend va Professor Nishoni -->
+      <div class="flex items-center gap-3.5 cursor-pointer" onclick="window.App.switchTab('dashboard')">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-purple-600 via-violet-600 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-purple-600/40 border border-white/25">
+          <span class="font-serif font-extrabold text-lg tracking-tighter text-white">|A|</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-base sm:text-lg tracking-tight bg-gradient-to-r from-white via-purple-200 to-fuchsia-300 bg-clip-text text-transparent">
+              CHIZIQLI ALGEBRA PRO
+            </span>
+            <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-md bg-fuchsia-500/25 border border-fuchsia-400/40 text-fuchsia-200">
+              Cyber University
+            </span>
+          </div>
+          <p class="text-xs text-purple-300/85">PhD, dotsent Z. A. Nazarov ma’ruzalari • 270 ta Test</p>
+        </div>
+      </div>
+
+      <!-- Asosiy Menyular -->
+      <nav class="flex flex-wrap items-center gap-1.5">
+        <button type="button" data-tab="dashboard" onclick="window.App.switchTab('dashboard')" class="nav-tab active">
+          <i data-lucide="layout-grid" class="w-4 h-4"></i>
+          <span>Mavzular (8×30)</span>
+        </button>
+        <button type="button" data-tab="mixed" onclick="window.App.switchTab('mixed')" class="nav-tab">
+          <i data-lucide="shuffle" class="w-4 h-4"></i>
+          <span>Aralash Testlar</span>
+        </button>
+        <button type="button" data-tab="theory" onclick="window.App.switchTab('theory')" class="nav-tab">
+          <i data-lucide="book-open" class="w-4 h-4"></i>
+          <span>Professor Konspekti</span>
+        </button>
+        <button type="button" data-tab="lab" onclick="window.App.switchTab('lab')" class="nav-tab">
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+          <span>Matritsa Lab</span>
+        </button>
+        <button type="button" data-tab="catalog" onclick="window.App.switchTab('catalog')" class="nav-tab">
+          <i data-lucide="database" class="w-4 h-4"></i>
+          <span>270 Savol Bazasi</span>
+        </button>
+      </nav>
+
+      <!-- Tema o'zgartirish tugmasi -->
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="window.App.toggleTheme()"
+          class="btn-outline-purple px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-4 h-4 text-fuchsia-400"></i>
+          <span id="theme-toggle-label">Yorug‘ Binafsha</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ASOSIY KONTENT -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+
+    <!-- ====================================================================
+         1-BO'LIM: DASHBOARD VA 8 TA MAVZU (HAR BIRIDAN 30 TADAN TEST)
+         ==================================================================== -->
+    <section id="view-dashboard" class="view-section space-y-8">
+
+      <!-- Professor Hero Banner -->
+      <div class="purple-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden border border-purple-400/35">
+        <div class="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-gradient-to-br from-fuchsia-600/30 via-purple-600/25 to-indigo-600/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-16 -bottom-16 w-72 h-72 rounded-full bg-gradient-to-tr from-violet-600/30 to-purple-500/20 blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-8 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/20 border border-purple-400/40 text-xs font-bold text-purple-200">
+              <span class="w-2 h-2 rounded-full bg-fuchsia-400 animate-ping"></span>
+              <span>CYBER UNIVERSITY DAVLAT UNIVERSITETI • MASOFAVIY VA INTERAKTIV KURS</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              Chiziqli Algebra Fanidan <br />
+              <span class="bg-gradient-to-r from-purple-300 via-fuchsia-300 to-pink-300 bg-clip-text text-transparent">
+                Virtual Professor Akademiyasi
+              </span>
+            </h1>
+
+            <p class="text-sm sm:text-base text-purple-200/90 leading-relaxed max-w-3xl">
+              Assalomu alaykum, aziz talaba! Men sizning Chiziqli algebra fanidan professor o‘qituvchingizman.
+              Ushbu kreativ binafsha platformada <strong>barcha 8 ta ma’ruza mavzusining har biridan 30 tadan</strong>
+              (jami <strong>240 ta mavzulashtirilgan + 30 ta maxsus aralash = 270 ta</strong>) test savollari, batafsil
+              yechimlar, imtihon simulyatori va interaktiv matritsa kalkulyatori jamlangan.
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button onclick="window.App.switchTab('mixed')" class="btn-royal px-6 py-3.5 rounded-2xl text-sm flex items-center gap-2.5">
+                <i data-lucide="zap" class="w-5 h-5"></i>
+                <span>Aralash Imtihon Boshlash</span>
+              </button>
+              <button onclick="window.App.startPresetMixed('oraliq25')" class="btn-outline-purple px-5 py-3.5 rounded-2xl text-sm font-bold flex items-center gap-2">
+                <i data-lucide="award" class="w-5 h-5 text-fuchsia-400"></i>
+                <span>25 talik Oraliq Nazorat (Random)</span>
+              </button>
+              <button onclick="window.App.switchTab('theory')" class="btn-outline-purple px-5 py-3.5 rounded-2xl text-sm font-bold flex items-center gap-2">
+                <i data-lucide="book-open-check" class="w-5 h-5 text-purple-300"></i>
+                <span>Ma’ruzalar Formulalari</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Professor Karta / Statistika -->
+          <div class="lg:col-span-4">
+            <div class="p-6 rounded-3xl bg-gradient-to-br from-purple-950/90 via-violet-950/85 to-fuchsia-950/80 border border-purple-400/40 shadow-2xl space-y-4">
+              <div class="flex items-center gap-3.5 border-b border-purple-500/30 pb-4">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center text-white font-extrabold text-xl shadow-md">
+                  ZN
+                </div>
+                <div>
+                  <div class="text-xs font-bold uppercase tracking-wider text-fuchsia-300">Fan Professori</div>
+                  <div class="font-extrabold text-base text-white">Zuhriddin A. Nazarov</div>
+                  <div class="text-xs text-purple-300">Fizika-matematika fanlari PhD, dotsent</div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 text-center">
+                <div class="p-3 rounded-2xl bg-purple-900/40 border border-purple-500/25">
+                  <div class="text-xs text-purple-300">Savollar Bazasi</div>
+                  <div id="stat-total-questions" class="text-xl font-extrabold text-white mt-0.5">270 ta</div>
+                </div>
+                <div class="p-3 rounded-2xl bg-purple-900/40 border border-purple-500/25">
+                  <div class="text-xs text-purple-300">O‘zlashtirish</div>
+                  <div id="stat-accuracy" class="text-xl font-extrabold text-emerald-400 mt-0.5">0%</div>
+                </div>
+                <div class="p-3 rounded-2xl bg-purple-900/40 border border-purple-500/25">
+                  <div class="text-xs text-purple-300">Urinishlar soni</div>
+                  <div id="stat-total-attempts" class="text-xl font-extrabold text-fuchsia-300 mt-0.5">0 marta</div>
+                </div>
+                <div class="p-3 rounded-2xl bg-purple-900/40 border border-purple-500/25">
+                  <div class="text-xs text-purple-300">80%+ Mavzular</div>
+                  <div id="stat-mastered-topics" class="text-xl font-extrabold text-purple-200 mt-0.5">0 / 9</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mavzular Sarlavhasi -->
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-fuchsia-400">O‘QUV DASTURI BO‘YICHA TESTLAR</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mt-1">Barcha Ma’ruza Mavzulari (Har birida 30 tadan Test)</h2>
+        </div>
+        <div class="text-xs sm:text-sm text-purple-300">
+          💡 <strong>O‘quv rejimi</strong> — darhol javob va professor yechimi bilan &bull; <strong>Imtihon</strong> — vaqtga qarshi
+        </div>
+      </div>
+
+      <!-- 9 ta Bo'lim Kartalari (8 ta Ma'ruza + 9-Aralash Kompleks Bo'lim) -->
+      <div id="topics-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <!-- Oxirgi Ishlangan Testlar Tarixi -->
+      <div class="purple-glass rounded-3xl p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-extrabold flex items-center gap-2">
+            <i data-lucide="history" class="w-5 h-5 text-fuchsia-400"></i>
+            <span>So‘nggi Ishlangan Testlar Tarixi</span>
+          </h3>
+        </div>
+        <div id="recent-history-list" class="space-y-2.5"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2-BO'LIM: ARALASH TESTLAR MARKAZI (MIXED TESTS STUDIO)
+         ==================================================================== -->
+    <section id="view-mixed" class="view-section hidden space-y-8">
+      <div class="purple-glass rounded-3xl p-6 sm:p-8 border border-fuchsia-500/35">
+        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
+          ARALASH TESTLAR LABORATORIYASI
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold mt-3">Aralash Imtihon Simulyatori va Maxsus Konstruktor</h2>
+        <p class="text-sm text-purple-200/85 mt-1 max-w-3xl">
+          Barcha 8 ta ma’ruza mavzularini qamrab olgan tayyor aralash imtihon paketlaridan birini tanlang yoki o‘zingiz xohlagan mavzular va savollar sonini belgilab shaxsiy aralash test yarating!
+        </p>
+
+        <!-- 4 ta Tayyor Aralash Rejim -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+          <div class="p-5 rounded-2xl bg-purple-950/60 border border-purple-500/35 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-extrabold text-fuchsia-400 uppercase">1-Variant</span>
+              <h3 class="text-lg font-extrabold mt-1">Kompleks Aralash (30 ta)</h3>
+              <p class="text-xs text-purple-300/85 mt-1 mb-4">
+                Bir nechta mavzu qoidalarini birlashtirgan 30 ta maxsus sintez savollari.
+              </p>
+            </div>
+            <button onclick="window.App.startPresetMixed('curated30')" class="btn-royal w-full py-2.5 rounded-xl text-xs font-bold">
+              Boshlash (30 ta savol)
+            </button>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-purple-950/60 border border-purple-500/35 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-extrabold text-emerald-400 uppercase">2-Variant (Tavsiya)</span>
+              <h3 class="text-lg font-extrabold mt-1">Oraliq / Yakuniy Bilet (25 ta)</h3>
+              <p class="text-xs text-purple-300/85 mt-1 mb-4">
+                Barcha 8 ta ma’ruzadan teng proporsiyada tasodifiy tanlangan 25 ta savol • 40 daqiqa.
+              </p>
+            </div>
+            <button onclick="window.App.startPresetMixed('oraliq25')" class="btn-royal w-full py-2.5 rounded-xl text-xs font-bold">
+              Imtihonni Boshlash (25 ta)
+            </button>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-purple-950/60 border border-purple-500/35 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-extrabold text-amber-400 uppercase">3-Variant</span>
+              <h3 class="text-lg font-extrabold mt-1">Super-Marafon (40 ta)</h3>
+              <p class="text-xs text-purple-300/85 mt-1 mb-4">
+                Har bir ma’ruzadan 5 tadan = 40 ta savol. To‘liq kurs bo‘yicha chuqur sinov • 60 daqiqa.
+              </p>
+            </div>
+            <button onclick="window.App.startPresetMixed('marathon40')" class="btn-royal w-full py-2.5 rounded-xl text-xs font-bold">
+              Marafonni Boshlash (40 ta)
+            </button>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-purple-950/60 border border-purple-500/35 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-extrabold text-sky-400 uppercase">4-Variant</span>
+              <h3 class="text-lg font-extrabold mt-1">Tezkor Blitz (15 ta)</h3>
+              <p class="text-xs text-purple-300/85 mt-1 mb-4">
+                270 ta savol ichidan tasodifiy 15 ta savol — dars oldidan tezkor takrorlash uchun!
+              </p>
+            </div>
+            <button onclick="window.App.startPresetMixed('blitz15')" class="btn-royal w-full py-2.5 rounded-xl text-xs font-bold">
+              Blitz Boshlash (15 ta)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maxsus Aralash Test Konstruktori -->
+      <div class="purple-glass rounded-3xl p-6 sm:p-8">
+        <h3 class="text-xl font-extrabold mb-2 flex items-center gap-2">
+          <i data-lucide="sliders" class="w-5 h-5 text-fuchsia-400"></i>
+          <span>Maxsus Aralash Test Konstruktori (O‘zingiz Sozlang)</span>
+        </h3>
+        <p class="text-xs sm:text-sm text-purple-300 mb-5">
+          Qaysi mavzulardan savol tushishini, savollar sonini va ishlash rejimini tanlang:
+        </p>
+
+        <div id="custom-mix-topics" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6"></div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div>
+            <label class="block text-xs font-bold uppercase text-purple-300 mb-1.5">Savollar soni:</label>
+            <select id="custom-mix-count" class="w-full p-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-white text-sm font-semibold">
+              <option value="15">15 ta savol</option>
+              <option value="25">25 ta savol (Standart Bilet)</option>
+              <option value="30" selected>30 ta savol</option>
+              <option value="40">40 ta savol</option>
+              <option value="50">50 ta savol</option>
+              <option value="100">100 ta savol</option>
+              <option value="all">Tanlangan barcha savollar</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-purple-300 mb-1.5">Qiyinlik darajasi:</label>
+            <select id="custom-mix-diff" class="w-full p-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-white text-sm font-semibold">
+              <option value="all" selected>Barcha darajalar (Aralash)</option>
+              <option value="Oson">Faqat Oson (Nazariy & Bazaviy)</option>
+              <option value="O'rta">Faqat O‘rta (Standart Hisoblash)</option>
+              <option value="Qiyin">Faqat Qiyin (Murakkab Masalalar)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-purple-300 mb-1.5">Ishlash rejimi:</label>
+            <select id="custom-mix-mode" class="w-full p-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-white text-sm font-semibold">
+              <option value="practice" selected>🎓 Professor bilan o‘rganish (Darhol izoh)</option>
+              <option value="exam">⏱️ Imtihon rejimi (Vaqtga qarshi)</option>
+            </select>
+          </div>
+
+          <div class="flex items-end">
+            <label class="flex items-center gap-2.5 p-3 rounded-xl bg-purple-950/50 border border-purple-500/30 w-full cursor-pointer">
+              <input type="checkbox" id="custom-mix-shuffle" checked class="w-4 h-4 accent-fuchsia-500" />
+              <span class="text-xs sm:text-sm font-semibold">A, B, C, D o‘rnini aralashtirish</span>
+            </label>
+          </div>
+        </div>
+
+        <button onclick="window.App.startCustomMixedQuiz()" class="btn-royal px-8 py-3.5 rounded-2xl text-sm font-extrabold flex items-center gap-2">
+          <i data-lucide="rocket" class="w-5 h-5"></i>
+          <span>Maxsus Aralash Testni Boshlash</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3-BO'LIM: PROFESSOR KONSPEKTI VA FORMULALAR
+         ==================================================================== -->
+    <section id="view-theory" class="view-section hidden space-y-6">
+      <div class="purple-glass rounded-3xl p-6">
+        <h2 class="text-2xl font-extrabold mb-2">📖 Professor Ma’ruzalar Konspekti va Formulalar Shpargalkasi</h2>
+        <p class="text-xs sm:text-sm text-purple-300 mb-4">
+          PhD, dotsent Zuhriddin A. Nazarovning 1–8-ma’ruza taqdimotlari asosida tuzilgan asosiy formulalar va eslatmalar:
+        </p>
+        <div id="theory-topic-pills" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div id="theory-content-area"></div>
+    </section>
+
+    <!-- ====================================================================
+         4-BO'LIM: INTERAKTIV MATRITSA VA DETERMINANT LABORATORIYASI
+         ==================================================================== -->
+    <section id="view-lab" class="view-section hidden space-y-6">
+      <div class="purple-glass rounded-3xl p-6 sm:p-8">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div>
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white">
+              INTERAKTIV HISOBLASH LABORATORIYASI
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Matritsa, Determinant, Teskari Matritsa va Kramer Kalkulyatori</h2>
+            <p class="text-xs sm:text-sm text-purple-200/80 mt-1">
+              Ixtiyoriy $2\times 2$ yoki $3\times 3$ matritsa va ozod hadlar vektorini kiriting — laboratoriya $\det(A)$, $A^T$, $\text{rang}(A)$, qo‘shma matritsa $\bar{A}$, $A^{-1}$ va $AX=B$ yechimini hisoblab beradi!
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button id="lab-size-2" type="button" class="px-4 py-2 rounded-xl text-sm font-bold btn-outline-purple">2 × 2 Matritsa</button>
+            <button id="lab-size-3" type="button" class="px-4 py-2 rounded-xl text-sm font-bold btn-royal">3 × 3 Matritsa</button>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-xs font-bold uppercase text-purple-300 mb-2">Ma’ruzadagi tayyor misollardan birini yuklash:</label>
+          <select id="lab-preset-select" class="w-full sm:w-96 p-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-white text-sm font-semibold"></select>
+        </div>
+
+        <div id="lab-matrix-inputs" class="mb-6"></div>
+        <div id="lab-results-container"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5-BO'LIM: BARCHA 270 TA SAVOL VA JAVOBLAR KATALOGI
+         ==================================================================== -->
+    <section id="view-catalog" class="view-section hidden space-y-6">
+      <div class="purple-glass rounded-3xl p-6 no-print">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <div>
+            <h2 class="text-2xl font-extrabold">📚 Barcha 270 ta Test Savollari va Professor Yechimlari Bazasi</h2>
+            <p class="text-xs sm:text-sm text-purple-300">
+              Har bir mavzudan 30 tadan savol (8×30 = 240 ta) hamda 30 ta kompleks aralash savol kalitlari bilan
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span id="catalog-count-badge" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-fuchsia-500/20 border border-fuchsia-400/40 text-fuchsia-200">
+              Topildi: 270 ta savol
+            </span>
+            <button onclick="window.print()" class="btn-outline-purple px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="printer" class="w-4 h-4"></i>
+              <span>Chop etish / PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <input type="text" id="catalog-search-input" placeholder="Savol matni yoki formula bo‘yicha qidiruv..."
+            class="p-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-white text-sm placeholder-purple-300/50 focus:outline-none focus:border-fuchsia-400" />
+
+          <select id="catalog-topic-select" class="p-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-white text-sm font-semibold">
+            <option value="all">Barcha bo‘limlar (270 ta savol)</option>
+          </select>
+
+          <select id="catalog-diff-select" class="p-3 rounded-xl bg-purple-950/80 border border-purple-500/40 text-white text-sm font-semibold">
+            <option value="all">Barcha qiyinlik darajalari</option>
+            <option value="Oson">Oson</option>
+            <option value="O'rta">O‘rta</option>
+            <option value="Qiyin">Qiyin</option>
+          </select>
+
+          <label class="flex items-center gap-2.5 p-3 rounded-xl bg-purple-950/60 border border-purple-500/30 cursor-pointer">
+            <input type="checkbox" id="catalog-toggle-answers" checked class="w-4 h-4 accent-fuchsia-500" />
+            <span class="text-xs sm:text-sm font-semibold">To‘g‘ri javob va izohni ko‘rsatish</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="catalog-questions-list" class="space-y-4"></div>
+    </section>
+
+    <!-- ====================================================================
+         6-BO'LIM: TEST ISHLASH OYNASI (ACTIVE QUIZ VIEW)
+         ==================================================================== -->
+    <section id="view-quiz" class="view-section hidden space-y-6">
+      <!-- Yuqori Test Status Barcha -->
+      <div class="purple-glass rounded-3xl p-4 sm:p-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="quiz-mode-badge"></span>
+              <span id="quiz-timer-display" class="px-3 py-1 rounded-full text-xs font-extrabold bg-purple-950/80 border border-purple-500/40 text-purple-200">
+                ⏱️ 00:00
+              </span>
+            </div>
+            <h2 id="quiz-header-title" class="text-lg sm:text-xl font-extrabold mt-2"></h2>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="window.App.finishQuiz(false)"
+              class="px-4 py-2 rounded-xl text-xs font-extrabold bg-rose-500/20 border border-rose-400/50 text-rose-200 hover:bg-rose-500/35 transition flex items-center gap-1.5">
+              <i data-lucide="flag" class="w-4 h-4"></i>
+              <span>Testni Yakunlash</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-purple-300 font-semibold mb-1.5">
+          <span id="quiz-progress-text">Savol: 1 / 30</span>
+          <span>Klaviatura: [A/1] [B/2] [C/3] [D/4] • [← / →]</span>
+        </div>
+        <div class="w-full h-2.5 rounded-full bg-purple-950/90 overflow-hidden p-0.5 border border-purple-500/30">
+          <div id="quiz-progress-bar" class="h-full rounded-full bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 transition-all duration-300" style="width: 3%"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Savol va Variantlar Karta -->
+        <div class="lg:col-span-8">
+          <div class="purple-glass rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-purple-500/25">
+              <div class="flex flex-wrap items-center gap-2">
+                <span id="quiz-q-number" class="px-3 py-1 rounded-xl text-xs font-extrabold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
+                  1-SAVOL
+                </span>
+                <span id="quiz-q-diff"></span>
+                <span id="quiz-q-topic" class="text-xs text-purple-300 font-medium"></span>
+              </div>
+
+              <button type="button" id="quiz-flag-btn" onclick="window.App.toggleFlagCurrent()"></button>
+            </div>
+
+            <!-- Savol Matni -->
+            <div id="quiz-question-text" class="text-base sm:text-lg font-bold leading-relaxed mb-6"></div>
+
+            <!-- 4 ta Variant -->
+            <div id="quiz-options-container" class="space-y-3"></div>
+
+            <!-- Professor Izohi (Practice rejimida) -->
+            <div id="quiz-explanation-box" class="hidden"></div>
+
+            <!-- Navigatsiya Tugmalari -->
+            <div class="flex items-center justify-between gap-4 mt-8 pt-5 border-t border-purple-500/25">
+              <button type="button" id="quiz-prev-btn" onclick="window.App.prevQuestion()"
+                class="btn-outline-purple px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 disabled:opacity-40">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Oldingi savol</span>
+              </button>
+
+              <button type="button" id="quiz-next-btn" onclick="window.App.nextQuestion()"
+                class="btn-royal px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2">
+                <span>Keyingi savol</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savollar Xaritasi (Palette) -->
+        <div class="lg:col-span-4">
+          <div class="purple-glass rounded-3xl p-5 sticky top-24">
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-purple-200 mb-3 flex items-center gap-2">
+              <i data-lucide="compass" class="w-4 h-4 text-fuchsia-400"></i>
+              <span>Savollar Xaritasi</span>
+            </h3>
+            <div id="quiz-palette-grid" class="flex flex-wrap gap-2 mb-5"></div>
+
+            <div class="space-y-2 text-xs text-purple-300 border-t border-purple-500/25 pt-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded bg-gradient-to-r from-violet-600 to-fuchsia-500 inline-block"></span>
+                <span>Joriy savol</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded bg-emerald-500/40 border border-emerald-400 inline-block"></span>
+                <span>To‘g‘ri javob (O‘quv rejimida)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded bg-rose-500/40 border border-rose-400 inline-block"></span>
+                <span>Xato javob (O‘quv rejimida)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded border-2 border-amber-400 inline-block"></span>
+                <span>Belgilab qo‘yilgan savol</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7-BO'LIM: NATIJALAR VA XATOLAR TAHLILI (RESULTS VIEW)
+         ==================================================================== -->
+    <section id="view-results" class="view-section hidden space-y-6">
+      <div id="results-summary-card" class="purple-glass rounded-3xl p-6 sm:p-8 border border-fuchsia-500/40"></div>
+
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h3 class="text-xl font-extrabold">📋 Savollar Bo‘yicha Batafsil Yechimlar Tahlili</h3>
+        <div class="flex gap-2">
+          <button onclick="window.App.renderResultsDetailedReview('all')" class="btn-outline-purple px-3.5 py-1.5 rounded-xl text-xs font-bold">
+            Barchasi
+          </button>
+          <button onclick="window.App.renderResultsDetailedReview('wrong')" class="btn-outline-purple px-3.5 py-1.5 rounded-xl text-xs font-bold text-rose-300">
+            Faqat Xatolar
+          </button>
+          <button onclick="window.App.renderResultsDetailedReview('flagged')" class="btn-outline-purple px-3.5 py-1.5 rounded-xl text-xs font-bold text-amber-300">
+            Belgilanganlar
+          </button>
+        </div>
+      </div>
+
+      <div id="results-questions-review" class="space-y-4"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-purple-500/25 mt-16 py-8 text-center text-xs sm:text-sm text-purple-300/80 no-print">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <strong>CYBER UNIVERSITY DAVLAT UNIVERSITETI</strong> — «Chiziqli Algebra» Virtual Akademiyasi
+      </div>
+      <div>
+        Ma’ruzachi: <strong>PhD, dotsent Zuhriddin A. Nazarov</strong> • Jami <strong>270 ta</strong> interaktiv test savollari
+      </div>
+    </div>
+  </footer>
+
+  <!-- Ma'lumotlar va Skriptlar -->
+  <script src="js/theory-data.js"></script>
+  <script src="js/questions-data.js"></script>
+  <script src="js/matrix-lab.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
