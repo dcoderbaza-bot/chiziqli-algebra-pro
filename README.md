@@ -1,5 +1,8 @@
 # 💜 Chiziqli Algebra Pro — Virtual Professor & Interaktiv Test Platformasi
 
+🌐 **Jonli Web-Sayt (GitHub Pages):** https://dcoderbaza-bot.github.io/chiziqli-algebra-pro/  
+📦 **GitHub Repozitoriy:** https://github.com/dcoderbaza-bot/chiziqli-algebra-pro
+
 **“Cyber University” Davlat Universiteti** — Fizika-matematika fanlari falsafa doktori (PhD), dotsent **Zuhriddin A. Nazarov**ning ma’ruza darslari asosida yaratilgan zamonaviy, kreativ binafsha (*Royal Purple / Cyber Amethyst*) dizayndagi interaktiv ta’lim va test platformasi.
 
 ---
