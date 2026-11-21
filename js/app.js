@@ -14,11 +14,14 @@
     catalogFilterDiff: "all",
     catalogSearch: "",
     catalogShowAnswers: true,
+    previewMidtermVariantNum: null,
+    previewMidtermShowAnswers: true,
     stats: {
       totalAttempts: 0,
       totalAnswered: 0,
       totalCorrect: 0,
       topicBest: {}, // topicId -> { pct, score, total, date }
+      midtermBest: {}, // variantNum -> { pct, score, total, date }
       history: [] // { id, title, mode, score, total, pct, durationSec, date }
     },
     quiz: {
@@ -162,6 +165,8 @@
 
     if (tabName === "dashboard") {
       renderDashboard();
+    } else if (tabName === "midterm") {
+      renderMidtermHub();
     } else if (tabName === "mixed") {
       renderMixedHub();
     } else if (tabName === "theory") {
@@ -768,6 +773,18 @@
           date: nowStr
         };
       }
+    } else if (typeof qz.topicId === "string" && qz.topicId.startsWith("midterm_v")) {
+      const vNum = parseInt(qz.topicId.replace("midterm_v", ""), 10);
+      if (!state.stats.midtermBest) state.stats.midtermBest = {};
+      const prevBest = state.stats.midtermBest[vNum];
+      if (!prevBest || pct >= prevBest.pct) {
+        state.stats.midtermBest[vNum] = {
+          pct,
+          score: correctCount,
+          total,
+          date: nowStr
+        };
+      }
     }
 
     state.stats.history.unshift({
@@ -1128,6 +1145,185 @@
     renderMath(listEl);
   }
 
+  // =========================================================================
+  // 1.5. ORALIQ NAZORAT (10 TA VARIANT — 17 AMALIY + 8 NAZARIY)
+  // =========================================================================
+  function renderMidtermHub() {
+    const grid = document.getElementById("midterm-variants-grid");
+    if (!grid || !window.MIDTERM_VARIANTS) return;
+
+    const bestMap = state.stats.midtermBest || {};
+
+    grid.innerHTML = window.MIDTERM_VARIANTS.map((v) => {
+      const best = bestMap[v.variant];
+      const bestPct = best ? best.pct : 0;
+      return `
+        <div class="purple-glass purple-glass-interactive rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 via-violet-600 to-fuchsia-500 opacity-20 blur-2xl pointer-events-none"></div>
+
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white shadow">
+                ${v.variant}-VARIANT
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-purple-950/70 border border-purple-400/30 text-purple-200">
+                25 savol
+              </span>
+            </div>
+
+            <h3 class="text-lg font-extrabold mb-1.5">Oraliq Nazorat #${v.variant}</h3>
+            <p class="text-xs text-purple-200/80 mb-3 leading-relaxed">
+              17 amaliy (o‘zgarmas) + 8 nazariy (barcha 8 mavzu).
+              ${v.variant === 1 ? "Asl 1–25 tartibda." : "Misol raqamlari o‘zgartirilgan."}
+            </p>
+          </div>
+
+          <div>
+            <div class="mb-3.5">
+              <div class="flex justify-between text-[11px] font-semibold mb-1">
+                <span class="text-purple-300">Natija:</span>
+                <span class="${bestPct >= 80 ? "text-emerald-400" : "text-fuchsia-300"} font-bold">
+                  ${best ? `${best.score}/${best.total} (${bestPct}%)` : "Ishlanmagan"}
+                </span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-purple-950/80 overflow-hidden border border-purple-500/20">
+                <div class="h-full rounded-full bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500" style="width: ${Math.max(bestPct, 4)}%"></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button type="button" onclick="window.App.startMidtermVariant(${v.variant}, 'practice')"
+                class="btn-royal py-2 px-2.5 rounded-xl text-xs flex items-center justify-center gap-1">
+                <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+                <span>O‘quv</span>
+              </button>
+              <button type="button" onclick="window.App.startMidtermVariant(${v.variant}, 'exam')"
+                class="btn-outline-purple py-2 px-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1">
+                <i data-lucide="timer" class="w-3.5 h-3.5 text-fuchsia-400"></i>
+                <span>Imtihon</span>
+              </button>
+            </div>
+
+            <button type="button" onclick="window.App.previewMidtermVariant(${v.variant})"
+              class="w-full mt-2 py-2 px-2.5 rounded-xl text-[11px] font-semibold text-purple-300 hover:text-white hover:bg-purple-500/15 transition flex items-center justify-center gap-1.5">
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+              <span>Bilet ko‘rish / Chop etish</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    refreshIcons();
+  }
+
+  function startMidtermVariant(variantNum, mode) {
+    if (!window.MIDTERM_VARIANTS) return;
+    const varObj = window.MIDTERM_VARIANTS.find((v) => v.variant === variantNum);
+    if (!varObj) return;
+
+    // Har bir variantdagi 1..25 savol tartibi aynan o'sha variant raqamlarida saqlanadi!
+    const questions = varObj.questions.map((q) => Object.assign({}, q, { options: q.options.slice() }));
+
+    launchQuiz({
+      title: varObj.title,
+      subtitle: varObj.subtitle,
+      mode: mode,
+      topicId: `midterm_v${variantNum}`,
+      questions: questions,
+      timeLimitSec: mode === "exam" ? 40 * 60 : 0
+    });
+  }
+
+  function previewMidtermVariant(variantNum) {
+    state.previewMidtermVariantNum = variantNum;
+    const panel = document.getElementById("midterm-preview-panel");
+    if (panel) panel.classList.remove("hidden");
+    renderMidtermPreview();
+    if (panel) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function closeMidtermPreview() {
+    state.previewMidtermVariantNum = null;
+    const panel = document.getElementById("midterm-preview-panel");
+    if (panel) panel.classList.add("hidden");
+  }
+
+  function renderMidtermPreview() {
+    if (!state.previewMidtermVariantNum || !window.MIDTERM_VARIANTS) return;
+    const varObj = window.MIDTERM_VARIANTS.find((v) => v.variant === state.previewMidtermVariantNum);
+    if (!varObj) return;
+
+    const titleEl = document.getElementById("midterm-preview-title");
+    if (titleEl) titleEl.textContent = `${varObj.title} (25 ta savol: 17 amaliy + 8 nazariy)`;
+
+    const listEl = document.getElementById("midterm-preview-list");
+    if (!listEl) return;
+
+    const letters = ["A", "B", "C", "D"];
+    const showAns = state.previewMidtermShowAnswers;
+
+    listEl.innerHTML =
+      `<div class="hidden print:block text-center mb-6">
+        <h2 class="text-xl font-bold uppercase">CYBER UNIVERSITY DAVLAT UNIVERSITETI</h2>
+        <h3 class="text-lg font-bold mt-1">CHIZIQLI ALGEBRA FANIDAN ORALIQ NAZORAT ISHI — ${varObj.variant}-VARIANT</h3>
+      </div>` +
+      varObj.questions
+        .map((q) => {
+          const isPrac = q.kind === "Amaliy";
+          return `
+          <div class="purple-glass rounded-2xl p-5 border ${
+            isPrac ? "border-purple-500/35" : "border-fuchsia-500/45"
+          }">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-lg text-xs font-extrabold ${
+                  isPrac
+                    ? "bg-purple-600/40 text-purple-100 border border-purple-400/35"
+                    : "bg-fuchsia-600/40 text-fuchsia-100 border border-fuchsia-400/35"
+                }">
+                  ${q.num}-SAVOL • ${isPrac ? "Amaliy misol" : `Nazariy (${q.topicId}-Ma’ruza)`}
+                </span>
+              </div>
+              <span class="text-xs text-purple-300/80">${q.id}</span>
+            </div>
+
+            <div class="text-base font-bold mb-4 leading-relaxed">${q.question}</div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-sm">
+              ${q.options
+                .map((opt, idx) => {
+                  const isAns = showAns && idx === q.answer;
+                  return `
+                  <div class="p-3 rounded-xl border ${
+                    isAns
+                      ? "bg-emerald-500/20 border-emerald-400 text-emerald-200 font-bold"
+                      : "bg-purple-950/40 border-purple-500/25 text-purple-200"
+                  }">
+                    <span class="font-extrabold mr-1.5">${letters[idx]})</span> ${opt}
+                  </div>
+                `;
+                })
+                .join("")}
+            </div>
+
+            ${
+              showAns
+                ? `<div class="professor-callout p-3.5 text-xs sm:text-sm mt-3">
+                    <span class="font-bold text-fuchsia-300">Javob: ${letters[q.answer]})</span>
+                    <span class="text-purple-100 ml-1">${q.explanation}</span>
+                  </div>`
+                : ""
+            }
+          </div>
+        `;
+        })
+        .join("");
+
+    refreshIcons();
+    renderMath(listEl);
+  }
+
   // Klaviatura boshqaruvi (1..4 yoki A..D, strelkalar)
   function setupKeyboardShortcuts() {
     window.addEventListener("keydown", (e) => {
@@ -1179,6 +1375,14 @@
       });
     }
 
+    const midtermAnsToggle = document.getElementById("midterm-preview-answers");
+    if (midtermAnsToggle) {
+      midtermAnsToggle.addEventListener("change", (e) => {
+        state.previewMidtermShowAnswers = e.target.checked;
+        renderMidtermPreview();
+      });
+    }
+
     setupKeyboardShortcuts();
     renderDashboard();
     refreshIcons();
@@ -1190,6 +1394,9 @@
     switchTab,
     toggleTheme,
     startTopicQuiz,
+    startMidtermVariant,
+    previewMidtermVariant,
+    closeMidtermPreview,
     startPresetMixed,
     startCustomMixedQuiz,
     selectOption,

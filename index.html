@@ -64,6 +64,10 @@
           <i data-lucide="layout-grid" class="w-4 h-4"></i>
           <span>Mavzular (8×30)</span>
         </button>
+        <button type="button" data-tab="midterm" onclick="window.App.switchTab('midterm')" class="nav-tab">
+          <i data-lucide="file-check-2" class="w-4 h-4"></i>
+          <span>Oraliq Nazorat (10 Variant)</span>
+        </button>
         <button type="button" data-tab="mixed" onclick="window.App.switchTab('mixed')" class="nav-tab">
           <i data-lucide="shuffle" class="w-4 h-4"></i>
           <span>Aralash Testlar</span>
@@ -127,13 +131,13 @@
             </p>
 
             <div class="flex flex-wrap gap-3 pt-2">
-              <button onclick="window.App.switchTab('mixed')" class="btn-royal px-6 py-3.5 rounded-2xl text-sm flex items-center gap-2.5">
-                <i data-lucide="zap" class="w-5 h-5"></i>
-                <span>Aralash Imtihon Boshlash</span>
+              <button onclick="window.App.switchTab('midterm')" class="btn-royal px-6 py-3.5 rounded-2xl text-sm flex items-center gap-2.5">
+                <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                <span>Oraliq Nazorat (10 ta Variant)</span>
               </button>
-              <button onclick="window.App.startPresetMixed('oraliq25')" class="btn-outline-purple px-5 py-3.5 rounded-2xl text-sm font-bold flex items-center gap-2">
-                <i data-lucide="award" class="w-5 h-5 text-fuchsia-400"></i>
-                <span>25 talik Oraliq Nazorat (Random)</span>
+              <button onclick="window.App.switchTab('mixed')" class="btn-outline-purple px-5 py-3.5 rounded-2xl text-sm font-bold flex items-center gap-2">
+                <i data-lucide="zap" class="w-5 h-5 text-fuchsia-400"></i>
+                <span>Aralash Imtihon Boshlash</span>
               </button>
               <button onclick="window.App.switchTab('theory')" class="btn-outline-purple px-5 py-3.5 rounded-2xl text-sm font-bold flex items-center gap-2">
                 <i data-lucide="book-open-check" class="w-5 h-5 text-purple-300"></i>
@@ -202,6 +206,66 @@
           </h3>
         </div>
         <div id="recent-history-list" class="space-y-2.5"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         1.5-BO'LIM: ORALIQ NAZORAT (10 TA VARIANT — 17 AMALIY + 8 NAZARIY)
+         ==================================================================== -->
+    <section id="view-midterm" class="view-section hidden space-y-8">
+      <div class="purple-glass rounded-3xl p-6 sm:p-8 border border-fuchsia-500/40 relative overflow-hidden no-print">
+        <div class="absolute -right-12 -top-12 w-56 h-56 rounded-full bg-gradient-to-br from-fuchsia-600/30 to-purple-600/20 blur-3xl pointer-events-none"></div>
+        <div class="relative z-10">
+          <span class="px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
+            CYBER UNIVERSITY • ORALIQ NAZORAT ISHI
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mt-3">Chiziqli Algebra Fanidan Oraliq Nazorat — 10 ta Variant</h2>
+          <p class="text-sm text-purple-200/90 mt-2 max-w-4xl leading-relaxed">
+            Har bir variantda <strong>25 ta savol</strong> jamlangan: asosiy nazorat ishidagi <strong>17 ta amaliy misol o‘zgartirilmasdan</strong> saqlangan,
+            qolgan <strong>8 ta nazariy savol</strong> esa barcha 1–8-ma’ruza mavzularini to‘liq qamrab olgan holda har bir variantda yangilanadi (jami 80 ta noyob nazariy savol).
+            2–10-variantlarda savollarning tartib raqamlari (1–25) har safar o‘zgaradi!
+          </p>
+
+          <div class="flex flex-wrap gap-3 mt-4 text-xs font-semibold">
+            <span class="px-3 py-1.5 rounded-xl bg-purple-950/70 border border-purple-500/35 text-purple-200">
+              ✅ 17 ta Amaliy misol (o‘zgarishsiz)
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-fuchsia-950/70 border border-fuchsia-500/35 text-fuchsia-200">
+              📖 8 ta Nazariy savol (barcha 8 mavzudan 1 tadan)
+            </span>
+            <span class="px-3 py-1.5 rounded-xl bg-indigo-950/70 border border-indigo-500/35 text-indigo-200">
+              🔀 2–10-variantlarda savol raqamlari aralashtirilgan
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 ta Variant Kartalari -->
+      <div id="midterm-variants-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 no-print"></div>
+
+      <!-- Tanlangan Variantning Chop Etish / Bilet Ko'rinishi -->
+      <div id="midterm-preview-panel" class="hidden space-y-4">
+        <div class="purple-glass rounded-3xl p-5 sm:p-6 border border-fuchsia-500/40 flex flex-wrap items-center justify-between gap-4 no-print">
+          <div>
+            <span class="text-xs font-extrabold uppercase text-fuchsia-400">BILET KO‘RINISHI VA CHOP ETISH</span>
+            <h3 id="midterm-preview-title" class="text-xl font-extrabold mt-0.5">Oraliq Nazorat — 1-Variant</h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <label class="flex items-center gap-2 px-3 py-2 rounded-xl bg-purple-950/70 border border-purple-500/35 cursor-pointer text-xs font-bold">
+              <input type="checkbox" id="midterm-preview-answers" checked class="w-4 h-4 accent-fuchsia-500" />
+              <span>Kalit va yechimlarni ko‘rsatish</span>
+            </label>
+            <button type="button" onclick="window.print()" class="btn-royal px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="printer" class="w-4 h-4"></i>
+              <span>Chop etish / PDF</span>
+            </button>
+            <button type="button" onclick="window.App.closeMidtermPreview()" class="btn-outline-purple px-3.5 py-2 rounded-xl text-xs font-bold">
+              Yopish ✕
+            </button>
+          </div>
+        </div>
+
+        <div id="midterm-preview-list" class="space-y-4"></div>
       </div>
     </section>
 
@@ -578,6 +642,7 @@
   <!-- Ma'lumotlar va Skriptlar -->
   <script src="js/theory-data.js"></script>
   <script src="js/questions-data.js"></script>
+  <script src="js/midterm-data.js"></script>
   <script src="js/matrix-lab.js"></script>
   <script src="js/app.js"></script>
 </body>
